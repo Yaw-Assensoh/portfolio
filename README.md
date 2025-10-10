@@ -6,4 +6,4 @@ Welcome to my professional portfolio showcasing data analysis projects and skill
 - Python • SQL • Tableau • Excel • Jupyter Notebooks
 
 ## Live Portfolio
-Visit: https://yaw-assensoh-opoku.github.io
+Visit: https://yaw-assensoh.github.io/portfolio
