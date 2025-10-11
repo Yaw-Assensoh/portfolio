@@ -6,6 +6,78 @@
     <title>RockBuster Insights | Yaw Assensoh Opoku</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
+    <style>
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .image-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .image-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .image-content {
+            padding: 1.5rem;
+        }
+        
+        .image-content h4 {
+            margin-top: 0;
+            color: #2d87f0;
+        }
+        
+        .insight-box {
+            background: #f0f8ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #2d87f0;
+        }
+        
+        .insight-box h4 {
+            color: #2d87f0;
+            margin-top: 0;
+        }
+        
+        .highlight-stat {
+            display: inline-block;
+            background: #2d87f0;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 0.25rem 0.5rem 0.25rem 0;
+        }
+        
+        .analysis-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .analysis-section h2 {
+            color: #2d87f0;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <!-- COPIED HEADER FROM INDEX.HTML -->
@@ -87,6 +159,59 @@
                     </li>
                 </ul>
 
+                <!-- Data Visualizations Section -->
+                <div class="analysis-section">
+                    <h2>Data Analysis & Visualizations</h2>
+                    
+                    <div class="image-grid">
+                        <div class="image-card">
+                            <img src="Country_and_number_of_customers.png" alt="Customer Distribution by Country">
+                            <div class="image-content">
+                                <h4>Global Customer Distribution</h4>
+                                <p>Analysis of customer base across different countries.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-stat">United States</span> leads with the largest customer base, followed by <span class="highlight-stat">India</span> and <span class="highlight-stat">China</span>, indicating strong brand recognition in these markets.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="image-card">
+                            <img src="Category_and_Revenue.png" alt="Revenue by Movie Category">
+                            <div class="image-content">
+                                <h4>Revenue by Film Category</h4>
+                                <p>Performance analysis across different movie genres.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-stat">Sports</span> and <span class="highlight-stat">Animation</span> categories generate the highest revenue, with Sports leading at <span class="highlight-stat">$4,836</span> in total revenue.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="image-card">
+                            <img src="Revenue_per_country.png" alt="Revenue Distribution by Country">
+                            <div class="image-content">
+                                <h4>Geographic Revenue Analysis</h4>
+                                <p>Revenue distribution and customer demographics by country.</p>
+                                <p><strong>Key Finding:</strong> Countries with median age <span class="highlight-stat">37-39</span> show highest revenue generation, suggesting optimal target demographic for digital service.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="image-card">
+                            <img src="movies-revenue.png" alt="Detailed Movie Revenue Analysis">
+                            <div class="image-content">
+                                <h4>Genre Performance Deep Dive</h4>
+                                <p>Detailed revenue analysis across all movie categories.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-stat">Sci-Fi</span> and <span class="highlight-stat">Action</span> genres show strong performance, indicating potential for franchise development in digital platform.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="insight-box">
+                        <h4>Strategic Business Insights</h4>
+                        <ul>
+                            <li><strong>Market Prioritization:</strong> The United States represents the largest customer base, making it the primary target for the digital launch, with India and China as secondary expansion markets.</li>
+                            <li><strong>Content Strategy:</strong> Sports and Animation categories drive the highest revenue, suggesting these should be focal points for digital content acquisition and original programming.</li>
+                            <li><strong>Demographic Targeting:</strong> Customers aged 37-39 generate the highest revenue per country, indicating this age group should be the primary target for marketing campaigns.</li>
+                            <li><strong>Genre Diversification:</strong> While Sports leads in revenue, strong performance across Sci-Fi, Action, and Comedy genres suggests a balanced content library will maximize subscriber retention.</li>
+                        </ul>
+                    </div>
+                </div>
+
                 <h3 style="color: #2d87f0; margin-bottom: 1rem;">Key Findings & Insights:</h3>
                 <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
@@ -96,14 +221,14 @@
                             <div style="font-size: 0.9rem; color: #666;">Generated 60% of total revenue</div>
                         </div>
                         <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                            <div style="font-size: 2rem; color: #2d87f0; margin-bottom: 0.5rem;">#1</div>
-                            <div style="font-weight: 600;">Top Genres</div>
-                            <div style="font-size: 0.9rem; color: #666;">Sports & Animation most profitable</div>
+                            <div style="font-size: 2rem; color: #2d87f0; margin-bottom: 0.5rem;">$4,836</div>
+                            <div style="font-weight: 600;">Top Category</div>
+                            <div style="font-size: 0.9rem; color: #666;">Sports genre revenue leader</div>
                         </div>
                         <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                            <div style="font-size: 2rem; color: #2d87f0; margin-bottom: 0.5rem;">Global</div>
-                            <div style="font-weight: 600;">Expansion Ready</div>
-                            <div style="font-size: 0.9rem; color: #666;">High-value markets identified</div>
+                            <div style="font-size: 2rem; color: #2d87f0; margin-bottom: 0.5rem;">37-39</div>
+                            <div style="font-weight: 600;">Prime Age Group</div>
+                            <div style="font-size: 0.9rem; color: #666;">Highest revenue demographic</div>
                         </div>
                     </div>
                 </div>
@@ -111,10 +236,11 @@
                 <div style="background: #e8f4fd; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border-left: 4px solid #2d87f0;">
                     <h4 style="color: #2d87f0; margin-bottom: 1rem;">Strategic Impact:</h4>
                     <ul style="margin: 0; padding-left: 1.5rem;">
-                        <li>Enabled targeted loyalty programs for high-value customers</li>
-                        <li>Pinpointed Tokyo and Mexico City as priority international markets</li>
-                        <li>Guided digital content acquisition strategy toward Sports and Animation genres</li>
-                        <li>Provided data-backed roadmap for competitive digital transformation</li>
+                        <li>Enabled targeted loyalty programs for high-value customers in the US market</li>
+                        <li>Pinpointed Sports and Animation as priority content categories for digital acquisition</li>
+                        <li>Identified 37-39 age demographic as primary target for digital marketing campaigns</li>
+                        <li>Provided data-backed content strategy balancing high-performing genres with audience diversity</li>
+                        <li>Guided international expansion strategy with clear market prioritization based on existing customer base</li>
                     </ul>
                 </div>
 
@@ -170,7 +296,7 @@
                     <a href="../index.html" class="btn btn-primary" style="margin-right: 1rem;">
                         <i class="fas fa-arrow-left"></i> Back to Portfolio
                     </a>
-                    <a href="#" class="btn btn-outline">
+                    <a href="https://github.com/Yaw-Assensoh/Rockbuster-Insights" class="btn btn-outline">
                         <i class="fab fa-github"></i> View Code
                     </a>
                 </div>
