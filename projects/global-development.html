@@ -6,6 +6,59 @@
     <title>Global Development Trends | Yaw Assensoh Opoku</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
+    <style>
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .image-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .image-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .image-content {
+            padding: 1.5rem;
+        }
+        
+        .image-content h4 {
+            margin-top: 0;
+            color: #2d87f0;
+        }
+        
+        .insight-box {
+            background: #f0f8ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #2d87f0;
+        }
+        
+        .insight-box h4 {
+            color: #2d87f0;
+            margin-top: 0;
+        }
+        
+        .highlight-stat {
+            display: inline-block;
+            background: #2d87f0;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 0.25rem 0.5rem 0.25rem 0;
+        }
+    </style>
 </head>
 <body>
     <!-- COPIED HEADER FROM INDEX.HTML -->
@@ -51,8 +104,8 @@
             <p class="section-subtitle">Economic Indicators & Country Development Metrics</p>
             
             <div style="margin: 2rem 0;">
-                <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                     alt="Global Economic Analytics" 
+                <img src="../assets/images/analysis-2.jpg" loading="lazy" 
+                     alt="Three business professionals analyzing data visualizations and charts on a large computer monitor and floating screens, including bar graphs, pie charts, and line graphs; the environment is a modern office with a collaborative and focused atmosphere; no visible text in the image"
                      style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px;">
             </div>
 
@@ -87,6 +140,57 @@
                     </li>
                 </ul>
 
+                <!-- Data Visualizations Section -->
+                <h2 style="color: #2d87f0; margin: 3rem 0 1.5rem 0;">Data Analysis & Visualizations</h2>
+                
+                <div class="image-grid">
+                    <div class="image-card">
+                        <img src="Linear_Regression_Analysis.png" alt="Linear Regression: GDP vs Life Expectancy">
+                        <div class="image-content">
+                            <h4>GDP vs Life Expectancy</h4>
+                            <p>Linear regression analysis showing the relationship between GDP per capita and life expectancy.</p>
+                            <p><strong>Key Finding:</strong> <span class="highlight-stat">0.000208</span> coefficient indicates that for every $1,000 increase in GDP per capita, life expectancy increases by approximately 0.2 years.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="image-card">
+                        <img src="Correlation_Matrix_Heatmap.png" alt="Correlation Matrix Heatmap">
+                        <div class="image-content">
+                            <h4>Variable Correlations</h4>
+                            <p>Heatmap showing relationships between key development indicators.</p>
+                            <p><strong>Key Finding:</strong> Strong positive correlation <span class="highlight-stat">0.70</span> between internet usage and life expectancy, suggesting digital access may impact health outcomes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="image-card">
+                        <img src="Global_Average_Internet_Usage_Growth(%).png" alt="Global Internet Usage Growth">
+                        <div class="image-content">
+                            <h4>Internet Usage Growth</h4>
+                            <p>Trend analysis of global internet adoption over time.</p>
+                            <p><strong>Key Finding:</strong> Rapid growth in internet usage with a <span class="highlight-stat">500%</span> increase from 2000 to 2025, indicating accelerating digital transformation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="image-card">
+                        <img src="WCSS.png" alt="Elbow Method for Clustering">
+                        <div class="image-content">
+                            <h4>Country Clustering Analysis</h4>
+                            <p>Elbow method and silhouette scores for determining optimal country clusters.</p>
+                            <p><strong>Key Finding:</strong> Optimal clustering at <span class="highlight-stat">k=4</span> with silhouette score of <span class="highlight-stat">0.46</span>, suggesting four distinct development groups among nations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insight-box">
+                    <h4>Analytical Insights</h4>
+                    <ul>
+                        <li><strong>Economic-Health Relationship:</strong> The regression model (y = 67.70 + 0.000208 * GDP) explains how economic prosperity correlates with longer life expectancy, with diminishing returns at higher GDP levels.</li>
+                        <li><strong>Digital Divide Impact:</strong> The strong correlation (0.70) between internet usage and life expectancy highlights the importance of digital infrastructure in development strategies.</li>
+                        <li><strong>Development Trajectories:</strong> Cluster analysis reveals four distinct country groups with different development patterns, enabling targeted policy interventions.</li>
+                        <li><strong>Growth Dynamics:</strong> Internet adoption has grown exponentially, suggesting technology as a key driver in recent development progress.</li>
+                    </ul>
+                </div>
+
                 <h3 style="color: #2d87f0; margin-bottom: 1rem;">Key Findings & Impact:</h3>
                 <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
@@ -98,12 +202,12 @@
                         <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                             <div style="font-size: 2rem; color: #2d87f0; margin-bottom: 0.5rem;">Strong</div>
                             <div style="font-weight: 600;">Correlation Found</div>
-                            <div style="font-size: 0.9rem; color: #666;">Education spending & GDP growth</div>
+                            <div style="font-size: 0.9rem; color: #666;">Internet access & life expectancy</div>
                         </div>
                         <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                            <div style="font-size: 2rem; color: #2d87f0; margin-bottom: 0.5rem;">Emerging</div>
-                            <div style="font-weight: 600;">Markets Identified</div>
-                            <div style="font-size: 0.9rem; color: #666;">Rapid development indicators</div>
+                            <div style="font-size: 2rem; color: #2d87f0; margin-bottom: 0.5rem;">4</div>
+                            <div style="font-weight: 600;">Country Clusters</div>
+                            <div style="font-size: 0.9rem; color: #666;">Distinct development patterns</div>
                         </div>
                     </div>
                 </div>
@@ -111,10 +215,10 @@
                 <div style="background: #e8f4fd; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border-left: 4px solid #2d87f0;">
                     <h4 style="color: #2d87f0; margin-bottom: 1rem;">Strategic Insights:</h4>
                     <ul style="margin: 0; padding-left: 1.5rem;">
-                        <li>Identified strong correlation between education investment and economic growth</li>
-                        <li>Mapped regional disparities in healthcare access and outcomes</li>
-                        <li>Analyzed technology adoption rates against economic development levels</li>
-                        <li>Created predictive models for future development trends</li>
+                        <li>Identified strong correlation between internet access and health outcomes (r=0.70)</li>
+                        <li>Quantified GDP impact on life expectancy with predictive regression model</li>
+                        <li>Segmented countries into 4 development clusters for targeted interventions</li>
+                        <li>Documented exponential growth in internet adoption as development accelerator</li>
                         <li>Provided data-driven recommendations for international development strategies</li>
                     </ul>
                 </div>
@@ -159,7 +263,7 @@
                     <a href="../index.html" class="btn btn-primary" style="margin-right: 1rem;">
                         <i class="fas fa-arrow-left"></i> Back to Portfolio
                     </a>
-                    <a href="#" class="btn btn-outline">
+                    <a href="https://github.com/Yaw-Assensoh/Global-Development-Trends" class="btn btn-outline">
                         <i class="fab fa-github"></i> View Code
                     </a>
                 </div>
