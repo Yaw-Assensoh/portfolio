@@ -147,6 +147,7 @@
             <p class="section-subtitle">Business Intelligence & Strategic Recommendations</p>
             
             <div class="hero-image-container" style="margin: 2rem 0;">
+                <!-- Try multiple image paths and fallbacks -->
                 <img id="rockbusterHero" src="../assets/images/rockbuster.jpg" 
                      alt="RockBuster Movie Analytics Dashboard" 
                      class="hero-image"
@@ -341,54 +342,5 @@
     </main>
 
     <script src="../script.js"></script>
-    <script>
-        // Enhanced image loading with multiple fallbacks
-        function tryAlternativeImage(img) {
-            console.log('Image failed to load, trying alternatives...');
-            
-            const alternativePaths = [
-                '../assets/images/rockbuster.JPG', // Try with uppercase extension
-                '../assets/images/rockbuster.png', // Try PNG format
-                '../assets/images/rockbuster-analysis.jpg', // Try different name
-                './assets/images/rockbuster.jpg', // Try relative path
-                'assets/images/rockbuster.jpg', // Try simpler path
-                'https://images.unsplash.com/photo-1478720568477-b270df6eeb49?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80' // Final fallback
-            ];
-            
-            let currentAttempt = 0;
-            const maxAttempts = alternativePaths.length;
-            
-            function tryNextImage() {
-                if (currentAttempt < maxAttempts) {
-                    img.src = alternativePaths[currentAttempt];
-                    currentAttempt++;
-                } else {
-                    // All attempts failed, show fallback
-                    img.style.display = 'none';
-                    document.getElementById('fallbackHero').style.display = 'flex';
-                }
-            }
-            
-            // Remove the current onerror to prevent infinite loop
-            img.onerror = null;
-            
-            // Try the first alternative
-            tryNextImage();
-            
-            // Set up new onerror handler for the next attempt
-            img.onerror = tryNextImage;
-        }
-        
-        // Check if image loaded successfully after page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const heroImage = document.getElementById('rockbusterHero');
-            
-            // Check if image is already loaded
-            if (heroImage.complete && heroImage.naturalHeight === 0) {
-                // Image failed to load
-                tryAlternativeImage(heroImage);
-            }
-        });
-    </script>
 </body>
 </html>
