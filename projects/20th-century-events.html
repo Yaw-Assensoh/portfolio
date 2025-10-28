@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20th Century Geopolitical Network Analysis | Yaw Assensoh Opoku</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .image-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .image-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .image-content {
+            padding: 1.5rem;
+        }
+        
+        .image-content h4 {
+            margin-top: 0;
+            color: #2d87f0;
+        }
+        
+        .insight-box {
+            background: #f0f8ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #2d87f0;
+        }
+        
+        .insight-box h4 {
+            color: #2d87f0;
+            margin-top: 0;
+        }
+        
+        .highlight-stat {
+            display: inline-block;
+            background: #2d87f0;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 0.25rem 0.5rem 0.25rem 0;
+        }
+        
+        .analysis-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .analysis-section h2 {
+            color: #2d87f0;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .fallback-image {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .hero-image-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .phase-timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .phase-timeline::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #2d87f0;
+            z-index: 1;
+        }
+        
+        .phase {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+        
+        .phase-dot {
+            width: 40px;
+            height: 40px;
+            background: #2d87f0;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .phase.completed .phase-dot {
+            background: #27ae60;
+        }
+        
+        .phase h4 {
+            margin: 0.5rem 0;
+            color: #2d87f0;
+        }
+        
+        .network-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2d87f0;
+            margin-bottom: 0.5rem;
+        }
+        
+        .network-graph-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="header" data-header>
+        <div class="container">
+            <a href="../index.html">
+                <h1 class="logo">Yaw Assensoh Opoku</h1>
+            </a>
+
+            <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
+                <i class="fas fa-bars menu-icon"></i>
+                <i class="fas fa-times close-icon"></i>
+            </button>
+
+            <nav class="navbar container">
+                <ul class="navbar-list">
+                    <li>
+                        <a href="../index.html#home" class="navbar-link" data-nav-link>Home</a>
+                    </li>
+                    <li>
+                        <a href="../index.html#about" class="navbar-link" data-nav-link>About</a>
+                    </li>
+                    <li>
+                        <a href="../index.html#portfolio" class="navbar-link" data-nav-link>Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="../index.html#skills" class="navbar-link" data-nav-link>Skills</a>
+                    </li>
+                    <li>
+                        <a href="../index.html#contact" class="navbar-link" data-nav-link>Contact</a>
+                    </li>
+                    <li>
+                        <a href="../resume.pdf" class="btn btn-primary" download>Download CV</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 120px 20px 60px;">
+        <article>
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">20th Century Geopolitical Network Analysis</h1>
+            <p class="section-subtitle">Advanced Network Science & Graph Theory Analysis of International Relations</p>
+            
+            <!-- Project Timeline -->
+            <div class="phase-timeline">
+                <div class="phase completed">
+                    <div class="phase-dot"><i class="fas fa-check"></i></div>
+                    <h4>Phase 1</h4>
+                    <p>Data Collection</p>
+                </div>
+                <div class="phase completed">
+                    <div class="phase-dot"><i class="fas fa-check"></i></div>
+                    <h4>Phase 2</h4>
+                    <p>Text Mining & NLP</p>
+                </div>
+                <div class="phase completed">
+                    <div class="phase-dot"><i class="fas fa-check"></i></div>
+                    <h4>Phase 3</h4>
+                    <p>Network Analysis</p>
+                </div>
+            </div>
+
+            <div style="margin: 2rem 0;">
+                <img src="../assets/images/20th-century-image.jpg" 
+                     alt="20th Century Geopolitical Network Analysis" 
+                     style="width:100%; height:400px; object-fit:cover; border-radius:12px;">
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2>Project Overview</h2>
+                
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <p style="margin: 0; font-weight: 600; color: #2d87f0;">Goal:</p>
+                    <p style="margin: 0.5rem 0 0 0;">Apply network science and graph theory to analyze 20th century international relationships, identifying geopolitical communities, central powers, and bridge nations using advanced centrality measures.</p>
+                    
+                    <p style="margin: 1rem 0 0 0; font-weight: 600; color: #2d87f0;">Business Problem:</p>
+                    <p style="margin: 0.5rem 0 0 0;">Understand the complex web of international alliances and power dynamics that shaped 20th century geopolitics through quantitative network analysis and community detection algorithms.</p>
+                </div>
+
+                <!-- Network Statistics -->
+                <div class="network-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">89</div>
+                        <div>Countries Analyzed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">214</div>
+                        <div>Relationships Mapped</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5</div>
+                        <div>Geopolitical Communities</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">0.078</div>
+                        <div>Network Density</div>
+                    </div>
+                </div>
+
+                <h3 style="color: #2d87f0; margin-bottom: 1rem;">My Role & Process:</h3>
+                <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #e9ecef;">
+                        <i class="fas fa-project-diagram" style="color: #2d87f0; margin-right: 0.5rem;"></i>
+                        <strong>Network Construction:</strong> Built country relationship networks from historical text data using NetworkX
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #e9ecef;">
+                        <i class="fas fa-users" style="color: #2d87f0; margin-right: 0.5rem;"></i>
+                        <strong>Community Detection:</strong> Applied Leiden algorithm to identify geopolitical blocs and alliances
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #e9ecef;">
+                        <i class="fas fa-bullseye" style="color: #2d87f0; margin-right: 0.5rem;"></i>
+                        <strong>Centrality Analysis:</strong> Calculated degree, closeness, and betweenness centrality measures
+                    </li>
+                    <li style="padding: 0.5rem 0;">
+                        <i class="fas fa-chart-network" style="color: #2d87f0; margin-right: 0.5rem;"></i>
+                        <strong>Interactive Visualization:</strong> Created dynamic network graphs using Pyvis for exploration
+                    </li>
+                </ul>
+
+                <!-- Network Analysis Section -->
+                <div class="analysis-section">
+                    <h2>Network Analysis & Centrality Measures</h2>
+                    
+                    <div class="image-grid">
+                        <div class="image-card">
+                            <img src="../assets/images/degree_centrality_enhanced.png" alt="Degree Centrality Analysis"
+                                 onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                            <div class="image-content">
+                                <h4>Degree Centrality</h4>
+                                <p>Measures direct connections - identifies the most connected countries in the network.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-stat">Japan</span> and <span class="highlight-stat">Soviet Union</span> show highest degree centrality, indicating extensive diplomatic relationships.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="image-card">
+                            <img src="../assets/images/closeness_centrality_enhanced.png" alt="Closeness Centrality Analysis"
+                                 onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                            <div class="image-content">
+                                <h4>Closeness Centrality</h4>
+                                <p>Identifies countries that can quickly reach others - measures strategic positioning.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-stat">Japan</span> and <span class="highlight-stat">Soviet Union</span> again lead, showing optimal network positioning for influence spread.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="image-card">
+                            <img src="../assets/images/betweenness_centrality_enhanced.png" alt="Betweenness Centrality Analysis"
+                                 onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                            <div class="image-content">
+                                <h4>Betweenness Centrality</h4>
+                                <p>Reveals bridge countries that control flow between different network segments.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-stat">Soviet Union</span> dominates as key broker, controlling information flow between geopolitical blocs.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="image-card">
+                            <img src="../assets/images/comparative_centrality_analysis.png" alt="Comparative Centrality Analysis"
+                                 onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                            <div class="image-content">
+                                <h4>Comparative Analysis</h4>
+                                <p>Shows how countries rank across different centrality measures.</p>
+                                <p><strong>Key Finding:</strong> Superpowers maintain consistent high rankings across all centrality types, confirming their dominant network positions.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="insight-box">
+                        <h4>Strategic Network Insights</h4>
+                        <ul>
+                            <li><strong>Superpower Dominance:</strong> Soviet Union and Japan consistently rank highest across all centrality measures, confirming their pivotal roles in 20th century geopolitics.</li>
+                            <li><strong>Bridge Nations:</strong> High betweenness scores reveal countries that served as crucial intermediaries between different geopolitical blocs during conflicts and negotiations.</li>
+                            <li><strong>Community Structure:</strong> Network partitions align with historical alliances (Western Bloc, Eastern Bloc, Non-Aligned Movement), validating the quantitative approach.</li>
+                            <li><strong>Influence Pathways:</strong> Closeness centrality identifies nations best positioned to rapidly spread influence or information through the international network.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Original Text Analysis Section (Keep existing content) -->
+                <div class="analysis-section">
+                    <h2>Text Mining & Linguistic Analysis</h2>
+                    
+                    <div class="image-grid">
+                        <div class="image-card">
+                            <img src="../assets/images/Top 20 Mentioned Countries in 20th Century.png" alt="Top 20 Mentioned Countries in 20th Century"
+                                 onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                            <div class="image-content">
+                                <h4>Country Mentions Analysis</h4>
+                                <p>Analysis of most frequently mentioned countries in 20th century historical text.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-stat">Germany</span> and <span class="highlight-stat">Japan</span> lead with highest mentions, reflecting their central roles in major 20th century conflicts.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="image-card">
+                            <img src="../assets/images/Top 10 Part-of-Speech Tags in 20th Century Text.png" alt="Part-of-Speech Tag Frequency"
+                                 onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                            <div class="image-content">
+                                <h4>Linguistic Patterns</h4>
+                                <p>Frequency analysis of part-of-speech tags in historical text.</p>
+                                <p><strong>Key Finding:</strong> Nouns dominate historical discourse, with <span class="highlight-stat">singular nouns (N)</span> being most frequent, indicating focus on specific entities and concepts.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="image-card">
+                            <img src="../assets/images/Top 15 Nouns,Verbs and Adjectives.png" alt="Top Nouns, Verbs and Adjectives"
+                                 onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                            <div class="image-content">
+                                <h4>Word Category Analysis</h4>
+                                <p>Most frequent nouns, verbs, and adjectives in 20th century historical text.</p>
+                                <p><strong>Key Finding:</strong> Military and geopolitical terms dominate, with words like <span class="highlight-stat">"union"</span>, <span class="highlight-stat">"battle"</span>, and <span class="highlight-stat">"german"</span> appearing most frequently.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="color: #2d87f0; margin-bottom: 1rem;">Key Findings & Insights:</h3>
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                        <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <div style="font-size: 2rem; color: #2d87f0; margin-bottom: 0.5rem;">89</div>
+                            <div style="font-weight: 600;">Countries Mapped</div>
+                            <div style="font-size: 0.9rem; color: #666;">In network analysis</div>
+                        </div>
+                        <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <div style="font-size: 2rem; color: #2d87f0; margin-bottom: 0.5rem;">5</div>
+                            <div style="font-weight: 600;">Geopolitical Communities</div>
+                            <div style="font-size: 0.9rem; color: #666;">Identified via Leiden algorithm</div>
+                        </div>
+                        <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <div style="font-size: 2rem; color: #2d87f0; margin-bottom: 0.5rem;">0.566</div>
+                            <div style="font-weight: 600;">Max Closeness</div>
+                            <div style="font-size: 0.9rem; color: #666;">Japan & Soviet Union</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #e8f4fd; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border-left: 4px solid #2d87f0;">
+                    <h4 style="color: #2d87f0; margin-bottom: 1rem;">Strategic Impact:</h4>
+                    <ul style="margin: 0; padding-left: 1.5rem;">
+                        <li>Quantified international power dynamics using network science methodologies</li>
+                        <li>Identified key broker nations that mediated between geopolitical blocs</li>
+                        <li>Revealed community structures matching historical alliance patterns</li>
+                        <li>Provided framework for predictive analysis of international relations</li>
+                        <li>Demonstrated application of graph theory to historical analysis</li>
+                    </ul>
+                </div>
+
+                <h3 style="color: #2d87f0; margin-bottom: 1rem;">Tools & Technologies:</h3>
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <i class="fab fa-python" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Python</div>
+                            <div style="font-size: 0.9rem; color: #666;">NetworkX, Pyvis, CDLib</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <i class="fas fa-project-diagram" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Network Science</div>
+                            <div style="font-size: 0.9rem; color: #666;">Graph Theory Analysis</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <i class="fas fa-users" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Community Detection</div>
+                            <div style="font-size: 0.9rem; color: #666;">Leiden Algorithm</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <i class="fas fa-chart-network" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Interactive Viz</div>
+                            <div style="font-size: 0.9rem; color: #666;">Pyvis Networks</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem; text-align: center;">
+                    <a href="../index.html" class="btn btn-primary" style="margin-right: 1rem;">
+                        <i class="fas fa-arrow-left"></i> Back to Portfolio
+                    </a>
+                    <a href="https://github.com/Yaw-Assensoh/20th-Century-Analysis" class="btn btn-outline">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <script src="../script.js"></script>
+</body>
+</html>
