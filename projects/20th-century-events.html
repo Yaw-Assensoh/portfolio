@@ -180,6 +180,95 @@
             margin: 2rem 0;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+        
+        .phase-details {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .phase-details h3 {
+            color: #2d87f0;
+            border-bottom: 2px solid #2d87f0;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .tech-item {
+            background: #f0f8ff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .tech-item i {
+            color: #2d87f0;
+        }
+        
+        .data-highlight {
+            background: #e8f4fd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #2d87f0;
+        }
+        
+        .data-highlight h4 {
+            color: #2d87f0;
+            margin-top: 0;
+        }
+        
+        .historical-context {
+            background: #f9f3e9;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid #e6b400;
+        }
+        
+        .historical-context h3 {
+            color: #b8860b;
+            margin-top: 0;
+        }
+        
+        .thematic-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .category-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .category-card h4 {
+            color: #2d87f0;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .category-card ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
     </style>
 </head>
 <body>
@@ -245,9 +334,9 @@
             </div>
 
             <div style="margin: 2rem 0;">
-                <img src="../assets/images/20th-century-image.jpg" 
+                <img src="../assets/images/history20.jpg" loading="lazy"
                      alt="20th Century Geopolitical Network Analysis" 
-                     style="width:100%; height:400px; object-fit:cover; border-radius:12px;">
+                     style="width:100%; height:800px; object-fit:cover; border-radius:12px;">
             </div>
 
             <div style="max-width: 800px; margin: 0 auto;">
@@ -259,6 +348,153 @@
                     
                     <p style="margin: 1rem 0 0 0; font-weight: 600; color: #2d87f0;">Business Problem:</p>
                     <p style="margin: 0.5rem 0 0 0;">Understand the complex web of international alliances and power dynamics that shaped 20th century geopolitics through quantitative network analysis and community detection algorithms.</p>
+                </div>
+
+                <!-- Historical Context -->
+                <div class="historical-context">
+                    <h3>20th Century Historical Context</h3>
+                    <p>The 20th century changed the world in unprecedented ways. The World Wars sparked tension between countries and led to the creation of atomic bombs, the Cold War led to the Space Race and the creation of space-based rockets, and the World Wide Web was created. These advancements have played a significant role in citizens' lives and shaped the 21st century into what it is today.</p>
+                    
+                    <div class="thematic-categories">
+                        <div class="category-card">
+                            <h4><i class="fas fa-bomb"></i> Global Conflicts & Wars</h4>
+                            <ul>
+                                <li>World War I and II</li>
+                                <li>Cold War era</li>
+                                <li>Regional conflicts</li>
+                                <li>Decolonization movements</li>
+                            </ul>
+                        </div>
+                        <div class="category-card">
+                            <h4><i class="fas fa-microchip"></i> Technological Advancements</h4>
+                            <ul>
+                                <li>Aviation and space exploration</li>
+                                <li>Digital revolution</li>
+                                <li>Medical breakthroughs</li>
+                                <li>Communication technologies</li>
+                            </ul>
+                        </div>
+                        <div class="category-card">
+                            <h4><i class="fas fa-landmark"></i> Political Transformations</h4>
+                            <ul>
+                                <li>Rise and fall of empires</li>
+                                <li>Democratic expansions</li>
+                                <li>International organizations</li>
+                                <li>Geopolitical shifts</li>
+                            </ul>
+                        </div>
+                        <div class="category-card">
+                            <h4><i class="fas fa-users"></i> Social & Cultural Changes</h4>
+                            <ul>
+                                <li>Civil rights movements</li>
+                                <li>Women's suffrage</li>
+                                <li>Educational expansion</li>
+                                <li>Cultural globalization</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="data-highlight">
+                        <h4>Data Characteristics</h4>
+                        <p><strong>Period Coverage:</strong> 1900-1999</p>
+                        <p><strong>Content Type:</strong> Historical events and developments</p>
+                        <p><strong>Source:</strong> Wikipedia curated content</p>
+                        <p><strong>Format:</strong> Organized text with thematic headings</p>
+                    </div>
+                </div>
+
+                <!-- Phase 1: Data Collection -->
+                <div class="phase-details">
+                    <h3>Phase 1: Data Collection</h3>
+                    <p><strong>Project Status:</strong> COMPLETED</p>
+                    
+                    <h4>Phase 1 Deliverables:</h4>
+                    <ul>
+                        <li>Web scraping implementation</li>
+                        <li>Wikipedia content extraction</li>
+                        <li>Data storage and verification</li>
+                        <li>Version control with GitHub</li>
+                    </ul>
+                    
+                    <h4>Technical Details:</h4>
+                    <div class="data-highlight">
+                        <p><strong>Source:</strong> Wikipedia - Key Events of the 20th Century</p>
+                        <p><strong>Content:</strong> 66,144 characters, 108 sections</p>
+                        <p><strong>Method:</strong> Robust HTML parsing with fallback handling</p>
+                        <p><strong>Output:</strong> UTF-8 encoded text file</p>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <div class="tech-item"><i class="fab fa-python"></i> Python</div>
+                        <div class="tech-item"><i class="fas fa-code"></i> BeautifulSoup</div>
+                        <div class="tech-item"><i class="fas fa-database"></i> Data Storage</div>
+                        <div class="tech-item"><i class="fab fa-github"></i> GitHub</div>
+                    </div>
+                </div>
+
+                <!-- Phase 2: Text Mining -->
+                <div class="phase-details">
+                    <h3>Phase 2: Text Mining & NLP Analysis</h3>
+                    <p>A comprehensive text mining and natural language processing project analyzing key events of the 20th century using Python's NLTK and TextBlob libraries.</p>
+                    
+                    <h4>Project Overview</h4>
+                    <p>This project performs sophisticated text analysis on historical data from the 20th century, including:</p>
+                    <ul>
+                        <li>Text Preprocessing & Tokenization</li>
+                        <li>Frequency Distribution Analysis</li>
+                        <li>Stop Word Removal</li>
+                        <li>Part-of-Speech Tagging</li>
+                        <li>Geopolitical Entity Recognition</li>
+                        <li>Data Visualization</li>
+                    </ul>
+                    
+                    <h4>Technologies Used</h4>
+                    <div class="tech-stack">
+                        <div class="tech-item"><i class="fab fa-python"></i> Python 3.8+</div>
+                        <div class="tech-item"><i class="fas fa-language"></i> NLTK</div>
+                        <div class="tech-item"><i class="fas fa-file-alt"></i> TextBlob</div>
+                        <div class="tech-item"><i class="fas fa-table"></i> Pandas</div>
+                        <div class="tech-item"><i class="fas fa-chart-bar"></i> Matplotlib & Seaborn</div>
+                        <div class="tech-item"><i class="fas fa-book"></i> Jupyter Notebook</div>
+                    </div>
+                </div>
+
+                <!-- Phase 3: Network Analysis -->
+                <div class="phase-details">
+                    <h3>Phase 3: Network Analysis</h3>
+                    <p>Advanced network analysis of 20th century international relationships using graph theory and community detection algorithms.</p>
+                    
+                    <h4>Network Analysis Features:</h4>
+                    <ul>
+                        <li><strong>Country Relationship Networks:</strong> Constructed from historical text data</li>
+                        <li><strong>Interactive Visualizations:</strong> Dynamic HTML graphs using Pyvis</li>
+                        <li><strong>Community Detection:</strong> Leiden algorithm for geopolitical bloc identification</li>
+                        <li><strong>Centrality Analysis:</strong>
+                            <ul>
+                                <li>Degree Centrality: Most connected countries</li>
+                                <li>Closeness Centrality: Most centrally positioned nations</li>
+                                <li>Betweenness Centrality: Key bridge countries between blocs</li>
+                            </ul>
+                        </li>
+                        <li><strong>Enhanced Visualizations:</strong> Annotated plots with professional styling</li>
+                    </ul>
+                    
+                    <h4>Key Findings:</h4>
+                    <ul>
+                        <li>Identified distinct geopolitical communities reflecting Cold War alliances</li>
+                        <li>Discovered key broker nations that mediated between power blocs</li>
+                        <li>Quantified the central role of superpowers in international relations</li>
+                        <li>Revealed network structures aligning with historical geopolitical realities</li>
+                    </ul>
+                    
+                    <h4>Technologies Used:</h4>
+                    <div class="tech-stack">
+                        <div class="tech-item"><i class="fas fa-project-diagram"></i> NetworkX</div>
+                        <div class="tech-item"><i class="fas fa-network-wired"></i> Pyvis</div>
+                        <div class="tech-item"><i class="fas fa-users"></i> CDLib</div>
+                        <div class="tech-item"><i class="fas fa-table"></i> Pandas</div>
+                        <div class="tech-item"><i class="fas fa-chart-line"></i> Matplotlib & Seaborn</div>
+                    </div>
                 </div>
 
                 <!-- Network Statistics -->
@@ -337,7 +573,7 @@
                         </div>
                         
                         <div class="image-card">
-                            <img src="../assets/images/comparative_centrality_analysis.png" alt="Comparative Centrality Analysis"
+                            <img src="../assets/images/comparative_centrality_analysis_enhanced.png" alt="Comparative Centrality Analysis"
                                  onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                             <div class="image-content">
                                 <h4>Comparative Analysis</h4>
@@ -364,7 +600,7 @@
                     
                     <div class="image-grid">
                         <div class="image-card">
-                            <img src="../assets/images/Top 20 Mentioned Countries in 20th Century.png" alt="Top 20 Mentioned Countries in 20th Century"
+                            <img src="../assets/images/Top-20-Most-Connected-Countries.png" alt="Top 20 Mentioned Countries in 20th Century"
                                  onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                             <div class="image-content">
                                 <h4>Country Mentions Analysis</h4>
@@ -374,7 +610,7 @@
                         </div>
                         
                         <div class="image-card">
-                            <img src="../assets/images/Top 10 Part-of-Speech Tags in 20th Century Text.png" alt="Part-of-Speech Tag Frequency"
+                            <img src="../assets/images/Top-10-Most-Common-Words.png" alt="Part-of-Speech Tag Frequency"
                                  onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                             <div class="image-content">
                                 <h4>Linguistic Patterns</h4>
@@ -384,12 +620,12 @@
                         </div>
                         
                         <div class="image-card">
-                            <img src="../assets/images/Top 15 Nouns,Verbs and Adjectives.png" alt="Top Nouns, Verbs and Adjectives"
+                            <img src="../assets/images/Nouns-Verbs-Adjectives.png" alt="Top Nouns, Verbs and Adjectives"
                                  onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                             <div class="image-content">
                                 <h4>Word Category Analysis</h4>
                                 <p>Most frequent nouns, verbs, and adjectives in 20th century historical text.</p>
-                                <p><strong>Key Finding:</strong> Military and geopolitical terms dominate, with words like <span class="highlight-stat">"union"</span>, <span class="highlight-stat">"battle"</span>, and <span class="highlight-stat">"german"</span> appearing most frequently.</p>
+                                <p><strong>Key Finding:</strong> Military and geopolitical terms dominate, with words like <span class="highlight-stat">"war"</span>, <span class="highlight-stat">"became"</span>, and <span class="highlight-stat">"soviet"</span> appearing most frequently.</p>
                             </div>
                         </div>
                     </div>
