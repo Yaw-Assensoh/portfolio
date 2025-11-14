@@ -106,11 +106,29 @@
           </p>
 
           <ul class="portfolio-list">
+            <!-- NYC Citi Bike Project - NEW -->
+            <li>
+              <a href="projects/nyc-citibike-analysis.html" class="portfolio-card">
+                <div class="card-image">
+                  <img src="./assets/images/nyc-bikes.png" alt="NYC Citi Bike Supply Optimization" loading="lazy"
+                       onerror="this.src='./assets/images/people-bikes.jpg'">
+                </div>
+                <div class="card-content">
+                  <p class="card-subtitle">Supply Chain Optimization</p>
+                  <h3 class="card-title">NYC Citi Bike Analysis</h3>
+                  <span class="btn-link">
+                    <span>View Project</span>
+                    <i class="fas fa-arrow-right"></i>
+                  </span>
+                </div>
+              </a>
+            </li>
+
             <li>
               <a href="projects/20th-century-events.html" class="portfolio-card">
                 <div class="card-image">
                   <img src="./assets/images/historical-data.jpg" alt="20th Century Geopolitical Network Analysis" loading="lazy"
-                         onerror="this.src='./assets/images/degree_centrality_enhanced.png'">
+                       onerror="this.src='./assets/images/degree_centrality_enhanced.png'">
                 </div>
                 <div class="card-content">
                   <p class="card-subtitle">Network Science & NLP</p>
@@ -127,7 +145,7 @@
               <a href="projects/instacart-analysis.html" class="portfolio-card">
                 <div class="card-image">
                   <img src="./assets/images/analysis-1.jpg" alt="Colorful data visualization dashboard " loading="lazy"
-                         onerror="this.src='./assets/images/analysis'">
+                       onerror="this.src='./assets/images/analysis'">
                 </div>
                 <div class="card-content">
                   <p class="card-subtitle">Market Basket Analysis</p>
@@ -144,7 +162,7 @@
               <a href="projects/rockbuster-insights.html" class="portfolio-card">
                 <div class="card-image">
                   <img src="./assets/images/Data-Analytics.jpg" alt="Colorful data visualization dashboard" loading="lazy"
-                         onerror="this.src='./assets/images/Data-Analytics.jpg'">
+                       onerror="this.src='./assets/images/Data-Analytics.jpg'">
                 </div>
                 <div class="card-content">
                   <p class="card-subtitle">Business Intelligence</p>
@@ -161,7 +179,7 @@
               <a href="projects/global-development.html" class="portfolio-card">
                 <div class="card-image">
                   <img src="./assets/images/analysis-3.jpg" alt="Global Development Trends - Economic Data Analysis" loading="lazy"
-                         onerror="this.src='./assets/images/analysis-3.jpg'">
+                       onerror="this.src='./assets/images/analysis-3.jpg'">
                 </div>
                 <div class="card-content">
                   <p class="card-subtitle">Economic Data Analysis</p>
@@ -178,7 +196,7 @@
               <a href="projects/influenza-forecast.html" class="portfolio-card">
                 <div class="card-image">
                   <img src="./assets/images/analysis-2.jpg" alt="Influenza Staffing Forecast - Healthcare Analytics" loading="lazy"
-                         onerror="this.src='./assets/images/analysis-2.jpg'">
+                       onerror="this.src='./assets/images/analysis-2.jpg'">
                 </div>
                 <div class="card-content">
                   <p class="card-subtitle">Healthcare Analytics</p>
@@ -393,7 +411,7 @@
     
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if (entry.isintersecting) {
           animateSkillBars();
           observer.unobserve(entry.target);
         }
@@ -404,5 +422,3 @@
   </script src="script.js"></script>
 </body>
 </html>
-
-     
