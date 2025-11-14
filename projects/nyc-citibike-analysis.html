@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC Citi Bike Supply Optimization | Yaw Assensoh Opoku</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .image-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .image-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .image-content {
+            padding: 1.5rem;
+        }
+        
+        .image-content h4 {
+            margin-top: 0;
+            color: #2d87f0;
+        }
+        
+        .insight-box {
+            background: #f0f8ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #2d87f0;
+        }
+        
+        .insight-box h4 {
+            color: #2d87f0;
+            margin-top: 0;
+        }
+        
+        .highlight-stat {
+            display: inline-block;
+            background: #2d87f0;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 0.25rem 0.5rem 0.25rem 0;
+        }
+        
+        .analysis-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .analysis-section h2 {
+            color: #2d87f0;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .fallback-image {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .hero-image-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .phase-timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .phase-timeline::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #2d87f0;
+            z-index: 1;
+        }
+        
+        .phase {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+        
+        .phase-dot {
+            width: 40px;
+            height: 40px;
+            background: #2d87f0;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .phase.completed .phase-dot {
+            background: #27ae60;
+        }
+        
+        .phase h4 {
+            margin: 0.5rem 0;
+            color: #2d87f0;
+        }
+        
+        .network-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2d87f0;
+            margin-bottom: 0.5rem;
+        }
+        
+        .network-graph-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="header" data-header>
+        <div class="container">
+            <a href="../index.html">
+                <h1 class="logo">Yaw Assensoh Opoku</h1>
+            </a>
+
+            <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
+                <i class="fas fa-bars menu-icon"></i>
+                <i class="fas fa-times close-icon"></i>
+            </button>
+
+            <nav class="navbar container">
+                <ul class="navbar-list">
+                    <li>
+                        <a href="../index.html#home" class="navbar-link" data-nav-link>Home</a>
+                    </li>
+                    <li>
+                        <a href="../index.html#about" class="navbar-link" data-nav-link>About</a>
+                    </li>
+                    <li>
+                        <a href="../index.html#portfolio" class="navbar-link" data-nav-link>Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="../index.html#skills" class="navbar-link" data-nav-link>Skills</a>
+                    </li>
+                    <li>
+                        <a href="../index.html#contact" class="navbar-link" data-nav-link>Contact</a>
+                    </li>
+                    <li>
+                        <a href="../resume.pdf" class="btn btn-primary" download>Download CV</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 120px 20px 60px;">
+        <article>
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">NYC Citi Bike Supply Optimization</h1>
+            <p class="section-subtitle">Data-Driven Analysis for Bike Share Operational Efficiency</p>
+            
+            <!-- Project Timeline -->
+            <div class="phase-timeline">
+                <div class="phase completed">
+                    <div class="phase-dot"><i class="fas fa-check"></i></div>
+                    <h4>Phase 1</h4>
+                    <p>Data Analysis</p>
+                </div>
+                <div class="phase completed">
+                    <div class="phase-dot"><i class="fas fa-check"></i></div>
+                    <h4>Phase 2</h4>
+                    <p>Dashboard Development</p>
+                </div>
+                <div class="phase completed">
+                    <div class="phase-dot"><i class="fas fa-check"></i></div>
+                    <h4>Phase 3</h4>
+                    <p>Deployment & Presentation</p>
+                </div>
+            </div>
+
+            <!-- Main Dashboard Image -->
+            <div style="margin: 2rem 0;">
+                <img src="../assets/images/people-bikes.jpg" 
+                     alt="NYC Citi Bike Dashboard - Daily Trips vs Temperature" 
+                     style="width:100%; height:400px; object-fit:contain; border-radius:12px; background:#f8f9fa;">
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2>Project Overview</h2>
+                
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <p style="margin: 0; font-weight: 600; color: #2d87f0;">Goal:</p>
+                    <p style="margin: 0.5rem 0 0 0;">Analyze NYC Citi Bike usage patterns to address customer complaints about bike availability during peak hours and provide data-driven operational solutions.</p>
+                    
+                    <p style="margin: 1rem 0 0 0; font-weight: 600; color: #2d87f0;">Business Problem:</p>
+                    <p style="margin: 0.5rem 0 0 0;">Seasonal bike shortages and uneven distribution across stations leading to customer dissatisfaction and lost revenue opportunities.</p>
+                </div>
+
+                <!-- Key Metrics -->
+                <div class="network-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">140K</div>
+                        <div>Peak Daily Trips</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">129K</div>
+                        <div>Top Station Volume</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">60%</div>
+                        <div>Seasonal Variation</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">0.82</div>
+                        <div>Temp Correlation</div>
+                    </div>
+                </div>
+
+                <h3 style="color: #2d87f0; margin-bottom: 1rem;">My Role & Process:</h3>
+                <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #e9ecef;">
+                        <i class="fas fa-database" style="color: #2d87f0; margin-right: 0.5rem;"></i>
+                        <strong>Data Analysis:</strong> Processed 2021-2022 ridership data to identify usage patterns and seasonal trends
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #e9ecef;">
+                        <i class="fas fa-chart-line" style="color: #2d87f0; margin-right: 0.5rem;"></i>
+                        <strong>Correlation Analysis:</strong> Identified strong temperature-usage correlation (r=0.82) driving seasonal demand
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #e9ecef;">
+                        <i class="fas fa-map-marker-alt" style="color: #2d87f0; margin-right: 0.5rem;"></i>
+                        <strong>Station Analysis:</strong> Mapped top 20 stations handling disproportionate trip volumes
+                    </li>
+                    <li style="padding: 0.5rem 0;">
+                        <i class="fas fa-rocket" style="color: #2d87f0; margin-right: 0.5rem;"></i>
+                        <strong>Dashboard Development:</strong> Built interactive Streamlit dashboard for stakeholder decision-making
+                    </li>
+                </ul>
+
+                <!-- Weather Impact Analysis -->
+                <div class="analysis-section">
+                    <h2>Weather Impact & Seasonal Patterns</h2>
+                    
+                    <div class="image-grid">
+                        <div class="image-card">
+                            <img src="../assets/images/daily-bike-trips-vs-temperature.png" alt="Daily Bike Trips vs Temperature"
+                                 onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                            <div class="image-content">
+                                <h4>Temperature Correlation</h4>
+                                <p>Dual-axis analysis showing strong relationship between temperature and daily bike trips.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-stat">0.82 correlation</span> between temperature and usage, with summer peaks reaching <span class="highlight-stat">140,000 trips</span> vs winter lows of 45,000.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="image-card">
+                            <img src="../assets/images/NYC-Daily-Average-Temperatures-2022.png" alt="NYC Daily Average Temperatures 2022"
+                                 onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                            <div class="image-content">
+                                <h4>Seasonal Temperature Patterns</h4>
+                                <p>NYC temperature fluctuations throughout 2022 showing clear seasonal cycles.</p>
+                                <p><strong>Key Finding:</strong> Temperature ranges from <span class="highlight-stat">-10°C to 30°C</span>, driving the 60% seasonal variation in bike usage.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="image-card">
+                            <img src="../assets/images/NYC-Daily-Bike-Trips-2022-Procedural-Approach.png" alt="NYC Daily Bike Trips 2022"
+                                 onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                            <div class="image-content">
+                                <h4>Daily Trip Patterns</h4>
+                                <p>Procedural analysis of daily bike trip volumes throughout 2022.</p>
+                                <p><strong>Key Finding:</strong> Consistent <span class="highlight-stat">weekend peaks</span> and seasonal growth from winter to summer months.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="insight-box">
+                        <h4>Seasonal Strategy Insights</h4>
+                        <ul>
+                            <li><strong>Clear Correlation:</strong> 0.82 temperature-usage correlation confirms weather as primary demand driver</li>
+                            <li><strong>Peak Season:</strong> May-October accounts for 70% of annual ridership with 140,000 daily trip peaks</li>
+                            <li><strong>Winter Optimization:</strong> November-April shows 40-50% lower demand, ideal for maintenance and scaling back</li>
+                            <li><strong>Revenue Opportunity:</strong> Dynamic pricing during peak summer months could increase revenue 20-25%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Station Analysis Section -->
+                <div class="analysis-section">
+                    <h2>Station Performance & Geographic Distribution</h2>
+                    
+                    <div class="image-grid">
+                        <div class="image-card">
+                            <img src="../assets/images/top-20-popular-bike-stations.png" alt="Top 20 Most Popular Bike Stations"
+                                 onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                            <div class="image-content">
+                                <h4>Station Usage Concentration</h4>
+                                <p>Top 20 stations by trip volume showing significant usage concentration.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-stat">W 21 St & 6 Ave</span> leads with 129,018 trips, while top 5 stations handle 3x average volume.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="image-card">
+                            <img src="../assets/images/Distribution-of-CitiBike-Trip-Durations-(2022).png" alt="Trip Duration Distribution"
+                                 onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                            <div class="image-content">
+                                <h4>Trip Duration Analysis</h4>
+                                <p>Distribution of Citi Bike trip durations throughout 2022.</p>
+                                <p><strong>Key Finding:</strong> Majority of trips <span class="highlight-stat">under 30 minutes</span>, indicating short-distance urban commuting patterns.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="insight-box">
+                        <h4>Operational Optimization Insights</h4>
+                        <ul>
+                            <li><strong>High-Demand Focus:</strong> Top 20 stations require prioritized maintenance and frequent rebalancing</li>
+                            <li><strong>Geographic Clustering:</strong> Stations in Midtown Manhattan and tourist areas show highest utilization</li>
+                            <li><strong>Expansion Opportunities:</strong> Residential neighborhoods and waterfront corridors represent growth areas</li>
+                            <li><strong>Maintenance Scheduling:</strong> Winter months ideal for comprehensive station maintenance and upgrades</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 style="color: #2d87f0; margin-bottom: 1rem;">Key Findings & Strategic Impact:</h3>
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                        <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <div style="font-size: 2rem; color: #2d87f0; margin-bottom: 0.5rem;">40-50%</div>
+                            <div style="font-weight: 600;">Recommended Scaling</div>
+                            <div style="font-size: 0.9rem; color: #666;">Nov-Apr fleet reduction</div>
+                        </div>
+                        <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <div style="font-size: 2rem; color: #2d87f0; margin-bottom: 0.5rem;">70%</div>
+                            <div style="font-weight: 600;">Warm Season Ridership</div>
+                            <div style="font-size: 0.9rem; color: #666;">May-Oct peak period</div>
+                        </div>
+                        <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <div style="font-size: 2rem; color: #2d87f0; margin-bottom: 0.5rem;">20-25%</div>
+                            <div style="font-weight: 600;">Revenue Potential</div>
+                            <div style="font-size: 0.9rem; color: #666;">Dynamic pricing impact</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #e8f4fd; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border-left: 4px solid #2d87f0;">
+                    <h4 style="color: #2d87f0; margin-bottom: 1rem;">Strategic Business Impact:</h4>
+                    <ul style="margin: 0; padding-left: 1.5rem;">
+                        <li>Data-driven seasonal scaling strategy reducing operational costs by 30-40%</li>
+                        <li>Optimized resource allocation to high-demand stations improving customer satisfaction</li>
+                        <li>Identified expansion opportunities in underserved geographic areas</li>
+                        <li>Dynamic pricing model increasing potential revenue by 20-25%</li>
+                        <li>Predictive maintenance scheduling during low-demand seasons</li>
+                    </ul>
+                </div>
+
+                <h3 style="color: #2d87f0; margin-bottom: 1rem;">Tools & Technologies:</h3>
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <i class="fab fa-python" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Python</div>
+                            <div style="font-size: 0.9rem; color: #666;">Pandas, NumPy, Matplotlib</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <i class="fas fa-chart-bar" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Streamlit</div>
+                            <div style="font-size: 0.9rem; color: #666;">Interactive Dashboard</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <i class="fas fa-chart-line" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Plotly</div>
+                            <div style="font-size: 0.9rem; color: #666;">Interactive Visualizations</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <i class="fas fa-cloud" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Streamlit Cloud</div>
+                            <div style="font-size: 0.9rem; color: #666;">Live Deployment</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem; text-align: center;">
+                    <a href="../index.html" class="btn btn-primary" style="margin-right: 1rem;">
+                        <i class="fas fa-arrow-left"></i> Back to Portfolio
+                    </a>
+                    <a href="https://yaw-assensoh-nyc-citi-notebooksnyc-bike-dashboard-part-2-dilkte.streamlit.app" class="btn btn-primary" style="margin-right: 1rem;">
+                        <i class="fas fa-external-link-alt"></i> Live Dashboard
+                    </a>
+                    <a href="https://github.com/Yaw-Assensoh/nyc-citibike-demand-analysis-2022" class="btn btn-outline">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <script src="../script.js"></script>
+</body>
+</html>
