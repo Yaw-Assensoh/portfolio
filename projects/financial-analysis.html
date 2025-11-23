@@ -104,53 +104,6 @@
             object-fit: cover;
         }
         
-        .phase-timeline {
-            display: flex;
-            justify-content: space-between;
-            margin: 2rem 0;
-            position: relative;
-        }
-        
-        .phase-timeline::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: #2d87f0;
-            z-index: 1;
-        }
-        
-        .phase {
-            text-align: center;
-            position: relative;
-            z-index: 2;
-            flex: 1;
-        }
-        
-        .phase-dot {
-            width: 40px;
-            height: 40px;
-            background: #2d87f0;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
-        
-        .phase.completed .phase-dot {
-            background: #27ae60;
-        }
-        
-        .phase h4 {
-            margin: 0.5rem 0;
-            color: #2d87f0;
-        }
-        
         .network-stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -224,31 +177,13 @@
         <article>
             <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Financial Markets Intelligence Platform</h1>
             <p class="section-subtitle">Data-Driven Investment Analysis & Portfolio Optimization</p>
-            
-            <!-- Project Timeline -->
-            <div class="phase-timeline">
-                <div class="phase completed">
-                    <div class="phase-dot"><i class="fas fa-check"></i></div>
-                    <h4>Phase 1</h4>
-                    <p>Data Analysis</p>
-                </div>
-                <div class="phase completed">
-                    <div class="phase-dot"><i class="fas fa-check"></i></div>
-                    <h4>Phase 2</h4>
-                    <p>Dashboard Development</p>
-                </div>
-                <div class="phase completed">
-                    <div class="phase-dot"><i class="fas fa-check"></i></div>
-                    <h4>Phase 3</h4>
-                    <p>Deployment & Insights</p>
-                </div>
-            </div>
 
             <!-- Main Dashboard Image -->
             <div style="margin: 2rem 0;">
                 <img src="../assets/images/dashboard-preview.jpg"   
                      alt="Financial Analysis Dashboard - Performance & Risk Metrics" 
-                     style="width:100%; height:400px; object-fit:contain; border-radius:12px; background:#f8f9fa;">
+                     style="width:100%; height:400px; object-fit:contain; border-radius:12px; background:#f8f9fa;"
+                     onerror="this.src='https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'">
             </div>
 
             <div style="max-width: 800px; margin: 0 auto;">
@@ -319,7 +254,7 @@
                         
                         <div class="image-card">
                             <img src="../assets/images/risk-analysis-chart.png" alt="Risk Analysis Metrics"
-                                 onerror="this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                                 onerror="this.src='https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                             <div class="image-content">
                                 <h4>Volatility & Risk Assessment</h4>
                                 <p>Comprehensive risk metrics including volatility, beta, and maximum drawdown analysis.</p>
@@ -329,7 +264,7 @@
                         
                         <div class="image-card">
                             <img src="../assets/images/Correlation Matrix Heatmap.png" alt="Correlation Analysis"
-                                 onerror="this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                                 onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                             <div class="image-content">
                                 <h4>Portfolio Correlation</h4>
                                 <p>Inter-security correlation matrix showing diversification opportunities.</p>
@@ -356,7 +291,7 @@
                     <div class="image-grid">
                         <div class="image-card">
                             <img src="../assets/images/tecnical-signals.png" alt="Technical Trading Signals"
-                                 onerror="this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                                 onerror="this.src='https://images.unsplash.com/photo-1613243555978-636c48dc653c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                             <div class="image-content">
                                 <h4>RSI & Signal Analysis</h4>
                                 <p>Technical indicators including RSI, moving averages, and trading signals.</p>
@@ -366,7 +301,7 @@
                         
                         <div class="image-card">
                             <img src="../assets/images/risk-return-scatter.png" alt="Risk-Return Profile"
-                                 onerror="this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                                 onerror="this.src='https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                             <div class="image-content">
                                 <h4>Risk-Return Optimization</h4>
                                 <p>Scatter analysis plotting volatility against total returns for portfolio optimization.</p>
@@ -430,6 +365,11 @@
                             <i class="fas fa-chart-bar" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
                             <div style="font-weight: 600; margin-bottom: 0.5rem;">Streamlit</div>
                             <div style="font-size: 0.9rem; color: #666;">Interactive Dashboard</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <i class="fas fa-database" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">SQL & PgAdmin</div>
+                            <div style="font-size: 0.9rem; color: #666;">Database Management</div>
                         </div>
                         <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                             <i class="fas fa-database" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
