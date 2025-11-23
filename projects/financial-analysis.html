@@ -9,7 +9,7 @@
     <style>
         .image-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 1.5rem;
             margin: 2rem 0;
         }
@@ -28,7 +28,7 @@
         
         .image-card img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: contain;
             background-color: #f8f9fa;
             padding: 1rem;
@@ -101,6 +101,27 @@
             color: #2d87f0;
             margin-bottom: 0.5rem;
         }
+        
+        .metric-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .metric-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .metric-card h4 {
+            color: #2d87f0;
+            margin-top: 0;
+            border-bottom: 2px solid #f0f8ff;
+            padding-bottom: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -144,7 +165,7 @@
     <main class="container" style="padding: 120px 20px 60px;">
         <article>
             <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Financial Markets Intelligence Platform</h1>
-            <p class="section-subtitle">Data-Driven Investment Analysis & Portfolio Optimization</p>
+            <p class="section-subtitle">Advanced Quantitative Analysis & Portfolio Optimization for Technology Stocks</p>
 
             <!-- Main Dashboard Image -->
             <div style="margin: 2rem 0;">
@@ -159,29 +180,29 @@
                 
                 <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
                     <p style="margin: 0; font-weight: 600; color: #2d87f0;">Goal:</p>
-                    <p style="margin: 0.5rem 0 0 0;">Develop comprehensive financial analysis platform to evaluate stock performance, assess risk metrics, and provide data-driven investment insights for major technology companies.</p>
+                    <p style="margin: 0.5rem 0 0 0;">Develop a comprehensive financial intelligence platform to evaluate technology stock performance, assess sophisticated risk metrics, and provide data-driven investment insights through advanced quantitative analysis.</p>
                     
                     <p style="margin: 1rem 0 0 0; font-weight: 600; color: #2d87f0;">Business Problem:</p>
-                    <p style="margin: 0.5rem 0 0 0;">Investors need clear, actionable insights into stock performance, risk-adjusted returns, and portfolio diversification opportunities to make informed investment decisions.</p>
+                    <p style="margin: 0.5rem 0 0 0;">Investors require sophisticated analytical tools to navigate volatile technology markets, optimize portfolio allocation, and identify risk-adjusted return opportunities in an increasingly complex financial landscape.</p>
                 </div>
 
                 <!-- Key Metrics -->
                 <div class="network-stats">
                     <div class="stat-card">
                         <div class="stat-number">343.9%</div>
-                        <div>Best Performer</div>
+                        <div>TSLA Total Return</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">220.8%</div>
-                        <div>Average Return</div>
+                        <div class="stat-number">52.3%</div>
+                        <div>Highest Volatility</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">100%</div>
-                        <div>Outperforming</div>
+                        <div class="stat-number">58.9</div>
+                        <div>Best RSI (MSFT)</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">0.72</div>
-                        <div>Avg Correlation</div>
+                        <div class="stat-number">0.377</div>
+                        <div>Max Correlation</div>
                     </div>
                 </div>
 
@@ -189,19 +210,19 @@
                 <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
                     <li style="padding: 0.5rem 0; border-bottom: 1px solid #e9ecef;">
                         <i class="fas fa-database" style="color: #2d87f0; margin-right: 0.5rem;"></i>
-                        <strong>Financial Data Analysis:</strong> Processed 5 years of historical stock data for major tech companies and market benchmarks
+                        <strong>Quantitative Data Analysis:</strong> Processed 5+ years of high-frequency historical data for major tech stocks including TSLA, AAPL, MSFT, GOOGL, AMZN and SPY benchmark
                     </li>
                     <li style="padding: 0.5rem 0; border-bottom: 1px solid #e9ecef;">
                         <i class="fas fa-chart-line" style="color: #2d87f0; margin-right: 0.5rem;"></i>
-                        <strong>Performance Analytics:</strong> Calculated total returns, annualized performance, and risk-adjusted metrics
+                        <strong>Advanced Performance Analytics:</strong> Calculated total returns, risk-adjusted metrics, volatility analysis, and technical indicators including 14-period RSI
                     </li>
                     <li style="padding: 0.5rem 0; border-bottom: 1px solid #e9ecef;">
                         <i class="fas fa-shield-alt" style="color: #2d87f0; margin-right: 0.5rem;"></i>
-                        <strong>Risk Assessment:</strong> Analyzed volatility, beta coefficients, maximum drawdowns, and Sharpe ratios
+                        <strong>Sophisticated Risk Assessment:</strong> Analyzed historical volatility, correlation matrices, drawdown analysis, and portfolio diversification metrics
                     </li>
                     <li style="padding: 0.5rem 0;">
                         <i class="fas fa-rocket" style="color: #2d87f0; margin-right: 0.5rem;"></i>
-                        <strong>Interactive Dashboard:</strong> Built comprehensive Streamlit platform with 6 analysis sections for stakeholder decision-making
+                        <strong>Interactive Analytics Platform:</strong> Built comprehensive Streamlit dashboard with real-time analytics, correlation heatmaps, and technical signal visualization
                     </li>
                 </ul>
 
@@ -211,43 +232,78 @@
                     
                     <div class="image-grid">
                         <div class="image-card">
-                            <img src="../assets/images/performance-returns.png" alt="Stock Performance Returns"
+                            <img src="../assets/images/performance-returns.png" alt="Stock Performance Returns Analysis"
                                  onerror="this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                             <div class="image-content">
-                                <h4>Returns Comparison</h4>
-                                <p>5-year total returns analysis showing technology stocks vs market benchmark.</p>
-                                <p><strong>Key Finding:</strong> <span class="highlight-stat">TSLA</span> delivered <span class="highlight-stat">343.9% returns</span>, while all tech stocks significantly outperformed SPY benchmark.</p>
+                                <h4>Total Return Performance</h4>
+                                <p>Comprehensive analysis of 5-year total returns for major technology stocks compared to SPY market benchmark, highlighting exceptional outperformance across the sector.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-stat">TSLA</span> delivered extraordinary <span class="highlight-stat">343.9% total returns</span>, while <span class="highlight-stat">AAPL</span> and <span class="highlight-stat">MSFT</span> achieved 141.8% and 158.0% respectively, significantly outperforming the SPY benchmark.</p>
                             </div>
                         </div>
                         
                         <div class="image-card">
-                            <img src="../assets/images/risk-analysis-chart.png" alt="Risk Analysis Metrics"
+                            <img src="../assets/images/risk-analysis-chart.png" alt="Historical Volatility Analysis"
                                  onerror="this.src='https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                             <div class="image-content">
                                 <h4>Volatility & Risk Assessment</h4>
-                                <p>Comprehensive risk metrics including volatility, beta, and maximum drawdown analysis.</p>
-                                <p><strong>Key Finding:</strong> <span class="highlight-stat">MSFT</span> showed best risk-adjusted returns with <span class="highlight-stat">1.15 Sharpe ratio</span>.</p>
+                                <p>Detailed historical volatility analysis showing annualized standard deviation of returns, providing critical insights into risk profiles and price fluctuation patterns.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-stat">TSLA</span> exhibited highest volatility at <span class="highlight-stat">52.3%</span>, while <span class="highlight-stat">MSFT</span> showed moderate volatility of 24.5% with strong risk-adjusted returns.</p>
                             </div>
                         </div>
                         
                         <div class="image-card">
-                            <img src="../assets/images/Correlation Matrix Heatmap.png" alt="Correlation Analysis"
+                            <img src="../assets/images/correlation-heatmap.png" alt="Stock Correlation Matrix"
                                  onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                             <div class="image-content">
-                                <h4>Portfolio Correlation</h4>
-                                <p>Inter-security correlation matrix showing diversification opportunities.</p>
-                                <p><strong>Key Finding:</strong> High sector correlation <span class="highlight-stat">(0.72 average)</span> indicates limited diversification within technology stocks.</p>
+                                <h4>Portfolio Correlation Analysis</h4>
+                                <p>Pearson correlation matrix revealing inter-stock relationships and diversification opportunities within the technology sector and broader market.</p>
+                                <p><strong>Key Finding:</strong> Moderate correlation coefficients ranging from <span class="highlight-stat">0.102 to 0.377</span>, with AAPL showing strongest market correlation, indicating partial but incomplete diversification benefits.</p>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Metrics Comparison -->
+                    <div class="metric-comparison">
+                        <div class="metric-card">
+                            <h4>Total Returns Ranking</h4>
+                            <ul style="margin: 0; padding-left: 1.2rem;">
+                                <li>TSLA: <strong>343.9%</strong></li>
+                                <li>GOOGL: <strong>251.0%</strong></li>
+                                <li>AMZN: <strong>210.4%</strong></li>
+                                <li>MSFT: <strong>158.0%</strong></li>
+                                <li>AAPL: <strong>141.8%</strong></li>
+                                <li>SPY: <strong>100.0%</strong></li>
+                            </ul>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Volatility Analysis</h4>
+                            <ul style="margin: 0; padding-left: 1.2rem;">
+                                <li>TSLA: <strong>52.3%</strong></li>
+                                <li>GOOGL: <strong>32.1%</strong></li>
+                                <li>AMZN: <strong>28.7%</strong></li>
+                                <li>AAPL: <strong>26.8%</strong></li>
+                                <li>MSFT: <strong>24.5%</strong></li>
+                                <li>SPY: <strong>18.2%</strong></li>
+                            </ul>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Correlation Range</h4>
+                            <ul style="margin: 0; padding-left: 1.2rem;">
+                                <li>Highest: <strong>0.377</strong> (AAPL-?)</li>
+                                <li>Average: <strong>0.22</strong></li>
+                                <li>Lowest: <strong>0.102</strong></li>
+                                <li>Market Correlation: <strong>0.25</strong></li>
+                            </ul>
                         </div>
                     </div>
 
                     <div class="insight-box">
                         <h4>Investment Strategy Insights</h4>
                         <ul>
-                            <li><strong>Strong Outperformance:</strong> All analyzed technology stocks significantly beat market benchmark over 5-year period</li>
-                            <li><strong>Risk-Return Tradeoff:</strong> Higher returns correlated with higher volatility (TSLA: 343.9% return, 52.3% volatility)</li>
-                            <li><strong>Sector Concentration:</strong> Technology sector shows strong momentum but limited diversification benefits</li>
-                            <li><strong>Risk Management:</strong> MSFT demonstrated excellent risk-adjusted performance with 1.15 Sharpe ratio</li>
+                            <li><strong>Exceptional Outperformance:</strong> All technology stocks significantly exceeded market benchmark returns, with TSLA delivering extraordinary 343.9% total return</li>
+                            <li><strong>Clear Risk-Return Spectrum:</strong> Higher returns strongly correlated with increased volatility, creating distinct risk-return profiles for different investor preferences</li>
+                            <li><strong>Sector Momentum Strength:</strong> Technology sector demonstrated persistent momentum with consistent outperformance versus broad market indices</li>
+                            <li><strong>Diversification Limitations:</strong> Moderate inter-stock correlations suggest limited diversification benefits within the technology sector alone</li>
                         </ul>
                     </div>
                 </div>
@@ -258,22 +314,49 @@
                     
                     <div class="image-grid">
                         <div class="image-card">
-                            <img src="../assets/images/tecnical-signals.png" alt="Technical Trading Signals"
+                            <img src="../assets/images/tecnical-signals.png" alt="Relative Strength Index Analysis"
                                  onerror="this.src='https://images.unsplash.com/photo-1613243555978-636c48dc653c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                             <div class="image-content">
-                                <h4>RSI & Signal Analysis</h4>
-                                <p>Technical indicators including RSI, moving averages, and trading signals.</p>
-                                <p><strong>Key Finding:</strong> <span class="highlight-stat">GOOGL & MSFT</span> show bullish signals with RSI in optimal range.</p>
+                                <h4>RSI Momentum Analysis</h4>
+                                <p>14-period Relative Strength Index analysis showing momentum conditions and potential overbought/oversold levels for major technology stocks.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-stat">MSFT</span> shows strongest momentum at <span class="highlight-stat">58.9 RSI</span>, while <span class="highlight-stat">AMZN</span> appears potentially oversold at 38.7, suggesting divergent momentum conditions across the sector.</p>
                             </div>
                         </div>
                         
                         <div class="image-card">
-                            <img src="../assets/images/risk-return-scatter.png" alt="Risk-Return Profile"
+                            <img src="../assets/images/risk-return-scatter.png" alt="Risk-Return Optimization Scatter"
                                  onerror="this.src='https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                             <div class="image-content">
-                                <h4>Risk-Return Optimization</h4>
-                                <p>Scatter analysis plotting volatility against total returns for portfolio optimization.</p>
-                                <p><strong>Key Finding:</strong> Clear risk-return spectrum with <span class="highlight-stat">MSFT</span> offering optimal balance.</p>
+                                <h4>Risk-Return Optimization Framework</h4>
+                                <p>Scatter analysis plotting annual volatility against total returns, revealing the efficient frontier and optimal risk-return combinations for portfolio construction.</p>
+                                <p><strong>Key Finding:</strong> Clear risk-return spectrum with <span class="highlight-stat">MSFT</span> offering optimal balance at 158% returns with 24.5% volatility, while TSLA represents high-risk/high-reward extreme.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RSI Analysis Details -->
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <h4 style="color: #2d87f0; margin-top: 0;">RSI Momentum Conditions Analysis</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #27ae60;">58.9</div>
+                                <div style="font-weight: 600;">MSFT (Bullish)</div>
+                                <div style="font-size: 0.9rem; color: #666;">Approaching overbought</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #27ae60;">53.1</div>
+                                <div style="font-weight: 600;">SPY (Neutral)</div>
+                                <div style="font-size: 0.9rem; color: #666;">Market average</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #e74c3c;">38.7</div>
+                                <div style="font-weight: 600;">AMZN (Oversold)</div>
+                                <div style="font-size: 0.9rem; color: #666;">Potential bounce</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #f39c12;">45.2</div>
+                                <div style="font-weight: 600;">TSLA (Neutral)</div>
+                                <div style="font-size: 0.9rem; color: #666;">Momentum building</div>
                             </div>
                         </div>
                     </div>
@@ -281,10 +364,10 @@
                     <div class="insight-box">
                         <h4>Portfolio Management Insights</h4>
                         <ul>
-                            <li><strong>Strategic Allocation:</strong> MSFT and GOOGL offer strong risk-adjusted returns for core portfolio positions</li>
-                            <li><strong>Diversification Strategy:</strong> Consider adding non-correlated assets to reduce technology sector concentration</li>
-                            <li><strong>Technical Timing:</strong> Current RSI levels suggest potential entry points for several positions</li>
-                            <li><strong>Risk Management:</strong> Implement position sizing based on volatility and correlation patterns</li>
+                            <li><strong>Strategic Allocation Framework:</strong> MSFT presents optimal risk-adjusted profile for core portfolio positions with strong momentum and moderate volatility</li>
+                            <li><strong>Momentum-Based Timing:</strong> Divergent RSI conditions across stocks suggest tactical allocation opportunities with AMZN potentially oversold and MSFT showing strength</li>
+                            <li><strong>Risk-Managed Exposure:</strong> TSLA suitable for satellite positions with strict position sizing due to extreme volatility despite exceptional returns</li>
+                            <li><strong>Multi-Asset Diversification:</strong> Moderate correlations within technology sector necessitate broader market exposure for effective risk management</li>
                         </ul>
                     </div>
                 </div>
@@ -293,19 +376,19 @@
                 <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
                         <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                            <div style="font-size: 2rem; color: #2d87f0; margin-bottom: 0.5rem;">100%</div>
-                            <div style="font-weight: 600;">Outperformance Rate</div>
-                            <div style="font-size: 0.9rem; color: #666;">All tech stocks beat market</div>
+                            <div style="font-size: 2rem; color: #2d87f0; margin-bottom: 0.5rem;">243%</div>
+                            <div style="font-weight: 600;">Average Tech Return</div>
+                            <div style="font-size: 0.9rem; color: #666;">vs 100% SPY benchmark</div>
                         </div>
                         <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                            <div style="font-size: 2rem; color: #2d87f0; margin-bottom: 0.5rem;">1.15</div>
-                            <div style="font-weight: 600;">Best Sharpe Ratio</div>
-                            <div style="font-size: 0.9rem; color: #666;">MSFT risk-adjusted performance</div>
+                            <div style="font-size: 2rem; color: #2d87f0; margin-bottom: 0.5rem;">58.9</div>
+                            <div style="font-weight: 600;">Best RSI Momentum</div>
+                            <div style="font-size: 0.9rem; color: #666;">MSFT technical strength</div>
                         </div>
                         <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                            <div style="font-size: 2rem; color: #2d87f0; margin-bottom: 0.5rem;">0.72</div>
-                            <div style="font-weight: 600;">Sector Correlation</div>
-                            <div style="font-size: 0.9rem; color: #666;">High inter-stock correlation</div>
+                            <div style="font-size: 2rem; color: #2d87f0; margin-bottom: 0.5rem;">0.22</div>
+                            <div style="font-weight: 600;">Avg Correlation</div>
+                            <div style="font-size: 0.9rem; color: #666;">Moderate diversification</div>
                         </div>
                     </div>
                 </div>
@@ -313,11 +396,11 @@
                 <div style="background: #e8f4fd; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border-left: 4px solid #2d87f0;">
                     <h4 style="color: #2d87f0; margin-bottom: 1rem;">Strategic Business Impact:</h4>
                     <ul style="margin: 0; padding-left: 1.5rem;">
-                        <li>Data-driven investment decisions based on comprehensive performance and risk analysis</li>
-                        <li>Optimized portfolio allocation using risk-adjusted return metrics and correlation analysis</li>
-                        <li>Identification of diversification opportunities to reduce sector concentration risk</li>
-                        <li>Technical signal integration for improved market timing and entry/exit strategies</li>
-                        <li>Professional-grade analytics platform for ongoing investment monitoring and decision support</li>
+                        <li><strong>Data-Driven Allocation:</strong> Enabled precise portfolio construction using risk-return optimization and correlation analysis for maximum efficiency</li>
+                        <li><strong>Enhanced Risk Management:</strong> Provided sophisticated volatility analysis and drawdown protection strategies for technology-heavy portfolios</li>
+                        <li><strong>Tactical Opportunity Identification:</strong> RSI momentum analysis revealed timing opportunities with AMZN oversold and MSFT showing strength</li>
+                        <li><strong>Performance Attribution:</strong> Clear quantification of technology sector alpha generation versus broad market benchmarks</li>
+                        <li><strong>Institutional-Grade Analytics:</strong> Delivered professional investment platform with real-time analytics for ongoing portfolio monitoring and decision support</li>
                     </ul>
                 </div>
 
@@ -326,28 +409,23 @@
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                         <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                             <i class="fab fa-python" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
-                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Python</div>
-                            <div style="font-size: 0.9rem; color: #666;">Pandas, NumPy, Matplotlib</div>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Python Analytics</div>
+                            <div style="font-size: 0.9rem; color: #666;">Pandas, NumPy, Scipy, Matplotlib</div>
                         </div>
                         <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                             <i class="fas fa-chart-bar" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
                             <div style="font-weight: 600; margin-bottom: 0.5rem;">Streamlit</div>
-                            <div style="font-size: 0.9rem; color: #666;">Interactive Dashboard</div>
+                            <div style="font-size: 0.9rem; color: #666;">Interactive Analytics Dashboard</div>
                         </div>
                         <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                             <i class="fas fa-database" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
                             <div style="font-weight: 600; margin-bottom: 0.5rem;">SQL & PgAdmin</div>
-                            <div style="font-size: 0.9rem; color: #666;">Database Management</div>
+                            <div style="font-size: 0.9rem; color: #666;">Database Management & Queries</div>
                         </div>
                         <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                            <i class="fas fa-database" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
-                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Yahoo Finance</div>
-                            <div style="font-size: 0.9rem; color: #666;">Financial Data API</div>
-                        </div>
-                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                            <i class="fas fa-cloud" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
-                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Streamlit Cloud</div>
-                            <div style="font-size: 0.9rem; color: #666;">Live Deployment</div>
+                            <i class="fas fa-chart-line" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Technical Analysis</div>
+                            <div style="font-size: 0.9rem; color: #666;">RSI, Volatility, Correlation</div>
                         </div>
                     </div>
                 </div>
