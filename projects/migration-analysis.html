@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Migration Analysis Platform | Yaw Assensoh Opoku</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .image-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .image-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .image-content {
+            padding: 1.5rem;
+        }
+        
+        .image-content h4 {
+            margin-top: 0;
+            color: #2d87f0;
+        }
+        
+        .insight-box {
+            background: #f0f8ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #2d87f0;
+        }
+        
+        .insight-box h4 {
+            color: #2d87f0;
+            margin-top: 0;
+        }
+        
+        .highlight-stat {
+            display: inline-block;
+            background: #2d87f0;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 0.25rem 0.5rem 0.25rem 0;
+        }
+        
+        .analysis-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .analysis-section h2 {
+            color: #2d87f0;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .network-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2d87f0;
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .metric-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .metric-card h4 {
+            color: #2d87f0;
+            margin-top: 0;
+            border-bottom: 2px solid #f0f8ff;
+            padding-bottom: 0.5rem;
+        }
+        
+        .migration-pattern {
+            background: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .continent-highlight {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        .africa { background: #FF6B6B; color: white; }
+        .asia { background: #4ECDC4; color: white; }
+        .europe { background: #45B7D1; color: white; }
+        .north-america { background: #96CEB4; color: white; }
+        .south-america { background: #FFEAA7; color: #333; }
+        .oceania { background: #DDA0DD; color: white; }
+        
+        .trend-indicator {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .trend-up {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .trend-down {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        .methodology-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        
+        .policy-simulation {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        
+        .policy-impact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .policy-card {
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="header" data-header>
+        <div class="container">
+            <a href="../index.html">
+                <h1 class="logo">Yaw Assensoh Opoku</h1>
+            </a>
+
+            <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
+                <i class="fas fa-bars menu-icon"></i>
+                <i class="fas fa-times close-icon"></i>
+            </button>
+
+            <nav class="navbar container">
+                <ul class="navbar-list">
+                    <li>
+                        <a href="../index.html#home" class="navbar-link" data-nav-link>Home</a>
+                    </li>
+                    <li>
+                        <a href="../index.html#about" class="navbar-link" data-nav-link>About</a>
+                    </li>
+                    <li>
+                        <a href="../index.html#portfolio" class="navbar-link" data-nav-link>Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="../index.html#skills" class="navbar-link" data-nav-link>Skills</a>
+                    </li>
+                    <li>
+                        <a href="../index.html#contact" class="navbar-link" data-nav-link>Contact</a>
+                    </li>
+                    <li>
+                        <a href="../resume.pdf" class="btn btn-primary" download>Download CV</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 120px 20px 60px;">
+        <article>
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Global Migration Analysis Platform</h1>
+            <p class="section-subtitle">Comprehensive Data Analysis, Forecasting & Policy Impact Assessment</p>
+
+            <!-- Main Dashboard Image -->
+            <div style="margin: 2rem 0;">
+                <img src="../assets/images/dashboard-preview.jpg"   
+                     alt="Global Migration Analysis Dashboard - Migration Patterns & Economic Metrics" 
+                     style="width:100%; height:400px; object-fit:cover; border-radius:12px;"
+                     onerror="this.src='https://images.unsplash.com/photo-1527689361190-bcf06e6c8b6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'">
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2>Project Overview</h2>
+                
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <p style="margin: 0; font-weight: 600; color: #2d87f0;">Goal:</p>
+                    <p style="margin: 0.5rem 0 0 0;">Develop a comprehensive analytical platform combining descriptive analytics, predictive modeling, and policy simulation to understand global migration dynamics and their economic impacts.</p>
+                    
+                    <p style="margin: 1rem 0 0 0; font-weight: 600; color: #2d87f0;">Business Value:</p>
+                    <p style="margin: 0.5rem 0 0 0;">Provides governments, NGOs, and businesses with data-driven insights for policy formulation, resource planning, and strategic decision-making in migration-related domains.</p>
+                </div>
+
+                <!-- Key Metrics - Updated with correct numbers -->
+                <div class="network-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">233</div>
+                        <div>Countries Analyzed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">+0.62</div>
+                        <div>Wealth-Migration Correlation</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">25</div>
+                        <div>Years of Data</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3</div>
+                        <div>Forecasting Models</div>
+                    </div>
+                </div>
+
+                <!-- 1. CONTINENTAL ANALYSIS SECTION (Added Back) -->
+                <div class="analysis-section">
+                    <h2>Continental Migration Analysis</h2>
+                    
+                    <div class="image-grid">
+                        <div class="image-card">
+                            <img src="../assets/images/continental-migration-analysis.png" alt="Continental Migration Analysis"
+                                 onerror="this.src='../assets/images/continental-migration-analysis.png'">
+                            <div class="image-content">
+                                <h4>Net Migration by Continent</h4>
+                                <p>Analysis of total net migration across six continents, showing population movements and regional patterns.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-stat">Asia</span> leads with 5.8M net migration, followed by <span class="highlight-stat">North America</span> (3.4M) and <span class="highlight-stat">Europe</span> (3.2M).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="image-card">
+                            <img src="../assets/images/economic-continent.png" alt="Economic vs Migration Analysis"
+                                 onerror="this.src='../assets/images/economic-continent.png'">
+                            <div class="image-content">
+                                <h4>Economic Development vs Migration</h4>
+                                <p>Comparison of normalized GDP per capita and migration rates across continents.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-stat">Europe</span> has highest GDP (100%) with 51.6% migration rate, showing strong economic-migration correlation.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="image-card">
+                            <img src="../assets/images/migration-leaders-analysis.png" alt="Migration Leaders Analysis"
+                                 onerror="this.src='../assets/images/migration-leaders-analysis.png'">
+                            <div class="image-content">
+                                <h4>Top Migration Countries</h4>
+                                <p>Identification of countries with highest immigration and emigration rates globally.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-stat">Poland, Germany, Nepal</span> lead in immigration; <span class="highlight-stat">Falkland Islands, Palau</span> lead in emigration.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Continental Statistics -->
+                    <div class="migration-pattern">
+                        <h4 style="color: #2d87f0; margin-top: 0;">Continental Migration Statistics</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                            <div style="text-align: center;">
+                                <span class="continent-highlight asia">Asia</span>
+                                <div style="font-weight: bold; color: #4ECDC4; margin: 0.5rem 0;">5.8M</div>
+                                <div style="font-size: 0.9rem;">Net Migration</div>
+                                <div style="font-size: 0.8rem; color: #666;">1.3B Population</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <span class="continent-highlight north-america">North America</span>
+                                <div style="font-weight: bold; color: #96CEB4; margin: 0.5rem 0;">3.4M</div>
+                                <div style="font-size: 0.9rem;">Net Migration</div>
+                                <div style="font-size: 0.8rem; color: #666;">11 Countries</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <span class="continent-highlight europe">Europe</span>
+                                <div style="font-weight: bold; color: #45B7D1; margin: 0.5rem 0;">3.2M</div>
+                                <div style="font-size: 0.9rem;">Net Migration</div>
+                                <div style="font-size: 0.8rem; color: #666;">17 Countries</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <span class="continent-highlight africa">Africa</span>
+                                <div style="font-weight: bold; color: #FF6B6B; margin: 0.5rem 0;">1.7M</div>
+                                <div style="font-size: 0.9rem;">Net Migration</div>
+                                <div style="font-size: 0.8rem; color: #666;">15 Countries</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="insight-box">
+                        <h4>Continental Insights</h4>
+                        <ul>
+                            <li><strong>Asian Dominance:</strong> Asia accounts for largest migration flows (5.8M) and population (1.3B), making it the epicenter of global migration</li>
+                            <li><strong>Economic Attraction:</strong> Europe and North America combine high GDP with significant immigration, confirming economic pull factors</li>
+                            <li><strong>Regional Imbalances:</strong> Clear divide between immigrant-receiving and emigrant-sending continents persists</li>
+                            <li><strong>Policy Coordination:</strong> Continental patterns suggest regional policy approaches could be more effective than country-specific measures</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2. TIME SERIES & FORECASTING SECTION -->
+                <div class="analysis-section">
+                    <h2>Time Series Analysis & Predictive Forecasting</h2>
+                    
+                    <div class="image-grid">
+                        <div class="image-card">
+                            <img src="../assets/images/migration-rate-time-series.png" alt="Migration Rate Time Series"
+                                 onerror="this.src='../assets/images/migration-rate-time-series.png'">
+                            <div class="image-content">
+                                <h4>25-Year Migration Trends</h4>
+                                <p>Longitudinal analysis of migration rates from 2000-2025 for key countries showing evolving patterns.</p>
+                                <p><strong>Key Finding:</strong> <span class="trend-indicator trend-down">US trend decreasing</span> (-0.105/year) while <span class="trend-indicator trend-up">Germany increasing</span> (+0.010/year).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="image-card">
+                            <img src="../assets/images/advanced-forecasting.png" alt="Advanced Forecasting Models"
+                                 onerror="this.src='../assets/images/advanced-forecasting.png'">
+                            <div class="image-content">
+                                <h4>Multi-Model Forecasting</h4>
+                                <p>Comparison of ARIMA, Prophet, and Linear models with confidence intervals and error metrics.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-stat">ARIMA model</span> achieves best performance (MAE: 0.25) for US migration forecasting.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Forecasting Performance -->
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <h4 style="color: #2d87f0; margin-top: 0;">Forecasting Model Performance Comparison</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div style="text-align: center; padding: 1rem; border: 2px solid #2d87f0; border-radius: 8px;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #2d87f0;">ARIMA</div>
+                                <div style="font-weight: 600; color: #27ae60;">MAE: 0.25</div>
+                                <div style="font-size: 0.9rem; color: #666;">Best Performance</div>
+                            </div>
+                            <div style="text-align: center; padding: 1rem; border: 2px solid #10B981; border-radius: 8px;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #10B981;">Prophet</div>
+                                <div style="font-weight: 600; color: #666;">MAE: 0.72</div>
+                                <div style="font-size: 0.9rem; color: #666;">Good for seasonality</div>
+                            </div>
+                            <div style="text-align: center; padding: 1rem; border: 2px solid #F59E0B; border-radius: 8px;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #F59E0B;">Linear</div>
+                                <div style="font-weight: 600; color: #666;">MAE: 0.98</div>
+                                <div style="font-size: 0.9rem; color: #666;">Baseline model</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="insight-box">
+                        <h4>Forecasting Insights</h4>
+                        <ul>
+                            <li><strong>Model Superiority:</strong> ARIMA outperforms Prophet and Linear models for migration rate forecasting with 65% lower error</li>
+                            <li><strong>Trend Divergence:</strong> Developed countries show varying trends (US decreasing, Germany increasing) suggesting different policy impacts</li>
+                            <li><strong>Predictive Confidence:</strong> 95% confidence intervals provide reliable planning ranges for policymakers</li>
+                            <li><strong>Forecasting Utility:</strong> 5-year forecasts enable proactive policy development and resource allocation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 3. MACHINE LEARNING CLUSTERING SECTION -->
+                <div class="analysis-section">
+                    <h2>Machine Learning Clustering Analysis</h2>
+                    
+                    <div class="image-grid">
+                        <div class="image-card">
+                            <img src="../assets/images/cluster-validation-metrics.png" alt="Cluster Validation Metrics"
+                                 onerror="this.src='../assets/images/cluster-validation-metrics.png'">
+                            <div class="image-content">
+                                <h4>Cluster Validation & Optimization</h4>
+                                <p>Comprehensive validation using Elbow Method, Silhouette Score, Calinski-Harabasz, and Davies-Bouldin indices.</p>
+                                <p><strong>Key Finding:</strong> Optimal clustering at <span class="highlight-stat">5-6 groups</span> validated by multiple metrics for robust classification.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="image-card">
+                            <img src="../assets/images/migration-network.png" alt="Migration Network Analysis"
+                                 onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                            <div class="image-content">
+                                <h4>Migration Network Patterns</h4>
+                                <p>Network analysis showing migration corridors and connectivity between countries and regions.</p>
+                                <p><strong>Key Finding:</strong> Clear <span class="highlight-stat">South-North migration corridors</span> dominate with Asia→NA and Africa→Europe strongest.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Clustering Methodology -->
+                    <div class="methodology-box">
+                        <h4 style="color: #2d87f0; margin-top: 0;">🔄 Clustering Methodology</h4>
+                        <p><strong>K-means Algorithm:</strong> Applied with feature scaling and PCA for dimensionality reduction</p>
+                        <p><strong>Validation Metrics:</strong> Used four complementary metrics to determine optimal cluster count:</p>
+                        <ul style="margin: 0.5rem 0 0 1.5rem;">
+                            <li><strong>Elbow Method:</strong> Visual inspection for variance explained (k=6)</li>
+                            <li><strong>Silhouette Score:</strong> Measures cluster separation (best at k=5)</li>
+                            <li><strong>Calinski-Harabasz:</strong> Variance ratio criterion</li>
+                            <li><strong>Davies-Bouldin:</strong> Average similarity measure</li>
+                        </ul>
+                    </div>
+
+                    <div class="insight-box">
+                        <h4>Clustering Insights</h4>
+                        <ul>
+                            <li><strong>Natural Groupings:</strong> Countries cluster into 5-6 meaningful groups based on migration-economic profiles</li>
+                            <li><strong>Validation Robustness:</strong> Multiple metrics converge on similar optimal cluster counts, ensuring reliable results</li>
+                            <li><strong>Interpretable Categories:</strong> Clusters correspond to real-world categories: high-income immigration hubs, developing emigration regions, etc.</li>
+                            <li><strong>Policy Targeting:</strong> Enables tailored policy approaches for countries within same migration-economic cluster</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 4. POLICY IMPACT SIMULATION SECTION (Added Back) -->
+                <div class="analysis-section">
+                    <h2>Policy Impact Simulation & Recommendations</h2>
+                    
+                    <div class="policy-simulation">
+                        <h3 style="color: white; margin-top: 0; text-align: center;">Interactive Policy Simulation</h3>
+                        <p style="text-align: center; opacity: 0.9; margin-bottom: 1.5rem;">Explore how different migration policies impact economic outcomes</p>
+                        
+                        <div class="policy-impact">
+                            <div class="policy-card">
+                                <h5 style="color: #2d87f0; margin: 0 0 0.5rem 0;">Liberal Policy</h5>
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #27ae60;">+10-15%</div>
+                                <div style="font-size: 0.9rem;">GDP Growth Impact</div>
+                                <div style="font-size: 0.8rem; margin-top: 0.5rem; color: #666;">Increased immigration</div>
+                            </div>
+                            <div class="policy-card">
+                                <h5 style="color: #2d87f0; margin: 0 0 0.5rem 0;">Restrictive Policy</h5>
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #e74c3c;">-5-10%</div>
+                                <div style="font-size: 0.9rem;">GDP Growth Impact</div>
+                                <div style="font-size: 0.8rem; margin-top: 0.5rem; color: #666;">Reduced immigration</div>
+                            </div>
+                            <div class="policy-card">
+                                <h5 style="color: #2d87f0; margin: 0 0 0.5rem 0;">Balanced Approach</h5>
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #f39c12;">+3-5%</div>
+                                <div style="font-size: 0.9rem;">GDP Growth Impact</div>
+                                <div style="font-size: 0.8rem; margin-top: 0.5rem; color: #666;">Selective immigration</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Policy Recommendations -->
+                    <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                        <h4 style="color: #2d87f0; margin-top: 0;">Data-Driven Policy Recommendations</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                            <div style="background: white; padding: 1rem; border-radius: 6px;">
+                                <h5 style="color: #2d87f0; margin: 0 0 0.5rem 0;">For High-Income Countries</h5>
+                                <ul style="margin: 0; padding-left: 1.2rem; font-size: 0.9rem;">
+                                    <li>Implement skills-based immigration systems</li>
+                                    <li>Invest in integration programs</li>
+                                    <li>Use forecasts for infrastructure planning</li>
+                                </ul>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 6px;">
+                                <h5 style="color: #2d87f0; margin: 0 0 0.5rem 0;">For Developing Countries</h5>
+                                <ul style="margin: 0; padding-left: 1.2rem; font-size: 0.9rem;">
+                                    <li>Create economic opportunities to retain talent</li>
+                                    <li>Leverage diaspora networks</li>
+                                    <li>Targeted education investment</li>
+                                </ul>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 6px;">
+                                <h5 style="color: #2d87f0; margin: 0 0 0.5rem 0;">For International Orgs</h5>
+                                <ul style="margin: 0; padding-left: 1.2rem; font-size: 0.9rem;">
+                                    <li>Regional migration agreements</li>
+                                    <li>Data-sharing frameworks</li>
+                                    <li>Capacity building programs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="insight-box">
+                        <h4>Strategic Policy Insights</h4>
+                        <ul>
+                            <li><strong>Economic Optimization:</strong> Liberal migration policies correlate with higher GDP growth but require integration investments</li>
+                            <li><strong>Cluster-Based Approaches:</strong> Tailored policies for different country clusters maximize effectiveness</li>
+                            <li><strong>Forecast-Informed Planning:</strong> Use predictive models for proactive resource allocation and policy development</li>
+                            <li><strong>Balanced Strategies:</strong> Optimal policies balance economic benefits with social considerations and integration capacity</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Technical Achievements Summary -->
+                <div style="background: #2d87f0; color: white; padding: 2rem; border-radius: 12px; margin: 3rem 0;">
+                    <h3 style="margin-top: 0; text-align: center;">Technical Excellence & Impact</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: bold;">233</div>
+                            <div>Countries Analyzed</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: bold;">0.25</div>
+                            <div>Best MAE Score</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: bold;">5-6</div>
+                            <div>Validated Clusters</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: bold;">+0.62</div>
+                            <div>Key Correlation</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #e8f4fd; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border-left: 4px solid #2d87f0;">
+                    <h4 style="color: #2d87f0; margin-bottom: 1rem;">Project Impact & Applications:</h4>
+                    <ul style="margin: 0; padding-left: 1.5rem;">
+                        <li><strong>Government Policy:</strong> Provides evidence-based insights for migration policy formulation and reform</li>
+                        <li><strong>Economic Planning:</strong> Enables better labor market forecasting and infrastructure planning</li>
+                        <li><strong>Academic Research:</strong> Serves as foundation for migration studies and demographic research</li>
+                        <li><strong>Business Strategy:</strong> Helps companies understand demographic shifts for market planning</li>
+                        <li><strong>International Development:</strong> Guides development assistance targeting and program design</li>
+                    </ul>
+                </div>
+
+                <h3 style="color: #2d87f0; margin-bottom: 1rem;">Tools & Technologies:</h3>
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <i class="fab fa-python" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Python Stack</div>
+                            <div style="font-size: 0.9rem; color: #666;">Pandas, Statsmodels, Scikit-learn</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <i class="fas fa-chart-line" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Forecasting</div>
+                            <div style="font-size: 0.9rem; color: #666;">ARIMA, Prophet, Time Series</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <i class="fas fa-robot" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Machine Learning</div>
+                            <div style="font-size: 0.9rem; color: #666;">K-means, Clustering, Validation</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <i class="fas fa-chart-bar" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Visualization</div>
+                            <div style="font-size: 0.9rem; color: #666;">Plotly, Streamlit, Interactive Dash</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem; text-align: center;">
+                    <a href="../index.html" class="btn btn-primary" style="margin-right: 1rem;">
+                        <i class="fas fa-arrow-left"></i> Back to Portfolio
+                    </a>
+                    <a href="https://yaw-assensoh-global-migration-analysis-project-app-tbxmqx.streamlit.app" 
+                       class="btn btn-primary" 
+                       style="margin-right: 1rem;"
+                       target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-external-link-alt"></i> Live Dashboard
+                    </a>
+                    <a href="https://github.com/Yaw-Assensoh/Global-Migration-Analysis-Project" 
+                       class="btn btn-outline"
+                       target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <script src="../script.js"></script>
+</body>
+</html>
