@@ -6,6 +6,160 @@
   <title>Yaw Assensoh Opoku - Data Analyst</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Featured Projects Section Styles */
+    .featured-projects {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    
+    .featured-projects .section-title {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #2d87f0;
+    }
+    
+    .featured-projects .section-subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 3rem;
+    }
+    
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .featured-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .featured-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    
+    .featured-image {
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .featured-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .featured-card:hover .featured-image img {
+      transform: scale(1.05);
+    }
+    
+    .featured-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .featured-badge {
+      display: inline-block;
+      background: #2d87f0;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      align-self: flex-start;
+    }
+    
+    .featured-title {
+      font-size: 1.3rem;
+      color: #2d87f0;
+      margin: 0 0 0.75rem 0;
+      line-height: 1.3;
+    }
+    
+    .featured-description {
+      color: #666;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+      line-height: 1.6;
+    }
+    
+    .featured-impact {
+      background: #f0f8ff;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: auto;
+      border-left: 4px solid #2d87f0;
+    }
+    
+    .impact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+    
+    .impact-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .impact-icon {
+      color: #2d87f0;
+      margin-right: 0.5rem;
+      font-size: 0.8rem;
+    }
+    
+    .featured-link {
+      display: inline-flex;
+      align-items: center;
+      color: #2d87f0;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: color 0.3s ease;
+    }
+    
+    .featured-link:hover {
+      color: #1a5fb4;
+    }
+    
+    .featured-link i {
+      margin-left: 0.5rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .featured-link:hover i {
+      transform: translateX(5px);
+    }
+    
+    .view-all-projects {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    
+    @media (max-width: 768px) {
+      .featured-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .featured-projects {
+        padding: 60px 0;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -65,12 +219,163 @@
                empowering stakeholders to make confident, data-driven decisions.
             </p>
             <div class="btn-group">
-              <a href="#contact" class="btn btn-primary blue">Discuss Data Solutions</a>
+              <a href="#featured-projects" class="btn btn-primary blue">View Featured Projects</a>
               <a href="#about" class="btn btn-outline">About Me</a>
             </div>
           </div>
           <div class="hero-banner">
             <img src="./assets/images/herrrro-banner.jpg" alt="Data Analytics Visualization" loading="lazy">
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW: Featured Projects Section -->
+      <section class="featured-projects" id="featured-projects">
+        <div class="container">
+          <p class="section-subtitle">Featured Case Studies</p>
+          <h2 class="section-title">Data-Driven Business Impact</h2>
+          <p class="section-text" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+            Selected projects demonstrating how I transform complex data into actionable business strategies and measurable outcomes.
+          </p>
+          
+          <div class="featured-grid">
+            <!-- NYC Citi Bike Featured Card -->
+            <div class="featured-card">
+              <div class="featured-image">
+                <img src="./assets/images/people-bikes.jpg" alt="NYC Citi Bike Optimization">
+              </div>
+              <div class="featured-content">
+                <span class="featured-badge">Supply Chain & Operations</span>
+                <h3 class="featured-title">NYC Citi Bike Supply Optimization</h3>
+                <p class="featured-description">
+                  Developed demand forecasting model with 0.82 temperature-usage correlation to optimize bike distribution across 1,500+ stations, reducing operational costs while improving customer satisfaction.
+                </p>
+                
+                <div class="featured-impact">
+                  <div class="impact-item">
+                    <i class="fas fa-chart-line impact-icon"></i>
+                    <span><strong>40% seasonal fleet scaling</strong> recommendation</span>
+                  </div>
+                  <div class="impact-item">
+                    <i class="fas fa-dollar-sign impact-icon"></i>
+                    <span><strong>20-25% revenue increase</strong> through dynamic pricing</span>
+                  </div>
+                  <div class="impact-item">
+                    <i class="fas fa-clock impact-icon"></i>
+                    <span><strong>4-week advance forecasting</strong> for proactive planning</span>
+                  </div>
+                </div>
+                
+                <a href="projects/nyc-citibike-analysis.html" class="featured-link">
+                  View Full Case Study <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Instacart Featured Card -->
+            <div class="featured-card">
+              <div class="featured-image">
+                <img src="./assets/images/instacart-image.jpg" alt="Instacart Market Basket Analysis">
+              </div>
+              <div class="featured-content">
+                <span class="featured-badge">E-commerce & Retail Analytics</span>
+                <h3 class="featured-title">Instacart Market Basket Analysis</h3>
+                <p class="featured-description">
+                  Customer segmentation and product association analysis that identified 12 high-probability product pairs, enabling targeted marketing and strategic bundling to increase average order value.
+                </p>
+                
+                <div class="featured-impact">
+                  <div class="impact-item">
+                    <i class="fas fa-users impact-icon"></i>
+                    <span><strong>35-37% high spenders</strong> identified for targeting</span>
+                  </div>
+                  <div class="impact-item">
+                    <i class="fas fa-shopping-cart impact-icon"></i>
+                    <span><strong>15% AOV increase</strong> through product bundling</span>
+                  </div>
+                  <div class="impact-item">
+                    <i class="fas fa-bullseye impact-icon"></i>
+                    <span><strong>65%+ co-purchase rates</strong> on identified product pairs</span>
+                  </div>
+                </div>
+                
+                <a href="projects/instacart-analysis.html" class="featured-link">
+                  View Full Case Study <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Financial Analysis Featured Card -->
+            <div class="featured-card">
+              <div class="featured-image">
+                <img src="./assets/images/dashboard-preview.jpg" alt="Financial Markets Intelligence">
+              </div>
+              <div class="featured-content">
+                <span class="featured-badge">Financial Analytics & Investment</span>
+                <h3 class="featured-title">Financial Markets Intelligence Platform</h3>
+                <p class="featured-description">
+                  Quantitative analysis of technology stocks delivering 243% average returns vs. 100% SPY benchmark, with risk-adjusted portfolio optimization and momentum-based allocation strategies.
+                </p>
+                
+                <div class="featured-impact">
+                  <div class="impact-item">
+                    <i class="fas fa-rocket impact-icon"></i>
+                    <span><strong>343.9% TSLA returns</strong> with risk management framework</span>
+                  </div>
+                  <div class="impact-item">
+                    <i class="fas fa-shield-alt impact-icon"></i>
+                    <span><strong>Optimal risk-adjusted positioning</strong> with MSFT core strategy</span>
+                  </div>
+                  <div class="impact-item">
+                    <i class="fas fa-chart-bar impact-icon"></i>
+                    <span><strong>58.9 RSI momentum</strong> signals for tactical allocation</span>
+                  </div>
+                </div>
+                
+                <a href="projects/financial-analysis.html" class="featured-link">
+                  View Full Case Study <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Influenza Forecast Featured Card -->
+            <div class="featured-card">
+              <div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Influenza Staffing Forecast">
+              </div>
+              <div class="featured-content">
+                <span class="featured-badge">Healthcare Analytics & Forecasting</span>
+                <h3 class="featured-title">Influenza Staffing Forecast Model</h3>
+                <p class="featured-description">
+                  ARIMA-based predictive model with 89% accuracy for 4-week influenza forecasts, enabling optimized hospital staffing and resource allocation during peak seasons.
+                </p>
+                
+                <div class="featured-impact">
+                  <div class="impact-item">
+                    <i class="fas fa-hospital impact-icon"></i>
+                    <span><strong>23% overtime cost reduction</strong> through optimized staffing</span>
+                  </div>
+                  <div class="impact-item">
+                    <i class="fas fa-user-md impact-icon"></i>
+                    <span><strong>95% mortality in 65+ group</strong> identified for targeted care</span>
+                  </div>
+                  <div class="impact-item">
+                    <i class="fas fa-calendar-check impact-icon"></i>
+                    <span><strong>4-week advance planning</strong> for proactive resource allocation</span>
+                  </div>
+                </div>
+                
+                <a href="projects/influenza-forecast.html" class="featured-link">
+                  View Full Case Study <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="view-all-projects">
+            <a href="#portfolio" class="btn btn-outline" style="margin-top: 2rem;">
+              <i class="fas fa-folder-open"></i> View All 8 Projects
+            </a>
           </div>
         </div>
       </section>
@@ -112,7 +417,7 @@
         </div>
       </section>
 
-      <!-- Portfolio Section -->
+      <!-- Portfolio Section (Keep existing) -->
       <section class="section portfolio" id="portfolio">
         <div class="container">
           <p class="section-subtitle">Portfolio</p>
