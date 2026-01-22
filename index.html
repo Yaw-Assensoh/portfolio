@@ -150,6 +150,58 @@
       margin-top: 3rem;
     }
     
+    /* New About Me Styles */
+    .career-highlights {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      border-left: 4px solid #2d87f0;
+    }
+    
+    .highlight-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    
+    .highlight-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .highlight-item i {
+      color: #2d87f0;
+      margin-right: 0.75rem;
+      margin-top: 0.25rem;
+      font-size: 1rem;
+    }
+    
+    .highlight-item span {
+      color: #333;
+    }
+    
+    .specialties ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 0.5rem;
+    }
+    
+    .specialties li {
+      margin-bottom: 0.75rem;
+      padding-left: 1.5rem;
+      position: relative;
+      line-height: 1.5;
+    }
+    
+    .specialties li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #2d87f0;
+      font-weight: bold;
+    }
+    
     @media (max-width: 768px) {
       .featured-grid {
         grid-template-columns: 1fr;
@@ -202,25 +254,22 @@
 
   <main>
     <article>
-      <!-- Hero Section -->
+      <!-- REVISED Hero Section - SHORTENED as tutor requested -->
       <section class="hero" id="home">
         <div class="container">
           <div class="hero-content">
             <h2 class="hero-title">
               <span>Hello, I'm</span>
               <strong>Yaw Assensoh Opoku</strong> 
-              <span class="hero-subtitle">Data Analyst & Insights Storyteller</span>
+              <span class="hero-subtitle">Data Analyst & Former Logistics Entrepreneur</span>
             </h2>
             <p class="hero-text">
-              Who believes that the most powerful insights are found at the intersection of analysis and storytelling. 
-              In this portfolio, you'll find a curated collection of projects where I've transformed messy,
-               raw data into clear narratives and actionable recommendations. My process—from data cleaning, SQL querying, Python and 
-               Excel to dynamic visualization in tableau—is designed to not only uncover the 'what' but also explain the 'so what,' 
-               empowering stakeholders to make confident, data-driven decisions.
+              I translate complex data into actionable business insights. With hands-on experience in operations and logistics, 
+              I bridge the gap between technical analysis and real-world business impact.
             </p>
             <div class="btn-group">
               <a href="#featured-projects" class="btn btn-primary blue">View Featured Projects</a>
-              <a href="#about" class="btn btn-outline">About Me</a>
+              <a href="#about" class="btn btn-outline">My Story</a>
             </div>
           </div>
           <div class="hero-banner">
@@ -229,7 +278,7 @@
         </div>
       </section>
 
-      <!-- NEW: Featured Projects Section -->
+      <!-- Featured Projects Section -->
       <section class="featured-projects" id="featured-projects">
         <div class="container">
           <p class="section-subtitle">Featured Case Studies</p>
@@ -380,44 +429,76 @@
         </div>
       </section>
 
-      <!-- About Section -->
+      <!-- REVISED About Section - EXPANDED as tutor requested -->
       <section class="section about" id="about">
         <div class="container">
           <figure class="about-banner">
-            <img src="./assets/images/absolute-image.png"  alt="Yaw Assensoh Opoku">
+            <img src="./assets/images/absolute-image.png" alt="Yaw Assensoh Opoku - Data Analyst">
           </figure>
           <div class="about-content">
-            <p class="section-subtitle">I'm a Data Analyst</p>
-            <h2 class="section-title">I work with data</h2>
+            <p class="section-subtitle">My Professional Journey</p>
+            <h2 class="section-title">From Logistics Operations to Data Insights</h2>
+            
             <p class="section-text">
-              From logistics to analytics - I turn raw data into clear insights that drive smarter business decisions.
+              For years, I owned and operated a logistics business in Hamburg, where every decision—from route optimization 
+              and dispatch planning to customer segmentation—depended on understanding complex operational data. I wasn't just 
+              analyzing numbers; I was using them to make real-time decisions that directly impacted revenue, efficiency, and 
+              customer satisfaction.
             </p>
+            
             <p class="section-text">
-              I transform complex data into clear, actionable insights. With strong focus on 
-              accuracy and storytelling, I uncover patterns that drive smarter decisions and measurable impact. Every
-              dataset holds a story, my goal is to translate that story into strategies that inspires growth and innovation.
+              This hands-on entrepreneurial experience taught me that <strong>data isn't just about finding patterns—it's about 
+              solving practical business problems</strong>. When I discovered I could formalize these skills through data analytics, 
+              it wasn't a career change; it was a natural evolution. I've simply added Python, SQL, and Tableau to the toolkit 
+              I'd been developing for years.
             </p>
-
-            <!-- Bullet list of specialties -->
-             <div class="specialties">
-              <h3>Specialties:</h3>
+            
+            <div class="career-highlights">
+              <h3 style="margin-top: 0; color: #2d87f0;">Proven Business Impact:</h3>
+              <div class="highlight-item">
+                <i class="fas fa-chart-line"></i>
+                <span><strong>10% monthly revenue increase</strong> through data-driven demand forecasting in my logistics business</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-route"></i>
+                <span><strong>15% delivery efficiency improvement</strong> via route optimization analysis</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-users"></i>
+                <span><strong>20% growth in repeat business</strong> from customer segmentation insights</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-wrench"></i>
+                <span><strong>25% reduction in maintenance downtime</strong> through proactive monitoring systems</span>
+              </div>
+            </div>
+            
+            <div class="specialties">
+              <h3>What Makes My Approach Unique:</h3>
               <ul>
-                <li>Data Cleaning & Preparation</li>
-                <li>Exploratory Data Analysis (EDA)</li>
-                <li>Statistical Analysis & Hypothesis Testing</li>
-                <li>Data Visualization & Dashboarding Development</li>
-                <li>SQL Database Management</li>
-                <li>Predictive Analysis & Forecasting</li>
-                <li>Business Intelligence Reporting</li>
-                <li>A/B Testing & Experimentation</li>
+                <li><strong>Business-First Mindset:</strong> I start with "What problem are we solving?" not just "What does the data show?"</li>
+                <li><strong>Entrepreneurial Perspective:</strong> Having run a business, I understand how insights translate to revenue and customer satisfaction</li>
+                <li><strong>Operational Experience:</strong> Years in logistics mean I understand process optimization from the ground up</li>
+                <li><strong>Communication Bridge:</strong> I excel at translating technical findings into actionable business recommendations</li>
+                <li><strong>Multilingual Advantage:</strong> Fluent in 5 languages (English, German, Italian, Spanish, French), I bring cultural awareness to global data challenges</li>
               </ul>
             </div>
-            <a href="#portfolio" class="btn btn-primary blue">View Portfolio</a>
+            
+            <p class="section-text" style="margin-top: 1.5rem;">
+              Today, I combine my operational expertise with advanced analytical skills to help organizations make smarter, 
+              data-driven decisions. Whether it's optimizing supply chains, predicting customer behavior, or uncovering 
+              revenue opportunities, I bring a practical, results-oriented approach to every project.
+            </p>
+            
+            <div class="btn-group" style="margin-top: 2rem;">
+              <a href="#portfolio" class="btn btn-primary blue">Explore My Projects</a>
+              <a href="resume.pdf" class="btn btn-outline" download>Download Full Resume</a>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Portfolio Section (Keep existing) -->
+      <!-- Portfolio Section -->
       <section class="section portfolio" id="portfolio">
         <div class="container">
           <p class="section-subtitle">Portfolio</p>
