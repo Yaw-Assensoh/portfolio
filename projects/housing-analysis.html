@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US Housing Affordability Analysis | Yaw Assensoh Opoku</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .image-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .image-content {
+            padding: 1.5rem;
+        }
+
+        .image-content h4 {
+            margin-top: 0;
+            color: #2d87f0;
+        }
+
+        .insight-box {
+            background: #f0f8ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #2d87f0;
+        }
+
+        .insight-box h4 {
+            color: #2d87f0;
+            margin-top: 0;
+        }
+
+        .highlight-stat {
+            display: inline-block;
+            background: #2d87f0;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 0.25rem 0.5rem 0.25rem 0;
+        }
+
+        .highlight-red {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 0.25rem 0.5rem 0.25rem 0;
+        }
+
+        .highlight-green {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 0.25rem 0.5rem 0.25rem 0;
+        }
+
+        .highlight-orange {
+            display: inline-block;
+            background: #e67e22;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 0.25rem 0.5rem 0.25rem 0;
+        }
+
+        .analysis-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .analysis-section h2 {
+            color: #2d87f0;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .network-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2d87f0;
+            margin-bottom: 0.5rem;
+        }
+
+        .methodology-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .city-highlight {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .city-la       { background: #e67e22; color: white; }
+        .city-ny       { background: #2980b9; color: white; }
+        .city-miami    { background: #e74c3c; color: white; }
+        .city-chicago  { background: #27ae60; color: white; }
+        .city-houston  { background: #8e44ad; color: white; }
+
+        .risk-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .risk-high     { background: #fde8e8; color: #c0392b; border: 1px solid #e74c3c; }
+        .risk-moderate { background: #fef5e4; color: #d35400; border: 1px solid #e67e22; }
+        .risk-low      { background: #eafaf1; color: #1e8449; border: 1px solid #27ae60; }
+
+        .trend-indicator {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .trend-up   { background-color: #d4edda; color: #155724; }
+        .trend-down { background-color: #f8d7da; color: #721c24; }
+
+        .phase-scenario {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2c3e50 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .scenario-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .scenario-card {
+            background: rgba(255,255,255,0.9);
+            color: #333;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .affordability-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+
+        .affordability-table th {
+            background: #2d87f0;
+            color: white;
+            padding: 0.85rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .affordability-table td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.9rem;
+        }
+
+        .affordability-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .affordability-table tr:hover td {
+            background: #f8faff;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header" data-header>
+        <div class="container">
+            <a href="../index.html">
+                <h1 class="logo">Yaw Assensoh Opoku</h1>
+            </a>
+
+            <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
+                <i class="fas fa-bars menu-icon"></i>
+                <i class="fas fa-times close-icon"></i>
+            </button>
+
+            <nav class="navbar container">
+                <ul class="navbar-list">
+                    <li>
+                        <a href="../index.html#home" class="navbar-link" data-nav-link>Home</a>
+                    </li>
+                    <li>
+                        <a href="../index.html#about" class="navbar-link" data-nav-link>About</a>
+                    </li>
+                    <li>
+                        <a href="../index.html#portfolio" class="navbar-link" data-nav-link>Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="../index.html#skills" class="navbar-link" data-nav-link>Skills</a>
+                    </li>
+                    <li>
+                        <a href="../index.html#contact" class="navbar-link" data-nav-link>Contact</a>
+                    </li>
+                    <li>
+                        <a href="../Yaw_Assensoh_Opoku_CV.pdf" class="btn btn-primary" download>Download CV</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 120px 20px 60px;">
+        <article>
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">US Housing Affordability Analysis (2015–2024)</h1>
+            <p class="section-subtitle">3-Phase Analytics Project — Excel · SQL · Python · Machine Learning · Streamlit</p>
+
+            <!-- Hero Image - You'll need to add housing-dashboard.jpg -->
+            <div style="margin: 2rem 0;">
+                <img src="../assets/images/housing-dashboard.jpg"
+                     alt="US Housing Affordability Analysis Dashboard"
+                     style="width:100%; height:400px; object-fit:cover; border-radius:12px;"
+                     onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'">
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+
+                <!-- Project Overview -->
+                <h2>Project Overview</h2>
+
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <p style="margin: 0; font-weight: 600; color: #2d87f0;">Core Question:</p>
+                    <p style="margin: 0.5rem 0 0 0;">Why are some US cities becoming unaffordable while others remain stable — and can we predict where prices are heading?</p>
+
+                    <p style="margin: 1rem 0 0 0; font-weight: 600; color: #2d87f0;">Business Value:</p>
+                    <p style="margin: 0.5rem 0 0 0;">Provides homebuyers, policymakers, and real estate professionals with data-driven insights into affordability trends, market risk levels, and 3-year price forecasts across 5 major US metro areas.</p>
+                </div>
+
+                <!-- Key Stats -->
+                <div class="network-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">600</div>
+                        <div>Monthly Observations</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5</div>
+                        <div>Major US Cities</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">10</div>
+                        <div>Years of Data</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5</div>
+                        <div>ML Techniques</div>
+                    </div>
+                </div>
+
+                <!-- Key Findings Summary Table -->
+                <h2 style="color: #2d87f0; margin-top: 2.5rem;">Key Findings</h2>
+
+                <table class="affordability-table" style="margin-bottom: 2rem;">
+                    <thead>
+                        <tr>
+                            <th>Finding</th>
+                            <th>Insight</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🔴 <strong>The Crisis</strong></td>
+                            <td>Los Angeles (index 2.22) and New York (1.58) have been unaffordable since before 2015. An LA household needs $200K+ annual income to afford a median home.</td>
+                        </tr>
+                        <tr>
+                            <td>🟡 <strong>The Warning Sign</strong></td>
+                            <td>Miami crossed the affordability threshold in 2022 — 120% home value growth since 2015, the fastest in the dataset. Post-COVID migration pressure is the driver.</td>
+                        </tr>
+                        <tr>
+                            <td>🟢 <strong>The Counter-Narrative</strong></td>
+                            <td>Chicago and Houston stayed below 1.0 throughout the entire 10-year period. Major metros CAN remain affordable with the right land use policies.</td>
+                        </tr>
+                        <tr>
+                            <td>📅 <strong>The Inflection Point</strong></td>
+                            <td>COVID-19 (2020–2022) caused the sharpest simultaneous deterioration across all 5 cities. LA's index jumped 0.302 points in 2022 alone.</td>
+                        </tr>
+                        <tr>
+                            <td>💰 <strong>Supply, Not Income</strong></td>
+                            <td>Median income grew $11K over 10 years while LA home values grew $400K. Regression confirms: income subsidies alone cannot fix a structural supply problem.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Cities Overview -->
+                <div style="text-align: center; margin: 2rem 0;">
+                    <span class="city-highlight city-la">Los Angeles — HIGH RISK</span>
+                    <span class="city-highlight city-ny">New York — HIGH RISK</span>
+                    <span class="city-highlight city-miami">Miami — MODERATE</span>
+                    <span class="city-highlight city-chicago">Chicago — LOW RISK</span>
+                    <span class="city-highlight city-houston">Houston — LOW RISK</span>
+                </div>
+
+                <!-- ── PHASE 1 — EXCEL ── -->
+                <div class="analysis-section">
+                    <h2>Phase 1 — Excel Dashboard</h2>
+
+                    <div class="image-grid">
+                        <div class="image-card">
+                            <img src="../assets/images/housing-excel-dashboard.png"
+                                 alt="Housing Affordability Excel Dashboard">
+                            <div class="image-content">
+                                <h4>Affordability Index Dashboard</h4>
+                                <p>Multi-city trend dashboard tracking home values, rents, and affordability scores across 600 monthly observations from 2015 to 2024.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-red">LA reached 2.22</span> by 2024 — more than double the affordable threshold of 1.0.</p>
+                            </div>
+                        </div>
+
+                        <div class="image-card">
+                            <img src="../assets/images/housing-affordability-trends.png"
+                                 alt="Affordability Index Trends 2015-2024">
+                            <div class="image-content">
+                                <h4>10-Year Affordability Trends</h4>
+                                <p>Line charts showing how each city's affordability index evolved year by year, with the COVID-19 inflection point clearly visible from 2020 onward.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-orange">Miami grew 120%</span> in home values — the fastest deterioration in the dataset.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+                        <h4 style="color: #2d87f0; margin-top: 0;">Affordability Index Formula</h4>
+                        <div style="background: #f0f8ff; padding: 1rem; border-radius: 6px; font-family: monospace; font-size: 1rem; font-weight: bold; text-align: center; margin-bottom: 1rem;">
+                            Index = Median Home Price ÷ (Annual Median Income × 5)
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
+                            <div style="text-align: center; padding: 1rem; border: 2px solid #27ae60; border-radius: 8px;">
+                                <div style="font-size: 1.4rem; font-weight: bold; color: #27ae60;">≤ 1.0</div>
+                                <div style="font-size: 0.85rem; color: #555;">Affordable</div>
+                            </div>
+                            <div style="text-align: center; padding: 1rem; border: 2px solid #e67e22; border-radius: 8px;">
+                                <div style="font-size: 1.4rem; font-weight: bold; color: #e67e22;">1.0–1.5</div>
+                                <div style="font-size: 0.85rem; color: #555;">Moderate Risk</div>
+                            </div>
+                            <div style="text-align: center; padding: 1rem; border: 2px solid #e74c3c; border-radius: 8px;">
+                                <div style="font-size: 1.4rem; font-weight: bold; color: #e74c3c;">&gt; 1.5</div>
+                                <div style="font-size: 0.85rem; color: #555;">HIGH RISK</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="insight-box">
+                        <h4>Phase 1 Insights</h4>
+                        <ul>
+                            <li><strong>Threshold Breach:</strong> LA and NY were already above 1.0 in January 2015 — this crisis predates our dataset</li>
+                            <li><strong>COVID Acceleration:</strong> All 5 cities deteriorated simultaneously between 2020 and 2022 — the single most impactful period in the data</li>
+                            <li><strong>Miami Surprise:</strong> Miami grew 120% in home values, crossing the affordability threshold for the first time in 2022</li>
+                            <li><strong>Houston Model:</strong> Remained below 1.0 throughout — proving affordability is achievable in major metros with the right policies</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ── PHASE 2 — SQL ── -->
+                <div class="analysis-section">
+                    <h2>Phase 2 — SQL Market Intelligence</h2>
+
+                    <div class="image-grid">
+                        <div class="image-card">
+                            <img src="../assets/images/housing-sql-risk.png"
+                                 alt="SQL Market Risk Classification">
+                            <div class="image-content">
+                                <h4>Market Risk Classification</h4>
+                                <p>PostgreSQL CASE WHEN query classifying all 5 cities into HIGH, MODERATE, and LOW risk categories based on affordability index thresholds.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-red">LA is the only HIGH RISK</span> market — average index 1.745, peaking at 2.279 in 2022.</p>
+                            </div>
+                        </div>
+
+                        <div class="image-card">
+                            <img src="../assets/images/housing-sql-yoy.png"
+                                 alt="Year-over-Year Affordability Changes">
+                            <div class="image-content">
+                                <h4>Year-over-Year Change Analysis</h4>
+                                <p>LAG window function tracking annual changes in affordability index per city — isolating exactly when and where deterioration was fastest.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-red">2021–2022 was the worst period</span> across all cities — LA dropped 0.302 points in a single year.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SQL Queries Table -->
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+                        <h4 style="color: #2d87f0; margin-top: 0;">10 Analytical Queries</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; margin-top: 1rem;">
+                            <div style="padding: 0.6rem 0.9rem; background: #f0f8ff; border-radius: 6px; font-size: 0.87rem;">
+                                <strong style="color: #2d87f0;">Q1</strong> Avg home value per city
+                            </div>
+                            <div style="padding: 0.6rem 0.9rem; background: #f0f8ff; border-radius: 6px; font-size: 0.87rem;">
+                                <strong style="color: #2d87f0;">Q2</strong> Avg affordability index ranking
+                            </div>
+                            <div style="padding: 0.6rem 0.9rem; background: #f0f8ff; border-radius: 6px; font-size: 0.87rem;">
+                                <strong style="color: #2d87f0;">Q3</strong> Affordability trend by year
+                            </div>
+                            <div style="padding: 0.6rem 0.9rem; background: #f0f8ff; border-radius: 6px; font-size: 0.87rem;">
+                                <strong style="color: #2d87f0;">Q4</strong> Most expensive city per year (FIRST_VALUE)
+                            </div>
+                            <div style="padding: 0.6rem 0.9rem; background: #f0f8ff; border-radius: 6px; font-size: 0.87rem;">
+                                <strong style="color: #2d87f0;">Q5</strong> City rankings per year (RANK, PARTITION BY)
+                            </div>
+                            <div style="padding: 0.6rem 0.9rem; background: #f0f8ff; border-radius: 6px; font-size: 0.87rem;">
+                                <strong style="color: #2d87f0;">Q6</strong> Year-over-year change (LAG)
+                            </div>
+                            <div style="padding: 0.6rem 0.9rem; background: #f0f8ff; border-radius: 6px; font-size: 0.87rem;">
+                                <strong style="color: #2d87f0;">Q7</strong> Market risk classification (CASE WHEN)
+                            </div>
+                            <div style="padding: 0.6rem 0.9rem; background: #f0f8ff; border-radius: 6px; font-size: 0.87rem;">
+                                <strong style="color: #2d87f0;">Q8</strong> Rent-to-income ratio analysis
+                            </div>
+                            <div style="padding: 0.6rem 0.9rem; background: #f0f8ff; border-radius: 6px; font-size: 0.87rem;">
+                                <strong style="color: #2d87f0;">Q9</strong> Home value growth 2015 vs 2024 (JOINs)
+                            </div>
+                            <div style="padding: 0.6rem 0.9rem; background: #f0f8ff; border-radius: 6px; font-size: 0.87rem;">
+                                <strong style="color: #2d87f0;">Q10</strong> First year each city crossed 1.0 (DISTINCT ON)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="insight-box">
+                        <h4>Phase 2 Insights</h4>
+                        <ul>
+                            <li><strong>Risk Confirmed:</strong> LA is the only HIGH RISK market — avg index 1.745. NY is MODERATE at 1.309. Houston and Chicago remain LOW RISK throughout</li>
+                            <li><strong>Rent Burden:</strong> NY rent hit 44% of income in 2024 — the highest of all 5 cities. Houston stayed near 23% throughout, confirming its stability</li>
+                            <li><strong>Growth Leaders:</strong> Miami led 10-year home value growth at 120.2%. NY was the slowest at 59.4%</li>
+                            <li><strong>Threshold Crossing:</strong> Miami first crossed the 1.0 affordability threshold in 2022. LA and NY were already above it in 2015</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ── PHASE 3 — PYTHON ── -->
+                <div class="analysis-section">
+                    <h2>Phase 3 — Python Advanced Analytics</h2>
+
+                    <!-- EDA -->
+                    <h3 style="color: #2d87f0; margin-top: 1.5rem;">Exploratory Data Analysis</h3>
+                    <div class="image-grid">
+                        <div class="image-card">
+                            <img src="../assets/images/housing-eda-distributions.png"
+                                 alt="EDA Distribution Analysis">
+                            <div class="image-content">
+                                <h4>Distribution & Correlation Analysis</h4>
+                                <p>Histogram distributions, correlation heatmap, and city comparison charts across all key metrics from 2015 to 2024.</p>
+                                <p><strong>Key Finding:</strong> Home value and affordability index are <span class="highlight-stat">strongly correlated</span> — confirming rising prices, not falling wages, as the crisis driver.</p>
+                            </div>
+                        </div>
+
+                        <div class="image-card">
+                            <img src="../assets/images/housing-eda-trends.png"
+                                 alt="10-Year Home Value Trends">
+                            <div class="image-content">
+                                <h4>10-Year Trend Visualisation</h4>
+                                <p>Monthly home values and affordability trends across all 5 cities, with the post-COVID acceleration period highlighted.</p>
+                                <p><strong>Key Finding:</strong> <span class="trend-indicator trend-down">All cities accelerated post-2020</span> — the steepest simultaneous deterioration in the dataset.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Clustering -->
+                    <h3 style="color: #2d87f0; margin-top: 2rem;">K-Means Market Segmentation</h3>
+                    <div class="image-grid">
+                        <div class="image-card">
+                            <img src="../assets/images/housing-clustering-radar.png"
+                                 alt="K-Means Clustering Radar Chart">
+                            <div class="image-content">
+                                <h4>Cluster Radar Chart</h4>
+                                <p>Radar chart comparing all 5 cities across 6 normalised features. Cities with larger footprints score high on multiple stress metrics simultaneously.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-red">LA dominates every axis</span> — highest home value, rent, affordability stress, and growth rate combined.</p>
+                            </div>
+                        </div>
+
+                        <div class="image-card">
+                            <img src="../assets/images/housing-clustering-scatter.png"
+                                 alt="K-Means Cluster Scatter">
+                            <div class="image-content">
+                                <h4>Cluster Scatter Plot</h4>
+                                <p>Affordability vs home value scatter with silhouette-validated K-Means clusters. Bubble size represents 10-year home value growth.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-green">3 distinct clusters</span> emerged — matching Phase 2 SQL risk classifications through a completely independent method.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="methodology-box">
+                        <h4 style="color: #2d87f0; margin-top: 0;">🔄 Clustering Methodology</h4>
+                        <p><strong>K-Means Algorithm:</strong> Applied with StandardScaler feature normalisation across 9 housing metrics</p>
+                        <p><strong>Optimal K:</strong> Selected using silhouette score — K=3 produced the clearest separation for 5 cities</p>
+                        <ul style="margin: 0.5rem 0 0 1.5rem;">
+                            <li><strong>Elbow Method:</strong> Visual inspection of inertia curve to narrow K candidates</li>
+                            <li><strong>Silhouette Score:</strong> Measured cluster cohesion and separation — confirmed K=3</li>
+                            <li><strong>Cross-validation:</strong> Cluster assignments matched SQL risk classifications exactly</li>
+                        </ul>
+                    </div>
+
+                    <!-- Time Series -->
+                    <h3 style="color: #2d87f0; margin-top: 2rem;">SARIMA Time Series Forecasting</h3>
+                    <div class="image-grid">
+                        <div class="image-card">
+                            <img src="../assets/images/housing-forecast-la.png"
+                                 alt="Los Angeles SARIMA Forecast">
+                            <div class="image-content">
+                                <h4>City Forecasts (2025–2027)</h4>
+                                <p>SARIMA models trained on 10 years of monthly data, generating 36-month forecasts with 95% confidence intervals for all 5 cities.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-red">LA approaching $1M</span> by December 2027. Miami has the steepest forecast trajectory of all cities.</p>
+                            </div>
+                        </div>
+
+                        <div class="image-card">
+                            <img src="../assets/images/housing-combined-forecast.png"
+                                 alt="Combined City Forecasts">
+                            <div class="image-content">
+                                <h4>All Cities — Combined Forecast</h4>
+                                <p>All 5 cities on one chart — solid lines for historical data, dashed for SARIMA forecasts. The widening gap between LA and the other cities is the most striking visual.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-green">Houston and Chicago</span> show the narrowest confidence intervals — the most stable and predictable markets.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Forecast Table - Matches your combined-forecast.png -->
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+                        <h4 style="color: #2d87f0; margin-top: 0;">2027 Home Value Forecasts</h4>
+                        <table class="affordability-table">
+                            <thead>
+                                <tr>
+                                    <th>City</th>
+                                    <th>2024 Avg Value</th>
+                                    <th>2027 Forecast</th>
+                                    <th>Expected Change</th>
+                                    <th>Risk Level</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="city-highlight city-la" style="padding:0.2rem 0.6rem; margin:0;">Los Angeles</span></td>
+                                    <td>$929,241</td>
+                                    <td>$990,000</td>
+                                    <td><span class="trend-indicator trend-up">+6.5%</span></td>
+                                    <td><span class="risk-badge risk-high">HIGH RISK</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="city-highlight city-ny" style="padding:0.2rem 0.6rem; margin:0;">New York</span></td>
+                                    <td>$659,671</td>
+                                    <td>$813,000</td>
+                                    <td><span class="trend-indicator trend-up">+23.2%</span></td>
+                                    <td><span class="risk-badge risk-high">HIGH RISK</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="city-highlight city-miami" style="padding:0.2rem 0.6rem; margin:0;">Miami</span></td>
+                                    <td>$489,833</td>
+                                    <td>$629,000</td>
+                                    <td><span class="trend-indicator trend-up">+28.4%</span></td>
+                                    <td><span class="risk-badge risk-moderate">MODERATE</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="city-highlight city-chicago" style="padding:0.2rem 0.6rem; margin:0;">Chicago</span></td>
+                                    <td>$313,472</td>
+                                    <td>$326,000</td>
+                                    <td><span class="trend-indicator trend-up">+4.0%</span></td>
+                                    <td><span class="risk-badge risk-low">LOW RISK</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="city-highlight city-houston" style="padding:0.2rem 0.6rem; margin:0;">Houston</span></td>
+                                    <td>$309,058</td>
+                                    <td>$308,000</td>
+                                    <td><span class="trend-indicator trend-down">-0.3%</span></td>
+                                    <td><span class="risk-badge risk-low">LOW RISK</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Regression -->
+                    <h3 style="color: #2d87f0; margin-top: 2rem;">Regression Analysis & Scenario Modelling</h3>
+                    <div class="image-grid">
+                        <div class="image-card">
+                            <img src="../assets/images/housing-regression-importance.png"
+                                 alt="Feature Importance Chart">
+                            <div class="image-content">
+                                <h4>Feature Importance</h4>
+                                <p>Standardised regression coefficients showing which economic factors most strongly drive home values. Negative values indicate inverse relationships.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-stat">City location</span> and <span class="highlight-stat">affordability index</span> are the top predictors — confirming that where you live and existing stress dominate price movements.</p>
+                            </div>
+                        </div>
+
+                        <div class="image-card">
+                            <img src="../assets/images/housing-regression-scenarios.png"
+                                 alt="Scenario Analysis">
+                            <div class="image-content">
+                                <h4>Scenario Analysis — Los Angeles 2024</h4>
+                                <p>Using the trained model to predict how home values would change under different economic conditions — income increases, rent increases, or combined shocks.</p>
+                                <p><strong>Key Finding:</strong> A <span class="highlight-stat">+10% income increase</span> barely moves predicted prices (+7.5%) — structural supply constraints dominate all other factors.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Geospatial -->
+                    <h3 style="color: #2d87f0; margin-top: 2rem;">Geospatial Analysis</h3>
+                    <div class="image-grid">
+                        <div class="image-card">
+                            <img src="../assets/images/housing-choropleth.png"
+                                 alt="Affordability Choropleth Map">
+                            <div class="image-content">
+                                <h4>Choropleth Map — Affordability by State</h4>
+                                <p>US states coloured by affordability index. Green = affordable, amber = moderate, red = crisis. The coastal concentration of the crisis is immediately visible.</p>
+                                <p><strong>Key Finding:</strong> The crisis is <span class="highlight-red">geographically concentrated</span> — not a uniform national problem. Policy must be city-specific.</p>
+                            </div>
+                        </div>
+
+                        <div class="image-card">
+                            <img src="../assets/images/housing-bubble-map.png"
+                                 alt="Housing Bubble Map">
+                            <div class="image-content">
+                                <h4>Bubble Map — Price vs Risk</h4>
+                                <p>Bubble size represents home value; colour represents affordability risk. The time animation shows Miami shifting from green to amber between 2015 and 2024 in real time.</p>
+                                <p><strong>Key Finding:</strong> <span class="highlight-red">LA is both largest AND reddest</span> — highest price and highest risk simultaneously, with no other city close.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="insight-box">
+                        <h4>Geospatial Insights</h4>
+                        <ul>
+                            <li><strong>Coastal Crisis:</strong> LA and NY sit on the coasts with severe land constraints and restrictive zoning — their crisis is a geography and policy problem, not an income problem</li>
+                            <li><strong>Miami Animation:</strong> The time animation is the most powerful visual in the project — watch Miami shift from green to amber in real time as post-COVID migration hits</li>
+                            <li><strong>Midwest Proof:</strong> Chicago (2.7M people) and Houston (2.3M people) stay green throughout — disproving the idea that large cities must be unaffordable</li>
+                            <li><strong>Policy Implication:</strong> A national housing policy treating all cities the same will be too restrictive for Houston and too weak for Los Angeles</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Scenario Analysis Section -->
+                <div class="analysis-section">
+                    <h2>Policy Scenario Analysis</h2>
+
+                    <div class="phase-scenario">
+                        <h3 style="color: white; margin-top: 0; text-align: center;">What Moves Home Prices?</h3>
+                        <p style="text-align: center; opacity: 0.9; margin-bottom: 1.5rem;">Regression model tested 5 economic scenarios for Los Angeles in 2024</p>
+
+                        <div class="scenario-grid">
+                            <div class="scenario-card">
+                                <h5 style="color: #2d87f0; margin: 0 0 0.5rem 0;">Base Case</h5>
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #333;">$425,323</div>
+                                <div style="font-size: 0.9rem; color: #555;">2024 baseline</div>
+                            </div>
+                            <div class="scenario-card">
+                                <h5 style="color: #2d87f0; margin: 0 0 0.5rem 0;">Income +10%</h5>
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #e67e22;">$457,357</div>
+                                <div style="font-size: 0.9rem; color: #555;">+7.5% effect</div>
+                                <div style="font-size: 0.8rem; color: #999; margin-top: 0.3rem;">Policy raises alone won't fix it</div>
+                            </div>
+                            <div class="scenario-card">
+                                <h5 style="color: #2d87f0; margin: 0 0 0.5rem 0;">Rent +15%</h5>
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #e74c3c;">$429,180</div>
+                                <div style="font-size: 0.9rem; color: #555;">+0.9% effect</div>
+                                <div style="font-size: 0.8rem; color: #999; margin-top: 0.3rem;">Rent and prices tightly linked</div>
+                            </div>
+                            <div class="scenario-card">
+                                <h5 style="color: #2d87f0; margin: 0 0 0.5rem 0;">Income +10% Rent +15%</h5>
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #e74c3c;">$469,310</div>
+                                <div style="font-size: 0.9rem; color: #555;">+10.3% combined</div>
+                                <div style="font-size: 0.8rem; color: #999; margin-top: 0.3rem;">Still limited by supply constraints</div>
+                            </div>
+                            <div class="scenario-card">
+                                <h5 style="color: #2d87f0; margin: 0 0 0.5rem 0;">Income +20%</h5>
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #e74c3c;">$480,395</div>
+                                <div style="font-size: 0.9rem; color: #555;">+13.0% effect</div>
+                                <div style="font-size: 0.8rem; color: #999; margin-top: 0.3rem;">Still insufficient to close affordability gap</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                        <h4 style="color: #2d87f0; margin-top: 0;">Data-Driven Policy Recommendations</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                            <div style="background: white; padding: 1rem; border-radius: 6px;">
+                                <h5 style="color: #2d87f0; margin: 0 0 0.5rem 0;">For High-Cost Cities (LA, NY)</h5>
+                                <ul style="margin: 0; padding-left: 1.2rem; font-size: 0.9rem;">
+                                    <li>Reform zoning laws to allow higher density</li>
+                                    <li>Fast-track new construction permits</li>
+                                    <li>Invest in affordable housing supply</li>
+                                </ul>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 6px;">
+                                <h5 style="color: #2d87f0; margin: 0 0 0.5rem 0;">For Transitioning Cities (Miami)</h5>
+                                <ul style="margin: 0; padding-left: 1.2rem; font-size: 0.9rem;">
+                                    <li>Act before crossing into HIGH RISK territory</li>
+                                    <li>Monitor and cap short-term rental activity</li>
+                                    <li>Incentivise long-term housing development</li>
+                                </ul>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 6px;">
+                                <h5 style="color: #2d87f0; margin: 0 0 0.5rem 0;">For Affordable Cities (Houston, Chicago)</h5>
+                                <ul style="margin: 0; padding-left: 1.2rem; font-size: 0.9rem;">
+                                    <li>Preserve existing permissive zoning policies</li>
+                                    <li>Share land-use frameworks with other metros</li>
+                                    <li>Continue proactive infrastructure investment</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="insight-box">
+                        <h4>Strategic Insights</h4>
+                        <ul>
+                            <li><strong>Supply Is the Lever:</strong> Regression confirms that income changes have minimal effect on home values — structural supply is the only meaningful intervention</li>
+                            <li><strong>Houston's Model Works:</strong> Its combination of permissive zoning and land availability is a replicable framework — not a geographical accident</li>
+                            <li><strong>Forecast-Informed Planning:</strong> 3-year SARIMA forecasts enable proactive policy before markets deteriorate further</li>
+                            <li><strong>City-Specific Solutions:</strong> National housing policy treating all cities the same will be simultaneously too restrictive and too weak</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Technical Achievement Banner -->
+                <div style="background: #2d87f0; color: white; padding: 2rem; border-radius: 12px; margin: 3rem 0;">
+                    <h3 style="margin-top: 0; text-align: center;">Technical Achievements</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: bold;">600</div>
+                            <div>Data Points</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: bold;">10</div>
+                            <div>SQL Queries</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: bold;">3</div>
+                            <div>Market Clusters</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: bold;">36</div>
+                            <div>Month Forecast</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: bold;">4</div>
+                            <div>Map Types</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Impact -->
+                <div style="background: #e8f4fd; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border-left: 4px solid #2d87f0;">
+                    <h4 style="color: #2d87f0; margin-bottom: 1rem;">Project Impact & Applications</h4>
+                    <ul style="margin: 0; padding-left: 1.5rem;">
+                        <li><strong>Homebuyers:</strong> Understand which markets are genuinely affordable and where prices are heading over the next 3 years</li>
+                        <li><strong>Policymakers:</strong> Data-driven evidence for zoning reform, housing supply investment, and market-specific intervention strategies</li>
+                        <li><strong>Real Estate Professionals:</strong> Risk classification and growth forecasts for client advisory and investment analysis</li>
+                        <li><strong>Urban Planners:</strong> Geographic concentration analysis to guide infrastructure and development planning decisions</li>
+                        <li><strong>Academic Research:</strong> Reproducible multi-phase methodology combining descriptive, predictive, and geospatial analytics</li>
+                    </ul>
+                </div>
+
+                <!-- Tools & Technologies -->
+                <h3 style="color: #2d87f0; margin-bottom: 1rem;">Tools & Technologies</h3>
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
+                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+                            <i class="fas fa-file-excel" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Excel</div>
+                            <div style="font-size: 0.85rem; color: #666;">Data cleaning, VLOOKUP, PivotTables, Dashboard</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+                            <i class="fas fa-database" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">PostgreSQL</div>
+                            <div style="font-size: 0.85rem; color: #666;">10 queries, window functions, risk classification</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+                            <i class="fab fa-python" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Python Stack</div>
+                            <div style="font-size: 0.85rem; color: #666;">Pandas, Scikit-learn, Statsmodels, Folium</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+                            <i class="fas fa-chart-line" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Forecasting</div>
+                            <div style="font-size: 0.85rem; color: #666;">SARIMA, ADF stationarity test, 95% CI</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+                            <i class="fas fa-robot" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Machine Learning</div>
+                            <div style="font-size: 0.85rem; color: #666;">K-Means, silhouette score, regression</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+                            <i class="fas fa-map-marked-alt" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Streamlit</div>
+                            <div style="font-size: 0.85rem; color: #666;">6-page interactive dashboard, Plotly, Folium</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div style="margin-top: 3rem; text-align: center;">
+                    <a href="../index.html#portfolio" class="btn btn-primary" style="margin-right: 1rem;">
+                        <i class="fas fa-arrow-left"></i> Back to Portfolio
+                    </a>
+                    <a href="https://yaw-assensoh-housing-affordability-pr-dashboarddashboard-0wtwto.streamlit.app"
+                       class="btn btn-primary"
+                       style="margin-right: 1rem;"
+                       target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-external-link-alt"></i> Live Dashboard
+                    </a>
+                    <a href="https://github.com/Yaw-Assensoh/Housing-Affordability-Analysis"
+                       class="btn btn-outline"
+                       target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <script src="../script.js"></script>
+</body>
+</html>
