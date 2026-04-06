@@ -3,764 +3,490 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yaw Assensoh Opoku — Data Analyst | Operations to Analytics</title>
-  <meta name="description" content="Data Analyst with 10+ years logistics operations experience. Python, SQL, Tableau. Remote EU / Italy. Live dashboards & business impact.">
+  <title>Yaw Assensoh Opoku — Data Analyst · Remote / Europe</title>
+  <meta name="description" content="Data Analyst bridging operational expertise with advanced analytics. Former logistics entrepreneur, fluent in 5 languages, 9 case studies with live dashboards. Open to remote or relocation to Italy.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
-      color: #1e293b;
-      line-height: 1.5;
-      scroll-behavior: smooth;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    /* header */
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-      z-index: 1000;
-      transition: all 0.2s;
-    }
-    .header.scrolled {
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    }
-    .header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 72px;
-    }
-    .logo {
-      font-family: 'Space Grotesk', monospace;
-      font-size: 1.4rem;
-      font-weight: 600;
-      background: linear-gradient(135deg, #1e40af, #3b82f6);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      letter-spacing: -0.3px;
-    }
-    .navbar-list {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-      list-style: none;
-    }
-    .navbar-link {
-      text-decoration: none;
-      font-weight: 500;
-      color: #334155;
-      transition: color 0.2s;
-      font-size: 0.95rem;
-    }
-    .navbar-link:hover {
-      color: #2563eb;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 20px;
-      border-radius: 40px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s;
-      cursor: pointer;
-      border: none;
-      font-size: 0.9rem;
-    }
-    .btn-primary {
-      background: #2563eb;
-      color: white;
-      box-shadow: 0 2px 6px rgba(37,99,235,0.2);
-    }
-    .btn-primary:hover {
-      background: #1d4ed8;
-      transform: translateY(-1px);
-    }
-    .btn-outline {
-      background: transparent;
-      border: 1.5px solid #cbd5e1;
-      color: #1e293b;
-    }
-    .btn-outline:hover {
-      border-color: #2563eb;
-      color: #2563eb;
-    }
-    .nav-toggle-btn {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-    /* hero */
-    .hero {
-      padding: 140px 0 80px;
-      background: linear-gradient(145deg, #fafcff 0%, #f1f5f9 100%);
-    }
-    .hero .container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: center;
-    }
-    .hero-title {
-      font-size: 3.2rem;
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.5rem;
-    }
-    .hero-title span {
-      display: block;
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: #2563eb;
-      margin-bottom: 0.75rem;
-    }
-    .hero-text {
-      font-size: 1.1rem;
-      color: #475569;
-      margin-bottom: 2rem;
-      max-width: 500px;
-    }
-    .availability-box {
-      background: white;
-      border-radius: 20px;
-      padding: 1rem 1.5rem;
-      display: inline-flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin: 1.5rem 0;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      border: 1px solid #e2e8f0;
-    }
-    .avail-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-    .avail-item i {
-      color: #2563eb;
-      font-size: 1rem;
-    }
-    .hero-banner img {
-      width: 100%;
-      border-radius: 32px;
-      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.15);
-    }
-    /* open to section */
-    .open-to-strip {
-      background: #0f172a;
-      color: white;
-      padding: 16px 0;
-      text-align: center;
-    }
-    .open-to-strip p {
-      display: flex;
-      justify-content: center;
-      gap: 28px;
-      flex-wrap: wrap;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-    .open-to-strip i {
-      margin-right: 6px;
-      color: #60a5fa;
-    }
-    /* featured */
-    .section {
-      padding: 80px 0;
-    }
-    .section-subtitle {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #2563eb;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-    .section-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: #0f172a;
-    }
-    .featured-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .featured-card {
-      background: white;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      transition: all 0.25s ease;
-      border: 1px solid #eef2ff;
-    }
-    .featured-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.12);
-    }
-    .featured-image {
-      height: 180px;
-      background: #f1f5f9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    .featured-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .featured-content {
-      padding: 1.5rem;
-    }
-    .featured-badge {
-      background: #eef2ff;
-      color: #2563eb;
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 30px;
-      display: inline-block;
-      margin-bottom: 1rem;
-    }
-    .featured-title {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-    }
-    .featured-description {
-      color: #475569;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
-    .featured-impact {
-      background: #f8fafc;
-      padding: 12px;
-      border-radius: 16px;
-      margin: 1rem 0;
-      font-size: 0.85rem;
-    }
-    .impact-item {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 6px;
-    }
-    .featured-link {
-      font-weight: 600;
-      color: #2563eb;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    /* about */
-    .about {
-      background: #fafcff;
-    }
-    .about .container {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 48px;
-      align-items: start;
-    }
-    .about-banner img {
-      width: 100%;
-      border-radius: 32px;
-      box-shadow: 0 12px 24px -12px rgba(0,0,0,0.1);
-    }
-    .career-highlights {
-      background: white;
-      border-radius: 24px;
-      padding: 1.5rem;
-      margin: 1.5rem 0;
-      border-left: 4px solid #2563eb;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-    }
-    .specialties-list {
-      list-style: none;
-      margin: 1rem 0;
-    }
-    .specialties-list li {
-      margin-bottom: 12px;
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-    }
-    /* portfolio grid */
-    .portfolio-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.8rem;
-      list-style: none;
-      margin-top: 2rem;
-    }
-    .portfolio-card {
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid #eef2ff;
-      transition: 0.2s;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-    .card-image {
-      height: 160px;
-      background: #eef2ff;
-    }
-    .card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .card-content {
-      padding: 1.2rem;
-    }
-    .card-subtitle {
-      font-size: 0.7rem;
-      color: #2563eb;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-    .card-title {
-      font-weight: 700;
-      font-size: 1rem;
-    }
-    /* skills */
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 2rem;
-      list-style: none;
-    }
-    .skills-item {
-      flex: 1 1 200px;
-    }
-    .skills-title {
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .skills-progress-box {
-      background: #e2e8f0;
-      border-radius: 20px;
-      height: 8px;
-      overflow: hidden;
-    }
-    .skills-progress {
-      background: #2563eb;
-      width: 0%;
-      height: 100%;
-      border-radius: 20px;
-      transition: width 1s ease;
-    }
-    /* contact */
-    .contact-card {
-      background: #0f172a;
-      border-radius: 40px;
-      padding: 3rem;
-      color: white;
-    }
-    .contact-card .section-title {
-      color: white;
-    }
-    .contact-card .wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .form-group {
-      margin-bottom: 1rem;
-    }
-    .form-group input, .form-group textarea {
-      width: 100%;
-      padding: 12px 16px;
-      border-radius: 16px;
-      border: none;
-      background: #1e293b;
-      color: white;
-      font-family: inherit;
-    }
-    .form-group label {
-      font-size: 0.8rem;
-      margin-bottom: 6px;
-      display: block;
-      color: #cbd5e1;
-    }
-    .contact-list {
-      list-style: none;
-    }
-    .contact-item {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 1.8rem;
-    }
-    .contact-icon {
-      background: #1e293b;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .footer {
-      background: #0f172a;
-      padding: 2rem 0;
-      border-top: 1px solid #1e293b;
-      text-align: center;
-      color: #94a3b8;
-    }
-    .back-to-top {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: #2563eb;
-      width: 44px;
-      height: 44px;
-      border-radius: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      opacity: 0;
-      transition: 0.2s;
-      pointer-events: none;
-      text-decoration: none;
-    }
-    .back-to-top.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    @media (max-width: 768px) {
-      .hero .container, .about .container, .contact-card .wrapper {
-        grid-template-columns: 1fr;
-      }
-      .navbar-list {
-        display: none;
-        flex-direction: column;
-        background: white;
-        position: absolute;
-        top: 72px;
-        left: 0;
-        width: 100%;
-        padding: 24px;
-        box-shadow: 0 12px 20px rgba(0,0,0,0.05);
-      }
-      .navbar-list.active {
-        display: flex;
-      }
-      .nav-toggle-btn {
-        display: block;
-      }
-      .hero-title {
-        font-size: 2.2rem;
-      }
-    }
-    .verified-link {
-      color: #2563eb;
-      text-decoration: underline;
+    :root{--blue:#1B5FD9;--blue-light:#EEF4FF;--blue-mid:#3B7BF5;--dark:#0D1117;--mid:#374151;--muted:#6B7280;--border:#E5E7EB;--bg:#FAFAFA;--white:#FFFFFF;--radius-sm:6px;--radius-md:12px;--radius-lg:20px;--shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow-md:0 4px 16px rgba(0,0,0,.10);--shadow-lg:0 12px 40px rgba(0,0,0,.12);--font-head:'DM Serif Display',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif;--nav-h:72px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-body);font-size:16px;line-height:1.7;color:var(--mid);background:var(--white);-webkit-font-smoothing:antialiased}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    ul{list-style:none}
+    .container{max-width:1120px;margin:0 auto;padding:0 24px}
+    .section{padding:96px 0}
+    .section-label{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+    .section-title{font-family:var(--font-head);font-size:clamp(2rem,4vw,2.8rem);color:var(--dark);line-height:1.18;margin-bottom:1rem}
+    .section-text{font-size:1.05rem;color:var(--muted);max-width:640px;line-height:1.75}
+
+    /* NAV */
+    .header{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid transparent;z-index:100;transition:border-color .3s,box-shadow .3s}
+    .header.scrolled{border-color:var(--border);box-shadow:var(--shadow-sm)}
+    .header .container{height:100%;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-family:var(--font-head);font-size:1.25rem;color:var(--dark);font-weight:400}
+    .navbar-list{display:flex;align-items:center;gap:6px}
+    .navbar-link{font-size:.875rem;font-weight:500;color:var(--muted);padding:6px 12px;border-radius:var(--radius-sm);transition:color .2s,background .2s}
+    .navbar-link:hover{color:var(--dark);background:var(--bg)}
+    .nav-social{display:flex;align-items:center;gap:2px;margin:0 6px}
+    .nav-social a{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-sm);color:var(--muted);font-size:.9rem;transition:color .2s,background .2s}
+    .nav-social a:hover{color:var(--blue);background:var(--blue-light)}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:.875rem;font-weight:600;cursor:pointer;transition:all .2s;border:none;white-space:nowrap}
+    .btn-primary{background:var(--blue);color:#fff}
+    .btn-primary:hover{background:#1550c0;transform:translateY(-1px);box-shadow:0 4px 14px rgba(27,95,217,.35)}
+    .btn-outline{background:transparent;color:var(--blue);border:1.5px solid var(--blue)}
+    .btn-outline:hover{background:var(--blue-light)}
+    .btn-ghost{background:transparent;color:var(--muted);border:1.5px solid var(--border)}
+    .btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
+    .btn-sm{padding:7px 16px;font-size:.82rem}
+    .nav-toggle-btn{display:none;background:none;border:none;font-size:1.25rem;color:var(--dark);cursor:pointer;padding:8px}
+
+    /* HERO */
+    .hero{padding:calc(var(--nav-h) + 64px) 0 80px;overflow:hidden;position:relative}
+    .hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,#dbeafe 0%,transparent 65%);pointer-events:none;opacity:.5}
+    .hero .container{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--blue-light);color:var(--blue);font-size:.8rem;font-weight:600;padding:6px 14px;border-radius:99px;margin-bottom:24px;border:1px solid #c7d9f9}
+    .dot{width:6px;height:6px;background:var(--blue);border-radius:50%;animation:pulse 2s infinite;flex-shrink:0}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+    .hero-headline{font-family:var(--font-head);font-size:clamp(2.4rem,5vw,3.6rem);color:var(--dark);line-height:1.12;margin-bottom:24px}
+    .hero-headline em{font-style:italic;color:var(--blue)}
+    .hero-sub{font-size:1.05rem;color:var(--muted);margin-bottom:36px;max-width:480px;line-height:1.75}
+    .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+    .hero-stats{display:flex;gap:32px;padding-top:32px;border-top:1px solid var(--border);flex-wrap:wrap}
+    .hero-stat-num{font-family:var(--font-head);font-size:1.8rem;color:var(--dark);line-height:1;display:block}
+    .hero-stat-label{font-size:.78rem;color:var(--muted);margin-top:4px}
+    .hero-visual{position:relative}
+    .hero-img-wrap{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/5;background:linear-gradient(135deg,#dbeafe,#eff6ff);display:flex;align-items:center;justify-content:center}
+    .hero-img-wrap img{width:100%;height:100%;object-fit:cover}
+    .hero-img-placeholder{text-align:center;padding:40px;color:#93C5FD}
+    .hero-img-placeholder i{font-size:4rem;margin-bottom:12px;display:block}
+    .hero-img-placeholder p{font-size:.85rem}
+    @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    .lang-badge{position:absolute;bottom:32px;left:-28px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);padding:14px 18px;box-shadow:var(--shadow-md);min-width:210px;animation:floatY 4s ease-in-out infinite}
+    .lang-badge-label{font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+    .lang-flags{display:flex;gap:6px;flex-wrap:wrap}
+    .lang-pill{font-size:.72rem;font-weight:600;padding:3px 9px;border-radius:99px;background:var(--blue-light);color:var(--blue);border:1px solid #c7d9f9}
+    .exp-badge{position:absolute;top:32px;right:-20px;background:var(--blue);color:#fff;border-radius:var(--radius-md);padding:14px 18px;box-shadow:0 8px 24px rgba(27,95,217,.35);text-align:center;animation:floatY 4s ease-in-out infinite .8s}
+    .exp-badge .num{font-family:var(--font-head);font-size:1.8rem;line-height:1}
+    .exp-badge .txt{font-size:.72rem;opacity:.85;margin-top:4px}
+
+    /* AVAILABILITY BANNER - UPDATED with Open To Roles */
+    .availability-banner{background:linear-gradient(90deg,#0f2d6e,#1B5FD9);padding:12px 0;text-align:center}
+    .availability-banner p{color:#fff;font-size:.82rem;font-weight:500;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+    .availability-banner .av-dot{width:8px;height:8px;background:#4ade80;border-radius:50%;display:inline-block;flex-shrink:0;animation:pulse 2s infinite}
+    .availability-banner a{color:#93c5fd;text-decoration:underline;margin-left:6px}
+
+    /* TRUST BAR */
+    .trust-bar{background:var(--dark);padding:22px 0}
+    .trust-bar .container{display:flex;align-items:center;gap:40px;overflow-x:auto;scrollbar-width:none}
+    .trust-bar .label{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#6B7280;white-space:nowrap;flex-shrink:0}
+    .tool-chip{display:flex;align-items:center;gap:8px;color:#D1D5DB;font-size:.82rem;font-weight:500;white-space:nowrap;flex-shrink:0}
+    .tool-chip i{font-size:.85rem;color:#9CA3AF}
+
+    /* ABOUT */
+    .about .container{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start}
+    .about-left{position:relative}
+    .about-story-card{background:var(--blue-light);border:1px solid #c7d9f9;border-radius:var(--radius-lg);padding:36px 32px;position:relative;overflow:hidden}
+    .about-story-card::before{content:'\201C';font-family:var(--font-head);font-size:8rem;color:var(--blue);opacity:.12;position:absolute;top:-20px;left:16px;line-height:1}
+    .about-story-card p{font-size:1.05rem;color:var(--mid);line-height:1.8;position:relative;z-index:1}
+    .about-story-card strong{color:var(--dark)}
+    .about-impact-card{margin-top:24px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);padding:20px 22px;box-shadow:var(--shadow-md)}
+    .about-impact-card .card-label{font-size:.7rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+    .impact-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:.84rem;color:var(--mid)}
+    .impact-row:last-child{margin-bottom:0}
+    .impact-row i{color:var(--blue);margin-top:3px;flex-shrink:0;font-size:.75rem}
+    .impact-row strong{color:var(--dark)}
+    .about-text .section-text{margin-bottom:1.25rem}
+    .specialties-list{margin:20px 0 28px;display:flex;flex-direction:column;gap:10px}
+    .specialty-item{display:flex;align-items:flex-start;gap:10px;font-size:.93rem}
+    .spec-icon{width:28px;height:28px;background:var(--blue-light);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--blue);font-size:.72rem;margin-top:2px}
+    .specialty-item strong{color:var(--dark);font-weight:600}
+
+    /* PROJECTS */
+    .projects{background:var(--bg)}
+    .projects-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:56px;gap:24px}
+    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .project-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s;display:flex;flex-direction:column}
+    .project-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:#c7d9f9}
+    .card-wide{grid-column:span 3;display:grid !important;grid-template-columns:1fr 1.2fr !important;flex-direction:unset !important}
+    .card-wide .card-img{height:auto;min-height:300px}
+    .card-img{overflow:hidden}
+    .project-card:not(.card-wide) .card-img{height:200px}
+    .card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .project-card:hover .card-img img{transform:scale(1.04)}
+    .card-body{padding:24px;display:flex;flex-direction:column;flex:1}
+    .card-wide .card-body{padding:36px}
+    .card-badge{display:inline-block;font-size:.7rem;font-weight:600;padding:3px 10px;border-radius:99px;background:var(--blue-light);color:var(--blue);border:1px solid #c7d9f9;margin-bottom:12px;align-self:flex-start}
+    .card-title{font-family:var(--font-head);font-size:1.15rem;color:var(--dark);line-height:1.3;margin-bottom:10px}
+    .card-wide .card-title{font-size:1.55rem}
+    .card-desc{font-size:.88rem;color:var(--muted);line-height:1.65;margin-bottom:16px;flex:1}
+    .card-metrics{background:#F0F7FF;border-radius:var(--radius-sm);padding:12px 14px;margin-bottom:16px;border-left:3px solid var(--blue)}
+    .metric-row{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--mid);margin-bottom:5px}
+    .metric-row:last-child{margin-bottom:0}
+    .metric-row i{color:var(--blue);font-size:.72rem;width:12px}
+    .metric-row strong{color:var(--dark)}
+    .card-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
+    .card-link{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;padding:6px 12px;border-radius:var(--radius-sm);transition:all .2s;border:1.5px solid var(--border);color:var(--mid)}
+    .card-link:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light)}
+    .card-link.primary{background:var(--blue);color:#fff;border-color:var(--blue)}
+    .card-link.primary:hover{background:#1550c0;box-shadow:0 4px 12px rgba(27,95,217,.3)}
+
+    /* MORE PROJECTS */
+    .portfolio-section{padding:80px 0}
+    .portfolio-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
+    .portfolio-card{border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;background:var(--white);transition:transform .3s,box-shadow .3s,border-color .3s;display:block}
+    .portfolio-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:#c7d9f9}
+    .portfolio-card .p-img{height:140px;overflow:hidden}
+    .portfolio-card .p-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+    .portfolio-card:hover .p-img img{transform:scale(1.05)}
+    .portfolio-card .p-body{padding:14px}
+    .portfolio-card .card-badge{font-size:.65rem;margin-bottom:6px}
+    .portfolio-card .card-title{font-size:.95rem;margin-bottom:4px}
+    .p-tools{font-size:.75rem;color:var(--muted);margin-bottom:10px}
+    .portfolio-card .card-links{gap:6px}
+    .portfolio-card .card-link{font-size:.72rem;padding:4px 10px}
+
+    /* SKILLS */
+    .skills{background:var(--bg)}
+    .skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:56px}
+    .skills-group-title{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+    .skills-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+    .skill-chip{display:flex;align-items:center;gap:7px;padding:7px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--white);font-size:.83rem;font-weight:500;color:var(--mid);transition:border-color .2s,box-shadow .2s}
+    .skill-chip:hover{border-color:var(--blue);box-shadow:0 0 0 3px rgba(27,95,217,.07)}
+    .skill-chip i{font-size:.78rem;color:var(--blue)}
+    .cert-card{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--white);margin-bottom:10px;transition:border-color .2s}
+    .cert-card:hover{border-color:#c7d9f9}
+    .cert-icon{width:40px;height:40px;border-radius:var(--radius-sm);background:var(--blue-light);display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:.95rem;flex-shrink:0}
+    .cert-name{font-weight:600;font-size:.88rem;color:var(--dark)}
+    .cert-issuer{font-size:.78rem;color:var(--muted)}
+
+    /* CONTACT - FIXED EMAIL */
+    .contact{background:var(--dark);color:#fff}
+    .contact .section-label{color:#60A5FA}
+    .contact .section-title{color:#fff}
+    .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:56px}
+    .contact-intro{font-size:1rem;color:#9CA3AF;line-height:1.75;margin-bottom:32px}
+    .contact-detail{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+    .cd-icon{width:44px;height:44px;border-radius:var(--radius-sm);background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#60A5FA;flex-shrink:0}
+    .cd-label{font-size:.72rem;color:#9CA3AF}
+    .cd-val{font-size:.93rem;color:#F3F4F6;font-weight:500}
+    .social-links{display:flex;gap:10px;margin-top:32px}
+    .social-link{width:44px;height:44px;border-radius:var(--radius-sm);background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#9CA3AF;font-size:1rem;transition:all .2s;border:1px solid rgba(255,255,255,.1)}
+    .social-link:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+    .contact-form{display:flex;flex-direction:column;gap:14px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .form-group{display:flex;flex-direction:column;gap:6px}
+    .form-label{font-size:.78rem;font-weight:600;color:#D1D5DB}
+    .form-input{padding:11px 16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:.93rem;color:#F3F4F6;outline:none;transition:border-color .2s,box-shadow .2s;resize:vertical}
+    .form-input::placeholder{color:#6B7280}
+    .form-input:focus{border-color:#60A5FA;box-shadow:0 0 0 3px rgba(96,165,250,.15)}
+    .form-submit{align-self:flex-start;background:var(--blue);color:#fff;font-family:var(--font-body);font-size:.88rem;font-weight:600;padding:11px 24px;border:none;border-radius:var(--radius-sm);cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+    .form-submit:hover{background:#1550c0;transform:translateY(-1px)}
+    .form-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+    #contact-feedback{margin-top:8px;font-size:.85rem;font-weight:600;display:none}
+
+    /* FOOTER */
+    .footer{background:#060910;padding:28px 0;border-top:1px solid rgba(255,255,255,.06)}
+    .footer .container{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .footer-copy{font-size:.8rem;color:#6B7280}
+    .footer-links{display:flex;gap:20px}
+    .footer-links a{font-size:.8rem;color:#6B7280;transition:color .2s}
+    .footer-links a:hover{color:#9CA3AF}
+
+    /* BACK TO TOP */
+    .back-to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;box-shadow:0 4px 14px rgba(27,95,217,.4);opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .3s,transform .3s;z-index:99}
+    .back-to-top.active{opacity:1;pointer-events:all;transform:translateY(0)}
+
+    /* FADE ANIMATION */
+    .fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+    .fade-up.visible{opacity:1;transform:translateY(0)}
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){
+      .projects-grid{grid-template-columns:1fr 1fr}
+      .card-wide{grid-column:span 2 !important}
+      .portfolio-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:768px){
+      .section{padding:64px 0}
+      .hero .container{grid-template-columns:1fr;gap:40px}
+      .hero-visual{order:-1}
+      .lang-badge{left:0;bottom:16px}
+      .exp-badge{right:0;top:16px}
+      .about .container{grid-template-columns:1fr;gap:40px}
+      .projects-grid{grid-template-columns:1fr}
+      .card-wide{grid-column:span 1 !important;display:flex !important;flex-direction:column !important;grid-template-columns:unset !important}
+      .card-wide .card-img{height:220px !important;min-height:unset}
+      .portfolio-grid{grid-template-columns:1fr 1fr}
+      .skills-layout{grid-template-columns:1fr}
+      .contact-layout{grid-template-columns:1fr;gap:40px}
+      .form-row{grid-template-columns:1fr}
+      .projects-header{flex-direction:column;align-items:flex-start}
+      .footer .container{flex-direction:column;text-align:center}
+      .navbar{display:none;position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:var(--white);padding:24px;flex-direction:column;border-top:1px solid var(--border);z-index:99;overflow-y:auto}
+      .navbar.open{display:flex}
+      .navbar-list{flex-direction:column;align-items:flex-start;gap:4px;width:100%}
+      .navbar-link{font-size:1.05rem;padding:10px 14px;width:100%}
+      .nav-social{margin:16px 0}
+      .nav-toggle-btn{display:block}
+    }
+    @media(max-width:480px){
+      .portfolio-grid{grid-template-columns:1fr}
+      .hero-stats{gap:16px}
     }
   </style>
 </head>
 <body>
 
+<!-- AVAILABILITY BANNER - UPDATED with Open To Roles (Fix #1) -->
+<div class="availability-banner">
+  <div class="container">
+    <p>
+      <span class="av-dot"></span> 
+      📍 Open To: Remote (EU-wide) | Relocation to Italy | Hybrid Hamburg &nbsp;|&nbsp; 
+      🎯 Roles: Data Analyst | BI Analyst | Operations Analyst &nbsp;|&nbsp; 
+      💼 Availability: 2 weeks notice
+    </p>
+  </div>
+</div>
+
+<!-- HEADER -->
 <header class="header" id="header">
   <div class="container">
-    <a href="#" style="text-decoration: none;"><span class="logo">Yaw Assensoh Opoku</span></a>
-    <button class="nav-toggle-btn" id="navToggleBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
-    <nav>
-      <ul class="navbar-list" id="navbarList">
+    <a href="#home"><h1 class="logo">Yaw Assensoh Opoku</h1></a>
+    <button class="nav-toggle-btn" id="navToggle" aria-label="Toggle menu">
+      <i class="fas fa-bars" id="menuIcon"></i>
+    </button>
+    <nav class="navbar" id="navbar">
+      <ul class="navbar-list">
         <li><a href="#home" class="navbar-link">Home</a></li>
         <li><a href="#about" class="navbar-link">About</a></li>
-        <li><a href="#featured-projects" class="navbar-link">Projects</a></li>
+        <li><a href="#projects" class="navbar-link">Projects</a></li>
         <li><a href="#skills" class="navbar-link">Skills</a></li>
         <li><a href="#contact" class="navbar-link">Contact</a></li>
-        <li><a href="Yaw_Assensoh_Opoku_CV.pdf" class="btn btn-primary" download><i class="fas fa-download"></i> CV</a></li>
+        <li class="nav-social">
+          <a href="https://github.com/Yaw-Assensoh" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/yaw-assensoh-opoku" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </li>
+        <li><a href="Yaw-Assensoh-Resume.pdf" class="btn btn-primary btn-sm" download><i class="fas fa-download"></i> Download CV</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<!-- OPEN TO section (explicit) -->
-<div class="open-to-strip">
+<!-- HERO - FIXED IMAGE (removed placeholder text) -->
+<section class="hero" id="home">
   <div class="container">
-    <p>
-      <span><i class="fas fa-globe-europe"></i> 📍 Open To: Remote (EU-wide) · Relocation to Italy · Hybrid Hamburg</span>
-      <span><i class="fas fa-bullseye"></i> 🎯 Roles: Data Analyst · BI Analyst · Operations Analyst</span>
-      <span><i class="fas fa-clock"></i> 💼 Availability: 2 weeks notice</span>
-    </p>
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="dot"></span>
+        Available — Remote / Italy / Europe
+      </div>
+      <h2 class="hero-headline">
+        Turning operational<br><em>chaos into revenue</em><br>clarity
+      </h2>
+      <p class="hero-sub">
+        Former logistics founder who spent years making decisions from messy data. Now I use Python, SQL, and Tableau to help organisations do the same — faster and at scale. Based in Hamburg, open to remote or relocation.
+      </p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-primary"><i class="fas fa-folder-open"></i> View Case Studies</a>
+        <a href="#about" class="btn btn-ghost">My Story</a>
+      </div>
+      <div class="hero-stats">
+        <div><span class="hero-stat-num">9</span><span class="hero-stat-label">Live case studies</span></div>
+        <div><span class="hero-stat-num">5</span><span class="hero-stat-label">Languages fluent</span></div>
+        <div><span class="hero-stat-num">10+</span><span class="hero-stat-label">Years in operations</span></div>
+        <div><span class="hero-stat-num">+10%</span><span class="hero-stat-label">Revenue uplift delivered</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-img-wrap">
+        <!-- FIXED: Replaced broken placeholder with a solid professional placeholder (no error text) -->
+        <img src="./assets/images/absolute-image.png" alt="Yaw Assensoh Opoku — Data Analyst"
+             onerror="this.src='https://placehold.co/600x750/EEF4FF/1B5FD9?text=Yaw+Assensoh+Opoku&font=montserrat'">
+      </div>
+      <div class="exp-badge">
+        <div class="num">10+</div>
+        <div class="txt">Years in<br>business ops</div>
+      </div>
+      <div class="lang-badge">
+        <div class="lang-badge-label">Fluent in 5 languages</div>
+        <div class="lang-flags">
+          <span class="lang-pill">🇬🇧 English</span>
+          <span class="lang-pill">🇩🇪 Deutsch</span>
+          <span class="lang-pill">🇮🇹 Italiano</span>
+          <span class="lang-pill">🇪🇸 Español</span>
+          <span class="lang-pill">🇫🇷 Français</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <span class="label">Tech stack</span>
+    <div class="tool-chip"><i class="fab fa-python"></i> Python</div>
+    <div class="tool-chip"><i class="fas fa-database"></i> PostgreSQL</div>
+    <div class="tool-chip"><i class="fas fa-chart-bar"></i> Tableau</div>
+    <div class="tool-chip"><i class="fas fa-file-excel"></i> Excel</div>
+    <div class="tool-chip"><i class="fas fa-robot"></i> Scikit-learn</div>
+    <div class="tool-chip"><i class="fas fa-wave-square"></i> SARIMA</div>
+    <div class="tool-chip"><i class="fas fa-map-marked-alt"></i> Streamlit</div>
+    <div class="tool-chip"><i class="fas fa-project-diagram"></i> K-Means</div>
+    <div class="tool-chip"><i class="fas fa-map"></i> Folium</div>
+    <div class="tool-chip"><i class="fas fa-chart-line"></i> Plotly</div>
   </div>
 </div>
 
-<!-- Hero -->
-<section class="hero" id="home">
-  <div class="container">
-    <div>
-      <h1 class="hero-title">
-        <span>Hello, I'm</span>
-        Turning operational chaos <br>into revenue clarity
-      </h1>
-      <p class="hero-text">Former logistics founder turned data analyst. I use Python, SQL, Tableau to solve real business problems — not just run queries. Based in Hamburg, ready for remote EU or Italy.</p>
-      <div class="availability-box">
-        <div class="avail-item"><i class="fas fa-check-circle"></i> 9 live dashboards</div>
-        <div class="avail-item"><i class="fas fa-language"></i> 5 languages fluent</div>
-        <div class="avail-item"><i class="fas fa-chart-line"></i> +10% revenue impact</div>
-        <div class="avail-item"><i class="fas fa-briefcase"></i> 10+ years ops</div>
-      </div>
-      <div class="btn-group">
-        <a href="#featured-projects" class="btn btn-primary"><i class="fas fa-folder-open"></i> Case studies</a>
-        <a href="#about" class="btn btn-outline">My story</a>
-      </div>
-    </div>
-    <div class="hero-banner">
-      <img src="./assets/images/herrrro-banner.jpg" alt="Yaw data analytics showcase" onerror="this.src='https://placehold.co/600x500/eef2ff/2563eb?text=Data+Analytics+Portfolio'">
-    </div>
-  </div>
-</section>
-
-<!-- Featured Projects (Fixed image placeholders + verified links) -->
-<section class="section" id="featured-projects">
-  <div class="container">
-    <p class="section-subtitle">Featured case studies</p>
-    <h2 class="section-title">Data-driven business impact</h2>
-    <div class="featured-grid">
-      
-      <div class="featured-card">
-        <div class="featured-image"><img src="./assets/images/housing-graphic.png" alt="Housing affordability dashboard" onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&auto=format'"></div>
-        <div class="featured-content">
-          <span class="featured-badge">Real Estate</span>
-          <h3 class="featured-title">US Housing Affordability</h3>
-          <p class="featured-description">K-Means clustering, SARIMA forecast, Streamlit dashboard. LA affordability index 2.22.</p>
-          <div class="featured-impact"><div class="impact-item"><i class="fas fa-chart-line"></i> 3 market clusters + 36-month forecast</div></div>
-          <a href="projects/housing-analysis.html" class="featured-link">Full case study <i class="fas fa-arrow-right"></i></a> 
-          <a href="https://yaw-assensoh-housing-affordability-pr-dashboarddashboard-0wtwto.streamlit.app" target="_blank" class="featured-link" style="margin-left:12px;"><i class="fas fa-external-link-alt"></i> Live</a>
-        </div>
-      </div>
-
-      <div class="featured-card">
-        <div class="featured-image"><img src="./assets/images/people-bikes.jpg" alt="Citi bike optimization" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400'"></div>
-        <div class="featured-content">
-          <span class="featured-badge">Supply chain</span>
-          <h3 class="featured-title">NYC Citi Bike Supply</h3>
-          <p class="featured-description">Demand forecasting (0.82 temp correlation) + dynamic pricing → +20-25% revenue.</p>
-          <div class="featured-impact"><div class="impact-item"><i class="fas fa-chart-line"></i> 4-week forecast, 1500+ stations</div></div>
-          <a href="projects/nyc-citibike-analysis.html" class="featured-link">Case study <i class="fas fa-arrow-right"></i></a>
-          <a href="https://yaw-assensoh-urban-mobility-insights-app-ujtkq3.streamlit.app" target="_blank" class="featured-link" style="margin-left:12px;">Dashboard</a>
-        </div>
-      </div>
-
-      <div class="featured-card">
-        <div class="featured-image"><img src="./assets/images/instacart-image.jpg" alt="Instacart basket" onerror="this.src='https://images.unsplash.com/photo-1542838132-92c53300491e?w=400'"></div>
-        <div class="featured-content">
-          <span class="featured-badge">Retail analytics</span>
-          <h3 class="featured-title">Instacart Market Basket</h3>
-          <p class="featured-description">Customer segmentation + product affinities → +15% AOV, 65% co-purchase rates.</p>
-          <div class="featured-impact"><div class="impact-item"><i class="fas fa-tag"></i> 12 high-probability pairs identified</div></div>
-          <a href="projects/instacart-analysis.html" class="featured-link">Case study <i class="fas fa-arrow-right"></i></a>
-          <a href="https://github.com/Yaw-Assensoh/Instacart-Analysis" target="_blank" class="featured-link" style="margin-left:12px;">GitHub</a>
-        </div>
-      </div>
-
-      <div class="featured-card">
-        <div class="featured-image"><img src="./assets/images/dashboard-preview.jpg" alt="Financial platform" onerror="this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400'"></div>
-        <div class="featured-content">
-          <span class="featured-badge">Finance</span>
-          <h3 class="featured-title">Financial Markets Intel</h3>
-          <p class="featured-description">243% avg returns vs SPY 100% — risk-adjusted portfolio, momentum signals.</p>
-          <div class="featured-impact"><div class="impact-item"><i class="fas fa-chart-bar"></i> TSLA +343% with risk framework</div></div>
-          <a href="projects/financial-analysis.html" class="featured-link">Case study <i class="fas fa-arrow-right"></i></a>
-          <a href="https://yaw-assensoh-financial-analysis-app-ypiyqi.streamlit.app" target="_blank" class="featured-link" style="margin-left:12px;">Live</a>
-        </div>
-      </div>
-
-      <div class="featured-card">
-        <div class="featured-image"><img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?w=400" alt="influenza forecast"></div>
-        <div class="featured-content">
-          <span class="featured-badge">Healthcare</span>
-          <h3 class="featured-title">Influenza Staffing Forecast</h3>
-          <p class="featured-description">ARIMA model (89% accuracy) → 23% overtime cost reduction, 4-week planning.</p>
-          <div class="featured-impact"><div class="impact-item"><i class="fas fa-hospital-user"></i> Optimized hospital staffing</div></div>
-          <a href="projects/influenza-forecast.html" class="featured-link">Case study <i class="fas fa-arrow-right"></i></a>
-          <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/Book1_17436918254930/Story1" target="_blank" class="featured-link" style="margin-left:12px;">Tableau</a>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center; margin-top: 2.5rem;">
-      <a href="#portfolio" class="btn btn-outline"><i class="fas fa-folder-open"></i> View all 9 projects</a>
-    </div>
-  </div>
-</section>
-
-<!-- About Section (headshot fixed, no broken image) -->
+<!-- ABOUT -->
 <section class="section about" id="about">
   <div class="container">
-    <div class="about-banner">
-      <img src="./assets/images/absolute-image.png" alt="Yaw headshot" onerror="this.src='https://placehold.co/500x600/eef2ff/1e293b?text=Yaw+Assensoh+Opoku'">
-    </div>
-    <div>
-      <p class="section-subtitle">From founder to analyst</p>
-      <h2 class="section-title">Operations + Analytics = Business impact</h2>
-      <p>For 10+ years I ran a logistics business in Hamburg — every decision had a real cost. That pressure taught me that data only matters when it changes a decision. Now I combine Python, SQL, Tableau with entrepreneurial intuition.</p>
-      <div class="career-highlights">
-        <h3 style="color:#2563eb; margin-bottom: 12px;">Results from my own business</h3>
-        <div class="impact-item"><i class="fas fa-chart-line"></i> +10% monthly revenue (demand forecasting)</div>
-        <div class="impact-item"><i class="fas fa-route"></i> +15% delivery efficiency (route optimisation)</div>
-        <div class="impact-item"><i class="fas fa-users"></i> +20% repeat business (customer segmentation)</div>
-        <div class="impact-item"><i class="fas fa-wrench"></i> -25% maintenance downtime</div>
+    <div class="about-left fade-up">
+      <div class="about-story-card">
+        <p>For years I owned and operated a logistics business in Hamburg — optimising routes, forecasting demand, and segmenting customers using whatever data tools I had. Every decision had a real cost.<br><br>That pressure taught me something most analysts learn in theory: <strong>data only matters when it changes a decision.</strong></p>
       </div>
-      <ul class="specialties-list">
-        <li><i class="fas fa-bullseye" style="color:#2563eb;"></i> <strong>Business-first:</strong> "What problem are we solving?"</li>
-        <li><i class="fas fa-cogs"></i> <strong>Operational fluency:</strong> process optimisation from ground up</li>
-        <li><i class="fas fa-language"></i> <strong>5 languages:</strong> English, German, Italian, Spanish, French</li>
-        <li><i class="fas fa-wifi"></i> <strong>Remote-ready:</strong> async collaboration, documentation-first</li>
-      </ul>
-      <div class="btn-group" style="margin-top: 1.5rem;">
-        <a href="#featured-projects" class="btn btn-primary">Explore projects</a>
+      <div class="about-impact-card">
+        <div class="card-label">Results from my own business</div>
+        <div class="impact-row"><i class="fas fa-chart-line"></i><span><strong>+10% monthly revenue</strong> via demand forecasting</span></div>
+        <div class="impact-row"><i class="fas fa-route"></i><span><strong>+15% delivery efficiency</strong> via route optimisation</span></div>
+        <div class="impact-row"><i class="fas fa-users"></i><span><strong>+20% repeat business</strong> via customer segmentation</span></div>
+        <div class="impact-row"><i class="fas fa-tools"></i><span><strong>−25% maintenance downtime</strong> via predictive monitoring</span></div>
+      </div>
+    </div>
+
+    <div class="about-text fade-up">
+      <p class="section-label">My Story</p>
+      <h2 class="section-title">From logistics founder to data analyst</h2>
+      <p class="section-text">Transitioning into analytics wasn't a career change — it was adding Python, SQL, and Tableau to a toolkit I'd already been building for years. I bring both the technical depth and the business context to turn insights into actions.</p>
+      <p class="section-text" style="margin-top:1rem;">Currently based in Hamburg, I'm actively seeking remote-first roles or opportunities that allow me to relocate to Italy. My multilingual background makes me a natural fit for international and pan-European teams.</p>
+
+      <div class="specialties-list">
+        <div class="specialty-item"><div class="spec-icon"><i class="fas fa-bullseye"></i></div><div><strong>Business-first mindset:</strong> I start with "What problem are we solving?" — not "What can the data show?"</div></div>
+        <div class="specialty-item"><div class="spec-icon"><i class="fas fa-cogs"></i></div><div><strong>Operational fluency:</strong> Years running logistics operations means I understand process optimisation from the ground up</div></div>
+        <div class="specialty-item"><div class="spec-icon"><i class="fas fa-language"></i></div><div><strong>Multilingual reach:</strong> Fluent in English, German, Italian, Spanish, and French — cultural awareness for global data challenges</div></div>
+        <div class="specialty-item"><div class="spec-icon"><i class="fas fa-wifi"></i></div><div><strong>Remote-ready:</strong> Comfortable with async collaboration, documentation-first communication, and distributed team workflows</div></div>
+      </div>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="#projects" class="btn btn-primary">View My Projects</a>
         <a href="Yaw_Assensoh_Opoku_CV.pdf" class="btn btn-outline" download><i class="fas fa-download"></i> Download CV</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Portfolio grid (all 9 projects, clean) -->
-<section class="section" id="portfolio">
+<!-- FEATURED PROJECTS -->
+<section class="section projects" id="projects">
   <div class="container">
-    <p class="section-subtitle">Complete portfolio</p>
-    <h2 class="section-title">9 data stories with live dashboards</h2>
-    <ul class="portfolio-list">
-      <li><a href="projects/housing-analysis.html" class="portfolio-card"><div class="card-image"><img src="./assets/images/housing-dashboard.png" alt="Housing" onerror="this.src='https://placehold.co/400x200/eef2ff/2563eb?text=Housing'"></div><div class="card-content"><p class="card-subtitle">Python · SQL · Streamlit</p><h3 class="card-title">US Housing Affordability</h3></div></a></li>
-      <li><a href="projects/migration-analysis.html" class="portfolio-card"><div class="card-image"><img src="./assets/images/migration-view.png" alt="Migration" onerror="this.src='https://placehold.co/400x200/eef2ff/2563eb?text=Migration'"></div><div class="card-content"><p class="card-subtitle">Forecasting · Tableau</p><h3 class="card-title">Global Migration Analysis</h3></div></a></li>
-      <li><a href="projects/financial-analysis.html" class="portfolio-card"><div class="card-image"><img src="./assets/images/financial-dashboard-preview.png" alt="Finance" onerror="this.src='https://placehold.co/400x200/eef2ff/2563eb?text=Finance'"></div><div class="card-content"><p class="card-subtitle">Quant · Python</p><h3 class="card-title">Financial Markets Intel</h3></div></a></li>
-      <li><a href="projects/nyc-citibike-analysis.html" class="portfolio-card"><div class="card-image"><img src="./assets/images/nyc-bikes.png" alt="Citi bike" onerror="this.src='https://placehold.co/400x200/eef2ff/2563eb?text=Citi+Bike'"></div><div class="card-content"><p class="card-subtitle">Supply chain</p><h3 class="card-title">NYC Citi Bike Optimization</h3></div></a></li>
-      <li><a href="projects/20th-century-events.html" class="portfolio-card"><div class="card-image"><img src="./assets/images/historical-data.jpg" alt="Geopolitical" onerror="this.src='https://placehold.co/400x200/eef2ff/2563eb?text=Network+Analysis'"></div><div class="card-content"><p class="card-subtitle">NetworkX · NLP</p><h3 class="card-title">20th Century Geopolitical</h3></div></a></li>
-      <li><a href="projects/instacart-analysis.html" class="portfolio-card"><div class="card-image"><img src="./assets/images/analysis-1.jpg" alt="Instacart" onerror="this.src='https://placehold.co/400x200/eef2ff/2563eb?text=Instacart'"></div><div class="card-content"><p class="card-subtitle">Market basket</p><h3 class="card-title">Instacart Analysis</h3></div></a></li>
-      <li><a href="projects/rockbuster-insights.html" class="portfolio-card"><div class="card-image"><img src="./assets/images/Data-Analytics.jpg" alt="Rockbuster" onerror="this.src='https://placehold.co/400x200/eef2ff/2563eb?text=Rockbuster'"></div><div class="card-content"><p class="card-subtitle">PostgreSQL · Tableau</p><h3 class="card-title">RockBuster Insights</h3></div></a></li>
-      <li><a href="projects/global-development.html" class="portfolio-card"><div class="card-image"><img src="./assets/images/analysis-3.jpg" alt="Global development" onerror="this.src='https://placehold.co/400x200/eef2ff/2563eb?text=Global+Dev'"></div><div class="card-content"><p class="card-subtitle">World Bank data</p><h3 class="card-title">Global Development Trends</h3></div></a></li>
-      <li><a href="projects/influenza-forecast.html" class="portfolio-card"><div class="card-image"><img src="./assets/images/analysis-2.jpg" alt="Influenza" onerror="this.src='https://placehold.co/400x200/eef2ff/2563eb?text=Influenza'"></div><div class="card-content"><p class="card-subtitle">ARIMA · Tableau</p><h3 class="card-title">Influenza Staffing Forecast</h3></div></a></li>
-    </ul>
-  </div>
-</section>
+    <div class="projects-header">
+      <div><p class="section-label">Case Studies</p><h2 class="section-title">Data-driven business impact</h2><p class="section-text">Selected projects with live dashboards, GitHub repos, and documented outcomes.</p></div>
+    </div>
 
-<!-- Skills section (progress bars, improved) -->
-<section class="section" id="skills">
-  <div class="container">
-    <p class="section-subtitle">Expertise</p>
-    <h2 class="section-title">Tools & technologies I use daily</h2>
-    <ul class="skills-list">
-      <li class="skills-item"><div class="skills-title">Python (Pandas, NumPy)</div><div class="skills-progress-box"><div class="skills-progress" style="width: 92%"></div></div></li>
-      <li class="skills-item"><div class="skills-title">SQL / PostgreSQL</div><div class="skills-progress-box"><div class="skills-progress" style="width: 90%"></div></div></li>
-      <li class="skills-item"><div class="skills-title">Tableau / Streamlit</div><div class="skills-progress-box"><div class="skills-progress" style="width: 90%"></div></div></li>
-      <li class="skills-item"><div class="skills-title">Excel (advanced)</div><div class="skills-progress-box"><div class="skills-progress" style="width: 95%"></div></div></li>
-      <li class="skills-item"><div class="skills-title">Machine Learning</div><div class="skills-progress-box"><div class="skills-progress" style="width: 85%"></div></div></li>
-      <li class="skills-item"><div class="skills-title">Business storytelling</div><div class="skills-progress-box"><div class="skills-progress" style="width: 88%"></div></div></li>
-    </ul>
-  </div>
-</section>
-
-<!-- Contact section (fixed email, real phone) -->
-<section class="section contact" id="contact">
-  <div class="container">
-    <div class="contact-card">
-      <p class="card-subtitle" style="color:#90cdf4;">Get in touch</p>
-      <h2 class="section-title">Let’s work together</h2>
-      <div class="wrapper">
-        <div>
-          <p style="margin-bottom: 1.5rem;">Remote EU / Italy relocation — I respond within 24h.</p>
-          <div class="contact-form">
-            <div class="form-row" style="display: grid; gap: 1rem; grid-template-columns:1fr 1fr;">
-              <div class="form-group"><label>Name</label><input type="text" id="contactName" placeholder="Your name"></div>
-              <div class="form-group"><label>Email</label><input type="email" id="contactEmail" placeholder="you@example.com"></div>
-            </div>
-            <div class="form-group"><label>Message</label><textarea id="contactMsg" rows="4" placeholder="Tell me about your project..."></textarea></div>
-            <button class="btn btn-primary" id="contactSendBtn" onclick="sendContact()"><i class="fas fa-paper-plane"></i> Send message</button>
-            <p id="contactFormFeedback" style="margin-top: 12px; font-size:0.85rem;"></p>
-          </div>
-        </div>
-        <ul class="contact-list">
-          <li class="contact-item"><div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div><div><h3>Location</h3><p>Hamburg, Germany · Remote/Italy</p></div></li>
-          <li class="contact-item"><div class="contact-icon"><i class="fas fa-envelope"></i></div><div><h3>Email</h3><a href="mailto:yaw.assensoh@hotmail.com" style="color:#a5f3fc;">yaw.assensoh@hotmail.com</a></div></li>
-          <li class="contact-item"><div class="contact-icon"><i class="fas fa-phone"></i></div><div><h3>Phone</h3><a href="tel:+4915738065664" style="color:#a5f3fc;">+49 157 3806 5664</a></div></li>
-        </ul>
+    <div class="projects-grid">
+      <!-- Housing (wide) -->
+      <div class="project-card card-wide fade-up">
+        <div class="card-img"><img src="./assets/images/housing-graphic.png" alt="US Housing Affordability" onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80'"></div>
+        <div class="card-body"><span class="card-badge">Real Estate & Economic Analytics</span><h3 class="card-title">US Housing Affordability Analysis (2015–2024)</h3><p class="card-desc">3-phase project examining the affordability crisis across 5 major US cities. Combined Excel, SQL, and Python with K-Means clustering and a 36-month SARIMA forecast — all surfaced in an interactive Streamlit dashboard.</p><div class="card-metrics"><div class="metric-row"><i class="fas fa-chart-line"></i><span><strong>2.22 LA affordability index</strong> — requires $200K+ annual income for median home</span></div><div class="metric-row"><i class="fas fa-layer-group"></i><span><strong>3 market clusters</strong> via K-Means, validated by SQL risk classification</span></div><div class="metric-row"><i class="fas fa-clock"></i><span><strong>36-month SARIMA forecast</strong> with 95% confidence intervals</span></div></div><div class="card-links"><a href="projects/housing-analysis.html" class="card-link primary"><i class="fas fa-book-open"></i> Full Case Study</a><a href="https://yaw-assensoh-housing-affordability-pr-dashboarddashboard-0wtwto.streamlit.app" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i> Live Dashboard</a><a href="https://github.com/Yaw-Assensoh/Housing-Affordability-Analysis" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div>
       </div>
+
+      <!-- Citi Bike -->
+      <div class="project-card fade-up"><div class="card-img"><img src="./assets/images/people-bikes.jpg" alt="NYC Citi Bike" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80'"></div><div class="card-body"><span class="card-badge">Supply Chain & Operations</span><h3 class="card-title">NYC Citi Bike Supply Optimisation</h3><p class="card-desc">Demand forecasting model with 0.82 temperature-usage correlation to optimise distribution across 1,500+ stations, reducing costs while improving availability.</p><div class="card-metrics"><div class="metric-row"><i class="fas fa-dollar-sign"></i><span><strong>20–25% revenue increase</strong> via dynamic pricing strategy</span></div><div class="metric-row"><i class="fas fa-calendar-alt"></i><span><strong>4-week advance forecasting</strong> for proactive planning</span></div></div><div class="card-links"><a href="projects/nyc-citibike-analysis.html" class="card-link primary"><i class="fas fa-book-open"></i> Case Study</a><a href="https://yaw-assensoh-urban-mobility-insights-app-ujtkq3.streamlit.app" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i> Dashboard</a><a href="https://github.com/Yaw-Assensoh/urban-mobility-insights" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></div>
+
+      <!-- Instacart -->
+      <div class="project-card fade-up"><div class="card-img"><img src="./assets/images/instacart-image.jpg" alt="Instacart" onerror="this.src='https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80'"></div><div class="card-body"><span class="card-badge">E-commerce & Retail</span><h3 class="card-title">Instacart Market Basket Analysis</h3><p class="card-desc">Customer segmentation and product association analysis identifying 12 high-probability product pairs for targeted marketing and strategic bundling.</p><div class="card-metrics"><div class="metric-row"><i class="fas fa-shopping-cart"></i><span><strong>+15% AOV</strong> through product bundling strategy</span></div><div class="metric-row"><i class="fas fa-bullseye"></i><span><strong>65%+ co-purchase rates</strong> on identified pairs</span></div></div><div class="card-links"><a href="projects/instacart-analysis.html" class="card-link primary"><i class="fas fa-book-open"></i> Case Study</a><a href="https://github.com/Yaw-Assensoh/Instacart-Analysis" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></div>
+
+      <!-- Financial -->
+      <div class="project-card fade-up"><div class="card-img"><img src="./assets/images/dashboard-preview.jpg" alt="Financial Markets" onerror="this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&q=80'"></div><div class="card-body"><span class="card-badge">Financial Analytics</span><h3 class="card-title">Financial Markets Intelligence Platform</h3><p class="card-desc">Quantitative analysis of tech stocks delivering 243% average returns vs. 100% SPY benchmark, with risk-adjusted portfolio optimisation and momentum signals.</p><div class="card-metrics"><div class="metric-row"><i class="fas fa-rocket"></i><span><strong>343.9% TSLA returns</strong> with risk management framework</span></div><div class="metric-row"><i class="fas fa-chart-bar"></i><span><strong>58.9 RSI</strong> momentum signals for tactical allocation</span></div></div><div class="card-links"><a href="projects/financial-analysis.html" class="card-link primary"><i class="fas fa-book-open"></i> Case Study</a><a href="https://yaw-assensoh-financial-analysis-app-ypiyqi.streamlit.app" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i> Dashboard</a><a href="https://github.com/Yaw-Assensoh/Financial-Analysis" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></div>
+
+      <!-- Influenza -->
+      <div class="project-card fade-up"><div class="card-img"><img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=600&q=80" alt="Influenza Forecast"></div><div class="card-body"><span class="card-badge">Healthcare Analytics</span><h3 class="card-title">Influenza Staffing Forecast Model</h3><p class="card-desc">ARIMA-based predictive model with 89% accuracy for 4-week influenza forecasts, enabling optimised hospital staffing during peak seasons.</p><div class="card-metrics"><div class="metric-row"><i class="fas fa-hospital"></i><span><strong>−23% overtime costs</strong> through optimised staffing schedules</span></div><div class="metric-row"><i class="fas fa-calendar-check"></i><span><strong>4-week advance planning</strong> capability for resource allocation</span></div></div><div class="card-links"><a href="projects/influenza-forecast.html" class="card-link primary"><i class="fas fa-book-open"></i> Case Study</a><a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/Book1_17436918254930/Story1" target="_blank" class="card-link"><i class="fas fa-chart-bar"></i> Tableau</a><a href="https://github.com/Yaw-Assensoh" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></div>
     </div>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="container"><p>© 2026 Yaw Assensoh Opoku — Data Analyst. All rights reserved.</p></div>
-</footer>
-<a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+<!-- MORE PROJECTS -->
+<section class="portfolio-section" id="portfolio">
+  <div class="container">
+    <p class="section-label">All Projects</p>
+    <h2 class="section-title">More analysis work</h2>
+    <div class="portfolio-grid">
+      <a href="projects/migration-analysis.html" class="portfolio-card fade-up"><div class="p-img"><img src="./assets/images/migration-view.png" alt="Global Migration" onerror="this.src='https://images.unsplash.com/photo-1527689361190-bcf06e6c8b6d?auto=format&fit=crop&w=400&q=80'"></div><div class="p-body"><span class="card-badge">Forecasting</span><h3 class="card-title">Global Migration Analysis</h3><p class="p-tools">Python · Tableau · ARIMA</p><div class="card-links"><a href="projects/migration-analysis.html" class="card-link primary">View</a><a href="https://yaw-assensoh-global-migration-analysis-project-app-tbxmqx.streamlit.app" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i> Dashboard</a><a href="https://github.com/Yaw-Assensoh/Global-Migration-Analysis-Project" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></a>
+      <a href="projects/rockbuster-insights.html" class="portfolio-card fade-up"><div class="p-img"><img src="./assets/images/Data-Analytics.jpg" alt="RockBuster" onerror="this.src='https://images.unsplash.com/photo-1534308143439-3820b8e20fca?auto=format&fit=crop&w=400&q=80'"></div><div class="p-body"><span class="card-badge">Business Intelligence</span><h3 class="card-title">RockBuster Insights</h3><p class="p-tools">PostgreSQL · Tableau</p><div class="card-links"><a href="projects/rockbuster-insights.html" class="card-link primary">View</a><a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/ROCKBUSTERPROJECT/Story1" target="_blank" class="card-link"><i class="fas fa-chart-bar"></i> Tableau</a><a href="https://github.com/Yaw-Assensoh/RockBuster-Insights" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></a>
+      <a href="projects/20th-century-events.html" class="portfolio-card fade-up"><div class="p-img"><img src="./assets/images/historical-data.jpg" alt="Geopolitical" onerror="this.src='https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=400&q=80'"></div><div class="p-body"><span class="card-badge">Network Science</span><h3 class="card-title">20th Century Geopolitical Analysis</h3><p class="p-tools">Python · NetworkX · NLP</p><div class="card-links"><a href="projects/20th-century-events.html" class="card-link primary">View</a><a href="https://github.com/Yaw-Assensoh/20th_Century" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></a>
+      <a href="projects/global-development.html" class="portfolio-card fade-up"><div class="p-img"><img src="./assets/images/analysis-3.jpg" alt="Global Development" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80'"></div><div class="p-body"><span class="card-badge">Economic Analysis</span><h3 class="card-title">Global Development Trends</h3><p class="p-tools">Python · Tableau · World Bank</p><div class="card-links"><a href="projects/global-development.html" class="card-link primary">View</a><a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/GDPperCapita_17593122370230/Story2" target="_blank" class="card-link"><i class="fas fa-chart-bar"></i> Tableau</a><a href="https://github.com/Yaw-Assensoh/Global-Development-Trends" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS (keeping your original chips) -->
+<section class="section skills" id="skills">
+  <div class="container">
+    <p class="section-label">Technical Skills</p>
+    <h2 class="section-title">Tools & technologies</h2>
+    <p class="section-text">Skills demonstrated through projects — not progress bars.</p>
+    <div class="skills-layout">
+      <div><p class="skills-group-title">Data Analysis & Python</p><div class="skills-chips"><div class="skill-chip"><i class="fab fa-python"></i> Python</div><div class="skill-chip"><i class="fas fa-table"></i> Pandas</div><div class="skill-chip"><i class="fas fa-calculator"></i> NumPy</div><div class="skill-chip"><i class="fas fa-chart-area"></i> Matplotlib / Seaborn</div><div class="skill-chip"><i class="fas fa-book"></i> Jupyter Notebook</div><div class="skill-chip"><i class="fas fa-map"></i> Folium</div><div class="skill-chip"><i class="fas fa-chart-bar"></i> Plotly</div></div><p class="skills-group-title">Databases & Querying</p><div class="skills-chips"><div class="skill-chip"><i class="fas fa-database"></i> PostgreSQL</div><div class="skill-chip"><i class="fas fa-code"></i> Window Functions</div><div class="skill-chip"><i class="fas fa-filter"></i> CTEs & Subqueries</div><div class="skill-chip"><i class="fas fa-file-excel"></i> Microsoft Excel</div></div><p class="skills-group-title">Visualisation & Dashboards</p><div class="skills-chips"><div class="skill-chip"><i class="fas fa-chart-bar"></i> Tableau</div><div class="skill-chip"><i class="fas fa-map-marked-alt"></i> Streamlit</div><div class="skill-chip"><i class="fas fa-tachometer-alt"></i> Power BI</div></div></div>
+      <div><p class="skills-group-title">Machine Learning & Statistics</p><div class="skills-chips"><div class="skill-chip"><i class="fas fa-robot"></i> Scikit-learn</div><div class="skill-chip"><i class="fas fa-layer-group"></i> K-Means Clustering</div><div class="skill-chip"><i class="fas fa-wave-square"></i> SARIMA / ARIMA</div><div class="skill-chip"><i class="fas fa-flask"></i> A/B Testing</div><div class="skill-chip"><i class="fas fa-project-diagram"></i> Regression Analysis</div><div class="skill-chip"><i class="fas fa-chart-line"></i> Time Series</div><div class="skill-chip"><i class="fas fa-network-wired"></i> NetworkX / NLP</div></div><p class="skills-group-title">Education & Credentials</p><div class="cert-card"><div class="cert-icon"><i class="fas fa-graduation-cap"></i></div><div><div class="cert-name">Data Analytics Certificate</div><div class="cert-issuer">CareerFoundry — 2024</div></div></div><div class="cert-card"><div class="cert-icon"><i class="fas fa-chart-bar"></i></div><div><div class="cert-name">Tableau for Analysts</div><div class="cert-issuer">Tableau Public — verified</div></div></div><div class="cert-card"><div class="cert-icon"><i class="fas fa-briefcase"></i></div><div><div class="cert-name">Logistics Operations (Founder)</div><div class="cert-issuer">Hamburg, Germany — 10+ years</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT - FIXED EMAIL (Fix #2) -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Let's work together</h2>
+    <div class="contact-layout">
+      <div><p class="contact-intro">Ready to turn your data into decisions? Whether you're hiring a data analyst or need project-based analysis — I'd love to hear from you. Open to remote roles across Europe or relocation to Italy. I typically respond within 24 hours.</p>
+        <div class="contact-detail"><div class="cd-icon"><i class="fas fa-map-marker-alt"></i></div><div><div class="cd-label">Location</div><div class="cd-val">Hamburg, Germany · Remote / Italy open</div></div></div>
+        <div class="contact-detail"><div class="cd-icon"><i class="fas fa-envelope"></i></div><div><div class="cd-label">Email</div><a href="mailto:yaw.assensoh@hotmail.com" class="cd-val">yaw.assensoh@hotmail.com</a></div></div>
+        <div class="contact-detail"><div class="cd-icon"><i class="fas fa-phone"></i></div><div><div class="cd-label">Phone</div><a href="tel:+4915738065664" class="cd-val">+49 157 3806 5664</a></div></div>
+        <div class="social-links"><a href="https://www.linkedin.com/in/yaw-assensoh-opoku" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a><a href="https://github.com/Yaw-Assensoh" target="_blank" class="social-link"><i class="fab fa-github"></i></a><a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku" target="_blank" class="social-link"><i class="fas fa-chart-bar"></i></a></div>
+      </div>
+      <div><div class="contact-form"><div class="form-row"><div class="form-group"><label class="form-label" for="c-name">Name</label><input class="form-input" type="text" id="c-name" placeholder="Your name" autocomplete="name"></div><div class="form-group"><label class="form-label" for="c-email">Email</label><input class="form-input" type="email" id="c-email" placeholder="your@email.com" autocomplete="email"></div></div><div class="form-group"><label class="form-label" for="c-subject">Subject</label><input class="form-input" type="text" id="c-subject" placeholder="What's this about?"></div><div class="form-group"><label class="form-label" for="c-msg">Message</label><textarea class="form-input" id="c-msg" rows="5" placeholder="Tell me about your project or opportunity..."></textarea></div><button class="form-submit" id="form-btn" onclick="handleContact()"><i class="fas fa-paper-plane"></i> Send Message</button><p id="contact-feedback"></p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer"><div class="container"><p class="footer-copy">&copy; 2026 Yaw Assensoh Opoku. All rights reserved.</p><div class="footer-links"><a href="https://github.com/Yaw-Assensoh" target="_blank">GitHub</a><a href="https://www.linkedin.com/in/yaw-assensoh-opoku" target="_blank">LinkedIn</a><a href="Yaw-Assensoh-Resume.pdf" download>Resume</a></div></div></footer>
+<a href="#home" class="back-to-top" id="btt"><i class="fas fa-arrow-up"></i></a>
 
 <script>
-  // navigation toggle
-  const toggleBtn = document.getElementById('navToggleBtn');
-  const navList = document.getElementById('navbarList');
-  toggleBtn?.addEventListener('click', () => navList.classList.toggle('active'));
-  document.querySelectorAll('.navbar-link').forEach(link => link.addEventListener('click', () => navList.classList.remove('active')));
-
-  window.addEventListener('scroll', () => {
-    const header = document.getElementById('header');
-    if(window.scrollY > 60) header.classList.add('scrolled'); else header.classList.remove('scrolled');
-    const btt = document.getElementById('backToTop');
-    if(window.scrollY > 400) btt.classList.add('active'); else btt.classList.remove('active');
-  });
-
-  function sendContact() {
-    const name = document.getElementById('contactName').value.trim();
-    const email = document.getElementById('contactEmail').value.trim();
-    const msg = document.getElementById('contactMsg').value.trim();
-    const fb = document.getElementById('contactFormFeedback');
-    if(!name || !email || !msg) { fb.innerHTML = '<span style="color:#f87171;">All fields required.</span>'; return; }
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { fb.innerHTML = '<span style="color:#f87171;">Valid email please.</span>'; return; }
-    const subject = `Portfolio contact from ${name}`;
-    const body = `Name: ${name}%0AEmail: ${email}%0A%0A${msg}`;
-    window.location.href = `mailto:yaw.assensoh@hotmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-    fb.innerHTML = '<span style="color:#86efac;">✓ Opening your email client.</span>';
-    document.getElementById('contactSendBtn').disabled = true;
+  // Header + back-to-top
+  const header = document.getElementById('header');
+  const btt = document.getElementById('btt');
+  window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 60); btt.classList.toggle('active', window.scrollY > 300); });
+  // Mobile nav
+  const toggle = document.getElementById('navToggle'); const navbar = document.getElementById('navbar'); const menuIcon = document.getElementById('menuIcon');
+  toggle.addEventListener('click', () => { const open = navbar.classList.toggle('open'); menuIcon.className = open ? 'fas fa-times' : 'fas fa-bars'; });
+  navbar.querySelectorAll('.navbar-link, .btn').forEach(el => { el.addEventListener('click', () => { navbar.classList.remove('open'); menuIcon.className = 'fas fa-bars'; }); });
+  // Fade-up on scroll
+  const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+  // Contact form — opens mailto with fixed email
+  function handleContact() {
+    const name = document.getElementById('c-name').value.trim();
+    const email = document.getElementById('c-email').value.trim();
+    const subject = document.getElementById('c-subject').value.trim();
+    const msg = document.getElementById('c-msg').value.trim();
+    const fb = document.getElementById('contact-feedback');
+    const btn = document.getElementById('form-btn');
+    if (!name || !email || !msg) { fb.style.cssText = 'display:block;color:#F87171'; fb.textContent = 'Please fill in your name, email, and message.'; return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { fb.style.cssText = 'display:block;color:#F87171'; fb.textContent = 'Please enter a valid email address.'; return; }
+    const sub = encodeURIComponent(subject || 'Portfolio enquiry');
+    const body = encodeURIComponent('Hi Yaw,\n\n' + msg + '\n\nBest,\n' + name + '\n' + email);
+    window.location.href = 'mailto:yaw.assensoh@hotmail.com?subject=' + sub + '&body=' + body;
+    btn.disabled = true; btn.innerHTML = '<i class="fas fa-check"></i> Message sent!';
+    fb.style.cssText = 'display:block;color:#4ade80'; fb.textContent = 'Your email client should open. Thank you!';
+    setTimeout(() => { btn.disabled = false; btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message'; }, 4000);
   }
-
-  // animate skill bars on view
-  const skillsSection = document.getElementById('skills');
-  const skillBars = document.querySelectorAll('.skills-progress');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) {
-        skillBars.forEach(bar => { const width = bar.style.width; bar.style.width = '0%'; setTimeout(() => bar.style.width = width, 150); });
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.4 });
-  if(skillsSection) observer.observe(skillsSection);
 </script>
 </body>
 </html>
