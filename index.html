@@ -73,7 +73,7 @@
     .exp-badge .num{font-family:var(--font-head);font-size:1.8rem;line-height:1}
     .exp-badge .txt{font-size:.72rem;opacity:.85;margin-top:4px}
 
-    /* AVAILABILITY BANNER - UPDATED with Open To Roles */
+    /* AVAILABILITY BANNER */
     .availability-banner{background:linear-gradient(90deg,#0f2d6e,#1B5FD9);padding:12px 0;text-align:center}
     .availability-banner p{color:#fff;font-size:.82rem;font-weight:500;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
     .availability-banner .av-dot{width:8px;height:8px;background:#4ade80;border-radius:50%;display:inline-block;flex-shrink:0;animation:pulse 2s infinite}
@@ -163,7 +163,7 @@
     .cert-name{font-weight:600;font-size:.88rem;color:var(--dark)}
     .cert-issuer{font-size:.78rem;color:var(--muted)}
 
-    /* CONTACT - FIXED EMAIL */
+    /* CONTACT */
     .contact{background:var(--dark);color:#fff}
     .contact .section-label{color:#60A5FA}
     .contact .section-title{color:#fff}
@@ -241,15 +241,10 @@
 </head>
 <body>
 
-<!-- AVAILABILITY BANNER - UPDATED with Open To Roles (Fix #1) -->
+<!-- AVAILABILITY BANNER - FIX #1: Added Open To details -->
 <div class="availability-banner">
   <div class="container">
-    <p>
-      <span class="av-dot"></span> 
-      📍 Open To: Remote (EU-wide) | Relocation to Italy | Hybrid Hamburg &nbsp;|&nbsp; 
-      🎯 Roles: Data Analyst | BI Analyst | Operations Analyst &nbsp;|&nbsp; 
-      💼 Availability: 2 weeks notice
-    </p>
+    <p><span class="av-dot"></span> 📍 Open To: Remote (EU-wide) | Relocation to Italy | Hybrid Hamburg &nbsp;|&nbsp; 🎯 Roles: Data Analyst | BI Analyst | Operations Analyst &nbsp;|&nbsp; 💼 Availability: 2 weeks notice</p>
   </div>
 </div>
 
@@ -277,7 +272,7 @@
   </div>
 </header>
 
-<!-- HERO - FIXED IMAGE (removed placeholder text) -->
+<!-- HERO - FIX #3: Fixed broken image (removed placeholder text) -->
 <section class="hero" id="home">
   <div class="container">
     <div class="hero-content">
@@ -296,16 +291,27 @@
         <a href="#about" class="btn btn-ghost">My Story</a>
       </div>
       <div class="hero-stats">
-        <div><span class="hero-stat-num">9</span><span class="hero-stat-label">Live case studies</span></div>
-        <div><span class="hero-stat-num">5</span><span class="hero-stat-label">Languages fluent</span></div>
-        <div><span class="hero-stat-num">10+</span><span class="hero-stat-label">Years in operations</span></div>
-        <div><span class="hero-stat-num">+10%</span><span class="hero-stat-label">Revenue uplift delivered</span></div>
+        <div>
+          <span class="hero-stat-num">9</span>
+          <span class="hero-stat-label">Live case studies</span>
+        </div>
+        <div>
+          <span class="hero-stat-num">5</span>
+          <span class="hero-stat-label">Languages fluent</span>
+        </div>
+        <div>
+          <span class="hero-stat-num">10+</span>
+          <span class="hero-stat-label">Years in operations</span>
+        </div>
+        <div>
+          <span class="hero-stat-num">+10%</span>
+          <span class="hero-stat-label">Revenue uplift delivered</span>
+        </div>
       </div>
     </div>
 
     <div class="hero-visual">
       <div class="hero-img-wrap">
-        <!-- FIXED: Replaced broken placeholder with a solid professional placeholder (no error text) -->
         <img src="./assets/images/absolute-image.png" alt="Yaw Assensoh Opoku — Data Analyst"
              onerror="this.src='https://placehold.co/600x750/EEF4FF/1B5FD9?text=Yaw+Assensoh+Opoku&font=montserrat'">
       </div>
@@ -349,7 +355,10 @@
   <div class="container">
     <div class="about-left fade-up">
       <div class="about-story-card">
-        <p>For years I owned and operated a logistics business in Hamburg — optimising routes, forecasting demand, and segmenting customers using whatever data tools I had. Every decision had a real cost.<br><br>That pressure taught me something most analysts learn in theory: <strong>data only matters when it changes a decision.</strong></p>
+        <p>
+          For years I owned and operated a logistics business in Hamburg — optimising routes, forecasting demand, and segmenting customers using whatever data tools I had. Every decision had a real cost.<br><br>
+          That pressure taught me something most analysts learn in theory: <strong>data only matters when it changes a decision.</strong>
+        </p>
       </div>
       <div class="about-impact-card">
         <div class="card-label">Results from my own business</div>
@@ -367,10 +376,22 @@
       <p class="section-text" style="margin-top:1rem;">Currently based in Hamburg, I'm actively seeking remote-first roles or opportunities that allow me to relocate to Italy. My multilingual background makes me a natural fit for international and pan-European teams.</p>
 
       <div class="specialties-list">
-        <div class="specialty-item"><div class="spec-icon"><i class="fas fa-bullseye"></i></div><div><strong>Business-first mindset:</strong> I start with "What problem are we solving?" — not "What can the data show?"</div></div>
-        <div class="specialty-item"><div class="spec-icon"><i class="fas fa-cogs"></i></div><div><strong>Operational fluency:</strong> Years running logistics operations means I understand process optimisation from the ground up</div></div>
-        <div class="specialty-item"><div class="spec-icon"><i class="fas fa-language"></i></div><div><strong>Multilingual reach:</strong> Fluent in English, German, Italian, Spanish, and French — cultural awareness for global data challenges</div></div>
-        <div class="specialty-item"><div class="spec-icon"><i class="fas fa-wifi"></i></div><div><strong>Remote-ready:</strong> Comfortable with async collaboration, documentation-first communication, and distributed team workflows</div></div>
+        <div class="specialty-item">
+          <div class="spec-icon"><i class="fas fa-bullseye"></i></div>
+          <div><strong>Business-first mindset:</strong> I start with "What problem are we solving?" — not "What can the data show?"</div>
+        </div>
+        <div class="specialty-item">
+          <div class="spec-icon"><i class="fas fa-cogs"></i></div>
+          <div><strong>Operational fluency:</strong> Years running logistics operations means I understand process optimisation from the ground up</div>
+        </div>
+        <div class="specialty-item">
+          <div class="spec-icon"><i class="fas fa-language"></i></div>
+          <div><strong>Multilingual reach:</strong> Fluent in English, German, Italian, Spanish, and French — cultural awareness for global data challenges</div>
+        </div>
+        <div class="specialty-item">
+          <div class="spec-icon"><i class="fas fa-wifi"></i></div>
+          <div><strong>Remote-ready:</strong> Comfortable with async collaboration, documentation-first communication, and distributed team workflows</div>
+        </div>
       </div>
 
       <div style="display:flex;gap:12px;flex-wrap:wrap;">
@@ -385,27 +406,124 @@
 <section class="section projects" id="projects">
   <div class="container">
     <div class="projects-header">
-      <div><p class="section-label">Case Studies</p><h2 class="section-title">Data-driven business impact</h2><p class="section-text">Selected projects with live dashboards, GitHub repos, and documented outcomes.</p></div>
+      <div>
+        <p class="section-label">Case Studies</p>
+        <h2 class="section-title">Data-driven business impact</h2>
+        <p class="section-text">Selected projects with live dashboards, GitHub repos, and documented outcomes.</p>
+      </div>
     </div>
 
     <div class="projects-grid">
-      <!-- Housing (wide) -->
+
+      <!-- FEATURED: Housing (wide) -->
       <div class="project-card card-wide fade-up">
-        <div class="card-img"><img src="./assets/images/housing-graphic.png" alt="US Housing Affordability" onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80'"></div>
-        <div class="card-body"><span class="card-badge">Real Estate & Economic Analytics</span><h3 class="card-title">US Housing Affordability Analysis (2015–2024)</h3><p class="card-desc">3-phase project examining the affordability crisis across 5 major US cities. Combined Excel, SQL, and Python with K-Means clustering and a 36-month SARIMA forecast — all surfaced in an interactive Streamlit dashboard.</p><div class="card-metrics"><div class="metric-row"><i class="fas fa-chart-line"></i><span><strong>2.22 LA affordability index</strong> — requires $200K+ annual income for median home</span></div><div class="metric-row"><i class="fas fa-layer-group"></i><span><strong>3 market clusters</strong> via K-Means, validated by SQL risk classification</span></div><div class="metric-row"><i class="fas fa-clock"></i><span><strong>36-month SARIMA forecast</strong> with 95% confidence intervals</span></div></div><div class="card-links"><a href="projects/housing-analysis.html" class="card-link primary"><i class="fas fa-book-open"></i> Full Case Study</a><a href="https://yaw-assensoh-housing-affordability-pr-dashboarddashboard-0wtwto.streamlit.app" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i> Live Dashboard</a><a href="https://github.com/Yaw-Assensoh/Housing-Affordability-Analysis" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div>
+        <div class="card-img">
+          <img src="./assets/images/housing-graphic.png" alt="US Housing Affordability"
+               onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80'">
+        </div>
+        <div class="card-body">
+          <span class="card-badge">Real Estate & Economic Analytics</span>
+          <h3 class="card-title">US Housing Affordability Analysis (2015–2024)</h3>
+          <p class="card-desc">3-phase project examining the affordability crisis across 5 major US cities. Combined Excel, SQL, and Python with K-Means clustering and a 36-month SARIMA forecast — all surfaced in an interactive Streamlit dashboard.</p>
+          <div class="card-metrics">
+            <div class="metric-row"><i class="fas fa-chart-line"></i><span><strong>2.22 LA affordability index</strong> — requires $200K+ annual income for median home</span></div>
+            <div class="metric-row"><i class="fas fa-layer-group"></i><span><strong>3 market clusters</strong> via K-Means, validated by SQL risk classification</span></div>
+            <div class="metric-row"><i class="fas fa-clock"></i><span><strong>36-month SARIMA forecast</strong> with 95% confidence intervals</span></div>
+          </div>
+          <div class="card-links">
+            <a href="projects/housing-analysis.html" class="card-link primary"><i class="fas fa-book-open"></i> Full Case Study</a>
+            <a href="https://yaw-assensoh-housing-affordability-pr-dashboarddashboard-0wtwto.streamlit.app" target="_blank" rel="noopener" class="card-link"><i class="fas fa-external-link-alt"></i> Live Dashboard</a>
+            <a href="https://github.com/Yaw-Assensoh/Housing-Affordability-Analysis" target="_blank" rel="noopener" class="card-link"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
       </div>
 
       <!-- Citi Bike -->
-      <div class="project-card fade-up"><div class="card-img"><img src="./assets/images/people-bikes.jpg" alt="NYC Citi Bike" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80'"></div><div class="card-body"><span class="card-badge">Supply Chain & Operations</span><h3 class="card-title">NYC Citi Bike Supply Optimisation</h3><p class="card-desc">Demand forecasting model with 0.82 temperature-usage correlation to optimise distribution across 1,500+ stations, reducing costs while improving availability.</p><div class="card-metrics"><div class="metric-row"><i class="fas fa-dollar-sign"></i><span><strong>20–25% revenue increase</strong> via dynamic pricing strategy</span></div><div class="metric-row"><i class="fas fa-calendar-alt"></i><span><strong>4-week advance forecasting</strong> for proactive planning</span></div></div><div class="card-links"><a href="projects/nyc-citibike-analysis.html" class="card-link primary"><i class="fas fa-book-open"></i> Case Study</a><a href="https://yaw-assensoh-urban-mobility-insights-app-ujtkq3.streamlit.app" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i> Dashboard</a><a href="https://github.com/Yaw-Assensoh/urban-mobility-insights" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></div>
+      <div class="project-card fade-up">
+        <div class="card-img">
+          <img src="./assets/images/people-bikes.jpg" alt="NYC Citi Bike"
+               onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="card-body">
+          <span class="card-badge">Supply Chain & Operations</span>
+          <h3 class="card-title">NYC Citi Bike Supply Optimisation</h3>
+          <p class="card-desc">Demand forecasting model with 0.82 temperature-usage correlation to optimise distribution across 1,500+ stations, reducing costs while improving availability.</p>
+          <div class="card-metrics">
+            <div class="metric-row"><i class="fas fa-dollar-sign"></i><span><strong>20–25% revenue increase</strong> via dynamic pricing strategy</span></div>
+            <div class="metric-row"><i class="fas fa-calendar-alt"></i><span><strong>4-week advance forecasting</strong> for proactive planning</span></div>
+          </div>
+          <div class="card-links">
+            <a href="projects/nyc-citibike-analysis.html" class="card-link primary"><i class="fas fa-book-open"></i> Case Study</a>
+            <a href="https://yaw-assensoh-urban-mobility-insights-app-ujtkq3.streamlit.app" target="_blank" rel="noopener" class="card-link"><i class="fas fa-external-link-alt"></i> Dashboard</a>
+            <a href="https://github.com/Yaw-Assensoh/urban-mobility-insights" target="_blank" rel="noopener" class="card-link"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
 
       <!-- Instacart -->
-      <div class="project-card fade-up"><div class="card-img"><img src="./assets/images/instacart-image.jpg" alt="Instacart" onerror="this.src='https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80'"></div><div class="card-body"><span class="card-badge">E-commerce & Retail</span><h3 class="card-title">Instacart Market Basket Analysis</h3><p class="card-desc">Customer segmentation and product association analysis identifying 12 high-probability product pairs for targeted marketing and strategic bundling.</p><div class="card-metrics"><div class="metric-row"><i class="fas fa-shopping-cart"></i><span><strong>+15% AOV</strong> through product bundling strategy</span></div><div class="metric-row"><i class="fas fa-bullseye"></i><span><strong>65%+ co-purchase rates</strong> on identified pairs</span></div></div><div class="card-links"><a href="projects/instacart-analysis.html" class="card-link primary"><i class="fas fa-book-open"></i> Case Study</a><a href="https://github.com/Yaw-Assensoh/Instacart-Analysis" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></div>
+      <div class="project-card fade-up">
+        <div class="card-img">
+          <img src="./assets/images/instacart-image.jpg" alt="Instacart"
+               onerror="this.src='https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="card-body">
+          <span class="card-badge">E-commerce & Retail</span>
+          <h3 class="card-title">Instacart Market Basket Analysis</h3>
+          <p class="card-desc">Customer segmentation and product association analysis identifying 12 high-probability product pairs for targeted marketing and strategic bundling.</p>
+          <div class="card-metrics">
+            <div class="metric-row"><i class="fas fa-shopping-cart"></i><span><strong>+15% AOV</strong> through product bundling strategy</span></div>
+            <div class="metric-row"><i class="fas fa-bullseye"></i><span><strong>65%+ co-purchase rates</strong> on identified pairs</span></div>
+          </div>
+          <div class="card-links">
+            <a href="projects/instacart-analysis.html" class="card-link primary"><i class="fas fa-book-open"></i> Case Study</a>
+            <a href="https://github.com/Yaw-Assensoh/Instacart-Analysis" target="_blank" rel="noopener" class="card-link"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
 
       <!-- Financial -->
-      <div class="project-card fade-up"><div class="card-img"><img src="./assets/images/dashboard-preview.jpg" alt="Financial Markets" onerror="this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&q=80'"></div><div class="card-body"><span class="card-badge">Financial Analytics</span><h3 class="card-title">Financial Markets Intelligence Platform</h3><p class="card-desc">Quantitative analysis of tech stocks delivering 243% average returns vs. 100% SPY benchmark, with risk-adjusted portfolio optimisation and momentum signals.</p><div class="card-metrics"><div class="metric-row"><i class="fas fa-rocket"></i><span><strong>343.9% TSLA returns</strong> with risk management framework</span></div><div class="metric-row"><i class="fas fa-chart-bar"></i><span><strong>58.9 RSI</strong> momentum signals for tactical allocation</span></div></div><div class="card-links"><a href="projects/financial-analysis.html" class="card-link primary"><i class="fas fa-book-open"></i> Case Study</a><a href="https://yaw-assensoh-financial-analysis-app-ypiyqi.streamlit.app" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i> Dashboard</a><a href="https://github.com/Yaw-Assensoh/Financial-Analysis" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></div>
+      <div class="project-card fade-up">
+        <div class="card-img">
+          <img src="./assets/images/dashboard-preview.jpg" alt="Financial Markets"
+               onerror="this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="card-body">
+          <span class="card-badge">Financial Analytics</span>
+          <h3 class="card-title">Financial Markets Intelligence Platform</h3>
+          <p class="card-desc">Quantitative analysis of tech stocks delivering 243% average returns vs. 100% SPY benchmark, with risk-adjusted portfolio optimisation and momentum signals.</p>
+          <div class="card-metrics">
+            <div class="metric-row"><i class="fas fa-rocket"></i><span><strong>343.9% TSLA returns</strong> with risk management framework</span></div>
+            <div class="metric-row"><i class="fas fa-chart-bar"></i><span><strong>58.9 RSI</strong> momentum signals for tactical allocation</span></div>
+          </div>
+          <div class="card-links">
+            <a href="projects/financial-analysis.html" class="card-link primary"><i class="fas fa-book-open"></i> Case Study</a>
+            <a href="https://yaw-assensoh-financial-analysis-app-ypiyqi.streamlit.app" target="_blank" rel="noopener" class="card-link"><i class="fas fa-external-link-alt"></i> Dashboard</a>
+            <a href="https://github.com/Yaw-Assensoh/Financial-Analysis" target="_blank" rel="noopener" class="card-link"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
 
       <!-- Influenza -->
-      <div class="project-card fade-up"><div class="card-img"><img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=600&q=80" alt="Influenza Forecast"></div><div class="card-body"><span class="card-badge">Healthcare Analytics</span><h3 class="card-title">Influenza Staffing Forecast Model</h3><p class="card-desc">ARIMA-based predictive model with 89% accuracy for 4-week influenza forecasts, enabling optimised hospital staffing during peak seasons.</p><div class="card-metrics"><div class="metric-row"><i class="fas fa-hospital"></i><span><strong>−23% overtime costs</strong> through optimised staffing schedules</span></div><div class="metric-row"><i class="fas fa-calendar-check"></i><span><strong>4-week advance planning</strong> capability for resource allocation</span></div></div><div class="card-links"><a href="projects/influenza-forecast.html" class="card-link primary"><i class="fas fa-book-open"></i> Case Study</a><a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/Book1_17436918254930/Story1" target="_blank" class="card-link"><i class="fas fa-chart-bar"></i> Tableau</a><a href="https://github.com/Yaw-Assensoh" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></div>
+      <div class="project-card fade-up">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=600&q=80" alt="Influenza Forecast">
+        </div>
+        <div class="card-body">
+          <span class="card-badge">Healthcare Analytics</span>
+          <h3 class="card-title">Influenza Staffing Forecast Model</h3>
+          <p class="card-desc">ARIMA-based predictive model with 89% accuracy for 4-week influenza forecasts, enabling optimised hospital staffing during peak seasons.</p>
+          <div class="card-metrics">
+            <div class="metric-row"><i class="fas fa-hospital"></i><span><strong>−23% overtime costs</strong> through optimised staffing schedules</span></div>
+            <div class="metric-row"><i class="fas fa-calendar-check"></i><span><strong>4-week advance planning</strong> capability for resource allocation</span></div>
+          </div>
+          <div class="card-links">
+            <a href="projects/influenza-forecast.html" class="card-link primary"><i class="fas fa-book-open"></i> Case Study</a>
+            <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/Book1_17436918254930/Story1" target="_blank" rel="noopener" class="card-link"><i class="fas fa-chart-bar"></i> Tableau</a>
+            <a href="https://github.com/Yaw-Assensoh" target="_blank" rel="noopener" class="card-link"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -416,75 +534,262 @@
     <p class="section-label">All Projects</p>
     <h2 class="section-title">More analysis work</h2>
     <div class="portfolio-grid">
-      <a href="projects/migration-analysis.html" class="portfolio-card fade-up"><div class="p-img"><img src="./assets/images/migration-view.png" alt="Global Migration" onerror="this.src='https://images.unsplash.com/photo-1527689361190-bcf06e6c8b6d?auto=format&fit=crop&w=400&q=80'"></div><div class="p-body"><span class="card-badge">Forecasting</span><h3 class="card-title">Global Migration Analysis</h3><p class="p-tools">Python · Tableau · ARIMA</p><div class="card-links"><a href="projects/migration-analysis.html" class="card-link primary">View</a><a href="https://yaw-assensoh-global-migration-analysis-project-app-tbxmqx.streamlit.app" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i> Dashboard</a><a href="https://github.com/Yaw-Assensoh/Global-Migration-Analysis-Project" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></a>
-      <a href="projects/rockbuster-insights.html" class="portfolio-card fade-up"><div class="p-img"><img src="./assets/images/Data-Analytics.jpg" alt="RockBuster" onerror="this.src='https://images.unsplash.com/photo-1534308143439-3820b8e20fca?auto=format&fit=crop&w=400&q=80'"></div><div class="p-body"><span class="card-badge">Business Intelligence</span><h3 class="card-title">RockBuster Insights</h3><p class="p-tools">PostgreSQL · Tableau</p><div class="card-links"><a href="projects/rockbuster-insights.html" class="card-link primary">View</a><a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/ROCKBUSTERPROJECT/Story1" target="_blank" class="card-link"><i class="fas fa-chart-bar"></i> Tableau</a><a href="https://github.com/Yaw-Assensoh/RockBuster-Insights" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></a>
-      <a href="projects/20th-century-events.html" class="portfolio-card fade-up"><div class="p-img"><img src="./assets/images/historical-data.jpg" alt="Geopolitical" onerror="this.src='https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=400&q=80'"></div><div class="p-body"><span class="card-badge">Network Science</span><h3 class="card-title">20th Century Geopolitical Analysis</h3><p class="p-tools">Python · NetworkX · NLP</p><div class="card-links"><a href="projects/20th-century-events.html" class="card-link primary">View</a><a href="https://github.com/Yaw-Assensoh/20th_Century" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></a>
-      <a href="projects/global-development.html" class="portfolio-card fade-up"><div class="p-img"><img src="./assets/images/analysis-3.jpg" alt="Global Development" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80'"></div><div class="p-body"><span class="card-badge">Economic Analysis</span><h3 class="card-title">Global Development Trends</h3><p class="p-tools">Python · Tableau · World Bank</p><div class="card-links"><a href="projects/global-development.html" class="card-link primary">View</a><a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/GDPperCapita_17593122370230/Story2" target="_blank" class="card-link"><i class="fas fa-chart-bar"></i> Tableau</a><a href="https://github.com/Yaw-Assensoh/Global-Development-Trends" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></a>
+      <a href="projects/migration-analysis.html" class="portfolio-card fade-up">
+        <div class="p-img"><img src="./assets/images/migration-view.png" alt="Global Migration"
+             onerror="this.src='https://images.unsplash.com/photo-1527689361190-bcf06e6c8b6d?auto=format&fit=crop&w=400&q=80'"></div>
+        <div class="p-body">
+          <span class="card-badge">Forecasting</span>
+          <h3 class="card-title">Global Migration Analysis</h3>
+          <p class="p-tools">Python · Tableau · ARIMA</p>
+          <div class="card-links">
+            <a href="projects/migration-analysis.html" class="card-link primary">View</a>
+            <a href="https://yaw-assensoh-global-migration-analysis-project-app-tbxmqx.streamlit.app" target="_blank" rel="noopener" class="card-link"><i class="fas fa-external-link-alt"></i> Dashboard</a>
+            <a href="https://github.com/Yaw-Assensoh/Global-Migration-Analysis-Project" target="_blank" rel="noopener" class="card-link"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </a>
+      <a href="projects/rockbuster-insights.html" class="portfolio-card fade-up">
+        <div class="p-img"><img src="./assets/images/Data-Analytics.jpg" alt="RockBuster"
+             onerror="this.src='https://images.unsplash.com/photo-1534308143439-3820b8e20fca?auto=format&fit=crop&w=400&q=80'"></div>
+        <div class="p-body">
+          <span class="card-badge">Business Intelligence</span>
+          <h3 class="card-title">RockBuster Insights</h3>
+          <p class="p-tools">PostgreSQL · Tableau</p>
+          <div class="card-links">
+            <a href="projects/rockbuster-insights.html" class="card-link primary">View</a>
+            <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/ROCKBUSTERPROJECT/Story1" target="_blank" rel="noopener" class="card-link"><i class="fas fa-chart-bar"></i> Tableau</a>
+            <a href="https://github.com/Yaw-Assensoh/RockBuster-Insights" target="_blank" rel="noopener" class="card-link"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </a>
+      <a href="projects/20th-century-events.html" class="portfolio-card fade-up">
+        <div class="p-img"><img src="./assets/images/historical-data.jpg" alt="Geopolitical"
+             onerror="this.src='https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=400&q=80'"></div>
+        <div class="p-body">
+          <span class="card-badge">Network Science</span>
+          <h3 class="card-title">20th Century Geopolitical Analysis</h3>
+          <p class="p-tools">Python · NetworkX · NLP</p>
+          <div class="card-links">
+            <a href="projects/20th-century-events.html" class="card-link primary">View</a>
+            <a href="https://github.com/Yaw-Assensoh/20th_Century" target="_blank" rel="noopener" class="card-link"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </a>
+      <a href="projects/global-development.html" class="portfolio-card fade-up">
+        <div class="p-img"><img src="./assets/images/analysis-3.jpg" alt="Global Development"
+             onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80'"></div>
+        <div class="p-body">
+          <span class="card-badge">Economic Analysis</span>
+          <h3 class="card-title">Global Development Trends</h3>
+          <p class="p-tools">Python · Tableau · World Bank</p>
+          <div class="card-links">
+            <a href="projects/global-development.html" class="card-link primary">View</a>
+            <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/GDPperCapita_17593122370230/Story2" target="_blank" rel="noopener" class="card-link"><i class="fas fa-chart-bar"></i> Tableau</a>
+            <a href="https://github.com/Yaw-Assensoh/Global-Development-Trends" target="_blank" rel="noopener" class="card-link"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- SKILLS (keeping your original chips) -->
+<!-- NEW TECH STACK LINE BETWEEN PROJECTS AND SKILLS (Fix #4) -->
+<div class="trust-bar" style="background:var(--bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="container">
+    <span class="label" style="color:var(--blue);">Full tech stack</span>
+    <div class="tool-chip" style="color:var(--mid);"><i class="fab fa-python" style="color:var(--blue);"></i> Python · Pandas · NumPy</div>
+    <div class="tool-chip" style="color:var(--mid);"><i class="fas fa-database" style="color:var(--blue);"></i> PostgreSQL · MySQL</div>
+    <div class="tool-chip" style="color:var(--mid);"><i class="fas fa-chart-line" style="color:var(--blue);"></i> Tableau · Power BI · Streamlit</div>
+    <div class="tool-chip" style="color:var(--mid);"><i class="fas fa-robot" style="color:var(--blue);"></i> Scikit-learn · SARIMA · K-Means</div>
+  </div>
+</div>
+
+<!-- SKILLS -->
 <section class="section skills" id="skills">
   <div class="container">
     <p class="section-label">Technical Skills</p>
     <h2 class="section-title">Tools & technologies</h2>
     <p class="section-text">Skills demonstrated through projects — not progress bars.</p>
     <div class="skills-layout">
-      <div><p class="skills-group-title">Data Analysis & Python</p><div class="skills-chips"><div class="skill-chip"><i class="fab fa-python"></i> Python</div><div class="skill-chip"><i class="fas fa-table"></i> Pandas</div><div class="skill-chip"><i class="fas fa-calculator"></i> NumPy</div><div class="skill-chip"><i class="fas fa-chart-area"></i> Matplotlib / Seaborn</div><div class="skill-chip"><i class="fas fa-book"></i> Jupyter Notebook</div><div class="skill-chip"><i class="fas fa-map"></i> Folium</div><div class="skill-chip"><i class="fas fa-chart-bar"></i> Plotly</div></div><p class="skills-group-title">Databases & Querying</p><div class="skills-chips"><div class="skill-chip"><i class="fas fa-database"></i> PostgreSQL</div><div class="skill-chip"><i class="fas fa-code"></i> Window Functions</div><div class="skill-chip"><i class="fas fa-filter"></i> CTEs & Subqueries</div><div class="skill-chip"><i class="fas fa-file-excel"></i> Microsoft Excel</div></div><p class="skills-group-title">Visualisation & Dashboards</p><div class="skills-chips"><div class="skill-chip"><i class="fas fa-chart-bar"></i> Tableau</div><div class="skill-chip"><i class="fas fa-map-marked-alt"></i> Streamlit</div><div class="skill-chip"><i class="fas fa-tachometer-alt"></i> Power BI</div></div></div>
-      <div><p class="skills-group-title">Machine Learning & Statistics</p><div class="skills-chips"><div class="skill-chip"><i class="fas fa-robot"></i> Scikit-learn</div><div class="skill-chip"><i class="fas fa-layer-group"></i> K-Means Clustering</div><div class="skill-chip"><i class="fas fa-wave-square"></i> SARIMA / ARIMA</div><div class="skill-chip"><i class="fas fa-flask"></i> A/B Testing</div><div class="skill-chip"><i class="fas fa-project-diagram"></i> Regression Analysis</div><div class="skill-chip"><i class="fas fa-chart-line"></i> Time Series</div><div class="skill-chip"><i class="fas fa-network-wired"></i> NetworkX / NLP</div></div><p class="skills-group-title">Education & Credentials</p><div class="cert-card"><div class="cert-icon"><i class="fas fa-graduation-cap"></i></div><div><div class="cert-name">Data Analytics Certificate</div><div class="cert-issuer">CareerFoundry — 2024</div></div></div><div class="cert-card"><div class="cert-icon"><i class="fas fa-chart-bar"></i></div><div><div class="cert-name">Tableau for Analysts</div><div class="cert-issuer">Tableau Public — verified</div></div></div><div class="cert-card"><div class="cert-icon"><i class="fas fa-briefcase"></i></div><div><div class="cert-name">Logistics Operations (Founder)</div><div class="cert-issuer">Hamburg, Germany — 10+ years</div></div></div></div>
+      <div>
+        <p class="skills-group-title">Data Analysis & Python</p>
+        <div class="skills-chips">
+          <div class="skill-chip"><i class="fab fa-python"></i> Python</div>
+          <div class="skill-chip"><i class="fas fa-table"></i> Pandas</div>
+          <div class="skill-chip"><i class="fas fa-calculator"></i> NumPy</div>
+          <div class="skill-chip"><i class="fas fa-chart-area"></i> Matplotlib / Seaborn</div>
+          <div class="skill-chip"><i class="fas fa-book"></i> Jupyter Notebook</div>
+          <div class="skill-chip"><i class="fas fa-map"></i> Folium</div>
+          <div class="skill-chip"><i class="fas fa-chart-bar"></i> Plotly</div>
+        </div>
+        <p class="skills-group-title">Databases & Querying</p>
+        <div class="skills-chips">
+          <div class="skill-chip"><i class="fas fa-database"></i> PostgreSQL</div>
+          <div class="skill-chip"><i class="fas fa-code"></i> Window Functions</div>
+          <div class="skill-chip"><i class="fas fa-filter"></i> CTEs & Subqueries</div>
+          <div class="skill-chip"><i class="fas fa-file-excel"></i> Microsoft Excel</div>
+        </div>
+        <p class="skills-group-title">Visualisation & Dashboards</p>
+        <div class="skills-chips">
+          <div class="skill-chip"><i class="fas fa-chart-bar"></i> Tableau</div>
+          <div class="skill-chip"><i class="fas fa-map-marked-alt"></i> Streamlit</div>
+          <div class="skill-chip"><i class="fas fa-tachometer-alt"></i> Power BI</div>
+        </div>
+      </div>
+      <div>
+        <p class="skills-group-title">Machine Learning & Statistics</p>
+        <div class="skills-chips">
+          <div class="skill-chip"><i class="fas fa-robot"></i> Scikit-learn</div>
+          <div class="skill-chip"><i class="fas fa-layer-group"></i> K-Means Clustering</div>
+          <div class="skill-chip"><i class="fas fa-wave-square"></i> SARIMA / ARIMA</div>
+          <div class="skill-chip"><i class="fas fa-flask"></i> A/B Testing</div>
+          <div class="skill-chip"><i class="fas fa-project-diagram"></i> Regression Analysis</div>
+          <div class="skill-chip"><i class="fas fa-chart-line"></i> Time Series</div>
+          <div class="skill-chip"><i class="fas fa-network-wired"></i> NetworkX / NLP</div>
+        </div>
+        <p class="skills-group-title">Education & Credentials</p>
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div><div class="cert-name">Data Analytics Certificate</div><div class="cert-issuer">CareerFoundry — 2024</div></div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fas fa-chart-bar"></i></div>
+          <div><div class="cert-name">Tableau for Analysts</div><div class="cert-issuer">Tableau Public — verified</div></div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fas fa-briefcase"></i></div>
+          <div><div class="cert-name">Logistics Operations (Founder)</div><div class="cert-issuer">Hamburg, Germany — 10+ years</div></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT - FIXED EMAIL (Fix #2) -->
+<!-- CONTACT - FIX #2: Fixed email address -->
 <section class="section contact" id="contact">
   <div class="container">
     <p class="section-label">Get In Touch</p>
     <h2 class="section-title">Let's work together</h2>
     <div class="contact-layout">
-      <div><p class="contact-intro">Ready to turn your data into decisions? Whether you're hiring a data analyst or need project-based analysis — I'd love to hear from you. Open to remote roles across Europe or relocation to Italy. I typically respond within 24 hours.</p>
-        <div class="contact-detail"><div class="cd-icon"><i class="fas fa-map-marker-alt"></i></div><div><div class="cd-label">Location</div><div class="cd-val">Hamburg, Germany · Remote / Italy open</div></div></div>
-        <div class="contact-detail"><div class="cd-icon"><i class="fas fa-envelope"></i></div><div><div class="cd-label">Email</div><a href="mailto:yaw.assensoh@hotmail.com" class="cd-val">yaw.assensoh@hotmail.com</a></div></div>
-        <div class="contact-detail"><div class="cd-icon"><i class="fas fa-phone"></i></div><div><div class="cd-label">Phone</div><a href="tel:+4915738065664" class="cd-val">+49 157 3806 5664</a></div></div>
-        <div class="social-links"><a href="https://www.linkedin.com/in/yaw-assensoh-opoku" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a><a href="https://github.com/Yaw-Assensoh" target="_blank" class="social-link"><i class="fab fa-github"></i></a><a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku" target="_blank" class="social-link"><i class="fas fa-chart-bar"></i></a></div>
+      <div>
+        <p class="contact-intro">Ready to turn your data into decisions? Whether you're hiring a data analyst or need project-based analysis — I'd love to hear from you. Open to remote roles across Europe or relocation to Italy. I typically respond within 24 hours.</p>
+        <div class="contact-detail">
+          <div class="cd-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div><div class="cd-label">Location</div><div class="cd-val">Hamburg, Germany · Remote / Italy open</div></div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon"><i class="fas fa-envelope"></i></div>
+          <div><div class="cd-label">Email</div><a href="mailto:yaw.assensoh@hotmail.com" class="cd-val">yaw.assensoh@hotmail.com</a></div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon"><i class="fas fa-phone"></i></div>
+          <div><div class="cd-label">Phone</div><a href="tel:+4915738065664" class="cd-val">+49 157 3806 5664</a></div>
+        </div>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/yaw-assensoh-opoku" target="_blank" rel="noopener" class="social-link" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/Yaw-Assensoh" target="_blank" rel="noopener" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku" target="_blank" rel="noopener" class="social-link" title="Tableau Public"><i class="fas fa-chart-bar"></i></a>
+        </div>
       </div>
-      <div><div class="contact-form"><div class="form-row"><div class="form-group"><label class="form-label" for="c-name">Name</label><input class="form-input" type="text" id="c-name" placeholder="Your name" autocomplete="name"></div><div class="form-group"><label class="form-label" for="c-email">Email</label><input class="form-input" type="email" id="c-email" placeholder="your@email.com" autocomplete="email"></div></div><div class="form-group"><label class="form-label" for="c-subject">Subject</label><input class="form-input" type="text" id="c-subject" placeholder="What's this about?"></div><div class="form-group"><label class="form-label" for="c-msg">Message</label><textarea class="form-input" id="c-msg" rows="5" placeholder="Tell me about your project or opportunity..."></textarea></div><button class="form-submit" id="form-btn" onclick="handleContact()"><i class="fas fa-paper-plane"></i> Send Message</button><p id="contact-feedback"></p></div></div>
+      <div>
+        <div class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="c-name">Name</label>
+              <input class="form-input" type="text" id="c-name" placeholder="Your name" autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="c-email">Email</label>
+              <input class="form-input" type="email" id="c-email" placeholder="your@email.com" autocomplete="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="c-subject">Subject</label>
+            <input class="form-input" type="text" id="c-subject" placeholder="What's this about?">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="c-msg">Message</label>
+            <textarea class="form-input" id="c-msg" rows="5" placeholder="Tell me about your project or opportunity..."></textarea>
+          </div>
+          <button class="form-submit" id="form-btn" onclick="handleContact()">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+          <p id="contact-feedback"></p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer"><div class="container"><p class="footer-copy">&copy; 2026 Yaw Assensoh Opoku. All rights reserved.</p><div class="footer-links"><a href="https://github.com/Yaw-Assensoh" target="_blank">GitHub</a><a href="https://www.linkedin.com/in/yaw-assensoh-opoku" target="_blank">LinkedIn</a><a href="Yaw-Assensoh-Resume.pdf" download>Resume</a></div></div></footer>
+<footer class="footer">
+  <div class="container">
+    <p class="footer-copy">&copy; 2026 Yaw Assensoh Opoku. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="https://github.com/Yaw-Assensoh" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/yaw-assensoh-opoku" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="Yaw-Assensoh-Resume.pdf" download>Resume</a>
+    </div>
+  </div>
+</footer>
+
 <a href="#home" class="back-to-top" id="btt"><i class="fas fa-arrow-up"></i></a>
 
 <script>
   // Header + back-to-top
   const header = document.getElementById('header');
   const btt = document.getElementById('btt');
-  window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 60); btt.classList.toggle('active', window.scrollY > 300); });
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+    btt.classList.toggle('active', window.scrollY > 300);
+  });
+
   // Mobile nav
-  const toggle = document.getElementById('navToggle'); const navbar = document.getElementById('navbar'); const menuIcon = document.getElementById('menuIcon');
-  toggle.addEventListener('click', () => { const open = navbar.classList.toggle('open'); menuIcon.className = open ? 'fas fa-times' : 'fas fa-bars'; });
-  navbar.querySelectorAll('.navbar-link, .btn').forEach(el => { el.addEventListener('click', () => { navbar.classList.remove('open'); menuIcon.className = 'fas fa-bars'; }); });
+  const toggle = document.getElementById('navToggle');
+  const navbar = document.getElementById('navbar');
+  const menuIcon = document.getElementById('menuIcon');
+  toggle.addEventListener('click', () => {
+    const open = navbar.classList.toggle('open');
+    menuIcon.className = open ? 'fas fa-times' : 'fas fa-bars';
+  });
+  navbar.querySelectorAll('.navbar-link, .btn').forEach(el => {
+    el.addEventListener('click', () => {
+      navbar.classList.remove('open');
+      menuIcon.className = 'fas fa-bars';
+    });
+  });
+
   // Fade-up on scroll
-  const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: 0.08 });
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
   document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
-  // Contact form — opens mailto with fixed email
+
+  // Contact form — opens mailto with real email
   function handleContact() {
-    const name = document.getElementById('c-name').value.trim();
-    const email = document.getElementById('c-email').value.trim();
+    const name    = document.getElementById('c-name').value.trim();
+    const email   = document.getElementById('c-email').value.trim();
     const subject = document.getElementById('c-subject').value.trim();
-    const msg = document.getElementById('c-msg').value.trim();
-    const fb = document.getElementById('contact-feedback');
-    const btn = document.getElementById('form-btn');
-    if (!name || !email || !msg) { fb.style.cssText = 'display:block;color:#F87171'; fb.textContent = 'Please fill in your name, email, and message.'; return; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { fb.style.cssText = 'display:block;color:#F87171'; fb.textContent = 'Please enter a valid email address.'; return; }
-    const sub = encodeURIComponent(subject || 'Portfolio enquiry');
+    const msg     = document.getElementById('c-msg').value.trim();
+    const fb      = document.getElementById('contact-feedback');
+    const btn     = document.getElementById('form-btn');
+    if (!name || !email || !msg) {
+      fb.style.cssText = 'display:block;color:#F87171';
+      fb.textContent = 'Please fill in your name, email, and message.';
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      fb.style.cssText = 'display:block;color:#F87171';
+      fb.textContent = 'Please enter a valid email address.';
+      return;
+    }
+    const sub  = encodeURIComponent(subject || 'Portfolio enquiry');
     const body = encodeURIComponent('Hi Yaw,\n\n' + msg + '\n\nBest,\n' + name + '\n' + email);
     window.location.href = 'mailto:yaw.assensoh@hotmail.com?subject=' + sub + '&body=' + body;
-    btn.disabled = true; btn.innerHTML = '<i class="fas fa-check"></i> Message sent!';
-    fb.style.cssText = 'display:block;color:#4ade80'; fb.textContent = 'Your email client should open. Thank you!';
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-check"></i> Message sent!';
+    fb.style.cssText = 'display:block;color:#4ade80';
+    fb.textContent = 'Your email client should open. Thank you!';
     setTimeout(() => { btn.disabled = false; btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message'; }, 4000);
   }
 </script>
