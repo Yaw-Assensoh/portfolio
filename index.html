@@ -3,1086 +3,167 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yaw Assensoh Opoku — Data Analyst Portfolio</title>
-  <meta name="description" content="Data Analyst with 10+ years logistics operations experience. Python, SQL, Tableau. 9 live projects with dashboards and reproducible code.">
+  <title>Yaw Assensoh Opoku — Data Analyst · Hamburg</title>
+  <meta name="description" content="Data Analyst bridging operational expertise with advanced analytics. Former logistics entrepreneur, fluent in 5 languages, 9 case studies with live dashboards.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --blue: #1B5FD9;
-      --blue-light: #EEF4FF;
-      --blue-mid: #3B7BF5;
-      --dark: #0D1117;
-      --mid: #374151;
-      --muted: #6B7280;
-      --border: #E5E7EB;
-      --bg: #FAFAFA;
-      --white: #FFFFFF;
-      --radius-sm: 6px;
-      --radius-md: 10px;
-      --radius-lg: 16px;
-      --shadow-sm: 0 1px 2px rgba(0,0,0,.05);
-      --shadow-md: 0 4px 12px rgba(0,0,0,.08);
-      --shadow-lg: 0 8px 30px rgba(0,0,0,.12);
-      --font-head: 'DM Serif Display', Georgia, serif;
-      --font-body: 'DM Sans', system-ui, sans-serif;
-      --nav-h: 70px;
-    }
-
-    body {
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.5;
-      color: var(--mid);
-      background: var(--white);
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .section {
-      padding: 80px 0;
-    }
-
-    .section-label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-family: var(--font-head);
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      color: var(--dark);
-      line-height: 1.2;
-      margin-bottom: 16px;
-    }
-
-    .section-subtitle {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 640px;
-    }
-
-    /* Header */
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: var(--nav-h);
-      background: rgba(255,255,255,.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid transparent;
-      z-index: 100;
-      transition: all 0.3s;
-    }
-
-    .header.scrolled {
-      border-color: var(--border);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .header .container {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-family: var(--font-head);
-      font-size: 1.25rem;
-      color: var(--dark);
-      font-weight: 400;
-    }
-
-    .navbar-list {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .navbar-link {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--muted);
-      padding: 6px 12px;
-      border-radius: var(--radius-sm);
-      transition: all 0.2s;
-    }
-
-    .navbar-link:hover {
-      color: var(--dark);
-      background: var(--bg);
-    }
-
-    .nav-social {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      margin-left: 8px;
-    }
-
-    .nav-social a {
-      width: 34px;
-      height: 34px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: var(--radius-sm);
-      color: var(--muted);
-      transition: all 0.2s;
-    }
-
-    .nav-social a:hover {
-      color: var(--blue);
-      background: var(--blue-light);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 22px;
-      border-radius: var(--radius-sm);
-      font-size: 0.875rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-      border: none;
-    }
-
-    .btn-primary {
-      background: var(--blue);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #1550c0;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(27,95,217,.3);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--blue);
-      border: 1.5px solid var(--blue);
-    }
-
-    .btn-outline:hover {
-      background: var(--blue-light);
-    }
-
-    .btn-ghost {
-      background: transparent;
-      color: var(--muted);
-      border: 1.5px solid var(--border);
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--blue);
-      color: var(--blue);
-    }
-
-    .btn-sm {
-      padding: 7px 16px;
-      font-size: 0.8rem;
-    }
-
-    .nav-toggle-btn {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.25rem;
-      cursor: pointer;
-      padding: 8px;
-    }
-
-    /* Hero */
-    .hero {
-      padding: calc(var(--nav-h) + 60px) 0 70px;
-      position: relative;
-    }
-
-    .hero .container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--blue-light);
-      color: var(--blue);
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 5px 12px;
-      border-radius: 99px;
-      margin-bottom: 24px;
-    }
-
-    .dot {
-      width: 6px;
-      height: 6px;
-      background: var(--blue);
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
-    }
-
-    .hero-headline {
-      font-family: var(--font-head);
-      font-size: clamp(2.2rem, 5vw, 3.4rem);
-      color: var(--dark);
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
-
-    .hero-headline em {
-      font-style: italic;
-      color: var(--blue);
-    }
-
-    .hero-sub {
-      font-size: 1rem;
-      color: var(--muted);
-      margin-bottom: 32px;
-      max-width: 460px;
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 32px;
-      padding-top: 28px;
-      border-top: 1px solid var(--border);
-    }
-
-    .hero-stat-num {
-      font-family: var(--font-head);
-      font-size: 1.6rem;
-      color: var(--dark);
-      line-height: 1;
-      display: block;
-    }
-
-    .hero-stat-label {
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
-    .hero-visual {
-      position: relative;
-    }
-
-    .hero-img-wrap {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      aspect-ratio: 4/5;
-      background: linear-gradient(135deg, #dbeafe, #eff6ff);
-    }
-
-    .hero-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
-
-    .lang-badge {
-      position: absolute;
-      bottom: 20px;
-      left: -20px;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 10px 14px;
-      box-shadow: var(--shadow-md);
-      animation: float 4s ease-in-out infinite;
-    }
-
-    .lang-badge-label {
-      font-size: 0.65rem;
-      font-weight: 600;
-      color: var(--muted);
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    .lang-flags {
-      display: flex;
-      gap: 5px;
-      flex-wrap: wrap;
-    }
-
-    .lang-pill {
-      font-size: 0.65rem;
-      font-weight: 600;
-      padding: 2px 8px;
-      border-radius: 99px;
-      background: var(--blue-light);
-      color: var(--blue);
-    }
-
-    .exp-badge {
-      position: absolute;
-      top: 20px;
-      right: -20px;
-      background: var(--blue);
-      color: white;
-      border-radius: var(--radius-md);
-      padding: 10px 14px;
-      text-align: center;
-      box-shadow: 0 6px 20px rgba(27,95,217,.3);
-      animation: float 4s ease-in-out infinite 0.6s;
-    }
-
-    .exp-badge .num {
-      font-family: var(--font-head);
-      font-size: 1.5rem;
-      line-height: 1;
-    }
-
-    .exp-badge .txt {
-      font-size: 0.65rem;
-      opacity: 0.85;
-    }
-
-    /* Trust Bar */
-    .trust-bar {
-      background: var(--dark);
-      padding: 18px 0;
-    }
-
-    .trust-bar .container {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      overflow-x: auto;
-    }
-
-    .trust-bar .container::-webkit-scrollbar {
-      display: none;
-    }
-
-    .trust-bar .label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #6B7280;
-      white-space: nowrap;
-    }
-
-    .tool-chip {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #D1D5DB;
-      font-size: 0.8rem;
-      font-weight: 500;
-      white-space: nowrap;
-    }
-
-    /* About */
-    .about .container {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 60px;
-      align-items: start;
-    }
-
-    .about-img-wrap {
-      position: relative;
-    }
-
-    .about-img-inner {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      aspect-ratio: 3/4;
-      background: linear-gradient(135deg, #eff6ff, #dbeafe);
-    }
-
-    .about-img-inner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .about-impact-card {
-      position: absolute;
-      bottom: -20px;
-      right: -20px;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 12px 16px;
-      box-shadow: var(--shadow-lg);
-      min-width: 200px;
-    }
-
-    .about-impact-card .card-label {
-      font-size: 0.65rem;
-      font-weight: 600;
-      color: var(--muted);
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .impact-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 5px;
-      font-size: 0.75rem;
-    }
-
-    .impact-row i {
-      color: var(--blue);
-      width: 14px;
-      font-size: 0.7rem;
-    }
-
-    .impact-row strong {
-      color: var(--dark);
-    }
-
-    .about-text .section-text {
-      margin-bottom: 16px;
-    }
-
-    .specialties-list {
-      margin: 24px 0 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .specialty-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 0.9rem;
-    }
-
-    .spec-icon {
-      width: 28px;
-      height: 28px;
-      background: var(--blue-light);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--blue);
-      font-size: 0.7rem;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    /* Projects Section - UNIFIED FORMAT */
-    .projects {
-      background: var(--bg);
-    }
-
-    .projects-header {
-      text-align: center;
-      margin-bottom: 56px;
-    }
-
-    .projects-header .section-label {
-      text-align: center;
-    }
-
-    .projects-header .section-title {
-      text-align: center;
-    }
-
-    .projects-header .section-subtitle {
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .projects-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-
-    .project-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      transition: all 0.3s;
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 0;
-    }
-
-    .project-card:hover {
-      box-shadow: var(--shadow-lg);
-      border-color: var(--blue-mid);
-    }
-
-    .card-img {
-      overflow: hidden;
-      height: 100%;
-      min-height: 280px;
-    }
-
-    .card-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s;
-    }
-
-    .project-card:hover .card-img img {
-      transform: scale(1.03);
-    }
-
-    .card-body {
-      padding: 32px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card-badge {
-      display: inline-block;
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding: 4px 12px;
-      border-radius: 99px;
-      background: var(--blue-light);
-      color: var(--blue);
-      margin-bottom: 16px;
-      align-self: flex-start;
-    }
-
-    .card-title {
-      font-family: var(--font-head);
-      font-size: 1.5rem;
-      color: var(--dark);
-      margin-bottom: 12px;
-    }
-
-    .card-desc {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    .card-metrics {
-      background: var(--bg);
-      border-radius: var(--radius-sm);
-      padding: 14px 16px;
-      margin-bottom: 20px;
-      border-left: 3px solid var(--blue);
-    }
-
-    .metric-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.8rem;
-      color: var(--mid);
-      margin-bottom: 6px;
-    }
-
-    .metric-row:last-child {
-      margin-bottom: 0;
-    }
-
-    .metric-row i {
-      color: var(--blue);
-      width: 16px;
-      font-size: 0.75rem;
-    }
-
-    .metric-row strong {
-      color: var(--dark);
-    }
-
-    .card-links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: auto;
-    }
-
-    .card-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 8px 16px;
-      border-radius: var(--radius-sm);
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--mid);
-      transition: all 0.2s;
-    }
-
-    .card-link:hover {
-      background: var(--blue-light);
-      border-color: var(--blue);
-      color: var(--blue);
-    }
-
-    /* Skills */
-    .skills {
-      background: var(--bg);
-    }
-
-    .skills-header {
-      text-align: center;
-      margin-bottom: 56px;
-    }
-
-    .skills-header .section-label {
-      text-align: center;
-    }
-
-    .skills-header .section-title {
-      text-align: center;
-    }
-
-    .skills-header .section-subtitle {
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .skills-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-    }
-
-    .skills-group-title {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-
-    .skills-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 32px;
-    }
-
-    .skill-chip {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      background: white;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--mid);
-      transition: all 0.2s;
-    }
-
-    .skill-chip:hover {
-      border-color: var(--blue);
-      background: var(--blue-light);
-    }
-
-    .skill-chip i {
-      color: var(--blue);
-    }
-
-    .cert-card {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 12px 16px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      background: white;
-      margin-bottom: 10px;
-    }
-
-    .cert-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: var(--radius-sm);
-      background: var(--blue-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--blue);
-      flex-shrink: 0;
-    }
-
-    .cert-name {
-      font-weight: 600;
-      font-size: 0.85rem;
-      color: var(--dark);
-    }
-
-    .cert-issuer {
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    /* Contact */
-    .contact {
-      background: var(--dark);
-      color: white;
-    }
-
-    .contact .section-label {
-      color: #60A5FA;
-      text-align: center;
-    }
-
-    .contact .section-title {
-      color: white;
-      text-align: center;
-    }
-
-    .contact-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      margin-top: 48px;
-    }
-
-    .contact-intro {
-      color: #9CA3AF;
-      margin-bottom: 28px;
-    }
-
-    .contact-detail {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 18px;
-    }
-
-    .cd-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-sm);
-      background: rgba(255,255,255,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #60A5FA;
-    }
-
-    .cd-label {
-      font-size: 0.7rem;
-      color: #9CA3AF;
-    }
-
-    .cd-val {
-      font-size: 0.9rem;
-      color: #F3F4F6;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .social-link {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-sm);
-      background: rgba(255,255,255,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #9CA3AF;
-      transition: all 0.2s;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .social-link:hover {
-      background: var(--blue);
-      color: white;
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .form-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: #D1D5DB;
-    }
-
-    .form-input {
-      padding: 10px 14px;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: var(--radius-sm);
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      color: #F3F4F6;
-      outline: none;
-    }
-
-    .form-input:focus {
-      border-color: #60A5FA;
-    }
-
-    .form-submit {
-      align-self: flex-start;
-      background: var(--blue);
-      color: white;
-      font-size: 0.85rem;
-      font-weight: 600;
-      padding: 10px 24px;
-      border: none;
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .form-submit:hover {
-      background: #1550c0;
-    }
-
-    #contact-feedback {
-      margin-top: 8px;
-      font-size: 0.8rem;
-      display: none;
-    }
-
-    /* Footer */
-    .footer {
-      background: #060910;
-      padding: 24px 0;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .footer .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .footer-copy {
-      font-size: 0.75rem;
-      color: #6B7280;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 24px;
-    }
-
-    .footer-links a {
-      font-size: 0.75rem;
-      color: #6B7280;
-    }
-
-    .footer-links a:hover {
-      color: #9CA3AF;
-    }
-
-    /* Back to top */
-    .back-to-top {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 44px;
-      height: 44px;
-      background: var(--blue);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: all 0.3s;
-      box-shadow: 0 4px 12px rgba(27,95,217,0.4);
-    }
-
-    .back-to-top.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    /* Animations */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s, transform 0.6s;
-    }
-
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .project-card {
-        grid-template-columns: 1fr;
-      }
-      .card-img {
-        min-height: 240px;
-      }
-      .card-body {
-        padding: 24px;
-      }
-      .skills-layout {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .section {
-        padding: 60px 0;
-      }
-      .hero .container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      .hero-visual {
-        order: -1;
-      }
-      .lang-badge {
-        left: 0;
-      }
-      .exp-badge {
-        right: 0;
-      }
-      .about .container {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
-      .about-impact-card {
-        right: 0;
-      }
-      .contact-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-      .footer .container {
-        flex-direction: column;
-        gap: 16px;
-        text-align: center;
-      }
-      .navbar {
-        display: none;
-        position: fixed;
-        top: var(--nav-h);
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: white;
-        padding: 24px;
-        border-top: 1px solid var(--border);
-        z-index: 99;
-      }
-      .navbar.open {
-        display: flex;
-      }
-      .navbar-list {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-      }
-      .navbar-link {
-        font-size: 1rem;
-        padding: 10px 14px;
-        width: 100%;
-      }
-      .nav-social {
-        margin: 16px 0;
-      }
-      .nav-toggle-btn {
-        display: block;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero-stats {
-        gap: 20px;
-      }
-      .card-title {
-        font-size: 1.25rem;
-      }
-    }
+    :root{--blue:#1B5FD9;--blue-light:#EEF4FF;--blue-mid:#3B7BF5;--dark:#0D1117;--mid:#374151;--muted:#6B7280;--border:#E5E7EB;--bg:#FAFAFA;--white:#FFFFFF;--radius-sm:6px;--radius-md:12px;--radius-lg:20px;--shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow-md:0 4px 16px rgba(0,0,0,.10);--shadow-lg:0 12px 40px rgba(0,0,0,.12);--font-head:'DM Serif Display',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif;--nav-h:72px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-body);font-size:16px;line-height:1.7;color:var(--mid);background:var(--white);-webkit-font-smoothing:antialiased}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    ul{list-style:none}
+    .container{max-width:1120px;margin:0 auto;padding:0 24px}
+    .section{padding:96px 0}
+    .section-label{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+    .section-title{font-family:var(--font-head);font-size:clamp(2rem,4vw,2.8rem);color:var(--dark);line-height:1.18;margin-bottom:1rem}
+    .section-text{font-size:1.05rem;color:var(--muted);max-width:640px;line-height:1.75}
+    .header{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid transparent;z-index:100;transition:border-color .3s,box-shadow .3s}
+    .header.scrolled{border-color:var(--border);box-shadow:var(--shadow-sm)}
+    .header .container{height:100%;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-family:var(--font-head);font-size:1.25rem;color:var(--dark);font-weight:400}
+    .navbar-list{display:flex;align-items:center;gap:6px}
+    .navbar-link{font-size:.875rem;font-weight:500;color:var(--muted);padding:6px 12px;border-radius:var(--radius-sm);transition:color .2s,background .2s}
+    .navbar-link:hover{color:var(--dark);background:var(--bg)}
+    .nav-social{display:flex;align-items:center;gap:2px;margin:0 6px}
+    .nav-social a{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-sm);color:var(--muted);font-size:.9rem;transition:color .2s,background .2s}
+    .nav-social a:hover{color:var(--blue);background:var(--blue-light)}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:.875rem;font-weight:600;cursor:pointer;transition:all .2s;border:none;white-space:nowrap}
+    .btn-primary{background:var(--blue);color:#fff}
+    .btn-primary:hover{background:#1550c0;transform:translateY(-1px);box-shadow:0 4px 14px rgba(27,95,217,.35)}
+    .btn-outline{background:transparent;color:var(--blue);border:1.5px solid var(--blue)}
+    .btn-outline:hover{background:var(--blue-light)}
+    .btn-ghost{background:transparent;color:var(--muted);border:1.5px solid var(--border)}
+    .btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
+    .btn-sm{padding:7px 16px;font-size:.82rem}
+    .nav-toggle-btn{display:none;background:none;border:none;font-size:1.25rem;color:var(--dark);cursor:pointer;padding:8px}
+    .hero{padding:calc(var(--nav-h) + 64px) 0 80px;overflow:hidden;position:relative}
+    .hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,#dbeafe 0%,transparent 65%);pointer-events:none;opacity:.5}
+    .hero .container{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--blue-light);color:var(--blue);font-size:.8rem;font-weight:600;padding:6px 14px;border-radius:99px;margin-bottom:24px;border:1px solid #c7d9f9}
+    .dot{width:6px;height:6px;background:var(--blue);border-radius:50%;animation:pulse 2s infinite;flex-shrink:0}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+    .hero-headline{font-family:var(--font-head);font-size:clamp(2.4rem,5vw,3.6rem);color:var(--dark);line-height:1.12;margin-bottom:24px}
+    .hero-headline em{font-style:italic;color:var(--blue)}
+    .hero-sub{font-size:1.05rem;color:var(--muted);margin-bottom:36px;max-width:480px;line-height:1.75}
+    .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+    .hero-stats{display:flex;gap:32px;padding-top:32px;border-top:1px solid var(--border);flex-wrap:wrap}
+    .hero-stat-num{font-family:var(--font-head);font-size:1.8rem;color:var(--dark);line-height:1;display:block}
+    .hero-stat-label{font-size:.78rem;color:var(--muted);margin-top:4px}
+    .hero-visual{position:relative}
+    .hero-img-wrap{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/5;background:linear-gradient(135deg,#dbeafe,#eff6ff);display:flex;align-items:center;justify-content:center}
+    .hero-img-wrap img{width:100%;height:100%;object-fit:cover}
+    .hero-img-placeholder{text-align:center;padding:40px;color:#93C5FD}
+    @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    .lang-badge{position:absolute;bottom:32px;left:-28px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);padding:14px 18px;box-shadow:var(--shadow-md);min-width:210px;animation:floatY 4s ease-in-out infinite}
+    .lang-badge-label{font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+    .lang-flags{display:flex;gap:6px;flex-wrap:wrap}
+    .lang-pill{font-size:.72rem;font-weight:600;padding:3px 9px;border-radius:99px;background:var(--blue-light);color:var(--blue);border:1px solid #c7d9f9}
+    .exp-badge{position:absolute;top:32px;right:-20px;background:var(--blue);color:#fff;border-radius:var(--radius-md);padding:14px 18px;box-shadow:0 8px 24px rgba(27,95,217,.35);text-align:center;animation:floatY 4s ease-in-out infinite .8s}
+    .exp-badge .num{font-family:var(--font-head);font-size:1.8rem;line-height:1}
+    .exp-badge .txt{font-size:.72rem;opacity:.85;margin-top:4px}
+    .trust-bar{background:var(--dark);padding:22px 0}
+    .trust-bar .container{display:flex;align-items:center;gap:40px;overflow-x:auto;scrollbar-width:none}
+    .trust-bar .container::-webkit-scrollbar{display:none}
+    .trust-bar .label{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#6B7280;white-space:nowrap;flex-shrink:0}
+    .tool-chip{display:flex;align-items:center;gap:8px;color:#D1D5DB;font-size:.82rem;font-weight:500;white-space:nowrap;flex-shrink:0}
+    .tool-chip i{font-size:.85rem;color:#9CA3AF}
+    .about .container{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start}
+    .about-img-wrap{position:relative}
+    .about-img-inner{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:3/4;background:linear-gradient(135deg,#eff6ff,#dbeafe);display:flex;align-items:center;justify-content:center}
+    .about-img-inner img{width:100%;height:100%;object-fit:cover}
+    .about-impact-card{position:absolute;bottom:-24px;right:-24px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);padding:16px 20px;box-shadow:var(--shadow-lg);min-width:200px}
+    .about-impact-card .card-label{font-size:.7rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+    .impact-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;font-size:.8rem;color:var(--mid)}
+    .impact-row:last-child{margin-bottom:0}
+    .impact-row i{color:var(--blue);margin-top:2px;flex-shrink:0;font-size:.75rem}
+    .impact-row strong{color:var(--dark)}
+    .about-text .section-text{margin-bottom:1.25rem}
+    .specialties-list{margin:20px 0 28px;display:flex;flex-direction:column;gap:10px}
+    .specialty-item{display:flex;align-items:flex-start;gap:10px;font-size:.93rem}
+    .spec-icon{width:28px;height:28px;background:var(--blue-light);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--blue);font-size:.72rem;margin-top:2px}
+    .specialty-item strong{color:var(--dark);font-weight:600}
+    .projects{background:var(--bg)}
+    .projects-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:56px;gap:24px}
+    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .project-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s;display:flex;flex-direction:column}
+    .project-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:#c7d9f9}
+    .card-img{overflow:hidden}
+    .project-card .card-img{height:200px}
+    .card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .project-card:hover .card-img img{transform:scale(1.04)}
+    .card-body{padding:24px;display:flex;flex-direction:column;flex:1}
+    .card-badge{display:inline-block;font-size:.7rem;font-weight:600;padding:3px 10px;border-radius:99px;background:var(--blue-light);color:var(--blue);border:1px solid #c7d9f9;margin-bottom:12px;align-self:flex-start}
+    .card-title{font-family:var(--font-head);font-size:1.15rem;color:var(--dark);line-height:1.3;margin-bottom:10px}
+    .card-desc{font-size:.88rem;color:var(--muted);line-height:1.65;margin-bottom:16px;flex:1}
+    .card-metrics{background:#F0F7FF;border-radius:var(--radius-sm);padding:12px 14px;margin-bottom:16px;border-left:3px solid var(--blue)}
+    .metric-row{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--mid);margin-bottom:5px}
+    .metric-row:last-child{margin-bottom:0}
+    .metric-row i{color:var(--blue);font-size:.72rem;width:12px}
+    .metric-row strong{color:var(--dark)}
+    .card-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
+    .card-link{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;padding:6px 12px;border-radius:var(--radius-sm);transition:all .2s;border:1.5px solid var(--border);color:var(--mid)}
+    .card-link:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light)}
+    .skills{background:var(--bg)}
+    .skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:56px}
+    .skills-group-title{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+    .skills-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+    .skill-chip{display:flex;align-items:center;gap:7px;padding:7px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--white);font-size:.83rem;font-weight:500;color:var(--mid);transition:border-color .2s,box-shadow .2s}
+    .skill-chip:hover{border-color:var(--blue);box-shadow:0 0 0 3px rgba(27,95,217,.07)}
+    .skill-chip i{font-size:.78rem;color:var(--blue)}
+    .cert-card{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--white);margin-bottom:10px;transition:border-color .2s}
+    .cert-card:hover{border-color:#c7d9f9}
+    .cert-icon{width:40px;height:40px;border-radius:var(--radius-sm);background:var(--blue-light);display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:.95rem;flex-shrink:0}
+    .cert-name{font-weight:600;font-size:.88rem;color:var(--dark)}
+    .cert-issuer{font-size:.78rem;color:var(--muted)}
+    .contact{background:var(--dark);color:#fff}
+    .contact .section-label{color:#60A5FA}
+    .contact .section-title{color:#fff}
+    .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:56px}
+    .contact-intro{font-size:1rem;color:#9CA3AF;line-height:1.75;margin-bottom:32px}
+    .contact-detail{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+    .cd-icon{width:44px;height:44px;border-radius:var(--radius-sm);background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#60A5FA;flex-shrink:0}
+    .cd-label{font-size:.72rem;color:#9CA3AF}
+    .cd-val{font-size:.93rem;color:#F3F4F6;font-weight:500}
+    .social-links{display:flex;gap:10px;margin-top:32px}
+    .social-link{width:44px;height:44px;border-radius:var(--radius-sm);background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#9CA3AF;font-size:1rem;transition:all .2s;border:1px solid rgba(255,255,255,.1)}
+    .social-link:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+    .contact-form{display:flex;flex-direction:column;gap:14px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .form-group{display:flex;flex-direction:column;gap:6px}
+    .form-label{font-size:.78rem;font-weight:600;color:#D1D5DB}
+    .form-input{padding:11px 16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:.93rem;color:#F3F4F6;outline:none;transition:border-color .2s,box-shadow .2s;resize:vertical}
+    .form-input::placeholder{color:#6B7280}
+    .form-input:focus{border-color:#60A5FA;box-shadow:0 0 0 3px rgba(96,165,250,.15)}
+    .form-submit{align-self:flex-start;background:var(--blue);color:#fff;font-family:var(--font-body);font-size:.88rem;font-weight:600;padding:11px 24px;border:none;border-radius:var(--radius-sm);cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+    .form-submit:hover{background:#1550c0;transform:translateY(-1px)}
+    .form-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+    #contact-feedback{margin-top:8px;font-size:.85rem;font-weight:600;display:none}
+    .footer{background:#060910;padding:28px 0;border-top:1px solid rgba(255,255,255,.06)}
+    .footer .container{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .footer-copy{font-size:.8rem;color:#6B7280}
+    .footer-links{display:flex;gap:20px}
+    .footer-links a{font-size:.8rem;color:#6B7280;transition:color .2s}
+    .footer-links a:hover{color:#9CA3AF}
+    .back-to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;box-shadow:0 4px 14px rgba(27,95,217,.4);opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .3s,transform .3s;z-index:99}
+    .back-to-top.active{opacity:1;pointer-events:all;transform:translateY(0)}
+    .fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+    .fade-up.visible{opacity:1;transform:translateY(0)}
+    @media(max-width:1024px){.projects-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:768px){.section{padding:64px 0}.hero .container{grid-template-columns:1fr;gap:40px}.hero-visual{order:-1}.lang-badge{left:0;bottom:16px}.exp-badge{right:0;top:16px}.about .container{grid-template-columns:1fr;gap:40px}.about-impact-card{right:0;bottom:-16px}.projects-grid{grid-template-columns:1fr}.skills-layout{grid-template-columns:1fr}.contact-layout{grid-template-columns:1fr;gap:40px}.form-row{grid-template-columns:1fr}.projects-header{flex-direction:column;align-items:flex-start}.footer .container{flex-direction:column;text-align:center}.navbar{display:none;position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:var(--white);padding:24px;flex-direction:column;border-top:1px solid var(--border);z-index:99;overflow-y:auto}.navbar.open{display:flex}.navbar-list{flex-direction:column;align-items:flex-start;gap:4px;width:100%}.navbar-link{font-size:1.05rem;padding:10px 14px;width:100%}.nav-social{margin:16px 0}.nav-toggle-btn{display:block}}
+    @media(max-width:480px){.hero-stats{gap:16px}}
   </style>
 </head>
 <body>
 
-<!-- Header -->
 <header class="header" id="header">
   <div class="container">
     <a href="#home"><h1 class="logo">Yaw Assensoh Opoku</h1></a>
-    <button class="nav-toggle-btn" id="navToggle">
-      <i class="fas fa-bars" id="menuIcon"></i>
-    </button>
+    <button class="nav-toggle-btn" id="navToggle" aria-label="Toggle menu"><i class="fas fa-bars" id="menuIcon"></i></button>
     <nav class="navbar" id="navbar">
       <ul class="navbar-list">
         <li><a href="#home" class="navbar-link">Home</a></li>
@@ -1090,463 +171,84 @@
         <li><a href="#projects" class="navbar-link">Projects</a></li>
         <li><a href="#skills" class="navbar-link">Skills</a></li>
         <li><a href="#contact" class="navbar-link">Contact</a></li>
-        <li class="nav-social">
-          <a href="https://github.com/Yaw-Assensoh" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/yaw-assensoh-opoku" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </li>
-        <li><a href="Yaw-Assensoh-Resume.pdf" class="btn btn-primary btn-sm" download><i class="fas fa-download"></i> CV</a></li>
+        <li class="nav-social"><a href="https://github.com/Yaw-Assensoh" target="_blank"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/in/yaw-assensoh-opoku" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="Yaw-Assensoh-Resume.pdf" class="btn btn-primary btn-sm" download><i class="fas fa-download"></i> Download CV</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<!-- Hero -->
 <section class="hero" id="home">
   <div class="container">
     <div class="hero-content">
-      <div class="hero-eyebrow">
-        <span class="dot"></span>
-        Available for opportunities
-      </div>
+      <div class="hero-eyebrow"><span class="dot"></span>Available for new opportunities</div>
       <h2 class="hero-headline">Turning operational<br><em>chaos into revenue</em><br>clarity</h2>
       <p class="hero-sub">Former logistics founder who spent years making decisions from messy data. Now I use Python, SQL, and Tableau to help organisations do the same, faster and at scale.</p>
-      <div class="hero-ctas">
-        <a href="#projects" class="btn btn-primary"><i class="fas fa-folder-open"></i> View Work</a>
-        <a href="#about" class="btn btn-ghost">My Story</a>
-      </div>
-      <div class="hero-stats">
-        <div><span class="hero-stat-num">9</span><span class="hero-stat-label">Live projects</span></div>
-        <div><span class="hero-stat-num">5</span><span class="hero-stat-label">Languages</span></div>
-        <div><span class="hero-stat-num">10+</span><span class="hero-stat-label">Years ops</span></div>
-        <div><span class="hero-stat-num">+10%</span><span class="hero-stat-label">Revenue uplift</span></div>
-      </div>
+      <div class="hero-ctas"><a href="#projects" class="btn btn-primary"><i class="fas fa-folder-open"></i> View Case Studies</a><a href="#about" class="btn btn-ghost">My Story</a></div>
+      <div class="hero-stats"><div><span class="hero-stat-num">9</span><span class="hero-stat-label">Live case studies</span></div><div><span class="hero-stat-num">5</span><span class="hero-stat-label">Languages fluent</span></div><div><span class="hero-stat-num">10+</span><span class="hero-stat-label">Years in operations</span></div><div><span class="hero-stat-num">+10%</span><span class="hero-stat-label">Revenue uplift delivered</span></div></div>
     </div>
     <div class="hero-visual">
-      <div class="hero-img-wrap">
-        <img src="./assets/images/absolute-image.png" alt="Yaw Assensoh Opoku" onerror="this.src='https://placehold.co/400x500/EEF4FF/1B5FD9?text=Yaw'">
-      </div>
-      <div class="exp-badge">
-        <div class="num">10+</div>
-        <div class="txt">Years in<br>operations</div>
-      </div>
-      <div class="lang-badge">
-        <div class="lang-badge-label">5 Languages</div>
-        <div class="lang-flags">
-          <span class="lang-pill">🇬🇧 EN</span>
-          <span class="lang-pill">🇩🇪 DE</span>
-          <span class="lang-pill">🇮🇹 IT</span>
-          <span class="lang-pill">🇪🇸 ES</span>
-          <span class="lang-pill">🇫🇷 FR</span>
-        </div>
-      </div>
+      <div class="hero-img-wrap"><img src="./assets/images/absolute-image.png" alt="Yaw Assensoh Opoku" onerror="this.outerHTML='<div class=hero-img-placeholder><i class=fas fa-user-circle></i><p>Add your headshot here</p></div>'"></div>
+      <div class="exp-badge"><div class="num">10+</div><div class="txt">Years in<br>business ops</div></div>
+      <div class="lang-badge"><div class="lang-badge-label">Fluent in 5 languages</div><div class="lang-flags"><span class="lang-pill">🇬🇧 English</span><span class="lang-pill">🇩🇪 Deutsch</span><span class="lang-pill">🇮🇹 Italiano</span><span class="lang-pill">🇪🇸 Español</span><span class="lang-pill">🇫🇷 Français</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- Trust Bar -->
-<div class="trust-bar">
-  <div class="container">
-    <span class="label">Tech stack</span>
-    <div class="tool-chip"><i class="fab fa-python"></i> Python</div>
-    <div class="tool-chip"><i class="fas fa-database"></i> PostgreSQL</div>
-    <div class="tool-chip"><i class="fas fa-chart-bar"></i> Tableau</div>
-    <div class="tool-chip"><i class="fas fa-file-excel"></i> Excel</div>
-    <div class="tool-chip"><i class="fas fa-robot"></i> Scikit-learn</div>
-    <div class="tool-chip"><i class="fas fa-wave-square"></i> SARIMA</div>
-    <div class="tool-chip"><i class="fas fa-map-marked-alt"></i> Streamlit</div>
-    <div class="tool-chip"><i class="fas fa-project-diagram"></i> K-Means</div>
-    <div class="tool-chip"><i class="fas fa-map"></i> Folium</div>
-  </div>
-</div>
+<div class="trust-bar"><div class="container"><span class="label">Tech stack</span><div class="tool-chip"><i class="fab fa-python"></i> Python</div><div class="tool-chip"><i class="fas fa-database"></i> PostgreSQL</div><div class="tool-chip"><i class="fas fa-chart-bar"></i> Tableau</div><div class="tool-chip"><i class="fas fa-file-excel"></i> Excel</div><div class="tool-chip"><i class="fas fa-robot"></i> Scikit-learn</div><div class="tool-chip"><i class="fas fa-wave-square"></i> SARIMA</div><div class="tool-chip"><i class="fas fa-map-marked-alt"></i> Streamlit</div><div class="tool-chip"><i class="fas fa-project-diagram"></i> K-Means</div><div class="tool-chip"><i class="fas fa-map"></i> Folium</div><div class="tool-chip"><i class="fas fa-chart-line"></i> Plotly</div></div></div>
 
-<!-- About -->
 <section class="section about" id="about">
   <div class="container">
-    <div class="about-img-wrap fade-up">
-      <div class="about-img-inner">
-        <img src="./assets/images/absolute-image.png" alt="Yaw" onerror="this.src='https://placehold.co/600x800/EEF4FF/1B5FD9?text=Yaw'">
-      </div>
-      <div class="about-impact-card">
-        <div class="card-label">Results from my business</div>
-        <div class="impact-row"><i class="fas fa-chart-line"></i><span><strong>+10% revenue</strong> via demand forecasting</span></div>
-        <div class="impact-row"><i class="fas fa-route"></i><span><strong>+15% efficiency</strong> via route optimisation</span></div>
-        <div class="impact-row"><i class="fas fa-users"></i><span><strong>+20% retention</strong> via segmentation</span></div>
-      </div>
-    </div>
-    <div class="about-text fade-up">
-      <p class="section-label">My Story</p>
-      <h2 class="section-title">From logistics founder to data analyst</h2>
-      <p class="section-text">For 10+ years I owned and operated a logistics business in Hamburg — optimising routes, forecasting demand, and segmenting customers using whatever data tools I had. Every decision had a real cost. That pressure taught me something most analysts learn in theory: <strong>data only matters when it changes a decision.</strong></p>
-      <p class="section-text">Transitioning into analytics wasn't a career change — it was adding Python, SQL, and Tableau to a toolkit I'd already been building for years. I bring both technical depth and business context to turn insights into actions.</p>
-      <div class="specialties-list">
-        <div class="specialty-item"><div class="spec-icon"><i class="fas fa-bullseye"></i></div><div><strong>Business-first mindset:</strong> I start with the problem, not the data</div></div>
-        <div class="specialty-item"><div class="spec-icon"><i class="fas fa-cogs"></i></div><div><strong>Operational fluency:</strong> I understand process optimisation from the ground up</div></div>
-        <div class="specialty-item"><div class="spec-icon"><i class="fas fa-language"></i></div><div><strong>Multilingual:</strong> English, German, Italian, Spanish, French</div></div>
-      </div>
-      <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="Yaw-Assensoh-Resume.pdf" class="btn btn-outline" download><i class="fas fa-download"></i> Resume</a>
-      </div>
+    <div class="about-img-wrap fade-up"><div class="about-img-inner"><img src="./assets/images/absolute-image.png" alt="Yaw Assensoh Opoku" onerror="this.outerHTML='<div class=about-img-placeholder><i class=fas fa-user-circle></i><p>Add your photo here</p></div>'"></div><div class="about-impact-card"><div class="card-label">Results from my own business</div><div class="impact-row"><i class="fas fa-chart-line"></i><span><strong>+10% monthly revenue</strong> via demand forecasting</span></div><div class="impact-row"><i class="fas fa-route"></i><span><strong>+15% delivery efficiency</strong> via route optimisation</span></div><div class="impact-row"><i class="fas fa-users"></i><span><strong>+20% repeat business</strong> via customer segmentation</span></div><div class="impact-row"><i class="fas fa-tools"></i><span><strong>−25% maintenance downtime</strong> via monitoring</span></div></div></div>
+    <div class="about-text fade-up"><p class="section-label">My Story</p><h2 class="section-title">From logistics founder to data analyst</h2><p class="section-text">For years I owned and operated a logistics business in Hamburg — optimising routes, forecasting demand, and segmenting customers using whatever data tools I had. Every decision had a real cost. That pressure taught me something most analysts learn in theory: <strong>data only matters when it changes a decision.</strong></p><p class="section-text" style="margin-top:1rem;">Transitioning into analytics wasn't a career change — it was adding Python, SQL, and Tableau to a toolkit I'd already been building for years. I bring both the technical depth and the business context to turn insights into actions.</p>
+      <div class="specialties-list"><div class="specialty-item"><div class="spec-icon"><i class="fas fa-bullseye"></i></div><div><strong>Business-first mindset:</strong> I start with "What problem are we solving?" — not "What can the data show?"</div></div><div class="specialty-item"><div class="spec-icon"><i class="fas fa-cogs"></i></div><div><strong>Operational fluency:</strong> Years running logistics operations means I understand process optimisation from the ground up</div></div><div class="specialty-item"><div class="spec-icon"><i class="fas fa-language"></i></div><div><strong>Multilingual reach:</strong> Fluent in English, German, Italian, Spanish, and French — cultural awareness for global data challenges</div></div><div class="specialty-item"><div class="spec-icon"><i class="fas fa-comments"></i></div><div><strong>Clear communication:</strong> I translate technical findings into recommendations non-technical stakeholders can act on</div></div></div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="#projects" class="btn btn-primary">View My Projects</a><a href="Yaw_Assensoh_Opoku_CV.pdf" class="btn btn-outline" download><i class="fas fa-download"></i> Download Resume</a></div>
     </div>
   </div>
 </section>
 
-<!-- Projects - UNIFIED SHOWCASE FORMAT -->
 <section class="section projects" id="projects">
   <div class="container">
-    <div class="projects-header">
-      <p class="section-label">Portfolio</p>
-      <h2 class="section-title">Data analysis case studies</h2>
-      <p class="section-subtitle">Live dashboards, reproducible code, and documented business outcomes.</p>
-    </div>
+    <div class="projects-header"><div><p class="section-label">Case Studies</p><h2 class="section-title">Data-driven business impact</h2><p class="section-text">Selected projects with live dashboards, GitHub repos, and documented outcomes.</p></div></div>
     <div class="projects-grid">
-
-      <!-- Project 1: Housing Affordability -->
-      <div class="project-card fade-up">
-        <div class="card-img">
-          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80" alt="US Housing Affordability">
-        </div>
-        <div class="card-body">
-          <span class="card-badge">Real Estate Analytics</span>
-          <h3 class="card-title">US Housing Affordability Analysis</h3>
-          <p class="card-desc">3-phase project examining the affordability crisis across 5 major US cities. Combined Excel, SQL, and Python with K-Means clustering and a 36-month SARIMA forecast — all surfaced in an interactive Streamlit dashboard.</p>
-          <div class="card-metrics">
-            <div class="metric-row"><i class="fas fa-chart-line"></i><span><strong>2.22 LA affordability index</strong> — requires $200K+ annual income for median home</span></div>
-            <div class="metric-row"><i class="fas fa-layer-group"></i><span><strong>3 market clusters</strong> via K-Means, validated by SQL risk classification</span></div>
-            <div class="metric-row"><i class="fas fa-clock"></i><span><strong>36-month SARIMA forecast</strong> with 95% confidence intervals</span></div>
-          </div>
-          <div class="card-links">
-            <a href="https://yaw-assensoh-housing-affordability-pr-dashboarddashboard-0wtwto.streamlit.app" target="_blank" class="card-link"><i class="fas fa-chart-simple"></i> Live Dashboard</a>
-            <a href="https://github.com/Yaw-Assensoh/Housing-Affordability-Analysis" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub Repository</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 2: Citi Bike -->
-      <div class="project-card fade-up">
-        <div class="card-img">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80" alt="NYC Citi Bike">
-        </div>
-        <div class="card-body">
-          <span class="card-badge">Supply Chain & Operations</span>
-          <h3 class="card-title">NYC Citi Bike Supply Optimisation</h3>
-          <p class="card-desc">Demand forecasting model with 0.82 temperature-usage correlation to optimise distribution across 1,500+ stations, reducing costs while improving availability.</p>
-          <div class="card-metrics">
-            <div class="metric-row"><i class="fas fa-dollar-sign"></i><span><strong>20–25% revenue increase</strong> via dynamic pricing strategy</span></div>
-            <div class="metric-row"><i class="fas fa-calendar-alt"></i><span><strong>4-week advance forecasting</strong> for proactive planning</span></div>
-          </div>
-          <div class="card-links">
-            <a href="https://yaw-assensoh-urban-mobility-insights-app-ujtkq3.streamlit.app" target="_blank" class="card-link"><i class="fas fa-chart-simple"></i> Live Dashboard</a>
-            <a href="https://github.com/Yaw-Assensoh/urban-mobility-insights" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub Repository</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 3: Instacart -->
-      <div class="project-card fade-up">
-        <div class="card-img">
-          <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80" alt="Instacart Market Basket">
-        </div>
-        <div class="card-body">
-          <span class="card-badge">E-commerce & Retail Analytics</span>
-          <h3 class="card-title">Instacart Market Basket Analysis</h3>
-          <p class="card-desc">Customer segmentation and product association analysis identifying 12 high-probability product pairs for targeted marketing and strategic bundling.</p>
-          <div class="card-metrics">
-            <div class="metric-row"><i class="fas fa-shopping-cart"></i><span><strong>+15% AOV</strong> through product bundling strategy</span></div>
-            <div class="metric-row"><i class="fas fa-bullseye"></i><span><strong>65%+ co-purchase rates</strong> on identified pairs</span></div>
-          </div>
-          <div class="card-links">
-            <a href="https://github.com/Yaw-Assensoh/Instacart-Analysis" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub Repository</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 4: Financial Markets -->
-      <div class="project-card fade-up">
-        <div class="card-img">
-          <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80" alt="Financial Markets">
-        </div>
-        <div class="card-body">
-          <span class="card-badge">Financial Analytics</span>
-          <h3 class="card-title">Financial Markets Intelligence Platform</h3>
-          <p class="card-desc">Quantitative analysis of tech stocks delivering 243% average returns vs. 100% SPY benchmark, with risk-adjusted portfolio optimisation and momentum signals.</p>
-          <div class="card-metrics">
-            <div class="metric-row"><i class="fas fa-rocket"></i><span><strong>343.9% TSLA returns</strong> with risk management framework</span></div>
-            <div class="metric-row"><i class="fas fa-chart-bar"></i><span><strong>58.9 RSI</strong> momentum signals for tactical allocation</span></div>
-          </div>
-          <div class="card-links">
-            <a href="https://yaw-assensoh-financial-analysis-app-ypiyqi.streamlit.app" target="_blank" class="card-link"><i class="fas fa-chart-simple"></i> Live Dashboard</a>
-            <a href="https://github.com/Yaw-Assensoh/Financial-Analysis" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub Repository</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 5: Influenza -->
-      <div class="project-card fade-up">
-        <div class="card-img">
-          <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=800&q=80" alt="Influenza Forecast">
-        </div>
-        <div class="card-body">
-          <span class="card-badge">Healthcare Analytics</span>
-          <h3 class="card-title">Influenza Staffing Forecast Model</h3>
-          <p class="card-desc">ARIMA-based predictive model with 89% accuracy for 4-week influenza forecasts, enabling optimised hospital staffing during peak seasons.</p>
-          <div class="card-metrics">
-            <div class="metric-row"><i class="fas fa-hospital"></i><span><strong>−23% overtime costs</strong> through optimised staffing schedules</span></div>
-            <div class="metric-row"><i class="fas fa-calendar-check"></i><span><strong>4-week advance planning</strong> capability for resource allocation</span></div>
-          </div>
-          <div class="card-links">
-            <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/Book1_17436918254930/Story1" target="_blank" class="card-link"><i class="fab fa-tableau"></i> Tableau Dashboard</a>
-            <a href="https://github.com/Yaw-Assensoh" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub Repository</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 6: Global Migration -->
-      <div class="project-card fade-up">
-        <div class="card-img">
-          <img src="https://images.unsplash.com/photo-1527689361190-bcf06e6c8b6d?auto=format&fit=crop&w=800&q=80" alt="Global Migration">
-        </div>
-        <div class="card-body">
-          <span class="card-badge">Forecasting & Demographics</span>
-          <h3 class="card-title">Global Migration Analysis</h3>
-          <p class="card-desc">ARIMA-based migration flow forecasting across 50+ countries. Interactive visualisations showing migration corridors, push/pull factors, and economic impact correlations.</p>
-          <div class="card-metrics">
-            <div class="metric-row"><i class="fas fa-chart-line"></i><span><strong>ARIMA forecast accuracy</strong> with 90% confidence intervals</span></div>
-            <div class="metric-row"><i class="fas fa-globe"></i><span><strong>50+ countries analysed</strong> over 20-year period</span></div>
-          </div>
-          <div class="card-links">
-            <a href="https://yaw-assensoh-global-migration-analysis-project-app-tbxmqx.streamlit.app" target="_blank" class="card-link"><i class="fas fa-chart-simple"></i> Live Dashboard</a>
-            <a href="https://github.com/Yaw-Assensoh/Global-Migration-Analysis-Project" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub Repository</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 7: RockBuster -->
-      <div class="project-card fade-up">
-        <div class="card-img">
-          <img src="https://images.unsplash.com/photo-1534308143439-3820b8e20fca?auto=format&fit=crop&w=800&q=80" alt="RockBuster">
-        </div>
-        <div class="card-body">
-          <span class="card-badge">Business Intelligence</span>
-          <h3 class="card-title">RockBuster Business Insights</h3>
-          <p class="card-desc">Complete business intelligence dashboard for a DVD rental company. Customer segmentation, inventory optimisation, and revenue analysis using PostgreSQL.</p>
-          <div class="card-metrics">
-            <div class="metric-row"><i class="fas fa-database"></i><span><strong>Complex SQL queries</strong> with window functions and CTEs</span></div>
-            <div class="metric-row"><i class="fas fa-chart-pie"></i><span><strong>Interactive Tableau story</strong> with executive summary</span></div>
-          </div>
-          <div class="card-links">
-            <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/ROCKBUSTERPROJECT/Story1" target="_blank" class="card-link"><i class="fab fa-tableau"></i> Tableau Dashboard</a>
-            <a href="https://github.com/Yaw-Assensoh/RockBuster-Insights" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub Repository</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 8: Global Development -->
-      <div class="project-card fade-up">
-        <div class="card-img">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Global Development">
-        </div>
-        <div class="card-body">
-          <span class="card-badge">Economic Analysis</span>
-          <h3 class="card-title">Global Development Trends</h3>
-          <p class="card-desc">Longitudinal analysis of GDP per capita, life expectancy, and education metrics across 150+ countries using World Bank data.</p>
-          <div class="card-metrics">
-            <div class="metric-row"><i class="fas fa-chart-line"></i><span><strong>GDP growth correlations</strong> with education and healthcare spend</span></div>
-            <div class="metric-row"><i class="fas fa-chart-bar"></i><span><strong>Interactive visualisations</strong> for regional comparisons</span></div>
-          </div>
-          <div class="card-links">
-            <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/GDPperCapita_17593122370230/Story2" target="_blank" class="card-link"><i class="fab fa-tableau"></i> Tableau Dashboard</a>
-            <a href="https://github.com/Yaw-Assensoh/Global-Development-Trends" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub Repository</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 9: 20th Century Geopolitical -->
-      <div class="project-card fade-up">
-        <div class="card-img">
-          <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Geopolitical Analysis">
-        </div>
-        <div class="card-body">
-          <span class="card-badge">Network Science & NLP</span>
-          <h3 class="card-title">20th Century Geopolitical Analysis</h3>
-          <p class="card-desc">Network analysis of historical events and diplomatic relations using Python, NetworkX, and natural language processing on historical documents.</p>
-          <div class="card-metrics">
-            <div class="metric-row"><i class="fas fa-network-wired"></i><span><strong>Network centrality analysis</strong> identifying key geopolitical actors</span></div>
-            <div class="metric-row"><i class="fas fa-language"></i><span><strong>NLP processing</strong> of historical texts and treaties</span></div>
-          </div>
-          <div class="card-links">
-            <a href="https://github.com/Yaw-Assensoh/20th_Century" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub Repository</a>
-          </div>
-        </div>
-      </div>
-
+      <div class="project-card fade-up"><div class="card-img"><img src="./assets/images/housing-graphic.png" alt="US Housing Affordability" onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80'"></div><div class="card-body"><span class="card-badge">Real Estate &amp; Economic Analytics</span><h3 class="card-title">US Housing Affordability Analysis (2015–2024)</h3><p class="card-desc">3-phase project examining the affordability crisis across 5 major US cities. Combined Excel, SQL, and Python with K-Means clustering and a 36-month SARIMA forecast — all surfaced in an interactive Streamlit dashboard.</p><div class="card-metrics"><div class="metric-row"><i class="fas fa-chart-line"></i><span><strong>2.22 LA affordability index</strong> — requires $200K+ annual income for median home</span></div><div class="metric-row"><i class="fas fa-layer-group"></i><span><strong>3 market clusters</strong> via K-Means, validated by SQL risk classification</span></div><div class="metric-row"><i class="fas fa-clock"></i><span><strong>36-month SARIMA forecast</strong> with 95% confidence intervals</span></div></div><div class="card-links"><a href="https://yaw-assensoh-housing-affordability-pr-dashboarddashboard-0wtwto.streamlit.app" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i> Live Dashboard</a><a href="https://github.com/Yaw-Assensoh/Housing-Affordability-Analysis" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></div>
+      <div class="project-card fade-up"><div class="card-img"><img src="./assets/images/people-bikes.jpg" alt="NYC Citi Bike" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80'"></div><div class="card-body"><span class="card-badge">Supply Chain &amp; Operations</span><h3 class="card-title">NYC Citi Bike Supply Optimisation</h3><p class="card-desc">Demand forecasting model with 0.82 temperature-usage correlation to optimise distribution across 1,500+ stations, reducing costs while improving availability.</p><div class="card-metrics"><div class="metric-row"><i class="fas fa-dollar-sign"></i><span><strong>20–25% revenue increase</strong> via dynamic pricing strategy</span></div><div class="metric-row"><i class="fas fa-calendar-alt"></i><span><strong>4-week advance forecasting</strong> for proactive planning</span></div></div><div class="card-links"><a href="https://yaw-assensoh-urban-mobility-insights-app-ujtkq3.streamlit.app" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i> Dashboard</a><a href="https://github.com/Yaw-Assensoh/urban-mobility-insights" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></div>
+      <div class="project-card fade-up"><div class="card-img"><img src="./assets/images/instacart-image.jpg" alt="Instacart" onerror="this.src='https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80'"></div><div class="card-body"><span class="card-badge">E-commerce &amp; Retail</span><h3 class="card-title">Instacart Market Basket Analysis</h3><p class="card-desc">Customer segmentation and product association analysis identifying 12 high-probability product pairs for targeted marketing and strategic bundling.</p><div class="card-metrics"><div class="metric-row"><i class="fas fa-shopping-cart"></i><span><strong>+15% AOV</strong> through product bundling strategy</span></div><div class="metric-row"><i class="fas fa-bullseye"></i><span><strong>65%+ co-purchase rates</strong> on identified pairs</span></div></div><div class="card-links"><a href="https://github.com/Yaw-Assensoh/Instacart-Analysis" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></div>
+      <div class="project-card fade-up"><div class="card-img"><img src="./assets/images/dashboard-preview.jpg" alt="Financial Markets" onerror="this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&q=80'"></div><div class="card-body"><span class="card-badge">Financial Analytics</span><h3 class="card-title">Financial Markets Intelligence Platform</h3><p class="card-desc">Quantitative analysis of tech stocks delivering 243% average returns vs. 100% SPY benchmark, with risk-adjusted portfolio optimisation and momentum signals.</p><div class="card-metrics"><div class="metric-row"><i class="fas fa-rocket"></i><span><strong>343.9% TSLA returns</strong> with risk management framework</span></div><div class="metric-row"><i class="fas fa-chart-bar"></i><span><strong>58.9 RSI</strong> momentum signals for tactical allocation</span></div></div><div class="card-links"><a href="https://yaw-assensoh-financial-analysis-app-ypiyqi.streamlit.app" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i> Dashboard</a><a href="https://github.com/Yaw-Assensoh/Financial-Analysis" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></div>
+      <div class="project-card fade-up"><div class="card-img"><img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=600&q=80" alt="Influenza Forecast"></div><div class="card-body"><span class="card-badge">Healthcare Analytics</span><h3 class="card-title">Influenza Staffing Forecast Model</h3><p class="card-desc">ARIMA-based predictive model with 89% accuracy for 4-week influenza forecasts, enabling optimised hospital staffing during peak seasons.</p><div class="card-metrics"><div class="metric-row"><i class="fas fa-hospital"></i><span><strong>−23% overtime costs</strong> through optimised staffing schedules</span></div><div class="metric-row"><i class="fas fa-calendar-check"></i><span><strong>4-week advance planning</strong> capability for resource allocation</span></div></div><div class="card-links"><a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/Book1_17436918254930/Story1" target="_blank" class="card-link"><i class="fab fa-tableau"></i> Tableau</a><a href="https://github.com/Yaw-Assensoh" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></div>
+      <div class="project-card fade-up"><div class="card-img"><img src="./assets/images/migration-view.png" alt="Global Migration" onerror="this.src='https://images.unsplash.com/photo-1527689361190-bcf06e6c8b6d?auto=format&fit=crop&w=600&q=80'"></div><div class="card-body"><span class="card-badge">Forecasting</span><h3 class="card-title">Global Migration Analysis</h3><p class="card-desc">ARIMA-based migration flow forecasting across 50+ countries. Interactive visualisations showing migration corridors and economic impact correlations.</p><div class="card-metrics"><div class="metric-row"><i class="fas fa-chart-line"></i><span><strong>ARIMA forecast accuracy</strong> with 90% confidence intervals</span></div><div class="metric-row"><i class="fas fa-globe"></i><span><strong>50+ countries analysed</strong> over 20-year period</span></div></div><div class="card-links"><a href="https://yaw-assensoh-global-migration-analysis-project-app-tbxmqx.streamlit.app" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i> Dashboard</a><a href="https://github.com/Yaw-Assensoh/Global-Migration-Analysis-Project" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></div>
+      <div class="project-card fade-up"><div class="card-img"><img src="./assets/images/Data-Analytics.jpg" alt="RockBuster" onerror="this.src='https://images.unsplash.com/photo-1534308143439-3820b8e20fca?auto=format&fit=crop&w=600&q=80'"></div><div class="card-body"><span class="card-badge">Business Intelligence</span><h3 class="card-title">RockBuster Insights</h3><p class="card-desc">Complete business intelligence dashboard for a DVD rental company. Customer segmentation, inventory optimisation, and revenue analysis using PostgreSQL.</p><div class="card-metrics"><div class="metric-row"><i class="fas fa-database"></i><span><strong>Complex SQL queries</strong> with window functions and CTEs</span></div><div class="metric-row"><i class="fas fa-chart-pie"></i><span><strong>Interactive Tableau story</strong> with executive summary</span></div></div><div class="card-links"><a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/ROCKBUSTERPROJECT/Story1" target="_blank" class="card-link"><i class="fab fa-tableau"></i> Tableau</a><a href="https://github.com/Yaw-Assensoh/RockBuster-Insights" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></div>
+      <div class="project-card fade-up"><div class="card-img"><img src="./assets/images/analysis-3.jpg" alt="Global Development" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80'"></div><div class="card-body"><span class="card-badge">Economic Analysis</span><h3 class="card-title">Global Development Trends</h3><p class="card-desc">Longitudinal analysis of GDP per capita, life expectancy, and education metrics across 150+ countries using World Bank data.</p><div class="card-metrics"><div class="metric-row"><i class="fas fa-chart-line"></i><span><strong>GDP growth correlations</strong> with education and healthcare spend</span></div><div class="metric-row"><i class="fas fa-chart-bar"></i><span><strong>Interactive visualisations</strong> for regional comparisons</span></div></div><div class="card-links"><a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/GDPperCapita_17593122370230/Story2" target="_blank" class="card-link"><i class="fab fa-tableau"></i> Tableau</a><a href="https://github.com/Yaw-Assensoh/Global-Development-Trends" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></div>
+      <div class="project-card fade-up"><div class="card-img"><img src="./assets/images/historical-data.jpg" alt="Geopolitical" onerror="this.src='https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80'"></div><div class="card-body"><span class="card-badge">Network Science</span><h3 class="card-title">20th Century Geopolitical Analysis</h3><p class="card-desc">Network analysis of historical events and diplomatic relations using Python, NetworkX, and natural language processing on historical documents.</p><div class="card-metrics"><div class="metric-row"><i class="fas fa-network-wired"></i><span><strong>Network centrality analysis</strong> identifying key geopolitical actors</span></div><div class="metric-row"><i class="fas fa-language"></i><span><strong>NLP processing</strong> of historical texts and treaties</span></div></div><div class="card-links"><a href="https://github.com/Yaw-Assensoh/20th_Century" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- Skills -->
 <section class="section skills" id="skills">
-  <div class="container">
-    <div class="skills-header">
-      <p class="section-label">Technical Skills</p>
-      <h2 class="section-title">Tools & technologies</h2>
-      <p class="section-subtitle">Skills demonstrated through projects — not progress bars.</p>
-    </div>
-    <div class="skills-layout">
-      <div>
-        <p class="skills-group-title">Data Analysis & Python</p>
-        <div class="skills-chips">
-          <div class="skill-chip"><i class="fab fa-python"></i> Python</div>
-          <div class="skill-chip"><i class="fas fa-table"></i> Pandas</div>
-          <div class="skill-chip"><i class="fas fa-calculator"></i> NumPy</div>
-          <div class="skill-chip"><i class="fas fa-chart-area"></i> Matplotlib/Seaborn</div>
-          <div class="skill-chip"><i class="fas fa-book"></i> Jupyter</div>
-          <div class="skill-chip"><i class="fas fa-chart-bar"></i> Plotly</div>
-        </div>
-        <p class="skills-group-title">Databases & Querying</p>
-        <div class="skills-chips">
-          <div class="skill-chip"><i class="fas fa-database"></i> PostgreSQL</div>
-          <div class="skill-chip"><i class="fas fa-code"></i> Window Functions</div>
-          <div class="skill-chip"><i class="fas fa-file-excel"></i> Excel</div>
-        </div>
-        <p class="skills-group-title">Visualisation</p>
-        <div class="skills-chips">
-          <div class="skill-chip"><i class="fas fa-chart-bar"></i> Tableau</div>
-          <div class="skill-chip"><i class="fas fa-map-marked-alt"></i> Streamlit</div>
-          <div class="skill-chip"><i class="fas fa-tachometer-alt"></i> Power BI</div>
-        </div>
-      </div>
-      <div>
-        <p class="skills-group-title">Machine Learning & Statistics</p>
-        <div class="skills-chips">
-          <div class="skill-chip"><i class="fas fa-robot"></i> Scikit-learn</div>
-          <div class="skill-chip"><i class="fas fa-layer-group"></i> K-Means</div>
-          <div class="skill-chip"><i class="fas fa-wave-square"></i> SARIMA/ARIMA</div>
-          <div class="skill-chip"><i class="fas fa-flask"></i> A/B Testing</div>
-          <div class="skill-chip"><i class="fas fa-chart-line"></i> Time Series</div>
-          <div class="skill-chip"><i class="fas fa-network-wired"></i> NetworkX</div>
-        </div>
-        <p class="skills-group-title">Education & Credentials</p>
-        <div class="cert-card"><div class="cert-icon"><i class="fas fa-graduation-cap"></i></div><div><div class="cert-name">Data Analytics Certificate</div><div class="cert-issuer">CareerFoundry — 2024</div></div></div>
-        <div class="cert-card"><div class="cert-icon"><i class="fas fa-chart-bar"></i></div><div><div class="cert-name">Tableau for Analysts</div><div class="cert-issuer">Tableau Public — verified</div></div></div>
-        <div class="cert-card"><div class="cert-icon"><i class="fas fa-briefcase"></i></div><div><div class="cert-name">Logistics Operations (Founder)</div><div class="cert-issuer">Hamburg, Germany — 10+ years</div></div></div>
-      </div>
-    </div>
-  </div>
+  <div class="container"><p class="section-label">Technical Skills</p><h2 class="section-title">Tools &amp; technologies</h2><p class="section-text">Skills demonstrated through projects — not progress bars.</p>
+    <div class="skills-layout"><div><p class="skills-group-title">Data Analysis &amp; Python</p><div class="skills-chips"><div class="skill-chip"><i class="fab fa-python"></i> Python</div><div class="skill-chip"><i class="fas fa-table"></i> Pandas</div><div class="skill-chip"><i class="fas fa-calculator"></i> NumPy</div><div class="skill-chip"><i class="fas fa-chart-area"></i> Matplotlib / Seaborn</div><div class="skill-chip"><i class="fas fa-book"></i> Jupyter Notebook</div><div class="skill-chip"><i class="fas fa-map"></i> Folium</div><div class="skill-chip"><i class="fas fa-chart-bar"></i> Plotly</div></div><p class="skills-group-title">Databases &amp; Querying</p><div class="skills-chips"><div class="skill-chip"><i class="fas fa-database"></i> PostgreSQL</div><div class="skill-chip"><i class="fas fa-code"></i> Window Functions</div><div class="skill-chip"><i class="fas fa-filter"></i> CTEs &amp; Subqueries</div><div class="skill-chip"><i class="fas fa-file-excel"></i> Microsoft Excel</div></div><p class="skills-group-title">Visualisation &amp; Dashboards</p><div class="skills-chips"><div class="skill-chip"><i class="fas fa-chart-bar"></i> Tableau</div><div class="skill-chip"><i class="fas fa-map-marked-alt"></i> Streamlit</div><div class="skill-chip"><i class="fas fa-tachometer-alt"></i> Power BI</div></div></div><div><p class="skills-group-title">Machine Learning &amp; Statistics</p><div class="skills-chips"><div class="skill-chip"><i class="fas fa-robot"></i> Scikit-learn</div><div class="skill-chip"><i class="fas fa-layer-group"></i> K-Means Clustering</div><div class="skill-chip"><i class="fas fa-wave-square"></i> SARIMA / ARIMA</div><div class="skill-chip"><i class="fas fa-flask"></i> A/B Testing</div><div class="skill-chip"><i class="fas fa-project-diagram"></i> Regression Analysis</div><div class="skill-chip"><i class="fas fa-chart-line"></i> Time Series</div><div class="skill-chip"><i class="fas fa-network-wired"></i> NetworkX / NLP</div></div><p class="skills-group-title">Education &amp; Credentials</p><div class="cert-card"><div class="cert-icon"><i class="fas fa-graduation-cap"></i></div><div><div class="cert-name">Data Analytics Certificate</div><div class="cert-issuer">CareerFoundry — 2024</div></div></div><div class="cert-card"><div class="cert-icon"><i class="fas fa-chart-bar"></i></div><div><div class="cert-name">Tableau for Analysts</div><div class="cert-issuer">Tableau Public — verified</div></div></div><div class="cert-card"><div class="cert-icon"><i class="fas fa-briefcase"></i></div><div><div class="cert-name">Logistics Operations (Founder)</div><div class="cert-issuer">Hamburg, Germany — 10+ years</div></div></div></div></div></div>
 </section>
 
-<!-- Contact -->
 <section class="section contact" id="contact">
-  <div class="container">
-    <p class="section-label">Get In Touch</p>
-    <h2 class="section-title">Let's work together</h2>
-    <div class="contact-layout">
-      <div>
-        <p class="contact-intro">Looking for a data analyst who understands both the technical and business side? I'd love to hear about your opportunity or project. I typically respond within 24 hours.</p>
-        <div class="contact-detail"><div class="cd-icon"><i class="fas fa-map-marker-alt"></i></div><div><div class="cd-label">Location</div><div class="cd-val">Hamburg, Germany (Open to remote)</div></div></div>
-        <div class="contact-detail"><div class="cd-icon"><i class="fas fa-envelope"></i></div><div><div class="cd-label">Email</div><a href="mailto:yaw.assensoh@hotmail.com" class="cd-val">yaw.assensoh@hotmail.com</a></div></div>
-        <div class="contact-detail"><div class="cd-icon"><i class="fas fa-phone"></i></div><div><div class="cd-label">Phone</div><a href="tel:+4915738065664" class="cd-val">+49 157 3806 5664</a></div></div>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/yaw-assensoh-opoku" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/Yaw-Assensoh" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
-          <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku" target="_blank" class="social-link"><i class="fas fa-chart-bar"></i></a>
-        </div>
-      </div>
-      <div>
-        <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_ENDPOINT_HERE" method="POST">
-          <div class="form-row">
-            <div class="form-group"><label class="form-label">Full name</label><input class="form-input" type="text" name="name" required></div>
-            <div class="form-group"><label class="form-label">Email address</label><input class="form-input" type="email" name="email" required></div>
-          </div>
-          <div class="form-group"><label class="form-label">Subject</label><input class="form-input" type="text" name="subject"></div>
-          <div class="form-group"><label class="form-label">Message</label><textarea class="form-input" name="message" rows="4" required placeholder="Tell me about the role, project, or opportunity..."></textarea></div>
-          <button type="submit" class="form-submit"><i class="fas fa-paper-plane"></i> Send Message</button>
-          <p id="contact-feedback"></p>
-        </form>
-      </div>
-    </div>
-  </div>
+  <div class="container"><p class="section-label">Get In Touch</p><h2 class="section-title">Let's work together</h2>
+    <div class="contact-layout"><div><p class="contact-intro">Ready to turn your data into decisions? Whether you're hiring a data analyst or need project-based analysis — I'd love to hear from you. I typically respond within 24 hours.</p><div class="contact-detail"><div class="cd-icon"><i class="fas fa-map-marker-alt"></i></div><div><div class="cd-label">Location</div><div class="cd-val">Hamburg, Germany</div></div></div><div class="contact-detail"><div class="cd-icon"><i class="fas fa-envelope"></i></div><div><div class="cd-label">Email</div><a href="mailto:yaw.assensoh@hotmail.com" class="cd-val">yaw.assensoh@hotmail.com</a></div></div><div class="contact-detail"><div class="cd-icon"><i class="fas fa-phone"></i></div><div><div class="cd-label">Phone</div><a href="tel:+4915738065664" class="cd-val">+49 157 3806 5664</a></div></div><div class="social-links"><a href="https://www.linkedin.com/in/yaw-assensoh-opoku" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a><a href="https://github.com/Yaw-Assensoh" target="_blank" class="social-link"><i class="fab fa-github"></i></a><a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku" target="_blank" class="social-link"><i class="fas fa-chart-bar"></i></a><a href="mailto:yaw.assensoh@hotmail.com" class="social-link"><i class="fas fa-envelope"></i></a></div></div>
+      <div><form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_ENDPOINT_HERE" method="POST"><div class="form-row"><div class="form-group"><label class="form-label" for="c-name">Name</label><input class="form-input" type="text" id="c-name" name="name" required></div><div class="form-group"><label class="form-label" for="c-email">Email</label><input class="form-input" type="email" id="c-email" name="email" required></div></div><div class="form-group"><label class="form-label" for="c-subject">Subject</label><input class="form-input" type="text" id="c-subject" name="subject"></div><div class="form-group"><label class="form-label" for="c-msg">Message</label><textarea class="form-input" id="c-msg" name="message" rows="5" required placeholder="Tell me about your project or opportunity..."></textarea></div><button type="submit" class="form-submit"><i class="fas fa-paper-plane"></i> Send Message</button><p id="contact-feedback"></p></form></div></div></div>
 </section>
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <p class="footer-copy">© 2025 Yaw Assensoh Opoku. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="https://github.com/Yaw-Assensoh" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/yaw-assensoh-opoku" target="_blank">LinkedIn</a>
-      <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku" target="_blank">Tableau Public</a>
-      <a href="Yaw-Assensoh-Resume.pdf" download>Resume</a>
-    </div>
-  </div>
-</footer>
+<footer class="footer"><div class="container"><p class="footer-copy">&copy; 2025 Yaw Assensoh Opoku. All rights reserved.</p><div class="footer-links"><a href="https://github.com/Yaw-Assensoh" target="_blank">GitHub</a><a href="https://www.linkedin.com/in/yaw-assensoh-opoku" target="_blank">LinkedIn</a><a href="Yaw-Assensoh-Resume.pdf" download>Resume</a></div></div></footer>
 
 <a href="#home" class="back-to-top" id="btt"><i class="fas fa-arrow-up"></i></a>
 
 <script>
-  // Header scroll effect
-  const header = document.getElementById('header');
-  const btt = document.getElementById('btt');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 60);
-    btt.classList.toggle('active', window.scrollY > 300);
-  });
-
-  // Mobile navigation
-  const toggle = document.getElementById('navToggle');
-  const navbar = document.getElementById('navbar');
-  const menuIcon = document.getElementById('menuIcon');
-  toggle.addEventListener('click', () => {
-    const open = navbar.classList.toggle('open');
-    menuIcon.className = open ? 'fas fa-times' : 'fas fa-bars';
-  });
-  document.querySelectorAll('.navbar-link, .btn').forEach(el => {
-    el.addEventListener('click', () => {
-      navbar.classList.remove('open');
-      menuIcon.className = 'fas fa-bars';
-    });
-  });
-
-  // Fade-up animation on scroll
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-  // Contact form handler
-  const form = document.getElementById('contactForm');
-  const feedback = document.getElementById('contact-feedback');
-  if (form) {
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const btn = form.querySelector('.form-submit');
-      const original = btn.innerHTML;
-      btn.disabled = true;
-      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-      feedback.style.display = 'block';
-      feedback.style.color = '#60A5FA';
-      feedback.textContent = 'Sending your message...';
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          feedback.style.color = '#34D399';
-          feedback.textContent = '✓ Message sent successfully! I\'ll respond within 24 hours.';
-          form.reset();
-        } else throw new Error();
-      } catch (err) {
-        feedback.style.color = '#F87171';
-        feedback.textContent = '❌ Failed to send. Please email me directly at yaw.assensoh@hotmail.com';
-      } finally {
-        btn.disabled = false;
-        btn.innerHTML = original;
-        setTimeout(() => { feedback.style.display = 'none'; }, 5000);
-      }
-    });
-  }
+  const header=document.getElementById('header'),btt=document.getElementById('btt');
+  window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>60);btt.classList.toggle('active',window.scrollY>300);});
+  const toggle=document.getElementById('navToggle'),navbar=document.getElementById('navbar'),menuIcon=document.getElementById('menuIcon');
+  toggle.addEventListener('click',()=>{const o=navbar.classList.toggle('open');menuIcon.className=o?'fas fa-times':'fas fa-bars';});
+  document.querySelectorAll('.navbar-link, .btn').forEach(el=>{el.addEventListener('click',()=>{navbar.classList.remove('open');menuIcon.className='fas fa-bars';});});
+  const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.08});
+  document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
+  const form=document.getElementById('contactForm'),fb=document.getElementById('contact-feedback');
+  if(form){form.addEventListener('submit',async function(e){e.preventDefault();const btn=form.querySelector('.form-submit'),original=btn.innerHTML;btn.disabled=true;btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending...';fb.style.display='block';fb.style.color='#60A5FA';fb.textContent='Sending your message...';try{const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});if(res.ok){fb.style.color='#34D399';fb.textContent='✓ Message sent successfully! I\'ll respond within 24 hours.';form.reset();}else throw new Error();}catch(err){fb.style.color='#F87171';fb.textContent='❌ Failed to send. Please email me directly.';}finally{btn.disabled=false;btn.innerHTML=original;setTimeout(()=>{fb.style.display='none';},5000);}});}
 </script>
 </body>
 </html>
