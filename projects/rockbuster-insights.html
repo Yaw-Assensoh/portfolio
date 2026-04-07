@@ -1,362 +1,239 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RockBuster Insights | Yaw Assensoh Opoku</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../style.css">
-    <style>
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .image-card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-        
-        .image-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .image-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 1px solid #e9ecef;
-        }
-        
-        .image-content {
-            padding: 1.5rem;
-        }
-        
-        .image-content h4 {
-            margin-top: 0;
-            color: #2d87f0;
-        }
-        
-        .insight-box {
-            background: #f0f8ff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-            border-left: 4px solid #2d87f0;
-        }
-        
-        .insight-box h4 {
-            color: #2d87f0;
-            margin-top: 0;
-        }
-        
-        .highlight-stat {
-            display: inline-block;
-            background: #2d87f0;
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
-            font-weight: bold;
-            margin: 0.25rem 0.5rem 0.25rem 0;
-        }
-        
-        .analysis-section {
-            margin: 3rem 0;
-            padding: 2rem;
-            background: #f8f9fa;
-            border-radius: 12px;
-        }
-        
-        .analysis-section h2 {
-            color: #2d87f0;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-        
-        .fallback-image {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        
-        .hero-image-container {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        
-        .hero-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    </style>
-</head>
-<body>
-    
-    <header class="header" data-header>
-        <div class="container">
-            <a href="../index.html">
-                <h1 class="logo">Yaw Assensoh Opoku</h1>
-            </a>
-
-            <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
-                <i class="fas fa-bars menu-icon"></i>
-                <i class="fas fa-times close-icon"></i>
-            </button>
-
-            <nav class="navbar container">
-                <ul class="navbar-list">
-                    <li>
-                        <a href="../index.html#home" class="navbar-link" data-nav-link>Home</a>
-                    </li>
-                    <li>
-                        <a href="../index.html#about" class="navbar-link" data-nav-link>About</a>
-                    </li>
-                    <li>
-                        <a href="../index.html#portfolio" class="navbar-link" data-nav-link>Portfolio</a>
-                    </li>
-                    <li>
-                        <a href="../index.html#skills" class="navbar-link" data-nav-link>Skills</a>
-                    </li>
-                    <li>
-                        <a href="../index.html#contact" class="navbar-link" data-nav-link>Contact</a>
-                    </li>
-                    <li>
-                        <a href="../Yaw_Assensoh_Opoku_CV.pdf" class="btn btn-primary" download>Download CV</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main class="container" style="padding: 120px 20px 60px;">
-        <article>
-            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">RockBuster Stealth Data Analysis</h1>
-            <p class="section-subtitle">Business Intelligence & Strategic Recommendations</p>
-            
-            <div style="margin: 2rem 0;">
-                <img src="../assets/images/rock-image.jpg" 
-                     alt="Rockbuster presentation" 
-                     style="width:100%; height:600px; object-fit:cover; border-radius:12px;">
-            </div>
-
-            <div style="max-width: 800px; margin: 0 auto;">
-                
-                <!-- PROJECT SYNOPSIS SECTION -->
-                <div class="project-synopsis" style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
-                    <h3 style="margin-top: 0; color: #2d87f0; display: flex; align-items: center; gap: 10px;"> Project Overview</h3>
-                    <p><strong>Business Objective:</strong> To guide Rockbuster Stealth's digital transformation from physical rental stores to a global streaming service by leveraging existing customer data to maximize subscriber acquisition and content strategy effectiveness.</p>
-                    <p><strong>Core Question:</strong> "How can we use historical rental data to identify our most valuable customers, optimal content categories, and priority markets for a successful launch against established competitors like Netflix and Amazon Prime?"</p>
-                    <p><strong>Key Deliverable:</strong> A comprehensive business intelligence framework with customer segmentation, content strategy recommendations, and market prioritization for the digital launch.</p>
-                </div>
-
-                <h3 style="color: #2d87f0; margin-bottom: 1rem;">My Role & Process:</h3>
-                <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
-                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #e9ecef;">
-                        <i class="fas fa-database" style="color: #2d87f0; margin-right: 0.5rem;"></i>
-                        <strong>Data Collection & Cleaning:</strong> Used SQL to extract and Python/Pandas to clean customer, film, and sales data
-                    </li>
-                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #e9ecef;">
-                        <i class="fas fa-chart-line" style="color: #2d87f0; margin-right: 0.5rem;"></i>
-                        <strong>Exploratory Analysis:</strong> Analyzed sales trends and customer demographics to find initial patterns
-                    </li>
-                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #e9ecef;">
-                        <i class="fas fa-users" style="color: #2d87f0; margin-right: 0.5rem;"></i>
-                        <strong>Pattern Identification:</strong> Segmented high-value customers and identified top-performing regions and film genres
-                    </li>
-                    <li style="padding: 0.5rem 0;">
-                        <i class="fas fa-lightbulb" style="color: #2d87f0; margin-right: 0.5rem;"></i>
-                        <strong>Insights Generation:</strong> Recommended targeted loyalty programs and data-backed market expansion strategy
-                    </li>
-                </ul>
-
-                <div class="analysis-section">
-                    <h2>Data Analysis & Visualizations</h2>
-                    
-                    <div class="image-grid">
-                        <div class="image-card">
-                            <img src="../assets/images/Country_number_of_customers.png" alt="Customer Distribution by Country"
-                                 onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                            <div class="image-content">
-                                <h4>Global Customer Distribution</h4>
-                                <p>Analysis of customer base across different countries.</p>
-                                <p><strong>Key Finding:</strong> <span class="highlight-stat">United States</span> leads with the largest customer base, followed by <span class="highlight-stat">India</span> and <span class="highlight-stat">China</span>, indicating strong brand recognition in these markets.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="image-card">
-                            <img src="../assets/images/Category_Revenue.png" alt="Revenue by Movie Category"
-                                 onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                            <div class="image-content">
-                                <h4>Revenue by Film Category</h4>
-                                <p>Performance analysis across different movie genres.</p>
-                                <p><strong>Key Finding:</strong> <span class="highlight-stat">Sports</span> and <span class="highlight-stat">Animation</span> categories generate the highest revenue, with Sports leading at <span class="highlight-stat">$4,836</span> in total revenue.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="image-card">
-                            <img src="../assets/images/Revenue per country.png" alt="Revenue Distribution by Country"
-                                 onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                            <div class="image-content">
-                                <h4>Geographic Revenue Analysis</h4>
-                                <p>Revenue distribution and customer demographics by country.</p>
-                                <p><strong>Key Finding:</strong> Countries with median age <span class="highlight-stat">37-39</span> show highest revenue generation, suggesting optimal target demographic for digital service.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="image-card">
-                            <img src="../assets/images/movies_revenue.png" alt="Detailed Movie Revenue Analysis"
-                                 onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                            <div class="image-content">
-                                <h4>Genre Performance Deep Dive</h4>
-                                <p>Detailed revenue analysis across all movie categories.</p>
-                                <p><strong>Key Finding:</strong> <span class="highlight-stat">Sci-Fi</span> and <span class="highlight-stat">Action</span> genres show strong performance, indicating potential for franchise development in digital platform.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insight-box">
-                        <h4>Strategic Business Insights</h4>
-                        <ul>
-                            <li><strong>Market Prioritization:</strong> The United States represents the largest customer base, making it the primary target for the digital launch, with India and China as secondary expansion markets.</li>
-                            <li><strong>Content Strategy:</strong> Sports and Animation categories drive the highest revenue, suggesting these should be focal points for digital content acquisition and original programming.</li>
-                            <li><strong>Demographic Targeting:</strong> Customers aged 37-39 generate the highest revenue per country, indicating this age group should be the primary target for marketing campaigns.</li>
-                            <li><strong>Genre Diversification:</strong> While Sports leads in revenue, strong performance across Sci-Fi, Action, and Comedy genres suggests a balanced content library will maximize subscriber retention.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3 style="color: #2d87f0; margin-bottom: 1rem;">Key Findings & Insights:</h3>
-                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
-                        <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                            <div style="font-size: 2rem; color: #2d87f0; margin-bottom: 0.5rem;">20%</div>
-                            <div style="font-weight: 600;">Top Customers</div>
-                            <div style="font-size: 0.9rem; color: #666;">Generated 60% of total revenue</div>
-                        </div>
-                        <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                            <div style="font-size: 2rem; color: #2d87f0; margin-bottom: 0.5rem;">$4,836</div>
-                            <div style="font-weight: 600;">Top Category</div>
-                            <div style="font-size: 0.9rem; color: #666;">Sports genre revenue leader</div>
-                        </div>
-                        <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                            <div style="font-size: 2rem; color: #2d87f0; margin-bottom: 0.5rem;">37-39</div>
-                            <div style="font-weight: 600;">Prime Age Group</div>
-                            <div style="font-size: 0.9rem; color: #666;">Highest revenue demographic</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- BUSINESS IMPACT SECTION -->
-                <div class="business-impact" style="background: #fef9e7; padding: 2rem; border-radius: 12px; margin: 3rem 0; border-left: 6px solid #F39C12;">
-                    <h3 style="color: #E67E22; margin-top: 0; display: flex; align-items: center; gap: 10px;"> Streaming Strategy & Market Positioning</h3>
-                    
-                    <h4 style="color: #E67E22; margin-top: 1.5rem;">Critical Digital Launch Findings:</h4>
-                    <ul style="margin-bottom: 1.5rem;">
-                        <li><strong>Revenue Concentration:</strong> Top 20% of customers generated 60% of revenue—these "Power Users" should receive exclusive launch incentives to ensure platform adoption.</li>
-                        <li><strong>Content Competitive Edge:</strong> Sports ($4,836 revenue) and Animation categories outperformed all others, representing Rockbuster's unique strength vs. Netflix's drama/comedy focus.</li>
-                        <li><strong>Geographic Launch Sequence:</strong> US market has 4.2x more customers than second-place India, making phased launch (US → India/China → EU) the lowest-risk approach.</li>
-                    </ul>
-                    
-                    <h4 style="color: #E67E22; margin-top: 1.5rem;">Digital Transformation Recommendations:</h4>
-                    <ul>
-                        <li><strong>For Launch Strategy:</strong> Implement <strong style="color: #E67E22;">"Power User" migration program</strong> offering 6 months free to top 20% customers (who generate 60% of revenue) to secure critical mass and word-of-mouth marketing.</li>
-                        <li><strong>For Content Acquisition:</strong> Allocate <strong style="color: #E67E22;">40% of licensing budget to Sports content</strong> and 25% to Animation—domains where Rockbuster already outperforms streaming giants—to establish immediate competitive differentiation.</li>
-                        <li><strong>For Market Expansion:</strong> Execute <strong style="color: #E67E22;">phased geographic rollout</strong>: Month 1-3: US (existing base), Month 4-6: India/China (strong recognition), Month 7-12: European markets with localized 37-39 age targeting.</li>
-                        <li><strong>For Customer Retention:</strong> Develop <strong style="color: #E67E22;">"Genre Journey" recommendation algorithm</strong> that moves Sports/Animation viewers to related Sci-Fi/Action content (high-performing secondary genres) to increase average viewing time by 35%.</li>
-                    </ul>
-                </div>
-
-                <div style="background: #e8f4fd; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border-left: 4px solid #2d87f0;">
-                    <h4 style="color: #2d87f0; margin-bottom: 1rem;">Strategic Impact:</h4>
-                    <ul style="margin: 0; padding-left: 1.5rem;">
-                        <li>Enabled targeted loyalty programs for high-value customers in the US market</li>
-                        <li>Pinpointed Sports and Animation as priority content categories for digital acquisition</li>
-                        <li>Identified 37-39 age demographic as primary target for digital marketing campaigns</li>
-                        <li>Provided data-backed content strategy balancing high-performing genres with audience diversity</li>
-                        <li>Guided international expansion strategy with clear market prioritization based on existing customer base</li>
-                    </ul>
-                </div>
-
-                <h3 style="color: #2d87f0; margin-bottom: 1rem;">Tools & Technologies:</h3>
-                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                            <i class="fab fa-python" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
-                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Python</div>
-                            <div style="font-size: 0.9rem; color: #666;">Data Analysis & Pandas</div>
-                        </div>
-                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                            <i class="fas fa-database" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
-                            <div style="font-weight: 600; margin-bottom: 0.5rem;">SQL</div>
-                            <div style="font-size: 0.9rem; color: #666;">Data Extraction & Queries</div>
-                        </div>
-                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                            <i class="fas fa-chart-bar" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
-                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Tableau</div>
-                            <div style="font-size: 0.9rem; color: #666;">Business Intelligence</div>
-                        </div>
-                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                            <i class="fas fa-file-excel" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
-                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Excel</div>
-                            <div style="font-size: 0.9rem; color: #666;">Data Analysis & Reporting</div>
-                        </div>
-                    </div>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
-                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                            <i class="fas fa-book" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
-                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Jupyter</div>
-                            <div style="font-size: 0.9rem; color: #666;">Interactive Analysis</div>
-                        </div>
-                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                            <i class="fas fa-shopping-basket" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
-                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Market Basket</div>
-                            <div style="font-size: 0.9rem; color: #666;">Analysis Techniques</div>
-                        </div>
-                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                            <i class="fas fa-chart-pie" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
-                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Data Viz</div>
-                            <div style="font-size: 0.9rem; color: #666;">Advanced Visualization</div>
-                        </div>
-                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                            <i class="fas fa-users" style="font-size: 2.5rem; color: #2d87f0; margin-bottom: 1rem;"></i>
-                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Segmentation</div>
-                            <div style="font-size: 0.9rem; color: #666;">Customer Analysis</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="margin-top: 3rem; text-align: center;">
-                    <a href="../index.html#portfolio" class="btn btn-primary" style="margin-right: 1rem;">
-                        <i class="fas fa-arrow-left"></i> Back to Portfolio
-                    </a>
-                    <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/ROCKBUSTERPROJECT/Story1"
-                          class="btn btn-outline"
-                          target="_blank" rel="noopener noreferrer" style="margin-right: 1rem;">
-                            <i class="fas fa-chart-bar"></i> View Tableau Dashboard
-                    </a>
-                    <a href="https://github.com/Yaw-Assensoh/Rockbuster-Insights" 
-                       class="btn btn-outline"
-                       target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-github"></i> View Code
-                    </a>
-                </div>
-            </div>
-        </article>
-    </main>
-
-    <script src="../script.js"></script>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RockBuster Insights | Yaw Assensoh Opoku</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--blue:#1B5FD9;--blue-light:#EEF4FF;--dark:#0D1117;--mid:#374151;--muted:#6B7280;--border:#E5E7EB;--bg:#FAFAFA;--white:#FFFFFF;--radius-sm:6px;--radius-md:12px;--radius-lg:20px;--shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow-md:0 4px 16px rgba(0,0,0,.10);--shadow-lg:0 12px 40px rgba(0,0,0,.12);--font-head:'DM Serif Display',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif;--nav-h:72px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);font-size:16px;line-height:1.7;color:var(--mid);background:var(--white);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+.header{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:100;box-shadow:var(--shadow-sm)}
+.header .container{height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--font-head);font-size:1.25rem;color:var(--dark)}
+.navbar-list{display:flex;align-items:center;gap:4px}
+.navbar-link{font-size:.875rem;font-weight:500;color:var(--muted);padding:6px 12px;border-radius:var(--radius-sm);transition:color .2s,background .2s}
+.navbar-link:hover{color:var(--dark);background:var(--bg)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:.875rem;font-weight:600;cursor:pointer;transition:all .2s;border:none;white-space:nowrap}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{background:#1550c0;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--blue);border:1.5px solid var(--blue)}
+.btn-outline:hover{background:var(--blue-light)}
+.btn-sm{padding:7px 16px;font-size:.82rem}
+.nav-toggle-btn{display:none;background:none;border:none;font-size:1.25rem;color:var(--dark);cursor:pointer;padding:8px}
+main{padding-top:calc(var(--nav-h) + 56px);padding-bottom:80px}
+.project-wrap{max-width:900px;margin:0 auto;padding:0 24px}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--muted);margin-bottom:32px}
+.breadcrumb a{color:var(--blue)}
+.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb i{font-size:.65rem}
+.project-hero-img{width:100%;height:520px;object-fit:cover;border-radius:var(--radius-lg);margin-bottom:40px}
+.project-label{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.project-title{font-family:var(--font-head);font-size:clamp(2rem,4vw,2.8rem);color:var(--dark);line-height:1.15;margin-bottom:16px}
+.project-subtitle{font-size:1.05rem;color:var(--muted);margin-bottom:28px}
+.project-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px}
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;margin-bottom:48px}
+.stat-pill{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:18px 20px;text-align:center}
+.stat-pill .num{font-family:var(--font-head);font-size:1.8rem;color:var(--dark);line-height:1;display:block}
+.stat-pill .lbl{font-size:.75rem;color:var(--muted);margin-top:4px}
+.section-block{margin-bottom:52px}
+.section-block h2{font-family:var(--font-head);font-size:1.55rem;color:var(--dark);margin-bottom:16px}
+.section-block h3{font-size:1.1rem;font-weight:600;color:var(--dark);margin:28px 0 12px}
+.section-block p{color:var(--mid);line-height:1.75;margin-bottom:12px}
+.section-block ul{padding-left:0;display:flex;flex-direction:column;gap:8px}
+.section-block ul li{display:flex;gap:10px;font-size:.95rem;color:var(--mid);line-height:1.6}
+.section-block ul li::before{content:'→';color:var(--blue);flex-shrink:0;font-weight:600}
+.overview-box{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:24px 28px;margin-bottom:36px}
+.overview-box .q-label{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+.overview-box p{margin:0;color:var(--mid)}
+.overview-box .divider{border:none;border-top:1px solid var(--border);margin:16px 0}
+.img-grid{display:grid;gap:24px;margin:24px 0}
+.img-grid.cols-2{grid-template-columns:1fr 1fr}
+.img-grid.cols-1{grid-template-columns:1fr}
+.img-card{border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;background:var(--white)}
+.img-card img{width:100%;height:380px;object-fit:cover;display:block;transition:transform .4s}
+.img-card:hover img{transform:scale(1.02)}
+.img-card.tall img{height:480px}
+.img-card.contain img{object-fit:contain;background:#f8f9fa;padding:12px;height:360px}
+.img-caption{padding:16px 20px;border-top:1px solid var(--border)}
+.img-caption h4{font-weight:600;font-size:.93rem;color:var(--dark);margin-bottom:4px}
+.img-caption p{font-size:.84rem;color:var(--muted);margin:0;line-height:1.55}
+.img-caption .finding{display:inline-block;margin-top:8px;background:var(--blue-light);color:var(--blue);font-size:.78rem;font-weight:600;padding:3px 10px;border-radius:99px;border:1px solid #c7d9f9}
+.insight-box{background:var(--blue-light);border-left:4px solid var(--blue);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:20px 24px;margin:20px 0}
+.insight-box h4{font-weight:600;color:var(--dark);margin-bottom:10px;font-size:.95rem}
+.insight-box ul{padding-left:0;display:flex;flex-direction:column;gap:6px}
+.insight-box ul li{display:flex;gap:10px;font-size:.88rem;color:var(--mid)}
+.insight-box ul li::before{content:'•';color:var(--blue);flex-shrink:0;font-weight:700}
+.data-table{width:100%;border-collapse:collapse;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);margin:20px 0}
+.data-table th{background:var(--blue);color:#fff;padding:12px 16px;text-align:left;font-size:.85rem;font-weight:600}
+.data-table td{padding:11px 16px;border-bottom:1px solid var(--border);font-size:.88rem;color:var(--mid)}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:hover td{background:var(--bg)}
+.badge{display:inline-block;font-size:.72rem;font-weight:600;padding:3px 10px;border-radius:99px;margin:2px}
+.badge-blue{background:var(--blue-light);color:var(--blue);border:1px solid #c7d9f9}
+.badge-red{background:#fde8e8;color:#c0392b;border:1px solid #e74c3c}
+.badge-green{background:#eafaf1;color:#1e8449;border:1px solid #27ae60}
+.badge-orange{background:#fef5e4;color:#d35400;border:1px solid #e67e22}
+.metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:20px 0}
+.metric-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);padding:18px 20px;box-shadow:var(--shadow-sm)}
+.metric-card h4{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.metric-card ul{padding:0;display:flex;flex-direction:column;gap:4px}
+.metric-card ul li{font-size:.87rem;color:var(--mid);display:flex;justify-content:space-between}
+.metric-card ul li strong{color:var(--dark)}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:20px 0}
+.tool-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:18px 16px;text-align:center}
+.tool-card i{font-size:1.8rem;color:var(--blue);margin-bottom:8px;display:block}
+.tool-card .t-name{font-weight:600;font-size:.88rem;color:var(--dark);margin-bottom:3px}
+.tool-card .t-desc{font-size:.75rem;color:var(--muted)}
+.section-divider{border:none;border-top:1px solid var(--border);margin:40px 0}
+.footer{background:#060910;padding:28px 0;border-top:1px solid rgba(255,255,255,.06)}
+.footer .container{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.footer-copy{font-size:.8rem;color:#6B7280}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:.8rem;color:#6B7280;transition:color .2s}
+.footer-links a:hover{color:#9CA3AF}
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin:24px 0}
+.kpi-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);padding:20px;text-align:center;box-shadow:var(--shadow-sm)}
+.kpi-card .k-num{font-family:var(--font-head);font-size:2rem;color:var(--blue);line-height:1;display:block}
+.kpi-card .k-lbl{font-size:.78rem;color:var(--muted);margin-top:4px}
+.kpi-card .k-sub{font-size:.72rem;color:var(--muted);margin-top:2px}
+@media(max-width:768px){
+  .img-grid.cols-2{grid-template-columns:1fr}
+  .img-card img,.img-card.tall img,.img-card.contain img{height:250px}
+  .stats-row,.kpi-row{grid-template-columns:repeat(2,1fr)}
+  .project-actions{flex-direction:column}
+  .project-hero-img{height:260px}
+  .navbar{display:none;position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:var(--white);padding:24px;flex-direction:column;border-top:1px solid var(--border);z-index:99;overflow-y:auto}
+  .navbar.open{display:flex}
+  .navbar-list{flex-direction:column;align-items:flex-start;gap:4px;width:100%}
+  .navbar-link{font-size:1.05rem;padding:10px 14px;width:100%}
+  .nav-toggle-btn{display:block}
+  .footer .container{flex-direction:column;text-align:center}
+}
+</style>
+</head><body>
+<header class="header" id="header"><div class="container">
+  <a href="../index.html"><span class="logo">Yaw Assensoh Opoku</span></a>
+  <button class="nav-toggle-btn" id="navToggle"><i class="fas fa-bars" id="menuIcon"></i></button>
+  <nav class="navbar" id="navbar"><ul class="navbar-list">
+    <li><a href="../index.html#home" class="navbar-link">Home</a></li>
+    <li><a href="../index.html#about" class="navbar-link">About</a></li>
+    <li><a href="../index.html#projects" class="navbar-link">Projects</a></li>
+    <li><a href="../index.html#skills" class="navbar-link">Skills</a></li>
+    <li><a href="../index.html#contact" class="navbar-link">Contact</a></li>
+    <li><a href="../Yaw-Assensoh-Resume.pdf" class="btn btn-primary btn-sm" download><i class="fas fa-download"></i> Download CV</a></li>
+  </ul></nav>
+</div></header>
+<main><div class="project-wrap">
+<div class="breadcrumb"><a href="../index.html#projects"><i class="fas fa-arrow-left"></i> All Projects</a><i class="fas fa-chevron-right"></i><span>RockBuster Insights</span></div>
+<img class="project-hero-img" src="../assets/images/rock-image.jpg" alt="RockBuster Stealth Data Analysis"
+     onerror="this.src='https://images.unsplash.com/photo-1534308143439-3820b8e20fca?auto=format&fit=crop&w=1200&q=80'">
+<p class="project-label">Business Intelligence</p>
+<h1 class="project-title">RockBuster Stealth Data Analysis</h1>
+<p class="project-subtitle">Business Intelligence &amp; Digital Transformation Strategy</p>
+<div class="project-actions">
+  <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/ROCKBUSTERPROJECT/Story1" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-chart-bar"></i> View Tableau Dashboard</a>
+  <a href="https://github.com/Yaw-Assensoh/RockBuster-Insights" target="_blank" rel="noopener" class="btn btn-outline"><i class="fab fa-github"></i> View Code</a>
+  <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+</div>
+<div class="stats-row">
+  <div class="stat-pill"><span class="num">20%</span><span class="lbl">Top Customers → 60% Revenue</span></div>
+  <div class="stat-pill"><span class="num">$4,836</span><span class="lbl">Sports Category Revenue</span></div>
+  <div class="stat-pill"><span class="num">37–39</span><span class="lbl">Prime Age Demographic</span></div>
+  <div class="stat-pill"><span class="num">3</span><span class="lbl">Priority Markets</span></div>
+</div>
+<hr class="section-divider">
+<div class="section-block">
+  <h2>Project Overview</h2>
+  <div class="overview-box">
+    <div class="q-label">Core Question</div>
+    <p>How can we use historical rental data to identify our most valuable customers, optimal content categories, and priority markets for a successful streaming launch against Netflix and Amazon Prime?</p>
+    <hr class="divider">
+    <div class="q-label">Business Value</div>
+    <p>A comprehensive business intelligence framework with customer segmentation, content strategy recommendations, and market prioritisation for RockBuster's digital transformation.</p>
+  </div>
+</div>
+<hr class="section-divider">
+<div class="section-block">
+  <h2>Data Analysis &amp; Visualisations</h2>
+  <div class="img-grid cols-2">
+    <div class="img-card">
+      <img src="../assets/images/Country_number_of_customers.png" alt="Customer Distribution by Country"
+           onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
+      <div class="img-caption">
+        <h4>Global Customer Distribution</h4>
+        <p>Analysis of customer base across different countries, revealing existing brand strength and priority launch markets.</p>
+        <span class="finding">United States leads — 4.2x more customers than second-place India</span>
+      </div>
+    </div>
+    <div class="img-card">
+      <img src="../assets/images/Category_Revenue.png" alt="Revenue by Movie Category"
+           onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
+      <div class="img-caption">
+        <h4>Revenue by Film Category</h4>
+        <p>Performance analysis across different movie genres, revealing Rockbuster's competitive content advantage.</p>
+        <span class="finding">Sports leads at $4,836 — followed by Animation. Rockbuster's unique edge vs Netflix</span>
+      </div>
+    </div>
+  </div>
+  <div class="img-grid cols-2">
+    <div class="img-card">
+      <img src="../assets/images/Revenue per country.png" alt="Revenue Distribution by Country"
+           onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
+      <div class="img-caption">
+        <h4>Geographic Revenue Analysis</h4>
+        <p>Revenue distribution by country, revealing the optimal demographic profile for digital service targeting.</p>
+        <span class="finding">Countries with median age 37–39 show highest revenue — the prime target demographic</span>
+      </div>
+    </div>
+    <div class="img-card">
+      <img src="../assets/images/movies_revenue.png" alt="Detailed Movie Revenue Analysis"
+           onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
+      <div class="img-caption">
+        <h4>Genre Performance Deep Dive</h4>
+        <p>Detailed revenue analysis across all movie categories, confirming the multi-genre strategy for subscriber retention.</p>
+        <span class="finding">Sci-Fi and Action are strong secondary performers — supports a balanced content library</span>
+      </div>
+    </div>
+  </div>
+  <div class="insight-box">
+    <h4>Strategic Business Insights</h4>
+    <ul>
+      <li>US market is the primary launch target — largest customer base with established brand recognition</li>
+      <li>Sports and Animation categories drive the highest revenue — priority for digital content licensing</li>
+      <li>Customers aged 37–39 generate the highest revenue per country — primary demographic for campaigns</li>
+      <li>Top 20% of customers generate 60% of revenue — exclusive launch incentives are essential</li>
+    </ul>
+  </div>
+</div>
+<hr class="section-divider">
+<div class="section-block">
+  <h2>Tools &amp; Technologies</h2>
+  <div class="tools-grid">
+    <div class="tool-card"><i class="fas fa-database"></i><div class="t-name">PostgreSQL</div><div class="t-desc">Data Extraction &amp; Queries</div></div>
+    <div class="tool-card"><i class="fas fa-chart-bar"></i><div class="t-name">Tableau</div><div class="t-desc">Business Intelligence Dashboard</div></div>
+    <div class="tool-card"><i class="fab fa-python"></i><div class="t-name">Python</div><div class="t-desc">Data Analysis &amp; Pandas</div></div>
+    <div class="tool-card"><i class="fas fa-file-excel"></i><div class="t-name">Excel</div><div class="t-desc">Reporting &amp; Analysis</div></div>
+  </div>
+</div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:48px">
+  <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/ROCKBUSTERPROJECT/Story1" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-chart-bar"></i> View Tableau Dashboard</a>
+  <a href="https://github.com/Yaw-Assensoh/RockBuster-Insights" target="_blank" rel="noopener" class="btn btn-outline"><i class="fab fa-github"></i> View Code</a>
+  <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+</div>
+</div></main>
+<footer class="footer"><div class="container">
+  <p class="footer-copy">&copy; 2026 Yaw Assensoh Opoku. All rights reserved.</p>
+  <div class="footer-links"><a href="https://github.com/Yaw-Assensoh" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/yaw-assensoh-opoku" target="_blank" rel="noopener">LinkedIn</a></div>
+</div></footer>
+<script>
+const toggle=document.getElementById("navToggle"),navbar=document.getElementById("navbar"),menuIcon=document.getElementById("menuIcon");
+toggle.addEventListener("click",()=>{const open=navbar.classList.toggle("open");menuIcon.className=open?"fas fa-times":"fas fa-bars";});
+navbar.querySelectorAll(".navbar-link,.btn").forEach(el=>el.addEventListener("click",()=>{navbar.classList.remove("open");menuIcon.className="fas fa-bars";}));
+</script>
+</body></html>
