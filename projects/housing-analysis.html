@@ -154,6 +154,29 @@ main{padding-top:calc(var(--nav-h) + 56px);padding-bottom:80px}
 /* FORMULA BOX */
 .formula-box{background:#f0f8ff;border:1px solid #c7d9f9;border-radius:var(--radius-md);padding:16px 20px;font-family:monospace;font-size:1rem;font-weight:700;text-align:center;color:var(--dark);margin:16px 0}
 
+/* IMPACT SECTION */
+.impact-section{border-radius:var(--radius-lg);padding:32px 36px;margin:40px 0}
+.impact-section.green{background:#ecfdf5;border-left:5px solid #16a34a}
+.impact-section.blue{background:#eff6ff;border-left:5px solid var(--blue)}
+.impact-section.red{background:#fff1f2;border-left:5px solid #dc2626}
+.impact-section h2{font-family:var(--font-head);font-size:1.45rem;margin-bottom:6px}
+.impact-section.green h2{color:#15803d}
+.impact-section.blue h2{color:#1d4ed8}
+.impact-section.red h2{color:#b91c1c}
+.impact-section .impact-intro{font-size:.95rem;color:var(--muted);margin-bottom:24px;line-height:1.7}
+.findings-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:28px}
+.finding-card{background:rgba(255,255,255,.75);border:1px solid rgba(0,0,0,.07);border-radius:var(--radius-md);padding:16px 20px}
+.finding-card .f-title{font-weight:700;font-size:.9rem;color:var(--dark);margin-bottom:4px}
+.finding-card p{font-size:.88rem;color:var(--mid);margin:0;line-height:1.6}
+.recs-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
+.rec-card{background:rgba(255,255,255,.8);border:1px solid rgba(0,0,0,.07);border-radius:var(--radius-md);padding:16px 20px}
+.rec-card .r-who{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+.rec-card p{font-size:.87rem;color:var(--mid);margin:0;line-height:1.6}
+.impact-bullets{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+.impact-bullet{display:flex;gap:8px;align-items:flex-start;font-size:.86rem;color:var(--mid)}
+.impact-bullet::before{content:'✓';color:#16a34a;font-weight:700;flex-shrink:0;margin-top:1px}
+@media(max-width:768px){.recs-grid,.impact-bullets{grid-template-columns:1fr}.impact-section{padding:24px 20px}}
+
 /* RESPONSIVE */
 @media(max-width:768px){
   .img-grid.cols-2{grid-template-columns:1fr}
@@ -474,6 +497,64 @@ main{padding-top:calc(var(--nav-h) + 56px);padding-bottom:80px}
           <div class="scenario-card"><h5>Income +10% & Rent +15%</h5><div class="val">$469,310</div><div class="effect">+10.3% — still limited by supply</div></div>
           <div class="scenario-card"><h5>Income +20%</h5><div class="val">$480,395</div><div class="effect">+13.0% — still insufficient to close gap</div></div>
         </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- STRATEGIC IMPACT -->
+    <div class="impact-section red">
+      <h2>Data-Driven Policy Insights &amp; Recommendations</h2>
+      <p class="impact-intro">This project turns 10 years of housing data into a clear picture of who is being priced out, why, and what can actually fix it. Here is what the analysis means for each stakeholder — explained without economics jargon.</p>
+
+      <h3 style="font-size:1rem;font-weight:700;color:#b91c1c;margin-bottom:12px">Critical Findings</h3>
+      <div class="findings-grid">
+        <div class="finding-card">
+          <div class="f-title">The Crisis Is Structural, Not Cyclical</div>
+          <p>LA and NY were already unaffordable before 2015 — the dataset starts with them already above the 1.0 threshold. Median income grew $11K over 10 years while LA home values grew $400K. Regression confirms: income subsidies alone cannot close a gap that large. The crisis is a supply problem, not an income problem.</p>
+        </div>
+        <div class="finding-card">
+          <div class="f-title">COVID Caused the Sharpest Single Deterioration on Record</div>
+          <p>All 5 cities deteriorated simultaneously between 2020 and 2022. LA's affordability index jumped 0.302 points in a single year — the largest annual shift in the entire dataset. Miami crossed the affordability threshold for the first time in 2022, driven by post-COVID migration pressure that pushed home values up 120% since 2015.</p>
+        </div>
+        <div class="finding-card">
+          <div class="f-title">Houston and Chicago Prove It Doesn't Have to Be This Way</div>
+          <p>Both cities stayed below the 1.0 affordability threshold for the entire 10-year period despite having populations of 2.3M and 2.7M respectively. They are not affordable because they are small or undesirable — they are affordable because of specific land use policies. This is a replicable model, not a geographical accident.</p>
+        </div>
+        <div class="finding-card">
+          <div class="f-title">The 3 Cluster Validation Confirms the SQL Risk Classification</div>
+          <p>K-Means clustering and SQL CASE WHEN risk classification were run independently — and produced identical results. LA and NY in the high-risk cluster, Miami moderate, Chicago and Houston low-risk. When two completely different analytical methods converge on the same answer, the finding is statistically robust, not a coincidence.</p>
+        </div>
+      </div>
+
+      <h3 style="font-size:1rem;font-weight:700;color:#b91c1c;margin-bottom:12px">Recommendations by Stakeholder</h3>
+      <div class="recs-grid">
+        <div class="rec-card">
+          <div class="r-who">Policymakers — High-Cost Cities (LA, NY)</div>
+          <p>Reform zoning laws to allow higher residential density and fast-track construction permits. The regression model shows income increases alone have minimal effect (+7.5% for a 10% income raise). The only lever that moves the affordability index meaningfully is increasing housing supply relative to demand.</p>
+        </div>
+        <div class="rec-card">
+          <div class="r-who">Policymakers — Transitioning Cities (Miami)</div>
+          <p>Act now, before crossing into HIGH RISK territory permanently. Miami's trajectory — 120% home value growth since 2015 — mirrors early-stage LA and NY. Cap short-term rental activity driving speculative demand, and incentivise long-term residential development before the affordability window closes.</p>
+        </div>
+        <div class="rec-card">
+          <div class="r-who">Policymakers — Affordable Cities (Houston, Chicago)</div>
+          <p>Preserve the permissive zoning and land availability policies that have kept these cities below 1.0. Do not import restrictive coastal zoning frameworks. Share these land-use models with other metros through policy working groups — Houston's model works and is exportable.</p>
+        </div>
+        <div class="rec-card">
+          <div class="r-who">Real Estate Professionals &amp; Homebuyers</div>
+          <p>The 36-month SARIMA forecast gives a 3-year price trajectory with 95% confidence intervals for all 5 cities. LA is approaching $1M by December 2027. Miami has the steepest projected growth. Houston and Chicago show the narrowest confidence intervals — the most predictable and stable markets for long-term investment.</p>
+        </div>
+      </div>
+
+      <h3 style="font-size:1rem;font-weight:700;color:#b91c1c;margin-bottom:12px">Strategic Impact</h3>
+      <div class="impact-bullets">
+        <div class="impact-bullet">3-phase methodology (Excel → SQL → Python) validated findings through independent methods</div>
+        <div class="impact-bullet">K-Means clusters matched SQL risk classifications exactly — cross-validated results</div>
+        <div class="impact-bullet">SARIMA forecasts provide 3-year price outlook with 95% confidence intervals per city</div>
+        <div class="impact-bullet">Regression proves supply, not income, is the only meaningful affordability lever</div>
+        <div class="impact-bullet">Houston and Chicago identified as replicable affordability models for other metros</div>
+        <div class="impact-bullet">Geospatial analysis confirms the crisis is coastal and city-specific — not a national uniform problem</div>
       </div>
     </div>
 

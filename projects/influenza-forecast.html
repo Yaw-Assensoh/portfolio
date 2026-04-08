@@ -1,7 +1,11 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Influenza Staffing Forecast Model | Yaw Assensoh Opoku</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
@@ -13,6 +17,8 @@ img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 ul{list-style:none}
 .container{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* NAV */
 .header{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:100;box-shadow:var(--shadow-sm)}
 .header .container{height:100%;display:flex;align-items:center;justify-content:space-between}
 .logo{font-family:var(--font-head);font-size:1.25rem;color:var(--dark)}
@@ -26,21 +32,33 @@ ul{list-style:none}
 .btn-outline:hover{background:var(--blue-light)}
 .btn-sm{padding:7px 16px;font-size:.82rem}
 .nav-toggle-btn{display:none;background:none;border:none;font-size:1.25rem;color:var(--dark);cursor:pointer;padding:8px}
+
+/* MAIN */
 main{padding-top:calc(var(--nav-h) + 56px);padding-bottom:80px}
 .project-wrap{max-width:900px;margin:0 auto;padding:0 24px}
+
+/* BREADCRUMB */
 .breadcrumb{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--muted);margin-bottom:32px}
 .breadcrumb a{color:var(--blue)}
 .breadcrumb a:hover{text-decoration:underline}
 .breadcrumb i{font-size:.65rem}
+
+/* HERO */
 .project-hero-img{width:100%;height:520px;object-fit:cover;border-radius:var(--radius-lg);margin-bottom:40px}
+
+/* HEADER BLOCK */
 .project-label{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
 .project-title{font-family:var(--font-head);font-size:clamp(2rem,4vw,2.8rem);color:var(--dark);line-height:1.15;margin-bottom:16px}
 .project-subtitle{font-size:1.05rem;color:var(--muted);margin-bottom:28px}
 .project-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px}
+
+/* STAT PILLS */
 .stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;margin-bottom:48px}
 .stat-pill{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:18px 20px;text-align:center}
 .stat-pill .num{font-family:var(--font-head);font-size:1.8rem;color:var(--dark);line-height:1;display:block}
 .stat-pill .lbl{font-size:.75rem;color:var(--muted);margin-top:4px}
+
+/* SECTION */
 .section-block{margin-bottom:52px}
 .section-block h2{font-family:var(--font-head);font-size:1.55rem;color:var(--dark);margin-bottom:16px}
 .section-block h3{font-size:1.1rem;font-weight:600;color:var(--dark);margin:28px 0 12px}
@@ -48,10 +66,14 @@ main{padding-top:calc(var(--nav-h) + 56px);padding-bottom:80px}
 .section-block ul{padding-left:0;display:flex;flex-direction:column;gap:8px}
 .section-block ul li{display:flex;gap:10px;font-size:.95rem;color:var(--mid);line-height:1.6}
 .section-block ul li::before{content:'→';color:var(--blue);flex-shrink:0;font-weight:600}
+
+/* OVERVIEW BOX */
 .overview-box{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:24px 28px;margin-bottom:36px}
 .overview-box .q-label{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
 .overview-box p{margin:0;color:var(--mid)}
 .overview-box .divider{border:none;border-top:1px solid var(--border);margin:16px 0}
+
+/* IMAGES — the fix: big, clean, full-width-ish */
 .img-grid{display:grid;gap:24px;margin:24px 0}
 .img-grid.cols-2{grid-template-columns:1fr 1fr}
 .img-grid.cols-1{grid-template-columns:1fr}
@@ -59,55 +81,109 @@ main{padding-top:calc(var(--nav-h) + 56px);padding-bottom:80px}
 .img-card img{width:100%;height:380px;object-fit:cover;display:block;transition:transform .4s}
 .img-card:hover img{transform:scale(1.02)}
 .img-card.tall img{height:480px}
-.img-card.contain img{object-fit:contain;background:#f8f9fa;padding:12px;height:360px}
+.img-card.contain img{object-fit:contain;background:#f8f9fa;padding:12px}
 .img-caption{padding:16px 20px;border-top:1px solid var(--border)}
 .img-caption h4{font-weight:600;font-size:.93rem;color:var(--dark);margin-bottom:4px}
 .img-caption p{font-size:.84rem;color:var(--muted);margin:0;line-height:1.55}
 .img-caption .finding{display:inline-block;margin-top:8px;background:var(--blue-light);color:var(--blue);font-size:.78rem;font-weight:600;padding:3px 10px;border-radius:99px;border:1px solid #c7d9f9}
+
+/* INSIGHT BOX */
 .insight-box{background:var(--blue-light);border-left:4px solid var(--blue);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:20px 24px;margin:20px 0}
 .insight-box h4{font-weight:600;color:var(--dark);margin-bottom:10px;font-size:.95rem}
 .insight-box ul{padding-left:0;display:flex;flex-direction:column;gap:6px}
 .insight-box ul li{display:flex;gap:10px;font-size:.88rem;color:var(--mid)}
 .insight-box ul li::before{content:'•';color:var(--blue);flex-shrink:0;font-weight:700}
+
+/* TABLE */
 .data-table{width:100%;border-collapse:collapse;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);margin:20px 0}
 .data-table th{background:var(--blue);color:#fff;padding:12px 16px;text-align:left;font-size:.85rem;font-weight:600}
 .data-table td{padding:11px 16px;border-bottom:1px solid var(--border);font-size:.88rem;color:var(--mid)}
 .data-table tr:last-child td{border-bottom:none}
 .data-table tr:hover td{background:var(--bg)}
+
+/* BADGE CHIPS */
 .badge{display:inline-block;font-size:.72rem;font-weight:600;padding:3px 10px;border-radius:99px;margin:2px}
 .badge-blue{background:var(--blue-light);color:var(--blue);border:1px solid #c7d9f9}
 .badge-red{background:#fde8e8;color:#c0392b;border:1px solid #e74c3c}
 .badge-green{background:#eafaf1;color:#1e8449;border:1px solid #27ae60}
 .badge-orange{background:#fef5e4;color:#d35400;border:1px solid #e67e22}
+
+/* METRIC GRID */
 .metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:20px 0}
 .metric-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);padding:18px 20px;box-shadow:var(--shadow-sm)}
 .metric-card h4{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .metric-card ul{padding:0;display:flex;flex-direction:column;gap:4px}
 .metric-card ul li{font-size:.87rem;color:var(--mid);display:flex;justify-content:space-between}
 .metric-card ul li strong{color:var(--dark)}
+
+/* TOOLS */
 .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:20px 0}
 .tool-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:18px 16px;text-align:center}
 .tool-card i{font-size:1.8rem;color:var(--blue);margin-bottom:8px;display:block}
 .tool-card .t-name{font-weight:600;font-size:.88rem;color:var(--dark);margin-bottom:3px}
 .tool-card .t-desc{font-size:.75rem;color:var(--muted)}
+
+/* DIVIDER */
 .section-divider{border:none;border-top:1px solid var(--border);margin:40px 0}
+
+/* FOOTER */
 .footer{background:#060910;padding:28px 0;border-top:1px solid rgba(255,255,255,.06)}
 .footer .container{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .footer-copy{font-size:.8rem;color:#6B7280}
 .footer-links{display:flex;gap:20px}
 .footer-links a{font-size:.8rem;color:#6B7280;transition:color .2s}
 .footer-links a:hover{color:#9CA3AF}
-.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin:24px 0}
-.kpi-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);padding:20px;text-align:center;box-shadow:var(--shadow-sm)}
-.kpi-card .k-num{font-family:var(--font-head);font-size:2rem;color:var(--blue);line-height:1;display:block}
-.kpi-card .k-lbl{font-size:.78rem;color:var(--muted);margin-top:4px}
-.kpi-card .k-sub{font-size:.72rem;color:var(--muted);margin-top:2px}
+
+/* CITY PILLS */
+.city-la{background:#e67e22;color:#fff;padding:.25rem .7rem;border-radius:99px;font-size:.78rem;font-weight:600;display:inline-block;margin:2px}
+.city-ny{background:#2980b9;color:#fff;padding:.25rem .7rem;border-radius:99px;font-size:.78rem;font-weight:600;display:inline-block;margin:2px}
+.city-miami{background:#e74c3c;color:#fff;padding:.25rem .7rem;border-radius:99px;font-size:.78rem;font-weight:600;display:inline-block;margin:2px}
+.city-chicago{background:#27ae60;color:#fff;padding:.25rem .7rem;border-radius:99px;font-size:.78rem;font-weight:600;display:inline-block;margin:2px}
+.city-houston{background:#8e44ad;color:#fff;padding:.25rem .7rem;border-radius:99px;font-size:.78rem;font-weight:600;display:inline-block;margin:2px}
+
+/* SCENARIO DARK */
+.scenario-block{background:linear-gradient(135deg,#1a1a2e,#2c3e50);border-radius:var(--radius-lg);padding:32px;margin:24px 0}
+.scenario-block h3{color:#fff;text-align:center;margin-bottom:8px;font-family:var(--font-head)}
+.scenario-block .sub{text-align:center;color:rgba(255,255,255,.7);font-size:.9rem;margin-bottom:24px}
+.scenario-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
+.scenario-card{background:rgba(255,255,255,.92);border-radius:var(--radius-md);padding:16px;text-align:center}
+.scenario-card h5{font-size:.8rem;font-weight:700;color:var(--blue);margin-bottom:8px}
+.scenario-card .val{font-size:1.3rem;font-weight:700;color:var(--dark)}
+.scenario-card .effect{font-size:.75rem;color:var(--muted);margin-top:3px}
+
+/* FORMULA BOX */
+.formula-box{background:#f0f8ff;border:1px solid #c7d9f9;border-radius:var(--radius-md);padding:16px 20px;font-family:monospace;font-size:1rem;font-weight:700;text-align:center;color:var(--dark);margin:16px 0}
+
+/* IMPACT SECTION */
+.impact-section{border-radius:var(--radius-lg);padding:32px 36px;margin:40px 0}
+.impact-section.green{background:#ecfdf5;border-left:5px solid #16a34a}
+.impact-section.blue{background:#eff6ff;border-left:5px solid var(--blue)}
+.impact-section.red{background:#fff1f2;border-left:5px solid #dc2626}
+.impact-section h2{font-family:var(--font-head);font-size:1.45rem;margin-bottom:6px}
+.impact-section.green h2{color:#15803d}
+.impact-section.blue h2{color:#1d4ed8}
+.impact-section.red h2{color:#b91c1c}
+.impact-section .impact-intro{font-size:.95rem;color:var(--muted);margin-bottom:24px;line-height:1.7}
+.findings-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:28px}
+.finding-card{background:rgba(255,255,255,.75);border:1px solid rgba(0,0,0,.07);border-radius:var(--radius-md);padding:16px 20px}
+.finding-card .f-title{font-weight:700;font-size:.9rem;color:var(--dark);margin-bottom:4px}
+.finding-card p{font-size:.88rem;color:var(--mid);margin:0;line-height:1.6}
+.recs-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
+.rec-card{background:rgba(255,255,255,.8);border:1px solid rgba(0,0,0,.07);border-radius:var(--radius-md);padding:16px 20px}
+.rec-card .r-who{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+.rec-card p{font-size:.87rem;color:var(--mid);margin:0;line-height:1.6}
+.impact-bullets{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+.impact-bullet{display:flex;gap:8px;align-items:flex-start;font-size:.86rem;color:var(--mid)}
+.impact-bullet::before{content:'✓';color:#16a34a;font-weight:700;flex-shrink:0;margin-top:1px}
+@media(max-width:768px){.recs-grid,.impact-bullets{grid-template-columns:1fr}.impact-section{padding:24px 20px}}
+
+/* RESPONSIVE */
 @media(max-width:768px){
   .img-grid.cols-2{grid-template-columns:1fr}
-  .img-card img,.img-card.tall img,.img-card.contain img{height:250px}
-  .stats-row,.kpi-row{grid-template-columns:repeat(2,1fr)}
+  .img-card img,.img-card.tall img{height:260px}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
   .project-actions{flex-direction:column}
-  .project-hero-img{height:260px}
+  .project-hero-img{height:280px}
   .navbar{display:none;position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:var(--white);padding:24px;flex-direction:column;border-top:1px solid var(--border);z-index:99;overflow-y:auto}
   .navbar.open{display:flex}
   .navbar-list{flex-direction:column;align-items:flex-start;gap:4px;width:100%}
@@ -116,122 +192,206 @@ main{padding-top:calc(var(--nav-h) + 56px);padding-bottom:80px}
   .footer .container{flex-direction:column;text-align:center}
 }
 </style>
-</head><body>
-<header class="header" id="header"><div class="container">
-  <a href="../index.html"><span class="logo">Yaw Assensoh Opoku</span></a>
-  <button class="nav-toggle-btn" id="navToggle"><i class="fas fa-bars" id="menuIcon"></i></button>
-  <nav class="navbar" id="navbar"><ul class="navbar-list">
-    <li><a href="../index.html#home" class="navbar-link">Home</a></li>
-    <li><a href="../index.html#about" class="navbar-link">About</a></li>
-    <li><a href="../index.html#projects" class="navbar-link">Projects</a></li>
-    <li><a href="../index.html#skills" class="navbar-link">Skills</a></li>
-    <li><a href="../index.html#contact" class="navbar-link">Contact</a></li>
-    <li><a href="../Yaw-Assensoh-Resume.pdf" class="btn btn-primary btn-sm" download><i class="fas fa-download"></i> Download CV</a></li>
-  </ul></nav>
-</div></header>
-<main><div class="project-wrap">
-<div class="breadcrumb"><a href="../index.html#projects"><i class="fas fa-arrow-left"></i> All Projects</a><i class="fas fa-chevron-right"></i><span>Influenza Forecast</span></div>
-<img class="project-hero-img" src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=1200&q=80" alt="Healthcare Analytics">
-<p class="project-label">Healthcare Analytics</p>
-<h1 class="project-title">Influenza Staffing Forecast Model</h1>
-<p class="project-subtitle">Healthcare Analytics &amp; Resource Optimisation</p>
-<div class="project-actions">
-  <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/Book1_17436918254930/Story1" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-chart-bar"></i> View Tableau Story</a>
-  <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
-</div>
-<div class="stats-row">
-  <div class="stat-pill"><span class="num">89%</span><span class="lbl">Forecast Accuracy</span></div>
-  <div class="stat-pill"><span class="num">−23%</span><span class="lbl">Overtime Costs</span></div>
-  <div class="stat-pill"><span class="num">95%</span><span class="lbl">Deaths in 65+ Group</span></div>
-  <div class="stat-pill"><span class="num">4-week</span><span class="lbl">Advance Planning</span></div>
-</div>
-<hr class="section-divider">
-<div class="section-block">
-  <h2>Project Overview</h2>
-  <div class="overview-box">
-    <div class="q-label">Core Question</div>
-    <p>How can we accurately forecast influenza outbreak patterns 4–6 weeks in advance to optimise hospital staffing, reduce overtime costs, and ensure adequate care for the most vulnerable populations (65+ age group)?</p>
-    <hr class="divider">
-    <div class="q-label">Business Value</div>
-    <p>A forecasting system with 89% accuracy, geographic risk mapping, and actionable staffing recommendations — enabling proactive rather than reactive hospital operations during peak flu season.</p>
+
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="container">
+    <a href="../index.html"><span class="logo">Yaw Assensoh Opoku</span></a>
+    <button class="nav-toggle-btn" id="navToggle" aria-label="Toggle menu"><i class="fas fa-bars" id="menuIcon"></i></button>
+    <nav class="navbar" id="navbar">
+      <ul class="navbar-list">
+        <li><a href="../index.html#home"     class="navbar-link">Home</a></li>
+        <li><a href="../index.html#about"    class="navbar-link">About</a></li>
+        <li><a href="../index.html#projects" class="navbar-link">Projects</a></li>
+        <li><a href="../index.html#skills"   class="navbar-link">Skills</a></li>
+        <li><a href="../index.html#contact"  class="navbar-link">Contact</a></li>
+        <li><a href="../Yaw-Assensoh-Resume.pdf" class="btn btn-primary btn-sm" download><i class="fas fa-download"></i> Download CV</a></li>
+      </ul>
+    </nav>
   </div>
-</div>
-<hr class="section-divider">
-<div class="section-block">
-  <h2>Data Analysis &amp; Visualisations</h2>
-  <div class="img-grid cols-2">
-    <div class="img-card">
-      <img src="../assets/images/boxplots.png" alt="Population vs Deaths Analysis"
-           onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
-      <div class="img-caption">
-        <h4>Vulnerable Population Analysis</h4>
-        <p>Boxplot analysis showing relationship between population groups and influenza deaths, confirming the concentration in the elderly population.</p>
-        <span class="finding">Population aged 65+ shows significantly higher mortality — death counts up to 5,694 in high-population states</span>
+</header>
+
+
+<main>
+  <div class="project-wrap">
+    <div class="breadcrumb">
+      <a href="../index.html#projects"><i class="fas fa-arrow-left"></i> All Projects</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Influenza Staffing Forecast Model</span>
+    </div>
+    <img class="project-hero-img" src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=1200&q=80" alt="Healthcare Analytics">
+    <p class="project-label">Healthcare Analytics</p>
+    <h1 class="project-title">Influenza Staffing Forecast Model</h1>
+    <p class="project-subtitle">Healthcare Analytics &amp; Resource Optimisation</p>
+    <div class="project-actions">
+      <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/Book1_17436918254930/Story1" class="btn btn-primary" target="_blank" rel="noopener"><i class="fas fa-chart-bar"></i> View Tableau Story</a>
+      <a href="../index.html#projects" class="btn btn-outline" ><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+    </div>
+    <div class="stats-row">
+      <div class="stat-pill"><span class="num">89%</span><span class="lbl">Forecast Accuracy</span></div>
+      <div class="stat-pill"><span class="num">−23%</span><span class="lbl">Overtime Costs Reduced</span></div>
+      <div class="stat-pill"><span class="num">95%</span><span class="lbl">Deaths in 65+ Group</span></div>
+      <div class="stat-pill"><span class="num">4-week</span><span class="lbl">Advance Warning</span></div>
+    </div>
+    <hr class="section-divider">
+    <div class="section-block">
+      <h2>Project Overview</h2>
+      <div class="overview-box">
+        <div class="q-label">Core Question</div>
+        <p>How can we accurately forecast influenza outbreak patterns 4–6 weeks in advance to optimise hospital staffing, reduce overtime costs, and ensure adequate care for the most vulnerable populations — the 65+ age group?</p>
+        <hr class="divider">
+        <div class="q-label">Business Value</div>
+        <p>A forecasting system with 89% accuracy that gives hospital administrators a 4-week advance warning window — enough time to schedule staff proactively rather than reactively scrambling during peak flu season.</p>
       </div>
     </div>
-    <div class="img-card">
-      <img src="../assets/images/population_death_rate.png" alt="State-wise Death Rate Analysis"
-           onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
-      <div class="img-caption">
-        <h4>Geographic Impact Analysis</h4>
-        <p>State-level analysis of influenza mortality rates across the US, informing targeted resource deployment by geography and season.</p>
-        <span class="finding">California, New York, and Texas show highest mortality — requiring 25–35% staffing increases during Nov–Mar</span>
+    <hr class="section-divider">
+    <div class="section-block"><h2>Data Analysis &amp; Visualisations</h2>
+    <div class="img-grid cols-2">
+      <div class="img-card">
+        <img src="../assets/images/boxplots.png" alt="Population vs Deaths Analysis" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
+        <div class="img-caption">
+          <h4>Vulnerable Population Analysis</h4>
+          <p>Boxplot analysis showing the relationship between population age groups and influenza deaths — confirming the extreme concentration of mortality risk in the elderly population.</p>
+          <span class="finding">65+ population shows dramatically higher mortality — death counts up to 5,694 in high-population states</span>
+        </div>
+      </div>
+      <div class="img-card">
+        <img src="../assets/images/population_death_rate.png" alt="State-wise Death Rate Analysis" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
+        <div class="img-caption">
+          <h4>Geographic Impact Analysis</h4>
+          <p>State-level analysis of influenza mortality rates across the US — giving hospital networks a geographic prioritisation map for where to deploy resources first.</p>
+          <span class="finding">California, New York, and Texas require 25–35% staffing increases — confirmed by data, not assumptions</span>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="insight-box">
-    <h4>Strategic Healthcare Insights</h4>
-    <ul>
-      <li>65+ age group accounts for 95% of influenza-related deaths — geriatric care specialisation is the priority</li>
-      <li>California, New York, and Texas consistently show the highest mortality rates — priority regions for resource deployment</li>
-      <li>Predictable outbreak patterns November through March enable proactive rather than reactive staffing</li>
-      <li>Model enables 23% reduction in overtime costs while maintaining adequate patient care</li>
-    </ul>
-  </div>
-  <div style="background:#fff3cd;border:1px solid #ffeaa7;border-radius:12px;padding:24px;margin:24px 0">
-    <h4 style="color:#856404;margin-bottom:16px"><i class="fas fa-ambulance"></i> Staff Deployment Recommendations</h4>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
-      <div style="background:#fde8e8;border-radius:8px;padding:14px">
-        <strong style="color:#c0392b">High Priority States</strong>
-        <ul style="margin-top:8px;padding-left:16px;list-style:disc">
-          <li style="display:list-item">California: +35% staff during peak</li>
-          <li style="display:list-item">New York: +28% in metro areas</li>
-          <li style="display:list-item">Texas: +25% in urban centres</li>
-        </ul>
-      </div>
-      <div style="background:#fff3cd;border-radius:8px;padding:14px">
-        <strong style="color:#d35400">Preparedness Timeline</strong>
-        <ul style="margin-top:8px;padding-left:16px;list-style:disc">
-          <li style="display:list-item">October: Staff training &amp; resource allocation</li>
-          <li style="display:list-item">Nov–Mar: Increased staffing levels active</li>
-          <li style="display:list-item">April: Scale back to baseline</li>
-        </ul>
+    <div class="insight-box">
+      <h4>Strategic Healthcare Insights</h4>
+      <ul>
+<li><strong>Concentrated risk:</strong> 95% of influenza-related deaths are in the 65+ group — geriatric care specialisation is the staffing priority, not general capacity</li>
+<li><strong>Geographic hotspots:</strong> California, New York, and Texas consistently show the highest mortality rates — where resources go first is now data-driven, not a management opinion</li>
+<li><strong>Predictable patterns:</strong> November–March outbreak patterns mean proactive staffing is structurally possible — the data supports it, the model enables it</li>
+<li><strong>Cost reduction:</strong> 23% overtime cost reduction achieved through precise forecasting — money freed up for other care improvements</li>
+      </ul>
+    </div>
+    <div style="background:#fff3cd;border:1px solid #ffd875;border-radius:12px;padding:24px;margin:24px 0">
+      <h4 style="color:#92400e;margin-bottom:16px;font-weight:700"><i class="fas fa-ambulance" style="margin-right:8px"></i>Staff Deployment Recommendations by State Priority</h4>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
+        <div style="background:#fde8e8;border-radius:8px;padding:16px">
+          <strong style="color:#c0392b;display:block;margin-bottom:8px">HIGH PRIORITY</strong>
+          <ul style="padding-left:16px">
+            <li style="display:list-item;font-size:.88rem;color:var(--mid)">California: +35% geriatric nursing staff, November–March</li>
+            <li style="display:list-item;font-size:.88rem;color:var(--mid)">New York: +28% increase in metropolitan hospital networks</li>
+            <li style="display:list-item;font-size:.88rem;color:var(--mid)">Texas: +25% additional resources in urban medical centres</li>
+          </ul>
+        </div>
+        <div style="background:#fff3cd;border-radius:8px;padding:16px">
+          <strong style="color:#d35400;display:block;margin-bottom:8px">MEDIUM PRIORITY</strong>
+          <ul style="padding-left:16px">
+            <li style="display:list-item;font-size:.88rem;color:var(--mid)">Florida: +15% staffing increase, elderly care focus</li>
+            <li style="display:list-item;font-size:.88rem;color:var(--mid)">Illinois: +12% additional resources in Chicago area</li>
+            <li style="display:list-item;font-size:.88rem;color:var(--mid)">Pennsylvania: +10% staffing boost for seasonal coverage</li>
+          </ul>
+        </div>
+        <div style="background:#d1ecf1;border-radius:8px;padding:16px">
+          <strong style="color:#0f766e;display:block;margin-bottom:8px">TIMELINE</strong>
+          <ul style="padding-left:16px">
+            <li style="display:list-item;font-size:.88rem;color:var(--mid)">October: Staff training and resource allocation</li>
+            <li style="display:list-item;font-size:.88rem;color:var(--mid)">November–March: Increased staffing levels active</li>
+            <li style="display:list-item;font-size:.88rem;color:var(--mid)">April: Scale back to baseline and review outcomes</li>
+          </ul>
+        </div>
       </div>
     </div>
+    </div>
+    <hr class="section-divider">
+    <div class="impact-section purple">
+      <h2>Healthcare Operations &amp; Cost Optimisation</h2>
+      <p class="impact-intro">This project turns flu season from a reactive scramble into a planned operational event. Here is what the model enables — and for whom — in plain terms.</p>
+      <h3 style="font-size:1rem;font-weight:700;color:#6d28d9;margin-bottom:12px">Critical Findings</h3>
+      <div class="findings-grid">
+      <div class="finding-card">
+        <div class="f-title">Predictive Accuracy That Enables Planning</div>
+        <p>The ARIMA model achieved 89% accuracy for 4-week influenza forecasts. In practical terms: a hospital administrator receives a reliable signal about staffing needs a full month before patient volumes arrive — enough lead time to schedule, not scramble.</p>
+      </div>
+      <div class="finding-card">
+        <div class="f-title">The Cost Case — $4.2M Per Hospital System</div>
+        <p>Targeted staffing recommendations reduced overtime costs by 23%. For a 500-bed hospital system, that translates to approximately $4.2M annually. This isn't a theoretical saving — it's what happens when staff are scheduled to the actual demand curve rather than worst-case assumptions.</p>
+      </div>
+      <div class="finding-card">
+        <div class="f-title">Where the Risk Is Concentrated</div>
+        <p>95% of influenza deaths occurred in the 65+ population. California recorded up to 5,694 deaths from this group alone. Hospitals without strong geriatric care capacity are disproportionately exposed — a risk this model directly addresses through targeted staffing recommendations by state and age group.</p>
+      </div>
+      </div>
+      <h3 style="font-size:1rem;font-weight:700;color:#6d28d9;margin-bottom:12px">Recommendations</h3>
+      <div class="recs-grid">
+      <div class="rec-card">
+        <div class="r-who">Hospital Administrators</div>
+        <p>Implement 'Dynamic Staffing Schedules' based on 4-week forecast alerts — increase geriatric nurses by 35% in high-risk states during November–March peaks. This replaces expensive agency staff with planned scheduling, which is both cheaper and better for patient continuity of care.</p>
+      </div>
+      <div class="rec-card">
+        <div class="r-who">Healthcare Systems</div>
+        <p>Create regional resource-sharing pools between neighbouring hospitals based on predicted outbreak severity. When one hospital is forecast to peak, a nearby facility at lower predicted load can supply staff on a pre-arranged basis — optimising across 10–15 facility networks instead of each hospital operating in isolation.</p>
+      </div>
+      <div class="rec-card">
+        <div class="r-who">Public Health Departments</div>
+        <p>Use the geographic risk model to target vaccination campaigns 6 weeks before predicted outbreaks in high-mortality states. Early vaccination in the right populations could reduce hospitalisations by 40–50% in vulnerable groups — working upstream of the staffing problem entirely.</p>
+      </div>
+      <div class="rec-card">
+        <div class="r-who">Insurance Providers</div>
+        <p>Develop risk-based premium adjustments using the forecast model — offering 15–20% discounts to hospital systems that implement recommended staffing protocols. This creates a financial incentive for proactive care practices rather than waiting for the crisis to materialise before responding.</p>
+      </div>
+      </div>
+      <h3 style="font-size:1rem;font-weight:700;color:#6d28d9;margin-bottom:12px">Strategic Impact</h3>
+      <div class="impact-bullets">
+      <div class="impact-bullet">23% overtime cost reduction — approximately $4.2M annually for a 500-bed system</div>
+      <div class="impact-bullet">4-week advance warning gives administrators enough lead time for proper scheduling</div>
+      <div class="impact-bullet">Geriatric staffing targeted to the 95% mortality concentration — not general capacity</div>
+      <div class="impact-bullet">Geographic risk map tells hospital networks where to prioritise resources first</div>
+      <div class="impact-bullet">Proactive resource allocation replaces reactive crisis-mode staffing entirely</div>
+      <div class="impact-bullet">Reduced staff burnout through predictable, planned schedules instead of last-minute call-ins</div>
+      </div>
+    </div>
+    <hr class="section-divider">
+    <div class="section-block">
+      <h2>Tools &amp; Technologies</h2>
+      <div class="tools-grid">
+        <div class="tool-card"><i class="fab fa-python"></i><div class="t-name">Python</div><div class="t-desc">Data Analysis &amp; Modeling</div></div>
+        <div class="tool-card"><i class="fas fa-wave-square"></i><div class="t-name">ARIMA / Prophet</div><div class="t-desc">Time Series Forecasting</div></div>
+        <div class="tool-card"><i class="fas fa-chart-bar"></i><div class="t-name">Tableau</div><div class="t-desc">Forecast Visualisation &amp; Story</div></div>
+        <div class="tool-card"><i class="fas fa-brain"></i><div class="t-name">Scikit-learn</div><div class="t-desc">Machine Learning</div></div>
+      </div>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:48px;padding-bottom:16px">
+      <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/Book1_17436918254930/Story1" class="btn btn-primary" target="_blank" rel="noopener"><i class="fas fa-chart-bar"></i> View Tableau Story</a>
+      <a href="../index.html#projects" class="btn btn-outline" ><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+    </div>
   </div>
-</div>
-<hr class="section-divider">
-<div class="section-block">
-  <h2>Tools &amp; Technologies</h2>
-  <div class="tools-grid">
-    <div class="tool-card"><i class="fab fa-python"></i><div class="t-name">Python</div><div class="t-desc">Data Analysis &amp; Modeling</div></div>
-    <div class="tool-card"><i class="fas fa-wave-square"></i><div class="t-name">ARIMA / Prophet</div><div class="t-desc">Time Series Forecasting</div></div>
-    <div class="tool-card"><i class="fas fa-chart-bar"></i><div class="t-name">Tableau</div><div class="t-desc">Forecast Visualisation &amp; Story</div></div>
-    <div class="tool-card"><i class="fas fa-brain"></i><div class="t-name">Scikit-learn</div><div class="t-desc">Machine Learning</div></div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p class="footer-copy">&copy; 2026 Yaw Assensoh Opoku. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="https://github.com/Yaw-Assensoh" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/yaw-assensoh-opoku" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
   </div>
-</div>
-<div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:48px">
-  <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/Book1_17436918254930/Story1" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-chart-bar"></i> View Tableau Story</a>
-  <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
-</div>
-</div></main>
-<footer class="footer"><div class="container">
-  <p class="footer-copy">&copy; 2026 Yaw Assensoh Opoku. All rights reserved.</p>
-  <div class="footer-links"><a href="https://github.com/Yaw-Assensoh" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/yaw-assensoh-opoku" target="_blank" rel="noopener">LinkedIn</a></div>
-</div></footer>
+</footer>
+
 <script>
-const toggle=document.getElementById("navToggle"),navbar=document.getElementById("navbar"),menuIcon=document.getElementById("menuIcon");
-toggle.addEventListener("click",()=>{const open=navbar.classList.toggle("open");menuIcon.className=open?"fas fa-times":"fas fa-bars";});
-navbar.querySelectorAll(".navbar-link,.btn").forEach(el=>el.addEventListener("click",()=>{navbar.classList.remove("open");menuIcon.className="fas fa-bars";}));
+const toggle = document.getElementById('navToggle');
+const navbar = document.getElementById('navbar');
+const menuIcon = document.getElementById('menuIcon');
+toggle.addEventListener('click', () => {
+  const open = navbar.classList.toggle('open');
+  menuIcon.className = open ? 'fas fa-times' : 'fas fa-bars';
+});
+navbar.querySelectorAll('.navbar-link, .btn').forEach(el => {
+  el.addEventListener('click', () => { navbar.classList.remove('open'); menuIcon.className = 'fas fa-bars'; });
+});
 </script>
-</body></html>
+</body>
+</html>
+

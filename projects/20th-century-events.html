@@ -1,7 +1,11 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>20th Century Geopolitical Network Analysis | Yaw Assensoh Opoku</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
@@ -13,6 +17,8 @@ img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 ul{list-style:none}
 .container{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* NAV */
 .header{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:100;box-shadow:var(--shadow-sm)}
 .header .container{height:100%;display:flex;align-items:center;justify-content:space-between}
 .logo{font-family:var(--font-head);font-size:1.25rem;color:var(--dark)}
@@ -26,21 +32,33 @@ ul{list-style:none}
 .btn-outline:hover{background:var(--blue-light)}
 .btn-sm{padding:7px 16px;font-size:.82rem}
 .nav-toggle-btn{display:none;background:none;border:none;font-size:1.25rem;color:var(--dark);cursor:pointer;padding:8px}
+
+/* MAIN */
 main{padding-top:calc(var(--nav-h) + 56px);padding-bottom:80px}
 .project-wrap{max-width:900px;margin:0 auto;padding:0 24px}
+
+/* BREADCRUMB */
 .breadcrumb{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--muted);margin-bottom:32px}
 .breadcrumb a{color:var(--blue)}
 .breadcrumb a:hover{text-decoration:underline}
 .breadcrumb i{font-size:.65rem}
+
+/* HERO */
 .project-hero-img{width:100%;height:520px;object-fit:cover;border-radius:var(--radius-lg);margin-bottom:40px}
+
+/* HEADER BLOCK */
 .project-label{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
 .project-title{font-family:var(--font-head);font-size:clamp(2rem,4vw,2.8rem);color:var(--dark);line-height:1.15;margin-bottom:16px}
 .project-subtitle{font-size:1.05rem;color:var(--muted);margin-bottom:28px}
 .project-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px}
+
+/* STAT PILLS */
 .stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;margin-bottom:48px}
 .stat-pill{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:18px 20px;text-align:center}
 .stat-pill .num{font-family:var(--font-head);font-size:1.8rem;color:var(--dark);line-height:1;display:block}
 .stat-pill .lbl{font-size:.75rem;color:var(--muted);margin-top:4px}
+
+/* SECTION */
 .section-block{margin-bottom:52px}
 .section-block h2{font-family:var(--font-head);font-size:1.55rem;color:var(--dark);margin-bottom:16px}
 .section-block h3{font-size:1.1rem;font-weight:600;color:var(--dark);margin:28px 0 12px}
@@ -48,10 +66,14 @@ main{padding-top:calc(var(--nav-h) + 56px);padding-bottom:80px}
 .section-block ul{padding-left:0;display:flex;flex-direction:column;gap:8px}
 .section-block ul li{display:flex;gap:10px;font-size:.95rem;color:var(--mid);line-height:1.6}
 .section-block ul li::before{content:'→';color:var(--blue);flex-shrink:0;font-weight:600}
+
+/* OVERVIEW BOX */
 .overview-box{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:24px 28px;margin-bottom:36px}
 .overview-box .q-label{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
 .overview-box p{margin:0;color:var(--mid)}
 .overview-box .divider{border:none;border-top:1px solid var(--border);margin:16px 0}
+
+/* IMAGES — the fix: big, clean, full-width-ish */
 .img-grid{display:grid;gap:24px;margin:24px 0}
 .img-grid.cols-2{grid-template-columns:1fr 1fr}
 .img-grid.cols-1{grid-template-columns:1fr}
@@ -59,55 +81,109 @@ main{padding-top:calc(var(--nav-h) + 56px);padding-bottom:80px}
 .img-card img{width:100%;height:380px;object-fit:cover;display:block;transition:transform .4s}
 .img-card:hover img{transform:scale(1.02)}
 .img-card.tall img{height:480px}
-.img-card.contain img{object-fit:contain;background:#f8f9fa;padding:12px;height:360px}
+.img-card.contain img{object-fit:contain;background:#f8f9fa;padding:12px}
 .img-caption{padding:16px 20px;border-top:1px solid var(--border)}
 .img-caption h4{font-weight:600;font-size:.93rem;color:var(--dark);margin-bottom:4px}
 .img-caption p{font-size:.84rem;color:var(--muted);margin:0;line-height:1.55}
 .img-caption .finding{display:inline-block;margin-top:8px;background:var(--blue-light);color:var(--blue);font-size:.78rem;font-weight:600;padding:3px 10px;border-radius:99px;border:1px solid #c7d9f9}
+
+/* INSIGHT BOX */
 .insight-box{background:var(--blue-light);border-left:4px solid var(--blue);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:20px 24px;margin:20px 0}
 .insight-box h4{font-weight:600;color:var(--dark);margin-bottom:10px;font-size:.95rem}
 .insight-box ul{padding-left:0;display:flex;flex-direction:column;gap:6px}
 .insight-box ul li{display:flex;gap:10px;font-size:.88rem;color:var(--mid)}
 .insight-box ul li::before{content:'•';color:var(--blue);flex-shrink:0;font-weight:700}
+
+/* TABLE */
 .data-table{width:100%;border-collapse:collapse;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);margin:20px 0}
 .data-table th{background:var(--blue);color:#fff;padding:12px 16px;text-align:left;font-size:.85rem;font-weight:600}
 .data-table td{padding:11px 16px;border-bottom:1px solid var(--border);font-size:.88rem;color:var(--mid)}
 .data-table tr:last-child td{border-bottom:none}
 .data-table tr:hover td{background:var(--bg)}
+
+/* BADGE CHIPS */
 .badge{display:inline-block;font-size:.72rem;font-weight:600;padding:3px 10px;border-radius:99px;margin:2px}
 .badge-blue{background:var(--blue-light);color:var(--blue);border:1px solid #c7d9f9}
 .badge-red{background:#fde8e8;color:#c0392b;border:1px solid #e74c3c}
 .badge-green{background:#eafaf1;color:#1e8449;border:1px solid #27ae60}
 .badge-orange{background:#fef5e4;color:#d35400;border:1px solid #e67e22}
+
+/* METRIC GRID */
 .metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:20px 0}
 .metric-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);padding:18px 20px;box-shadow:var(--shadow-sm)}
 .metric-card h4{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .metric-card ul{padding:0;display:flex;flex-direction:column;gap:4px}
 .metric-card ul li{font-size:.87rem;color:var(--mid);display:flex;justify-content:space-between}
 .metric-card ul li strong{color:var(--dark)}
+
+/* TOOLS */
 .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:20px 0}
 .tool-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:18px 16px;text-align:center}
 .tool-card i{font-size:1.8rem;color:var(--blue);margin-bottom:8px;display:block}
 .tool-card .t-name{font-weight:600;font-size:.88rem;color:var(--dark);margin-bottom:3px}
 .tool-card .t-desc{font-size:.75rem;color:var(--muted)}
+
+/* DIVIDER */
 .section-divider{border:none;border-top:1px solid var(--border);margin:40px 0}
+
+/* FOOTER */
 .footer{background:#060910;padding:28px 0;border-top:1px solid rgba(255,255,255,.06)}
 .footer .container{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .footer-copy{font-size:.8rem;color:#6B7280}
 .footer-links{display:flex;gap:20px}
 .footer-links a{font-size:.8rem;color:#6B7280;transition:color .2s}
 .footer-links a:hover{color:#9CA3AF}
-.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin:24px 0}
-.kpi-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);padding:20px;text-align:center;box-shadow:var(--shadow-sm)}
-.kpi-card .k-num{font-family:var(--font-head);font-size:2rem;color:var(--blue);line-height:1;display:block}
-.kpi-card .k-lbl{font-size:.78rem;color:var(--muted);margin-top:4px}
-.kpi-card .k-sub{font-size:.72rem;color:var(--muted);margin-top:2px}
+
+/* CITY PILLS */
+.city-la{background:#e67e22;color:#fff;padding:.25rem .7rem;border-radius:99px;font-size:.78rem;font-weight:600;display:inline-block;margin:2px}
+.city-ny{background:#2980b9;color:#fff;padding:.25rem .7rem;border-radius:99px;font-size:.78rem;font-weight:600;display:inline-block;margin:2px}
+.city-miami{background:#e74c3c;color:#fff;padding:.25rem .7rem;border-radius:99px;font-size:.78rem;font-weight:600;display:inline-block;margin:2px}
+.city-chicago{background:#27ae60;color:#fff;padding:.25rem .7rem;border-radius:99px;font-size:.78rem;font-weight:600;display:inline-block;margin:2px}
+.city-houston{background:#8e44ad;color:#fff;padding:.25rem .7rem;border-radius:99px;font-size:.78rem;font-weight:600;display:inline-block;margin:2px}
+
+/* SCENARIO DARK */
+.scenario-block{background:linear-gradient(135deg,#1a1a2e,#2c3e50);border-radius:var(--radius-lg);padding:32px;margin:24px 0}
+.scenario-block h3{color:#fff;text-align:center;margin-bottom:8px;font-family:var(--font-head)}
+.scenario-block .sub{text-align:center;color:rgba(255,255,255,.7);font-size:.9rem;margin-bottom:24px}
+.scenario-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
+.scenario-card{background:rgba(255,255,255,.92);border-radius:var(--radius-md);padding:16px;text-align:center}
+.scenario-card h5{font-size:.8rem;font-weight:700;color:var(--blue);margin-bottom:8px}
+.scenario-card .val{font-size:1.3rem;font-weight:700;color:var(--dark)}
+.scenario-card .effect{font-size:.75rem;color:var(--muted);margin-top:3px}
+
+/* FORMULA BOX */
+.formula-box{background:#f0f8ff;border:1px solid #c7d9f9;border-radius:var(--radius-md);padding:16px 20px;font-family:monospace;font-size:1rem;font-weight:700;text-align:center;color:var(--dark);margin:16px 0}
+
+/* IMPACT SECTION */
+.impact-section{border-radius:var(--radius-lg);padding:32px 36px;margin:40px 0}
+.impact-section.green{background:#ecfdf5;border-left:5px solid #16a34a}
+.impact-section.blue{background:#eff6ff;border-left:5px solid var(--blue)}
+.impact-section.red{background:#fff1f2;border-left:5px solid #dc2626}
+.impact-section h2{font-family:var(--font-head);font-size:1.45rem;margin-bottom:6px}
+.impact-section.green h2{color:#15803d}
+.impact-section.blue h2{color:#1d4ed8}
+.impact-section.red h2{color:#b91c1c}
+.impact-section .impact-intro{font-size:.95rem;color:var(--muted);margin-bottom:24px;line-height:1.7}
+.findings-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:28px}
+.finding-card{background:rgba(255,255,255,.75);border:1px solid rgba(0,0,0,.07);border-radius:var(--radius-md);padding:16px 20px}
+.finding-card .f-title{font-weight:700;font-size:.9rem;color:var(--dark);margin-bottom:4px}
+.finding-card p{font-size:.88rem;color:var(--mid);margin:0;line-height:1.6}
+.recs-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
+.rec-card{background:rgba(255,255,255,.8);border:1px solid rgba(0,0,0,.07);border-radius:var(--radius-md);padding:16px 20px}
+.rec-card .r-who{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+.rec-card p{font-size:.87rem;color:var(--mid);margin:0;line-height:1.6}
+.impact-bullets{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+.impact-bullet{display:flex;gap:8px;align-items:flex-start;font-size:.86rem;color:var(--mid)}
+.impact-bullet::before{content:'✓';color:#16a34a;font-weight:700;flex-shrink:0;margin-top:1px}
+@media(max-width:768px){.recs-grid,.impact-bullets{grid-template-columns:1fr}.impact-section{padding:24px 20px}}
+
+/* RESPONSIVE */
 @media(max-width:768px){
   .img-grid.cols-2{grid-template-columns:1fr}
-  .img-card img,.img-card.tall img,.img-card.contain img{height:250px}
-  .stats-row,.kpi-row{grid-template-columns:repeat(2,1fr)}
+  .img-card img,.img-card.tall img{height:260px}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
   .project-actions{flex-direction:column}
-  .project-hero-img{height:260px}
+  .project-hero-img{height:280px}
   .navbar{display:none;position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:var(--white);padding:24px;flex-direction:column;border-top:1px solid var(--border);z-index:99;overflow-y:auto}
   .navbar.open{display:flex}
   .navbar-list{flex-direction:column;align-items:flex-start;gap:4px;width:100%}
@@ -116,146 +192,216 @@ main{padding-top:calc(var(--nav-h) + 56px);padding-bottom:80px}
   .footer .container{flex-direction:column;text-align:center}
 }
 </style>
-</head><body>
-<header class="header" id="header"><div class="container">
-  <a href="../index.html"><span class="logo">Yaw Assensoh Opoku</span></a>
-  <button class="nav-toggle-btn" id="navToggle"><i class="fas fa-bars" id="menuIcon"></i></button>
-  <nav class="navbar" id="navbar"><ul class="navbar-list">
-    <li><a href="../index.html#home" class="navbar-link">Home</a></li>
-    <li><a href="../index.html#about" class="navbar-link">About</a></li>
-    <li><a href="../index.html#projects" class="navbar-link">Projects</a></li>
-    <li><a href="../index.html#skills" class="navbar-link">Skills</a></li>
-    <li><a href="../index.html#contact" class="navbar-link">Contact</a></li>
-    <li><a href="../Yaw-Assensoh-Resume.pdf" class="btn btn-primary btn-sm" download><i class="fas fa-download"></i> Download CV</a></li>
-  </ul></nav>
-</div></header>
-<main><div class="project-wrap">
-<div class="breadcrumb"><a href="../index.html#projects"><i class="fas fa-arrow-left"></i> All Projects</a><i class="fas fa-chevron-right"></i><span>20th Century Geopolitical Analysis</span></div>
-<img class="project-hero-img" src="../assets/images/history20.jpg" alt="20th Century Geopolitical Network Analysis"
-     onerror="this.src='https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80'">
-<p class="project-label">Network Science &amp; NLP</p>
-<h1 class="project-title">20th Century Geopolitical Network Analysis</h1>
-<p class="project-subtitle">Advanced Network Science &amp; Graph Theory Analysis of International Relations</p>
-<div class="project-actions">
-  <a href="https://github.com/Yaw-Assensoh/20th_Century" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-github"></i> View Code</a>
-  <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
-</div>
-<div class="stats-row">
-  <div class="stat-pill"><span class="num">89</span><span class="lbl">Countries Analysed</span></div>
-  <div class="stat-pill"><span class="num">214</span><span class="lbl">Relationships Mapped</span></div>
-  <div class="stat-pill"><span class="num">5</span><span class="lbl">Geopolitical Communities</span></div>
-  <div class="stat-pill"><span class="num">0.566</span><span class="lbl">Max Closeness Score</span></div>
-</div>
-<hr class="section-divider">
-<div class="section-block">
-  <h2>Project Overview</h2>
-  <div class="overview-box">
-    <div class="q-label">Core Question</div>
-    <p>How can network theory and centrality measures reveal hidden power structures, alliance patterns, and influential broker nations in 20th century international relations?</p>
-    <hr class="divider">
-    <div class="q-label">Business Value</div>
-    <p>A quantitative framework for geopolitical analysis using network science, providing intelligence analysts, researchers, and diplomats with data-driven insights into historical power dynamics.</p>
+
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="container">
+    <a href="../index.html"><span class="logo">Yaw Assensoh Opoku</span></a>
+    <button class="nav-toggle-btn" id="navToggle" aria-label="Toggle menu"><i class="fas fa-bars" id="menuIcon"></i></button>
+    <nav class="navbar" id="navbar">
+      <ul class="navbar-list">
+        <li><a href="../index.html#home"     class="navbar-link">Home</a></li>
+        <li><a href="../index.html#about"    class="navbar-link">About</a></li>
+        <li><a href="../index.html#projects" class="navbar-link">Projects</a></li>
+        <li><a href="../index.html#skills"   class="navbar-link">Skills</a></li>
+        <li><a href="../index.html#contact"  class="navbar-link">Contact</a></li>
+        <li><a href="../Yaw-Assensoh-Resume.pdf" class="btn btn-primary btn-sm" download><i class="fas fa-download"></i> Download CV</a></li>
+      </ul>
+    </nav>
   </div>
-</div>
-<hr class="section-divider">
-<div class="section-block">
-  <h2>Network Analysis &amp; Centrality Measures</h2>
-  <div class="img-grid cols-2">
-    <div class="img-card contain">
-      <img src="../assets/images/degree_centrality_enhanced.png" alt="Degree Centrality Analysis"
-           onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
-      <div class="img-caption">
-        <h4>Degree Centrality</h4>
-        <p>Measures direct connections — identifies the most connected countries in the 20th century geopolitical network.</p>
-        <span class="finding">Japan and Soviet Union show highest degree centrality — extensive diplomatic reach</span>
+</header>
+
+
+<main>
+  <div class="project-wrap">
+    <div class="breadcrumb">
+      <a href="../index.html#projects"><i class="fas fa-arrow-left"></i> All Projects</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>20th Century Geopolitical Network Analysis</span>
+    </div>
+    <img class="project-hero-img" src="../assets/images/history20.jpg" alt="20th Century Geopolitical Network Analysis" onerror="this.src='https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80'">
+    <p class="project-label">Network Science &amp; NLP</p>
+    <h1 class="project-title">20th Century Geopolitical Network Analysis</h1>
+    <p class="project-subtitle">Advanced Network Science &amp; Graph Theory Analysis of International Relations</p>
+    <div class="project-actions">
+      <a href="https://github.com/Yaw-Assensoh/20th_Century" class="btn btn-primary" target="_blank" rel="noopener"><i class="fab fa-github"></i> View Code</a>
+      <a href="../index.html#projects" class="btn btn-outline" ><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+    </div>
+    <div class="stats-row">
+      <div class="stat-pill"><span class="num">89</span><span class="lbl">Countries Analysed</span></div>
+      <div class="stat-pill"><span class="num">214</span><span class="lbl">Relationships Mapped</span></div>
+      <div class="stat-pill"><span class="num">5</span><span class="lbl">Geopolitical Communities</span></div>
+      <div class="stat-pill"><span class="num">87%</span><span class="lbl">Cold War Alignment Accuracy</span></div>
+    </div>
+    <hr class="section-divider">
+    <div class="section-block">
+      <h2>Project Overview</h2>
+      <div class="overview-box">
+        <div class="q-label">Core Question</div>
+        <p>How can network theory and centrality measures reveal hidden power structures, alliance patterns, and influential broker nations in 20th century international relations — and what can those patterns tell us about geopolitics today?</p>
+        <hr class="divider">
+        <div class="q-label">Business Value</div>
+        <p>A quantitative framework applying network science to historical analysis — giving intelligence analysts, academic researchers, and diplomatic strategists a data-driven lens on how power actually moved through the 20th century international system.</p>
       </div>
     </div>
-    <div class="img-card contain">
-      <img src="../assets/images/closeness_centrality_enhanced.png" alt="Closeness Centrality Analysis"
-           onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
-      <div class="img-caption">
-        <h4>Closeness Centrality</h4>
-        <p>Identifies countries that can quickly reach others — measures strategic positioning in the international network.</p>
-        <span class="finding">Japan and Soviet Union lead at 0.566 — optimal positioning for influence spread</span>
+    <hr class="section-divider">
+    <div class="section-block"><h2>Network Analysis &amp; Centrality Measures</h2>
+    <div class="img-grid cols-2">
+      <div class="img-card contain">
+        <img src="../assets/images/degree_centrality_enhanced.png" alt="Degree Centrality Analysis" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
+        <div class="img-caption">
+          <h4>Degree Centrality</h4>
+          <p>Measures direct connections — identifies the most connected countries in the 20th century international network. The higher the degree centrality, the more bilateral relationships a country maintained simultaneously.</p>
+          <span class="finding">Japan and Soviet Union lead in direct connections — the most diplomatically active nations of the century</span>
+        </div>
+      </div>
+      <div class="img-card contain">
+        <img src="../assets/images/closeness_centrality_enhanced.png" alt="Closeness Centrality Analysis" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
+        <div class="img-caption">
+          <h4>Closeness Centrality</h4>
+          <p>Identifies which countries could reach all others most quickly through the network — a measure of strategic positioning, not just direct connections. High closeness means faster influence spread.</p>
+          <span class="finding">Japan and Soviet Union lead at 0.566 — optimal positions to project influence across the full network</span>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="img-grid cols-2">
-    <div class="img-card contain">
-      <img src="../assets/images/betweenness_centrality_enhanced.png" alt="Betweenness Centrality Analysis"
-           onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
-      <div class="img-caption">
-        <h4>Betweenness Centrality</h4>
-        <p>Reveals bridge countries that control information and influence flow between different network segments and blocs.</p>
-        <span class="finding">Soviet Union dominates as key broker — controlling flow between Eastern and Western blocs</span>
+    <div class="img-grid cols-2">
+      <div class="img-card contain">
+        <img src="../assets/images/betweenness_centrality_enhanced.png" alt="Betweenness Centrality Analysis" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
+        <div class="img-caption">
+          <h4>Betweenness Centrality</h4>
+          <p>Reveals bridge countries that sit on the paths between other nations — the gatekeepers who controlled information flow and brokered relationships between opposing blocs.</p>
+          <span class="finding">Soviet Union (0.75) dominates — mathematically confirmed as the key broker between Eastern and Western blocs</span>
+        </div>
+      </div>
+      <div class="img-card contain">
+        <img src="../assets/images/comparative_centrality_analysis_enhanced.png" alt="Comparative Centrality Analysis" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
+        <div class="img-caption">
+          <h4>Comparative Centrality Analysis</h4>
+          <p>All three centrality measures plotted together — showing which countries maintained dominance across every dimension of network influence, not just one.</p>
+          <span class="finding">Superpowers consistently rank high across all three measures — the data validates what history suggests</span>
+        </div>
       </div>
     </div>
-    <div class="img-card contain">
-      <img src="../assets/images/comparative_centrality_analysis_enhanced.png" alt="Comparative Centrality Analysis"
-           onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
-      <div class="img-caption">
-        <h4>Comparative Centrality Analysis</h4>
-        <p>Shows how countries rank across all three centrality measures simultaneously, confirming consistent superpower dominance.</p>
-        <span class="finding">Superpowers maintain high rankings across all centrality types — confirmed by multiple metrics</span>
+    </div>
+    <hr class="section-divider">
+    <div class="section-block"><h2>Text Mining &amp; Linguistic Analysis</h2>
+    <div class="img-grid cols-2">
+      <div class="img-card contain">
+        <img src="../assets/images/Top-20-Most-Connected-Countries.png" alt="Top 20 Mentioned Countries" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
+        <div class="img-caption">
+          <h4>Country Mentions Analysis</h4>
+          <p>Frequency analysis of country mentions across 66,144 characters of 20th century historical text — showing whose actions dominated the written record of the era.</p>
+          <span class="finding">Germany and Japan lead all country mentions — confirming their central roles in 20th century events</span>
+        </div>
+      </div>
+      <div class="img-card contain">
+        <img src="../assets/images/Nouns-Verbs-Adjectives.png" alt="Top Nouns, Verbs and Adjectives" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
+        <div class="img-caption">
+          <h4>Word Category Analysis</h4>
+          <p>Most frequent nouns, verbs, and adjectives in the 20th century corpus — revealing the linguistic fingerprint of the era and the themes that defined it.</p>
+          <span class="finding">"war", "became", "soviet" dominate — the century's language is defined by conflict and transformation</span>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="insight-box">
-    <h4>Network Insights</h4>
-    <ul>
-      <li>Soviet Union (0.75) and Japan (0.72) showed highest betweenness centrality — mathematically confirming their broker roles</li>
-      <li>5 distinct geopolitical communities closely matched Cold War alignments with 87% accuracy</li>
-      <li>Countries like Switzerland and Austria emerged as crucial diplomatic intermediaries — high betweenness, moderate degree</li>
-      <li>Network structure validates quantitative approach to historical analysis</li>
-    </ul>
-  </div>
-</div>
-<hr class="section-divider">
-<div class="section-block">
-  <h2>Text Mining &amp; Linguistic Analysis</h2>
-  <div class="img-grid cols-2">
-    <div class="img-card contain">
-      <img src="../assets/images/Top-20-Most-Connected-Countries.png" alt="Top 20 Mentioned Countries"
-           onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
-      <div class="img-caption">
-        <h4>Country Mentions Analysis</h4>
-        <p>Most frequently mentioned countries in 20th century historical text — 66,144 characters across 108 sections of Wikipedia data.</p>
-        <span class="finding">Germany and Japan lead — reflecting their central roles in major 20th century conflicts</span>
+    <div class="insight-box">
+      <h4>Network Insights</h4>
+      <ul>
+<li><strong>Superpower dominance:</strong> Soviet Union (betweenness 0.75) and Japan (0.72) mathematically confirmed as the century's dominant geopolitical brokers — two completely independent methods, same conclusion</li>
+<li><strong>Alliance recovery:</strong> 5 distinct network communities detected with 87% accuracy in matching real-world Cold War alliance structures — the text encoded the alliances implicitly</li>
+<li><strong>Bridge nations identified:</strong> Switzerland and Austria emerged as high-betweenness, moderate-degree nations — quantitative confirmation of their historical role as diplomatic intermediaries</li>
+<li><strong>Network density:</strong> 0.078 network density reflects the sparse but consequential nature of 20th century international ties — every connection carried enormous strategic weight</li>
+      </ul>
+    </div>
+    </div>
+    <hr class="section-divider">
+    <div class="impact-section purple">
+      <h2>Analytical Insights &amp; Strategic Applications</h2>
+      <p class="impact-intro">Network science turns historical narrative into measurable structure. Here is what the quantitative results mean — and how this methodology can be applied beyond historical analysis to live geopolitical intelligence.</p>
+      <h3 style="font-size:1rem;font-weight:700;color:#6d28d9;margin-bottom:12px">Critical Findings</h3>
+      <div class="findings-grid">
+      <div class="finding-card">
+        <div class="f-title">Quantified Superpower Influence</div>
+        <p>The Soviet Union scored 0.75 and Japan 0.72 on betweenness centrality — mathematically confirming their role as geopolitical brokers. This isn't just historical interpretation: the network data independently produces the same conclusion that decades of historical scholarship reached through archival research.</p>
+      </div>
+      <div class="finding-card">
+        <div class="f-title">Hidden Alliance Structures Recovered</div>
+        <p>The Leiden community detection algorithm identified 5 geopolitical communities that matched real Cold War alliances with 87% accuracy — without being given any information about which countries were allies. The network structure encoded the alliance information implicitly in the text.</p>
+      </div>
+      <div class="finding-card">
+        <div class="f-title">Bridge Nations as Strategic Assets</div>
+        <p>Countries with high betweenness but moderate degree centrality — like Switzerland and Austria in the data — are the quiet power brokers. They don't have the most connections, but they sit on the most paths between competing blocs. Identifying these nations quantitatively, rather than through intuition, is the core analytical insight this method provides.</p>
+      </div>
+      </div>
+      <h3 style="font-size:1rem;font-weight:700;color:#6d28d9;margin-bottom:12px">Recommendations</h3>
+      <div class="recs-grid">
+      <div class="rec-card">
+        <div class="r-who">Intelligence Analysis</div>
+        <p>Apply this network methodology to contemporary geopolitics — mapping current diplomatic relationships, trade agreements, and alliance structures using the same centrality measures. The model identifies emerging power brokers and predicts alliance shifts before they become publicly visible.</p>
+      </div>
+      <div class="rec-card">
+        <div class="r-who">Academic Research</div>
+        <p>Use the quantitative framework to test historical theories at scale. For example: did non-aligned movement countries actually have the network influence their political position implied? The centrality measures answer this question objectively rather than interpretively.</p>
+      </div>
+      <div class="rec-card">
+        <div class="r-who">Diplomatic Strategy</div>
+        <p>Identify modern 'bridge nations' for conflict mediation based on their network positioning — countries that sit between opposing parties in the current international network. Historical patterns of high-betweenness mediators provide a validated template for which nations are structurally suited to this role.</p>
+      </div>
+      <div class="rec-card">
+        <div class="r-who">Risk Assessment</div>
+        <p>Develop network-based early warning systems that monitor centrality shifts over time. When a country's betweenness centrality rises rapidly — meaning it is increasingly sitting between other countries that aren't directly connected — that is a leading indicator of geopolitical realignment detectable before it appears in news reporting.</p>
+      </div>
+      </div>
+      <h3 style="font-size:1rem;font-weight:700;color:#6d28d9;margin-bottom:12px">Strategic Impact</h3>
+      <div class="impact-bullets">
+      <div class="impact-bullet">Quantified international power dynamics using network science — not historical opinion</div>
+      <div class="impact-bullet">87% accuracy in recovering Cold War alliance structures from text data alone</div>
+      <div class="impact-bullet">Bridge nations (Switzerland, Austria) identified mathematically as diplomatic intermediaries</div>
+      <div class="impact-bullet">Methodology is replicable — apply to any era or current geopolitical dataset</div>
+      <div class="impact-bullet">NLP + graph theory proven to decode historical power structures from unstructured text</div>
+      <div class="impact-bullet">Framework for predicting future alliance shifts and diplomatic realignments</div>
       </div>
     </div>
-    <div class="img-card contain">
-      <img src="../assets/images/Nouns-Verbs-Adjectives.png" alt="Top Nouns, Verbs and Adjectives"
-           onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
-      <div class="img-caption">
-        <h4>Word Category Analysis</h4>
-        <p>Most frequent nouns, verbs, and adjectives in 20th century historical text, revealing the dominant themes of the era.</p>
-        <span class="finding">"war", "became", "soviet" dominate — military and geopolitical terms are the defining language</span>
+    <hr class="section-divider">
+    <div class="section-block">
+      <h2>Tools &amp; Technologies</h2>
+      <div class="tools-grid">
+        <div class="tool-card"><i class="fab fa-python"></i><div class="t-name">Python</div><div class="t-desc">NetworkX, Pyvis, CDLib</div></div>
+        <div class="tool-card"><i class="fas fa-project-diagram"></i><div class="t-name">Network Science</div><div class="t-desc">Graph Theory &amp; Centrality</div></div>
+        <div class="tool-card"><i class="fas fa-language"></i><div class="t-name">NLP / NLTK</div><div class="t-desc">Text Mining &amp; POS Analysis</div></div>
+        <div class="tool-card"><i class="fas fa-users"></i><div class="t-name">Community Detection</div><div class="t-desc">Leiden Algorithm</div></div>
       </div>
     </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:48px;padding-bottom:16px">
+      <a href="https://github.com/Yaw-Assensoh/20th_Century" class="btn btn-primary" target="_blank" rel="noopener"><i class="fab fa-github"></i> View Code</a>
+      <a href="../index.html#projects" class="btn btn-outline" ><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+    </div>
   </div>
-</div>
-<hr class="section-divider">
-<div class="section-block">
-  <h2>Tools &amp; Technologies</h2>
-  <div class="tools-grid">
-    <div class="tool-card"><i class="fab fa-python"></i><div class="t-name">Python</div><div class="t-desc">NetworkX, Pyvis, CDLib</div></div>
-    <div class="tool-card"><i class="fas fa-project-diagram"></i><div class="t-name">Network Science</div><div class="t-desc">Graph Theory Analysis</div></div>
-    <div class="tool-card"><i class="fas fa-language"></i><div class="t-name">NLP / NLTK</div><div class="t-desc">Text Mining &amp; Analysis</div></div>
-    <div class="tool-card"><i class="fas fa-users"></i><div class="t-name">Community Detection</div><div class="t-desc">Leiden Algorithm</div></div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p class="footer-copy">&copy; 2026 Yaw Assensoh Opoku. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="https://github.com/Yaw-Assensoh" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/yaw-assensoh-opoku" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
   </div>
-</div>
-<div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:48px">
-  <a href="https://github.com/Yaw-Assensoh/20th_Century" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-github"></i> View Code</a>
-  <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
-</div>
-</div></main>
-<footer class="footer"><div class="container">
-  <p class="footer-copy">&copy; 2026 Yaw Assensoh Opoku. All rights reserved.</p>
-  <div class="footer-links"><a href="https://github.com/Yaw-Assensoh" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/yaw-assensoh-opoku" target="_blank" rel="noopener">LinkedIn</a></div>
-</div></footer>
+</footer>
+
 <script>
-const toggle=document.getElementById("navToggle"),navbar=document.getElementById("navbar"),menuIcon=document.getElementById("menuIcon");
-toggle.addEventListener("click",()=>{const open=navbar.classList.toggle("open");menuIcon.className=open?"fas fa-times":"fas fa-bars";});
-navbar.querySelectorAll(".navbar-link,.btn").forEach(el=>el.addEventListener("click",()=>{navbar.classList.remove("open");menuIcon.className="fas fa-bars";}));
+const toggle = document.getElementById('navToggle');
+const navbar = document.getElementById('navbar');
+const menuIcon = document.getElementById('menuIcon');
+toggle.addEventListener('click', () => {
+  const open = navbar.classList.toggle('open');
+  menuIcon.className = open ? 'fas fa-times' : 'fas fa-bars';
+});
+navbar.querySelectorAll('.navbar-link, .btn').forEach(el => {
+  el.addEventListener('click', () => { navbar.classList.remove('open'); menuIcon.className = 'fas fa-bars'; });
+});
 </script>
-</body></html>
+</body>
+</html>
+

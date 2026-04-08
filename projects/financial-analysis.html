@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Financial Markets Intelligence Platform | Yaw Assensoh Opoku</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
@@ -15,6 +17,8 @@ img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 ul{list-style:none}
 .container{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* NAV */
 .header{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:100;box-shadow:var(--shadow-sm)}
 .header .container{height:100%;display:flex;align-items:center;justify-content:space-between}
 .logo{font-family:var(--font-head);font-size:1.25rem;color:var(--dark)}
@@ -28,21 +32,33 @@ ul{list-style:none}
 .btn-outline:hover{background:var(--blue-light)}
 .btn-sm{padding:7px 16px;font-size:.82rem}
 .nav-toggle-btn{display:none;background:none;border:none;font-size:1.25rem;color:var(--dark);cursor:pointer;padding:8px}
+
+/* MAIN */
 main{padding-top:calc(var(--nav-h) + 56px);padding-bottom:80px}
 .project-wrap{max-width:900px;margin:0 auto;padding:0 24px}
+
+/* BREADCRUMB */
 .breadcrumb{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--muted);margin-bottom:32px}
 .breadcrumb a{color:var(--blue)}
 .breadcrumb a:hover{text-decoration:underline}
 .breadcrumb i{font-size:.65rem}
+
+/* HERO */
 .project-hero-img{width:100%;height:520px;object-fit:cover;border-radius:var(--radius-lg);margin-bottom:40px}
+
+/* HEADER BLOCK */
 .project-label{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
 .project-title{font-family:var(--font-head);font-size:clamp(2rem,4vw,2.8rem);color:var(--dark);line-height:1.15;margin-bottom:16px}
 .project-subtitle{font-size:1.05rem;color:var(--muted);margin-bottom:28px}
 .project-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px}
+
+/* STAT PILLS */
 .stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;margin-bottom:48px}
 .stat-pill{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:18px 20px;text-align:center}
 .stat-pill .num{font-family:var(--font-head);font-size:1.8rem;color:var(--dark);line-height:1;display:block}
 .stat-pill .lbl{font-size:.75rem;color:var(--muted);margin-top:4px}
+
+/* SECTION */
 .section-block{margin-bottom:52px}
 .section-block h2{font-family:var(--font-head);font-size:1.55rem;color:var(--dark);margin-bottom:16px}
 .section-block h3{font-size:1.1rem;font-weight:600;color:var(--dark);margin:28px 0 12px}
@@ -50,10 +66,14 @@ main{padding-top:calc(var(--nav-h) + 56px);padding-bottom:80px}
 .section-block ul{padding-left:0;display:flex;flex-direction:column;gap:8px}
 .section-block ul li{display:flex;gap:10px;font-size:.95rem;color:var(--mid);line-height:1.6}
 .section-block ul li::before{content:'→';color:var(--blue);flex-shrink:0;font-weight:600}
+
+/* OVERVIEW BOX */
 .overview-box{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:24px 28px;margin-bottom:36px}
 .overview-box .q-label{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
 .overview-box p{margin:0;color:var(--mid)}
 .overview-box .divider{border:none;border-top:1px solid var(--border);margin:16px 0}
+
+/* IMAGES — the fix: big, clean, full-width-ish */
 .img-grid{display:grid;gap:24px;margin:24px 0}
 .img-grid.cols-2{grid-template-columns:1fr 1fr}
 .img-grid.cols-1{grid-template-columns:1fr}
@@ -61,55 +81,109 @@ main{padding-top:calc(var(--nav-h) + 56px);padding-bottom:80px}
 .img-card img{width:100%;height:380px;object-fit:cover;display:block;transition:transform .4s}
 .img-card:hover img{transform:scale(1.02)}
 .img-card.tall img{height:480px}
-.img-card.contain img{object-fit:contain;background:#f8f9fa;padding:12px;height:360px}
+.img-card.contain img{object-fit:contain;background:#f8f9fa;padding:12px}
 .img-caption{padding:16px 20px;border-top:1px solid var(--border)}
 .img-caption h4{font-weight:600;font-size:.93rem;color:var(--dark);margin-bottom:4px}
 .img-caption p{font-size:.84rem;color:var(--muted);margin:0;line-height:1.55}
 .img-caption .finding{display:inline-block;margin-top:8px;background:var(--blue-light);color:var(--blue);font-size:.78rem;font-weight:600;padding:3px 10px;border-radius:99px;border:1px solid #c7d9f9}
+
+/* INSIGHT BOX */
 .insight-box{background:var(--blue-light);border-left:4px solid var(--blue);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:20px 24px;margin:20px 0}
 .insight-box h4{font-weight:600;color:var(--dark);margin-bottom:10px;font-size:.95rem}
 .insight-box ul{padding-left:0;display:flex;flex-direction:column;gap:6px}
 .insight-box ul li{display:flex;gap:10px;font-size:.88rem;color:var(--mid)}
 .insight-box ul li::before{content:'•';color:var(--blue);flex-shrink:0;font-weight:700}
+
+/* TABLE */
 .data-table{width:100%;border-collapse:collapse;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);margin:20px 0}
 .data-table th{background:var(--blue);color:#fff;padding:12px 16px;text-align:left;font-size:.85rem;font-weight:600}
 .data-table td{padding:11px 16px;border-bottom:1px solid var(--border);font-size:.88rem;color:var(--mid)}
 .data-table tr:last-child td{border-bottom:none}
 .data-table tr:hover td{background:var(--bg)}
+
+/* BADGE CHIPS */
 .badge{display:inline-block;font-size:.72rem;font-weight:600;padding:3px 10px;border-radius:99px;margin:2px}
 .badge-blue{background:var(--blue-light);color:var(--blue);border:1px solid #c7d9f9}
 .badge-red{background:#fde8e8;color:#c0392b;border:1px solid #e74c3c}
 .badge-green{background:#eafaf1;color:#1e8449;border:1px solid #27ae60}
 .badge-orange{background:#fef5e4;color:#d35400;border:1px solid #e67e22}
+
+/* METRIC GRID */
 .metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:20px 0}
 .metric-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);padding:18px 20px;box-shadow:var(--shadow-sm)}
 .metric-card h4{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .metric-card ul{padding:0;display:flex;flex-direction:column;gap:4px}
 .metric-card ul li{font-size:.87rem;color:var(--mid);display:flex;justify-content:space-between}
 .metric-card ul li strong{color:var(--dark)}
+
+/* TOOLS */
 .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:20px 0}
 .tool-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:18px 16px;text-align:center}
 .tool-card i{font-size:1.8rem;color:var(--blue);margin-bottom:8px;display:block}
 .tool-card .t-name{font-weight:600;font-size:.88rem;color:var(--dark);margin-bottom:3px}
 .tool-card .t-desc{font-size:.75rem;color:var(--muted)}
+
+/* DIVIDER */
 .section-divider{border:none;border-top:1px solid var(--border);margin:40px 0}
+
+/* FOOTER */
 .footer{background:#060910;padding:28px 0;border-top:1px solid rgba(255,255,255,.06)}
 .footer .container{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .footer-copy{font-size:.8rem;color:#6B7280}
 .footer-links{display:flex;gap:20px}
 .footer-links a{font-size:.8rem;color:#6B7280;transition:color .2s}
 .footer-links a:hover{color:#9CA3AF}
-.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin:24px 0}
-.kpi-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);padding:20px;text-align:center;box-shadow:var(--shadow-sm)}
-.kpi-card .k-num{font-family:var(--font-head);font-size:2rem;color:var(--blue);line-height:1;display:block}
-.kpi-card .k-lbl{font-size:.78rem;color:var(--muted);margin-top:4px}
-.kpi-card .k-sub{font-size:.72rem;color:var(--muted);margin-top:2px}
+
+/* CITY PILLS */
+.city-la{background:#e67e22;color:#fff;padding:.25rem .7rem;border-radius:99px;font-size:.78rem;font-weight:600;display:inline-block;margin:2px}
+.city-ny{background:#2980b9;color:#fff;padding:.25rem .7rem;border-radius:99px;font-size:.78rem;font-weight:600;display:inline-block;margin:2px}
+.city-miami{background:#e74c3c;color:#fff;padding:.25rem .7rem;border-radius:99px;font-size:.78rem;font-weight:600;display:inline-block;margin:2px}
+.city-chicago{background:#27ae60;color:#fff;padding:.25rem .7rem;border-radius:99px;font-size:.78rem;font-weight:600;display:inline-block;margin:2px}
+.city-houston{background:#8e44ad;color:#fff;padding:.25rem .7rem;border-radius:99px;font-size:.78rem;font-weight:600;display:inline-block;margin:2px}
+
+/* SCENARIO DARK */
+.scenario-block{background:linear-gradient(135deg,#1a1a2e,#2c3e50);border-radius:var(--radius-lg);padding:32px;margin:24px 0}
+.scenario-block h3{color:#fff;text-align:center;margin-bottom:8px;font-family:var(--font-head)}
+.scenario-block .sub{text-align:center;color:rgba(255,255,255,.7);font-size:.9rem;margin-bottom:24px}
+.scenario-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
+.scenario-card{background:rgba(255,255,255,.92);border-radius:var(--radius-md);padding:16px;text-align:center}
+.scenario-card h5{font-size:.8rem;font-weight:700;color:var(--blue);margin-bottom:8px}
+.scenario-card .val{font-size:1.3rem;font-weight:700;color:var(--dark)}
+.scenario-card .effect{font-size:.75rem;color:var(--muted);margin-top:3px}
+
+/* FORMULA BOX */
+.formula-box{background:#f0f8ff;border:1px solid #c7d9f9;border-radius:var(--radius-md);padding:16px 20px;font-family:monospace;font-size:1rem;font-weight:700;text-align:center;color:var(--dark);margin:16px 0}
+
+/* IMPACT SECTION */
+.impact-section{border-radius:var(--radius-lg);padding:32px 36px;margin:40px 0}
+.impact-section.green{background:#ecfdf5;border-left:5px solid #16a34a}
+.impact-section.blue{background:#eff6ff;border-left:5px solid var(--blue)}
+.impact-section.red{background:#fff1f2;border-left:5px solid #dc2626}
+.impact-section h2{font-family:var(--font-head);font-size:1.45rem;margin-bottom:6px}
+.impact-section.green h2{color:#15803d}
+.impact-section.blue h2{color:#1d4ed8}
+.impact-section.red h2{color:#b91c1c}
+.impact-section .impact-intro{font-size:.95rem;color:var(--muted);margin-bottom:24px;line-height:1.7}
+.findings-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:28px}
+.finding-card{background:rgba(255,255,255,.75);border:1px solid rgba(0,0,0,.07);border-radius:var(--radius-md);padding:16px 20px}
+.finding-card .f-title{font-weight:700;font-size:.9rem;color:var(--dark);margin-bottom:4px}
+.finding-card p{font-size:.88rem;color:var(--mid);margin:0;line-height:1.6}
+.recs-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
+.rec-card{background:rgba(255,255,255,.8);border:1px solid rgba(0,0,0,.07);border-radius:var(--radius-md);padding:16px 20px}
+.rec-card .r-who{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+.rec-card p{font-size:.87rem;color:var(--mid);margin:0;line-height:1.6}
+.impact-bullets{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+.impact-bullet{display:flex;gap:8px;align-items:flex-start;font-size:.86rem;color:var(--mid)}
+.impact-bullet::before{content:'✓';color:#16a34a;font-weight:700;flex-shrink:0;margin-top:1px}
+@media(max-width:768px){.recs-grid,.impact-bullets{grid-template-columns:1fr}.impact-section{padding:24px 20px}}
+
+/* RESPONSIVE */
 @media(max-width:768px){
   .img-grid.cols-2{grid-template-columns:1fr}
-  .img-card img,.img-card.tall img,.img-card.contain img{height:250px}
-  .stats-row,.kpi-row{grid-template-columns:repeat(2,1fr)}
+  .img-card img,.img-card.tall img{height:260px}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
   .project-actions{flex-direction:column}
-  .project-hero-img{height:260px}
+  .project-hero-img{height:280px}
   .navbar{display:none;position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:var(--white);padding:24px;flex-direction:column;border-top:1px solid var(--border);z-index:99;overflow-y:auto}
   .navbar.open{display:flex}
   .navbar-list{flex-direction:column;align-items:flex-start;gap:4px;width:100%}
@@ -118,155 +192,210 @@ main{padding-top:calc(var(--nav-h) + 56px);padding-bottom:80px}
   .footer .container{flex-direction:column;text-align:center}
 }
 </style>
-</head><body>
-<header class="header" id="header"><div class="container">
-  <a href="../index.html"><span class="logo">Yaw Assensoh Opoku</span></a>
-  <button class="nav-toggle-btn" id="navToggle"><i class="fas fa-bars" id="menuIcon"></i></button>
-  <nav class="navbar" id="navbar"><ul class="navbar-list">
-    <li><a href="../index.html#home" class="navbar-link">Home</a></li>
-    <li><a href="../index.html#about" class="navbar-link">About</a></li>
-    <li><a href="../index.html#projects" class="navbar-link">Projects</a></li>
-    <li><a href="../index.html#skills" class="navbar-link">Skills</a></li>
-    <li><a href="../index.html#contact" class="navbar-link">Contact</a></li>
-    <li><a href="../Yaw-Assensoh-Resume.pdf" class="btn btn-primary btn-sm" download><i class="fas fa-download"></i> Download CV</a></li>
-  </ul></nav>
-</div></header>
-<main><div class="project-wrap">
-  <div class="breadcrumb"><a href="../index.html#projects"><i class="fas fa-arrow-left"></i> All Projects</a><i class="fas fa-chevron-right"></i><span>Financial Markets</span></div>
-  <img class="project-hero-img" src="../assets/images/dashboard-preview.jpg" alt="Financial Markets Dashboard"
-       onerror="this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80'">
-  <p class="project-label">Financial Analytics</p>
-  <h1 class="project-title">Financial Markets Intelligence Platform</h1>
-  <p class="project-subtitle">Advanced Quantitative Analysis &amp; Portfolio Optimisation for Technology Stocks</p>
-  <div class="project-actions">
-    <a href="https://yaw-assensoh-financial-analysis-app-ypiyqi.streamlit.app" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Live Dashboard</a>
-    <a href="https://github.com/Yaw-Assensoh/financial_analysis" target="_blank" rel="noopener" class="btn btn-outline"><i class="fab fa-github"></i> View Code</a>
-    <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="container">
+    <a href="../index.html"><span class="logo">Yaw Assensoh Opoku</span></a>
+    <button class="nav-toggle-btn" id="navToggle" aria-label="Toggle menu"><i class="fas fa-bars" id="menuIcon"></i></button>
+    <nav class="navbar" id="navbar">
+      <ul class="navbar-list">
+        <li><a href="../index.html#home"     class="navbar-link">Home</a></li>
+        <li><a href="../index.html#about"    class="navbar-link">About</a></li>
+        <li><a href="../index.html#projects" class="navbar-link">Projects</a></li>
+        <li><a href="../index.html#skills"   class="navbar-link">Skills</a></li>
+        <li><a href="../index.html#contact"  class="navbar-link">Contact</a></li>
+        <li><a href="../Yaw-Assensoh-Resume.pdf" class="btn btn-primary btn-sm" download><i class="fas fa-download"></i> Download CV</a></li>
+      </ul>
+    </nav>
   </div>
-  <div class="stats-row">
-    <div class="stat-pill"><span class="num">343.9%</span><span class="lbl">TSLA Total Return</span></div>
-    <div class="stat-pill"><span class="num">243%</span><span class="lbl">Avg Tech Return</span></div>
-    <div class="stat-pill"><span class="num">58.9</span><span class="lbl">Best RSI (MSFT)</span></div>
-    <div class="stat-pill"><span class="num">0.22</span><span class="lbl">Avg Correlation</span></div>
-  </div>
-  <hr class="section-divider">
-  <div class="section-block">
-    <h2>Project Overview</h2>
-    <div class="overview-box">
-      <div class="q-label">Core Question</div>
-      <p>Which technology stocks offer optimal risk-adjusted returns and what portfolio strategies maximise performance while managing volatility in the tech sector?</p>
-      <hr class="divider">
-      <div class="q-label">Business Value</div>
-      <p>An interactive financial intelligence dashboard with performance analytics, risk metrics, correlation analysis, and technical indicators for major tech stocks — giving portfolio managers a data edge.</p>
+</header>
+
+
+<main>
+  <div class="project-wrap">
+    <div class="breadcrumb">
+      <a href="../index.html#projects"><i class="fas fa-arrow-left"></i> All Projects</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Financial Markets Intelligence Platform</span>
     </div>
-  </div>
-  <hr class="section-divider">
-  <div class="section-block">
-    <h2>Investment Performance &amp; Returns</h2>
+    <img class="project-hero-img" src="../assets/images/dashboard-preview.jpg" alt="Financial Markets Dashboard" onerror="this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80'">
+    <p class="project-label">Financial Analytics</p>
+    <h1 class="project-title">Financial Markets Intelligence Platform</h1>
+    <p class="project-subtitle">Advanced Quantitative Analysis &amp; Portfolio Optimisation for Technology Stocks</p>
+    <div class="project-actions">
+      <a href="https://yaw-assensoh-financial-analysis-app-ypiyqi.streamlit.app" class="btn btn-primary" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Dashboard</a>
+      <a href="https://github.com/Yaw-Assensoh/financial_analysis" class="btn btn-outline" target="_blank" rel="noopener"><i class="fab fa-github"></i> View Code</a>
+      <a href="../index.html#projects" class="btn btn-outline" ><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+    </div>
+    <div class="stats-row">
+      <div class="stat-pill"><span class="num">343.9%</span><span class="lbl">TSLA Total Return</span></div>
+      <div class="stat-pill"><span class="num">243%</span><span class="lbl">Avg Tech Return vs SPY</span></div>
+      <div class="stat-pill"><span class="num">58.9</span><span class="lbl">Best RSI (MSFT)</span></div>
+      <div class="stat-pill"><span class="num">0.22</span><span class="lbl">Avg Correlation</span></div>
+    </div>
+    <hr class="section-divider">
+    <div class="section-block">
+      <h2>Project Overview</h2>
+      <div class="overview-box">
+        <div class="q-label">Core Question</div>
+        <p>Which technology stocks offer optimal risk-adjusted returns, and what portfolio strategies maximise performance while managing volatility in the tech sector?</p>
+        <hr class="divider">
+        <div class="q-label">Business Value</div>
+        <p>An interactive financial intelligence dashboard giving portfolio managers and institutional investors data-driven insights into performance, risk, correlation, and technical momentum signals across major tech stocks.</p>
+      </div>
+    </div>
+    <hr class="section-divider">
+    <div class="section-block"><h2>Investment Performance &amp; Returns Analysis</h2>
     <div class="img-grid cols-2">
       <div class="img-card contain">
-        <img src="../assets/images/performance-returns.png" alt="Stock Performance Returns"
-             onerror="this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80'">
+        <img src="../assets/images/performance-returns.png" alt="Stock Performance Returns" onerror="this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80'">
         <div class="img-caption">
           <h4>Total Return Performance</h4>
-          <p>5-year total returns for major tech stocks compared to SPY market benchmark, highlighting exceptional sector outperformance.</p>
-          <span class="finding">TSLA 343.9% · GOOGL 251.0% · AMZN 210.4% — all vs 100% SPY</span>
+          <p>5-year total returns for major tech stocks compared to the SPY market benchmark, highlighting the scale of sector outperformance.</p>
+          <span class="finding">TSLA 343.9% · GOOGL 251.0% · AMZN 210.4% — all vs 100% SPY benchmark</span>
         </div>
       </div>
       <div class="img-card contain">
-        <img src="../assets/images/risk-analysis-chart.png" alt="Historical Volatility Analysis"
-             onerror="this.src='https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=800&q=80'">
+        <img src="../assets/images/risk-analysis-chart.png" alt="Historical Volatility Analysis" onerror="this.src='https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=800&q=80'">
         <div class="img-caption">
           <h4>Volatility &amp; Risk Assessment</h4>
-          <p>Historical volatility analysis showing annualised standard deviation of returns — revealing the risk profile behind every return number.</p>
-          <span class="finding">TSLA volatility 52.3% vs MSFT 24.5% — clear risk-return spectrum</span>
+          <p>Historical volatility showing annualised standard deviation of returns — the number behind every return figure that investors rarely see prominently displayed.</p>
+          <span class="finding">TSLA 52.3% volatility vs MSFT 24.5% — return without context is incomplete information</span>
         </div>
       </div>
     </div>
     <div class="img-grid cols-1">
       <div class="img-card contain">
-        <img src="../assets/images/correlation-heatmap.png" alt="Stock Correlation Matrix"
-             onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
+        <img src="../assets/images/correlation-heatmap.png" alt="Stock Correlation Matrix" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
         <div class="img-caption">
           <h4>Portfolio Correlation Matrix</h4>
-          <p>Pearson correlation matrix revealing inter-stock relationships and diversification opportunities within the technology sector and broader market.</p>
-          <span class="finding">Correlations 0.102–0.377 — partial diversification benefits, sector exposure remains</span>
+          <p>Pearson correlation matrix revealing how strongly each stock's returns move together — the foundation of every diversification decision in portfolio construction.</p>
+          <span class="finding">Correlations 0.102–0.377 — moderate diversification benefit within tech; broader exposure still needed</span>
         </div>
       </div>
     </div>
-    <div class="metric-grid">
-      <div class="metric-card"><h4>Total Returns</h4><ul>
-        <li>TSLA<strong>343.9%</strong></li><li>GOOGL<strong>251.0%</strong></li>
-        <li>AMZN<strong>210.4%</strong></li><li>MSFT<strong>158.0%</strong></li>
-        <li>AAPL<strong>141.8%</strong></li><li>SPY<strong>100.0%</strong></li>
-      </ul></div>
-      <div class="metric-card"><h4>Volatility</h4><ul>
-        <li>TSLA<strong>52.3%</strong></li><li>GOOGL<strong>32.1%</strong></li>
-        <li>AMZN<strong>28.7%</strong></li><li>AAPL<strong>26.8%</strong></li>
-        <li>MSFT<strong>24.5%</strong></li><li>SPY<strong>18.2%</strong></li>
-      </ul></div>
-      <div class="metric-card"><h4>RSI Momentum</h4><ul>
-        <li>MSFT<strong>58.9 — Bullish</strong></li><li>SPY<strong>53.1 — Neutral</strong></li>
-        <li>TSLA<strong>45.2 — Neutral</strong></li><li>AMZN<strong>38.7 — Oversold</strong></li>
-      </ul></div>
+    </div>
+    <hr class="section-divider">
+    <div class="section-block"><h2>Technical Analysis &amp; Trading Signals</h2>
+    <div class="img-grid cols-2">
+      <div class="img-card contain">
+        <img src="../assets/images/tecnical-signals.png" alt="RSI Momentum Analysis" onerror="this.src='https://images.unsplash.com/photo-1613243555978-636c48dc653c?auto=format&fit=crop&w=800&q=80'">
+        <div class="img-caption">
+          <h4>RSI Momentum Analysis</h4>
+          <p>14-period Relative Strength Index across the tech sector — identifying which stocks have momentum behind them vs those that may be due for a reversal.</p>
+          <span class="finding">MSFT at 58.9 RSI (bullish momentum) vs AMZN at 38.7 (potentially oversold — mean reversion signal)</span>
+        </div>
+      </div>
+      <div class="img-card contain">
+        <img src="../assets/images/risk-return-scatter.png" alt="Risk-Return Optimisation Scatter" onerror="this.src='https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80'">
+        <div class="img-caption">
+          <h4>Risk-Return Optimisation Framework</h4>
+          <p>Scatter analysis plotting annual volatility against total returns — showing each stock's position on the efficient frontier for portfolio construction.</p>
+          <span class="finding">MSFT sits in the optimal zone: 158% returns with only 24.5% volatility</span>
+        </div>
+      </div>
     </div>
     <div class="insight-box">
       <h4>Investment Strategy Insights</h4>
       <ul>
-        <li>All tech stocks significantly exceeded market benchmark — TSLA delivered extraordinary 343.9% total return</li>
-        <li>Higher returns strongly correlated with increased volatility — distinct risk-return profiles for different investor types</li>
-        <li>MSFT presents optimal risk-adjusted profile: 158% returns with only 24.5% volatility</li>
-        <li>Moderate inter-stock correlations suggest limited diversification benefits within tech alone</li>
+<li><strong>Extraordinary outperformance:</strong> All tech stocks significantly exceeded the market benchmark — TSLA delivered 343.9% total return vs 100% SPY</li>
+<li><strong>Risk-return spectrum:</strong> Higher returns strongly correlated with increased volatility — MSFT offers the best risk-adjusted balance at 158% / 24.5% vol</li>
+<li><strong>Divergent momentum:</strong> MSFT RSI 58.9 (bullish) vs AMZN RSI 38.7 (oversold) — divergent signals create tactical allocation opportunities within the same sector</li>
+<li><strong>Diversification limits:</strong> Moderate inter-stock correlations (avg 0.22) suggest limited diversification benefits within tech alone — broader market exposure is needed</li>
       </ul>
     </div>
-  </div>
-  <hr class="section-divider">
-  <div class="section-block">
-    <h2>Technical Analysis &amp; Trading Signals</h2>
-    <div class="img-grid cols-2">
-      <div class="img-card contain">
-        <img src="../assets/images/tecnical-signals.png" alt="RSI Momentum Analysis"
-             onerror="this.src='https://images.unsplash.com/photo-1613243555978-636c48dc653c?auto=format&fit=crop&w=800&q=80'">
-        <div class="img-caption">
-          <h4>RSI Momentum Analysis</h4>
-          <p>14-period Relative Strength Index analysis showing momentum conditions and potential overbought/oversold levels across the tech sector.</p>
-          <span class="finding">MSFT at 58.9 RSI (bullish) vs AMZN at 38.7 (potentially oversold)</span>
-        </div>
+    </div>
+    <hr class="section-divider">
+    <div class="impact-section blue">
+      <h2>Investment Insights &amp; Portfolio Strategy</h2>
+      <p class="impact-intro">The numbers mean different things to different stakeholders. Here is what this analysis means in practice for each type of decision-maker — explained without financial jargon.</p>
+      <h3 style="font-size:1rem;font-weight:700;color:#1d4ed8;margin-bottom:12px">Critical Findings</h3>
+      <div class="findings-grid">
+      <div class="finding-card">
+        <div class="f-title">Extraordinary Tech Outperformance</div>
+        <p>Technology stocks delivered an average 243% return vs 100% for the SPY benchmark. TSLA led at 343.9%. In plain terms: every $1 invested in tech returned $2.43 on average, while the broader market returned $1.00 over the same period.</p>
       </div>
-      <div class="img-card contain">
-        <img src="../assets/images/risk-return-scatter.png" alt="Risk-Return Optimisation Scatter"
-             onerror="this.src='https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80'">
-        <div class="img-caption">
-          <h4>Risk-Return Optimisation Framework</h4>
-          <p>Scatter analysis plotting annual volatility against total returns, revealing the efficient frontier and optimal risk-return combinations.</p>
-          <span class="finding">MSFT: optimal balance at 158% returns with 24.5% volatility</span>
-        </div>
+      <div class="finding-card">
+        <div class="f-title">The Optimal Balance Point</div>
+        <p>MSFT offers the best risk-adjusted return in the group — 158% returns with only 24.5% annual volatility. TSLA delivered more (343.9%) but with 52.3% volatility, meaning its price swings 2× as violently. For most portfolios, MSFT is the better core holding.</p>
+      </div>
+      <div class="finding-card">
+        <div class="f-title">Divergent Momentum Signals</div>
+        <p>MSFT's RSI of 58.9 indicates bullish momentum — buyers are in control. AMZN's RSI of 38.7 signals it may be oversold — a potential entry point for investors who use technical analysis as a timing tool. These two stocks are moving in opposite directions right now.</p>
+      </div>
+      </div>
+      <h3 style="font-size:1rem;font-weight:700;color:#1d4ed8;margin-bottom:12px">Recommendations</h3>
+      <div class="recs-grid">
+      <div class="rec-card">
+        <div class="r-who">Portfolio Managers</div>
+        <p>Use MSFT as a core holding (optimal risk-adjusted returns) and treat TSLA as a satellite position limited to 5–10% of the portfolio. TSLA's 52.3% volatility makes it unsuitable as a core holding for most mandates.</p>
+      </div>
+      <div class="rec-card">
+        <div class="r-who">Risk Management</div>
+        <p>Implement dynamic position sizing based on each stock's volatility. Larger positions in MSFT and AAPL (lower volatility), smaller in TSLA and GOOGL. Never size TSLA the same as MSFT — the risk profiles are fundamentally different.</p>
+      </div>
+      <div class="rec-card">
+        <div class="r-who">Tactical Allocation</div>
+        <p>Consider adding to AMZN positions when RSI falls below 40 — historically this oversold signal has preceded mean-reversion recoveries. Reduce MSFT exposure if RSI exceeds 70 (overbought territory).</p>
+      </div>
+      <div class="rec-card">
+        <div class="r-who">Institutional Investors</div>
+        <p>The tech sector's persistent alpha generation (243% average return vs 100% benchmark) makes a compelling strategic allocation thesis. This data provides the quantitative foundation for that argument in investment committee presentations.</p>
+      </div>
+      </div>
+      <h3 style="font-size:1rem;font-weight:700;color:#1d4ed8;margin-bottom:12px">Strategic Impact</h3>
+      <div class="impact-bullets">
+      <div class="impact-bullet">All tech stocks significantly exceeded the market benchmark — sector momentum is real and persistent</div>
+      <div class="impact-bullet">Return without volatility context is misleading — TSLA's 343.9% comes with 52.3% annual price swings</div>
+      <div class="impact-bullet">MSFT is the optimal core holding — best risk-adjusted return in the group at 158% / 24.5% vol</div>
+      <div class="impact-bullet">AMZN RSI of 38.7 signals a potential mean-reversion entry point for tactical allocation</div>
+      <div class="impact-bullet">Moderate correlations (0.22 avg) confirm that genuine diversification requires adding non-tech assets</div>
+      <div class="impact-bullet">Divergent momentum signals create tactical opportunities even within a single sector</div>
       </div>
     </div>
-  </div>
-  <hr class="section-divider">
-  <div class="section-block">
-    <h2>Tools &amp; Technologies</h2>
-    <div class="tools-grid">
-      <div class="tool-card"><i class="fab fa-python"></i><div class="t-name">Python</div><div class="t-desc">Pandas, NumPy, Scipy, Matplotlib</div></div>
-      <div class="tool-card"><i class="fas fa-map-marked-alt"></i><div class="t-name">Streamlit</div><div class="t-desc">Interactive Analytics Dashboard</div></div>
-      <div class="tool-card"><i class="fas fa-database"></i><div class="t-name">SQL &amp; PgAdmin</div><div class="t-desc">Database Management</div></div>
-      <div class="tool-card"><i class="fas fa-chart-line"></i><div class="t-name">Technical Analysis</div><div class="t-desc">RSI, Volatility, Correlation</div></div>
+    <hr class="section-divider">
+    <div class="section-block">
+      <h2>Tools &amp; Technologies</h2>
+      <div class="tools-grid">
+        <div class="tool-card"><i class="fab fa-python"></i><div class="t-name">Python</div><div class="t-desc">Pandas, NumPy, Scipy, Matplotlib</div></div>
+        <div class="tool-card"><i class="fas fa-map-marked-alt"></i><div class="t-name">Streamlit</div><div class="t-desc">Interactive Analytics Dashboard</div></div>
+        <div class="tool-card"><i class="fas fa-database"></i><div class="t-name">SQL &amp; PgAdmin</div><div class="t-desc">Database Management</div></div>
+        <div class="tool-card"><i class="fas fa-chart-line"></i><div class="t-name">Technical Analysis</div><div class="t-desc">RSI, Volatility, Correlation</div></div>
+      </div>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:48px;padding-bottom:16px">
+      <a href="https://yaw-assensoh-financial-analysis-app-ypiyqi.streamlit.app" class="btn btn-primary" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Dashboard</a>
+      <a href="https://github.com/Yaw-Assensoh/financial_analysis" class="btn btn-outline" target="_blank" rel="noopener"><i class="fab fa-github"></i> View Code</a>
+      <a href="../index.html#projects" class="btn btn-outline" ><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
     </div>
   </div>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:48px">
-    <a href="https://yaw-assensoh-financial-analysis-app-ypiyqi.streamlit.app" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Live Dashboard</a>
-    <a href="https://github.com/Yaw-Assensoh/financial_analysis" target="_blank" rel="noopener" class="btn btn-outline"><i class="fab fa-github"></i> View Code</a>
-    <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p class="footer-copy">&copy; 2026 Yaw Assensoh Opoku. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="https://github.com/Yaw-Assensoh" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/yaw-assensoh-opoku" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
   </div>
-</div></main>
-<footer class="footer"><div class="container">
-  <p class="footer-copy">&copy; 2026 Yaw Assensoh Opoku. All rights reserved.</p>
-  <div class="footer-links"><a href="https://github.com/Yaw-Assensoh" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/yaw-assensoh-opoku" target="_blank" rel="noopener">LinkedIn</a></div>
-</div></footer>
+</footer>
+
 <script>
-const toggle=document.getElementById("navToggle"),navbar=document.getElementById("navbar"),menuIcon=document.getElementById("menuIcon");
-toggle.addEventListener("click",()=>{const open=navbar.classList.toggle("open");menuIcon.className=open?"fas fa-times":"fas fa-bars";});
-navbar.querySelectorAll(".navbar-link,.btn").forEach(el=>el.addEventListener("click",()=>{navbar.classList.remove("open");menuIcon.className="fas fa-bars";}));
+const toggle = document.getElementById('navToggle');
+const navbar = document.getElementById('navbar');
+const menuIcon = document.getElementById('menuIcon');
+toggle.addEventListener('click', () => {
+  const open = navbar.classList.toggle('open');
+  menuIcon.className = open ? 'fas fa-times' : 'fas fa-bars';
+});
+navbar.querySelectorAll('.navbar-link, .btn').forEach(el => {
+  el.addEventListener('click', () => { navbar.classList.remove('open'); menuIcon.className = 'fas fa-bars'; });
+});
 </script>
-</body></html>
+</body>
+</html>
+
