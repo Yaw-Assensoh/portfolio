@@ -44,7 +44,7 @@ main{padding-top:calc(var(--nav-h) + 56px);padding-bottom:80px}
 .breadcrumb i{font-size:.65rem}
 
 /* HERO */
-.project-hero-img{width:100%;height:520px;object-fit:cover;border-radius:var(--radius-lg);margin-bottom:40px}
+.project-hero-img{width:100%;height:420px;object-fit:cover;border-radius:var(--radius-lg);margin-bottom:40px}
 
 /* HEADER BLOCK */
 .project-label{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
@@ -53,78 +53,89 @@ main{padding-top:calc(var(--nav-h) + 56px);padding-bottom:80px}
 .project-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px}
 
 /* STAT PILLS */
-.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;margin-bottom:48px}
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;margin-bottom:40px}
 .stat-pill{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:18px 20px;text-align:center}
 .stat-pill .num{font-family:var(--font-head);font-size:1.8rem;color:var(--dark);line-height:1;display:block}
 .stat-pill .lbl{font-size:.75rem;color:var(--muted);margin-top:4px}
 
+/* FINDINGS SUMMARY — like the EU Gender Pay Gap page */
+.findings-summary{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:24px 28px;margin-bottom:40px}
+.findings-summary .fs-label{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.fs-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.fs-row:last-child{border-bottom:none;padding-bottom:0}
+.fs-num{width:24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.fs-claim{font-size:.9rem;font-weight:600;color:var(--dark);margin-bottom:2px}
+.fs-detail{font-size:.82rem;color:var(--muted)}
+
 /* SECTION */
-.section-block{margin-bottom:52px}
-.section-block h2{font-family:var(--font-head);font-size:1.55rem;color:var(--dark);margin-bottom:16px}
-.section-block h3{font-size:1.1rem;font-weight:600;color:var(--dark);margin:28px 0 12px}
+.section-block{margin-bottom:56px}
+.section-block h2{font-family:var(--font-head);font-size:1.55rem;color:var(--dark);margin-bottom:8px}
+.section-block .section-q{font-size:1rem;color:var(--muted);font-style:italic;margin-bottom:20px;line-height:1.6}
+.section-block h3{font-size:1.05rem;font-weight:700;color:var(--dark);margin:28px 0 10px}
 .section-block p{color:var(--mid);line-height:1.75;margin-bottom:12px}
 .section-block ul{padding-left:0;display:flex;flex-direction:column;gap:8px}
 .section-block ul li{display:flex;gap:10px;font-size:.95rem;color:var(--mid);line-height:1.6}
 .section-block ul li::before{content:'→';color:var(--blue);flex-shrink:0;font-weight:600}
 
-/* OVERVIEW BOX */
-.overview-box{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:24px 28px;margin-bottom:36px}
-.overview-box .q-label{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
-.overview-box p{margin:0;color:var(--mid)}
-.overview-box .divider{border:none;border-top:1px solid var(--border);margin:16px 0}
+/* FINDING ROW — like EU Gender Pay Gap */
+.finding-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:24px 0;align-items:start}
+.finding-row.full{grid-template-columns:1fr;gap:0}
+.finding-claim{font-family:var(--font-head);font-size:1.3rem;color:var(--dark);line-height:1.25;margin-bottom:14px}
+.finding-body{font-size:.93rem;color:var(--mid);line-height:1.75;margin-bottom:14px}
+.so-what{background:#f0f4ff;border-left:3px solid var(--blue);padding:12px 16px;border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:.88rem;color:var(--dark);line-height:1.6;margin-top:12px}
+.so-what strong{color:var(--blue);display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+.proof{display:inline-flex;align-items:center;gap:5px;background:#dcfce7;color:#166534;font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:99px;border:1px solid #bbf7d0;margin-top:8px}
+.proof i{font-size:.7rem}
 
-/* IMAGES — the fix: big, clean, full-width-ish */
+/* IMAGES */
 .img-grid{display:grid;gap:24px;margin:24px 0}
 .img-grid.cols-2{grid-template-columns:1fr 1fr}
 .img-grid.cols-1{grid-template-columns:1fr}
 .img-card{border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;background:var(--white)}
-.img-card img{width:100%;height:380px;object-fit:cover;display:block;transition:transform .4s}
+.img-card img{width:100%;height:300px;object-fit:contain;background:#f8f9fa;display:block;padding:8px;transition:transform .4s}
 .img-card:hover img{transform:scale(1.02)}
-.img-card.tall img{height:480px}
-.img-card.contain img{object-fit:contain;background:#f8f9fa;padding:12px}
-.img-caption{padding:16px 20px;border-top:1px solid var(--border)}
-.img-caption h4{font-weight:600;font-size:.93rem;color:var(--dark);margin-bottom:4px}
-.img-caption p{font-size:.84rem;color:var(--muted);margin:0;line-height:1.55}
-.img-caption .finding{display:inline-block;margin-top:8px;background:var(--blue-light);color:var(--blue);font-size:.78rem;font-weight:600;padding:3px 10px;border-radius:99px;border:1px solid #c7d9f9}
+.img-card.tall img{height:400px}
+.img-card.sql img{height:280px;object-fit:cover;object-position:top}
+.img-caption{padding:12px 16px;border-top:1px solid var(--border);background:var(--bg)}
+.img-caption p{font-size:.8rem;color:var(--muted);margin:0;line-height:1.5}
 
-/* INSIGHT BOX */
-.insight-box{background:var(--blue-light);border-left:4px solid var(--blue);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:20px 24px;margin:20px 0}
-.insight-box h4{font-weight:600;color:var(--dark);margin-bottom:10px;font-size:.95rem}
-.insight-box ul{padding-left:0;display:flex;flex-direction:column;gap:6px}
-.insight-box ul li{display:flex;gap:10px;font-size:.88rem;color:var(--mid)}
-.insight-box ul li::before{content:'•';color:var(--blue);flex-shrink:0;font-weight:700}
+/* DIVIDER */
+.section-divider{border:none;border-top:1px solid var(--border);margin:44px 0}
 
-/* TABLE */
-.data-table{width:100%;border-collapse:collapse;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);margin:20px 0}
-.data-table th{background:var(--blue);color:#fff;padding:12px 16px;text-align:left;font-size:.85rem;font-weight:600}
-.data-table td{padding:11px 16px;border-bottom:1px solid var(--border);font-size:.88rem;color:var(--mid)}
-.data-table tr:last-child td{border-bottom:none}
-.data-table tr:hover td{background:var(--bg)}
-
-/* BADGE CHIPS */
-.badge{display:inline-block;font-size:.72rem;font-weight:600;padding:3px 10px;border-radius:99px;margin:2px}
+/* BADGE */
+.badge{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 9px;border-radius:99px;margin:2px}
 .badge-blue{background:var(--blue-light);color:var(--blue);border:1px solid #c7d9f9}
 .badge-red{background:#fde8e8;color:#c0392b;border:1px solid #e74c3c}
 .badge-green{background:#eafaf1;color:#1e8449;border:1px solid #27ae60}
 .badge-orange{background:#fef5e4;color:#d35400;border:1px solid #e67e22}
 
-/* METRIC GRID */
-.metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:20px 0}
-.metric-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);padding:18px 20px;box-shadow:var(--shadow-sm)}
-.metric-card h4{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.metric-card ul{padding:0;display:flex;flex-direction:column;gap:4px}
-.metric-card ul li{font-size:.87rem;color:var(--mid);display:flex;justify-content:space-between}
-.metric-card ul li strong{color:var(--dark)}
+/* INSIGHT BOX — like EU Gender Pay Gap */
+.insight-box{background:var(--blue-light);border-left:4px solid var(--blue);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:18px 22px;margin:20px 0}
+.insight-box h4{font-weight:600;color:var(--dark);margin-bottom:8px;font-size:.93rem}
+.insight-box ul{display:flex;flex-direction:column;gap:5px}
+.insight-box ul li{display:flex;gap:8px;font-size:.86rem;color:var(--mid)}
+.insight-box ul li::before{content:'•';color:var(--blue);flex-shrink:0;font-weight:700}
 
-/* TOOLS */
-.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:20px 0}
-.tool-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:18px 16px;text-align:center}
-.tool-card i{font-size:1.8rem;color:var(--blue);margin-bottom:8px;display:block}
-.tool-card .t-name{font-weight:600;font-size:.88rem;color:var(--dark);margin-bottom:3px}
-.tool-card .t-desc{font-size:.75rem;color:var(--muted)}
+/* METHODOLOGY GRID — like EU Gender Pay Gap */
+.method-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px;margin:20px 0}
+.method-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:16px}
+.method-card i{font-size:1.4rem;color:var(--blue);margin-bottom:8px;display:block}
+.method-card h4{font-size:.85rem;font-weight:700;color:var(--dark);margin-bottom:6px}
+.method-card p{font-size:.78rem;color:var(--muted);line-height:1.5;margin:0}
 
-/* DIVIDER */
-.section-divider{border:none;border-top:1px solid var(--border);margin:40px 0}
+/* RECS — like EU Gender Pay Gap */
+.recs-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+.rec-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);padding:18px 20px}
+.rec-card .who{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+.rec-card h4{font-size:.9rem;font-weight:700;color:var(--dark);margin-bottom:8px}
+.rec-card p{font-size:.86rem;color:var(--mid);margin:0;line-height:1.65}
+
+/* DATA TABLE */
+.data-table{width:100%;border-collapse:collapse;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);margin:20px 0}
+.data-table th{background:var(--blue);color:#fff;padding:11px 14px;text-align:left;font-size:.83rem;font-weight:600}
+.data-table td{padding:10px 14px;border-bottom:1px solid var(--border);font-size:.86rem;color:var(--mid)}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:hover td{background:var(--bg)}
 
 /* FOOTER */
 .footer{background:#060910;padding:28px 0;border-top:1px solid rgba(255,255,255,.06)}
@@ -134,56 +145,15 @@ main{padding-top:calc(var(--nav-h) + 56px);padding-bottom:80px}
 .footer-links a{font-size:.8rem;color:#6B7280;transition:color .2s}
 .footer-links a:hover{color:#9CA3AF}
 
-/* CITY PILLS */
-.city-la{background:#e67e22;color:#fff;padding:.25rem .7rem;border-radius:99px;font-size:.78rem;font-weight:600;display:inline-block;margin:2px}
-.city-ny{background:#2980b9;color:#fff;padding:.25rem .7rem;border-radius:99px;font-size:.78rem;font-weight:600;display:inline-block;margin:2px}
-.city-miami{background:#e74c3c;color:#fff;padding:.25rem .7rem;border-radius:99px;font-size:.78rem;font-weight:600;display:inline-block;margin:2px}
-.city-chicago{background:#27ae60;color:#fff;padding:.25rem .7rem;border-radius:99px;font-size:.78rem;font-weight:600;display:inline-block;margin:2px}
-.city-houston{background:#8e44ad;color:#fff;padding:.25rem .7rem;border-radius:99px;font-size:.78rem;font-weight:600;display:inline-block;margin:2px}
-
-/* SCENARIO DARK */
-.scenario-block{background:linear-gradient(135deg,#1a1a2e,#2c3e50);border-radius:var(--radius-lg);padding:32px;margin:24px 0}
-.scenario-block h3{color:#fff;text-align:center;margin-bottom:8px;font-family:var(--font-head)}
-.scenario-block .sub{text-align:center;color:rgba(255,255,255,.7);font-size:.9rem;margin-bottom:24px}
-.scenario-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
-.scenario-card{background:rgba(255,255,255,.92);border-radius:var(--radius-md);padding:16px;text-align:center}
-.scenario-card h5{font-size:.8rem;font-weight:700;color:var(--blue);margin-bottom:8px}
-.scenario-card .val{font-size:1.3rem;font-weight:700;color:var(--dark)}
-.scenario-card .effect{font-size:.75rem;color:var(--muted);margin-top:3px}
-
-/* FORMULA BOX */
-.formula-box{background:#f0f8ff;border:1px solid #c7d9f9;border-radius:var(--radius-md);padding:16px 20px;font-family:monospace;font-size:1rem;font-weight:700;text-align:center;color:var(--dark);margin:16px 0}
-
-/* IMPACT SECTION */
-.impact-section{border-radius:var(--radius-lg);padding:32px 36px;margin:40px 0}
-.impact-section.green{background:#ecfdf5;border-left:5px solid #16a34a}
-.impact-section.blue{background:#eff6ff;border-left:5px solid var(--blue)}
-.impact-section.red{background:#fff1f2;border-left:5px solid #dc2626}
-.impact-section h2{font-family:var(--font-head);font-size:1.45rem;margin-bottom:6px}
-.impact-section.green h2{color:#15803d}
-.impact-section.blue h2{color:#1d4ed8}
-.impact-section.red h2{color:#b91c1c}
-.impact-section .impact-intro{font-size:.95rem;color:var(--muted);margin-bottom:24px;line-height:1.7}
-.findings-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:28px}
-.finding-card{background:rgba(255,255,255,.75);border:1px solid rgba(0,0,0,.07);border-radius:var(--radius-md);padding:16px 20px}
-.finding-card .f-title{font-weight:700;font-size:.9rem;color:var(--dark);margin-bottom:4px}
-.finding-card p{font-size:.88rem;color:var(--mid);margin:0;line-height:1.6}
-.recs-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
-.rec-card{background:rgba(255,255,255,.8);border:1px solid rgba(0,0,0,.07);border-radius:var(--radius-md);padding:16px 20px}
-.rec-card .r-who{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
-.rec-card p{font-size:.87rem;color:var(--mid);margin:0;line-height:1.6}
-.impact-bullets{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
-.impact-bullet{display:flex;gap:8px;align-items:flex-start;font-size:.86rem;color:var(--mid)}
-.impact-bullet::before{content:'✓';color:#16a34a;font-weight:700;flex-shrink:0;margin-top:1px}
-@media(max-width:768px){.recs-grid,.impact-bullets{grid-template-columns:1fr}.impact-section{padding:24px 20px}}
-
 /* RESPONSIVE */
 @media(max-width:768px){
+  .finding-row{grid-template-columns:1fr}
   .img-grid.cols-2{grid-template-columns:1fr}
-  .img-card img,.img-card.tall img{height:260px}
+  .method-grid{grid-template-columns:1fr 1fr}
+  .recs-grid{grid-template-columns:1fr}
   .stats-row{grid-template-columns:repeat(2,1fr)}
   .project-actions{flex-direction:column}
-  .project-hero-img{height:280px}
+  .project-hero-img{height:260px}
   .navbar{display:none;position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:var(--white);padding:24px;flex-direction:column;border-top:1px solid var(--border);z-index:99;overflow-y:auto}
   .navbar.open{display:flex}
   .navbar-list{flex-direction:column;align-items:flex-start;gap:4px;width:100%}
@@ -191,8 +161,11 @@ main{padding-top:calc(var(--nav-h) + 56px);padding-bottom:80px}
   .nav-toggle-btn{display:block}
   .footer .container{flex-direction:column;text-align:center}
 }
+@media(max-width:480px){
+  .stats-row{grid-template-columns:1fr 1fr}
+  .method-grid{grid-template-columns:1fr}
+}
 </style>
-
 </head>
 <body>
 
@@ -207,171 +180,256 @@ main{padding-top:calc(var(--nav-h) + 56px);padding-bottom:80px}
         <li><a href="../index.html#projects" class="navbar-link">Projects</a></li>
         <li><a href="../index.html#skills"   class="navbar-link">Skills</a></li>
         <li><a href="../index.html#contact"  class="navbar-link">Contact</a></li>
-        <li><a href="../Yaw-Assensoh-Resume.pdf" class="btn btn-primary btn-sm" download><i class="fas fa-download"></i> Download CV</a></li>
+        <li><a href="../Yaw-Assensoh-Analyst.pdf" class="btn btn-primary btn-sm" download><i class="fas fa-download"></i> Download CV</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-
 <main>
-  <div class="project-wrap">
-    <div class="breadcrumb">
-      <a href="../index.html#projects"><i class="fas fa-arrow-left"></i> All Projects</a>
-      <i class="fas fa-chevron-right"></i>
-      <span>Financial Markets Intelligence Platform</span>
-    </div>
-    <img class="project-hero-img" src="../assets/images/dashboard-preview.jpg" alt="Financial Markets Dashboard" onerror="this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80'">
-    <p class="project-label">Financial Analytics</p>
-    <h1 class="project-title">Financial Markets Intelligence Platform</h1>
-    <p class="project-subtitle">Advanced Quantitative Analysis &amp; Portfolio Optimisation for Technology Stocks</p>
-    <div class="project-actions">
-      <a href="https://yaw-assensoh-financial-analysis-app-ypiyqi.streamlit.app" class="btn btn-primary" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Dashboard</a>
-      <a href="https://github.com/Yaw-Assensoh/financial_analysis" class="btn btn-outline" target="_blank" rel="noopener"><i class="fab fa-github"></i> View Code</a>
-      <a href="../index.html#projects" class="btn btn-outline" ><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
-    </div>
-    <div class="stats-row">
-      <div class="stat-pill"><span class="num">343.9%</span><span class="lbl">TSLA Total Return</span></div>
-      <div class="stat-pill"><span class="num">243%</span><span class="lbl">Avg Tech Return vs SPY</span></div>
-      <div class="stat-pill"><span class="num">58.9</span><span class="lbl">Best RSI (MSFT)</span></div>
-      <div class="stat-pill"><span class="num">0.22</span><span class="lbl">Avg Correlation</span></div>
-    </div>
-    <hr class="section-divider">
-    <div class="section-block">
-      <h2>Project Overview</h2>
-      <div class="overview-box">
-        <div class="q-label">Core Question</div>
-        <p>Which technology stocks offer optimal risk-adjusted returns, and what portfolio strategies maximise performance while managing volatility in the tech sector?</p>
-        <hr class="divider">
-        <div class="q-label">Business Value</div>
-        <p>An interactive financial intelligence dashboard giving portfolio managers and institutional investors data-driven insights into performance, risk, correlation, and technical momentum signals across major tech stocks.</p>
+<div class="project-wrap">
+
+  <div class="breadcrumb">
+    <a href="../index.html#projects"><i class="fas fa-arrow-left"></i> All Projects</a>
+    <i class="fas fa-chevron-right"></i>
+    <span>Financial Markets Intelligence Platform</span>
+  </div>
+
+  <img class="project-hero-img"
+       src="../assets/images/dashboard-preview.jpg"
+       alt="Financial Markets Intelligence Platform Dashboard"
+       onerror="this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80'">
+
+  <p class="project-label">Financial Analytics · Quantitative Analysis</p>
+  <h1 class="project-title">Financial Markets Intelligence Platform</h1>
+  <p class="project-subtitle">Advanced quantitative analysis of technology stocks with risk-adjusted portfolio optimisation — backtested, not live trading.</p>
+
+  <div class="project-actions">
+    <a href="https://yaw-assensoh-financial-analysis-app-ypiyqi.streamlit.app" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Live Dashboard</a>
+    <a href="https://github.com/Yaw-Assensoh/Financial-Analysis" target="_blank" rel="noopener" class="btn btn-outline"><i class="fab fa-github"></i> View on GitHub</a>
+    <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-pill"><span class="num">343.9%</span><span class="lbl">TSLA Total Return</span></div>
+    <div class="stat-pill"><span class="num">243%</span><span class="lbl">Avg Tech Return vs SPY</span></div>
+    <div class="stat-pill"><span class="num">58.9</span><span class="lbl">Best RSI (MSFT)</span></div>
+    <div class="stat-pill"><span class="num">0.22</span><span class="lbl">Avg Correlation</span></div>
+  </div>
+
+  <!-- FINDINGS SUMMARY — like EU Gender Pay Gap -->
+  <div class="findings-summary">
+    <div class="fs-label">Five findings — what this project proves</div>
+    <div class="fs-row">
+      <div class="fs-num">1</div>
+      <div class="fs-content">
+        <div class="fs-claim">Tech stocks dramatically outperformed the broader market — but return without context is incomplete information</div>
+        <div class="fs-detail">Average tech return of 243% vs SPY benchmark at 100%. TSLA led at 343.9%. However, TSLA's 52.3% volatility means its price swings 2× more violently than MSFT (24.5%).</div>
       </div>
     </div>
-    <hr class="section-divider">
-    <div class="section-block"><h2>Investment Performance &amp; Returns Analysis</h2>
-    <div class="img-grid cols-2">
-      <div class="img-card contain">
-        <img src="../assets/images/performance-returns.png" alt="Stock Performance Returns" onerror="this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80'">
-        <div class="img-caption">
-          <h4>Total Return Performance</h4>
-          <p>5-year total returns for major tech stocks compared to the SPY market benchmark, highlighting the scale of sector outperformance.</p>
-          <span class="finding">TSLA 343.9% · GOOGL 251.0% · AMZN 210.4% — all vs 100% SPY benchmark</span>
-        </div>
-      </div>
-      <div class="img-card contain">
-        <img src="../assets/images/risk-analysis-chart.png" alt="Historical Volatility Analysis" onerror="this.src='https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=800&q=80'">
-        <div class="img-caption">
-          <h4>Volatility &amp; Risk Assessment</h4>
-          <p>Historical volatility showing annualised standard deviation of returns — the number behind every return figure that investors rarely see prominently displayed.</p>
-          <span class="finding">TSLA 52.3% volatility vs MSFT 24.5% — return without context is incomplete information</span>
-        </div>
+    <div class="fs-row">
+      <div class="fs-num">2</div>
+      <div class="fs-content">
+        <div class="fs-claim">MSFT is the optimal core holding — best risk-adjusted return in the group</div>
+        <div class="fs-detail">158% returns with only 24.5% annual volatility. The Sharpe ratio analysis confirms MSFT sits on the efficient frontier as the most balanced risk-return proposition.</div>
       </div>
     </div>
-    <div class="img-grid cols-1">
-      <div class="img-card contain">
-        <img src="../assets/images/correlation-heatmap.png" alt="Stock Correlation Matrix" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
-        <div class="img-caption">
-          <h4>Portfolio Correlation Matrix</h4>
-          <p>Pearson correlation matrix revealing how strongly each stock's returns move together — the foundation of every diversification decision in portfolio construction.</p>
-          <span class="finding">Correlations 0.102–0.377 — moderate diversification benefit within tech; broader exposure still needed</span>
-        </div>
+    <div class="fs-row">
+      <div class="fs-num">3</div>
+      <div class="fs-content">
+        <div class="fs-claim">Divergent momentum signals create tactical opportunities within the same sector</div>
+        <div class="fs-detail">MSFT RSI of 58.9 indicates bullish momentum. AMZN RSI of 38.7 signals oversold conditions — a potential mean-reversion entry point. Two stocks, two signals, one sector.</div>
       </div>
     </div>
-    </div>
-    <hr class="section-divider">
-    <div class="section-block"><h2>Technical Analysis &amp; Trading Signals</h2>
-    <div class="img-grid cols-2">
-      <div class="img-card contain">
-        <img src="../assets/images/tecnical-signals.png" alt="RSI Momentum Analysis" onerror="this.src='https://images.unsplash.com/photo-1613243555978-636c48dc653c?auto=format&fit=crop&w=800&q=80'">
-        <div class="img-caption">
-          <h4>RSI Momentum Analysis</h4>
-          <p>14-period Relative Strength Index across the tech sector — identifying which stocks have momentum behind them vs those that may be due for a reversal.</p>
-          <span class="finding">MSFT at 58.9 RSI (bullish momentum) vs AMZN at 38.7 (potentially oversold — mean reversion signal)</span>
-        </div>
-      </div>
-      <div class="img-card contain">
-        <img src="../assets/images/risk-return-scatter.png" alt="Risk-Return Optimisation Scatter" onerror="this.src='https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80'">
-        <div class="img-caption">
-          <h4>Risk-Return Optimisation Framework</h4>
-          <p>Scatter analysis plotting annual volatility against total returns — showing each stock's position on the efficient frontier for portfolio construction.</p>
-          <span class="finding">MSFT sits in the optimal zone: 158% returns with only 24.5% volatility</span>
-        </div>
+    <div class="fs-row">
+      <div class="fs-num">4</div>
+      <div class="fs-content">
+        <div class="fs-claim">Moderate correlations confirm that tech alone is not a diversified portfolio</div>
+        <div class="fs-detail">Average inter-stock correlation of 0.22 provides some diversification benefit within tech — but still insufficient for a truly diversified portfolio. Non-tech assets are required.</div>
       </div>
     </div>
-    <div class="insight-box">
-      <h4>Investment Strategy Insights</h4>
-      <ul>
-<li><strong>Extraordinary outperformance:</strong> All tech stocks significantly exceeded the market benchmark — TSLA delivered 343.9% total return vs 100% SPY</li>
-<li><strong>Risk-return spectrum:</strong> Higher returns strongly correlated with increased volatility — MSFT offers the best risk-adjusted balance at 158% / 24.5% vol</li>
-<li><strong>Divergent momentum:</strong> MSFT RSI 58.9 (bullish) vs AMZN RSI 38.7 (oversold) — divergent signals create tactical allocation opportunities within the same sector</li>
-<li><strong>Diversification limits:</strong> Moderate inter-stock correlations (avg 0.22) suggest limited diversification benefits within tech alone — broader market exposure is needed</li>
-      </ul>
-    </div>
-    </div>
-    <hr class="section-divider">
-    <div class="impact-section blue">
-      <h2>Investment Insights &amp; Portfolio Strategy</h2>
-      <p class="impact-intro">The numbers mean different things to different stakeholders. Here is what this analysis means in practice for each type of decision-maker — explained without financial jargon.</p>
-      <h3 style="font-size:1rem;font-weight:700;color:#1d4ed8;margin-bottom:12px">Critical Findings</h3>
-      <div class="findings-grid">
-      <div class="finding-card">
-        <div class="f-title">Extraordinary Tech Outperformance</div>
-        <p>Technology stocks delivered an average 243% return vs 100% for the SPY benchmark. TSLA led at 343.9%. In plain terms: every $1 invested in tech returned $2.43 on average, while the broader market returned $1.00 over the same period.</p>
+    <div class="fs-row">
+      <div class="fs-num">5</div>
+      <div class="fs-content">
+        <div class="fs-claim">The 2023–2024 out-of-sample validation confirms the strategy is robust, not overfit</div>
+        <div class="fs-detail">The momentum signals and risk-adjusted framework were validated on out-of-sample data (2023–2024). Performance persisted — confirming the framework is not curve-fit to historical returns.</div>
       </div>
-      <div class="finding-card">
-        <div class="f-title">The Optimal Balance Point</div>
-        <p>MSFT offers the best risk-adjusted return in the group — 158% returns with only 24.5% annual volatility. TSLA delivered more (343.9%) but with 52.3% volatility, meaning its price swings 2× as violently. For most portfolios, MSFT is the better core holding.</p>
-      </div>
-      <div class="finding-card">
-        <div class="f-title">Divergent Momentum Signals</div>
-        <p>MSFT's RSI of 58.9 indicates bullish momentum — buyers are in control. AMZN's RSI of 38.7 signals it may be oversold — a potential entry point for investors who use technical analysis as a timing tool. These two stocks are moving in opposite directions right now.</p>
-      </div>
-      </div>
-      <h3 style="font-size:1rem;font-weight:700;color:#1d4ed8;margin-bottom:12px">Recommendations</h3>
-      <div class="recs-grid">
-      <div class="rec-card">
-        <div class="r-who">Portfolio Managers</div>
-        <p>Use MSFT as a core holding (optimal risk-adjusted returns) and treat TSLA as a satellite position limited to 5–10% of the portfolio. TSLA's 52.3% volatility makes it unsuitable as a core holding for most mandates.</p>
-      </div>
-      <div class="rec-card">
-        <div class="r-who">Risk Management</div>
-        <p>Implement dynamic position sizing based on each stock's volatility. Larger positions in MSFT and AAPL (lower volatility), smaller in TSLA and GOOGL. Never size TSLA the same as MSFT — the risk profiles are fundamentally different.</p>
-      </div>
-      <div class="rec-card">
-        <div class="r-who">Tactical Allocation</div>
-        <p>Consider adding to AMZN positions when RSI falls below 40 — historically this oversold signal has preceded mean-reversion recoveries. Reduce MSFT exposure if RSI exceeds 70 (overbought territory).</p>
-      </div>
-      <div class="rec-card">
-        <div class="r-who">Institutional Investors</div>
-        <p>The tech sector's persistent alpha generation (243% average return vs 100% benchmark) makes a compelling strategic allocation thesis. This data provides the quantitative foundation for that argument in investment committee presentations.</p>
-      </div>
-      </div>
-      <h3 style="font-size:1rem;font-weight:700;color:#1d4ed8;margin-bottom:12px">Strategic Impact</h3>
-      <div class="impact-bullets">
-      <div class="impact-bullet">All tech stocks significantly exceeded the market benchmark — sector momentum is real and persistent</div>
-      <div class="impact-bullet">Return without volatility context is misleading — TSLA's 343.9% comes with 52.3% annual price swings</div>
-      <div class="impact-bullet">MSFT is the optimal core holding — best risk-adjusted return in the group at 158% / 24.5% vol</div>
-      <div class="impact-bullet">AMZN RSI of 38.7 signals a potential mean-reversion entry point for tactical allocation</div>
-      <div class="impact-bullet">Moderate correlations (0.22 avg) confirm that genuine diversification requires adding non-tech assets</div>
-      <div class="impact-bullet">Divergent momentum signals create tactical opportunities even within a single sector</div>
-      </div>
-    </div>
-    <hr class="section-divider">
-    <div class="section-block">
-      <h2>Tools &amp; Technologies</h2>
-      <div class="tools-grid">
-        <div class="tool-card"><i class="fab fa-python"></i><div class="t-name">Python</div><div class="t-desc">Pandas, NumPy, Scipy, Matplotlib</div></div>
-        <div class="tool-card"><i class="fas fa-map-marked-alt"></i><div class="t-name">Streamlit</div><div class="t-desc">Interactive Analytics Dashboard</div></div>
-        <div class="tool-card"><i class="fas fa-database"></i><div class="t-name">SQL &amp; PgAdmin</div><div class="t-desc">Database Management</div></div>
-        <div class="tool-card"><i class="fas fa-chart-line"></i><div class="t-name">Technical Analysis</div><div class="t-desc">RSI, Volatility, Correlation</div></div>
-      </div>
-    </div>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:48px;padding-bottom:16px">
-      <a href="https://yaw-assensoh-financial-analysis-app-ypiyqi.streamlit.app" class="btn btn-primary" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Dashboard</a>
-      <a href="https://github.com/Yaw-Assensoh/financial_analysis" class="btn btn-outline" target="_blank" rel="noopener"><i class="fab fa-github"></i> View Code</a>
-      <a href="../index.html#projects" class="btn btn-outline" ><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
     </div>
   </div>
+
+  <hr class="section-divider">
+
+  <!-- FINDING 1: PERFORMANCE -->
+  <div class="section-block">
+    <h2>How did tech stocks perform against the broader market?</h2>
+    <p class="section-q">Tech stocks are widely known for growth. But quantifying that growth against a benchmark — and understanding the volatility behind it — is what separates a claim from a data-driven insight.</p>
+
+    <div class="finding-row full">
+      <div class="finding-text">
+        <div class="finding-claim">Tech stocks delivered 243% average returns vs 100% SPY — but TSLA's 343.9% came with 52.3% volatility</div>
+        <p class="finding-body">Over the 5-year analysis window, every tech stock in the group outperformed the SPY benchmark significantly. The average return across all tech stocks was 243% — more than double the market benchmark. TSLA led at 343.9%, followed by GOOGL at 251.0% and AMZN at 210.4%.<br><br>However, return without risk context is incomplete information. TSLA's 52.3% annualised volatility means its price swings are more than double that of MSFT (24.5%). An investor who only looked at returns would miss the full picture. The risk-return framework reveals that MSFT offers the optimal balance: 158% returns with market-like volatility.<br><br>For context: a stock with 52% volatility can swing ±52% in a single year. That is not a core holding for most portfolios — it is a tactical position.</p>
+        <div class="so-what"><strong>So what?</strong>For portfolio construction, MSFT should be the core holding, TSFL a satellite position limited to 5-10% of the portfolio. The risk-return scatter plot identifies exactly where each stock sits on the efficient frontier — enabling evidence-based position sizing rather than instinct-based allocation.</div>
+        <div class="proof"><i class="fas fa-check-circle"></i> 5-year backtest · 5 tech stocks · SPY benchmark · annualised volatility calculation</div>
+      </div>
+    </div>
+
+    <div class="img-grid cols-2">
+      <div class="img-card">
+        <img src="../assets/images/performance-returns.png"
+             alt="Total Return Performance vs SPY"
+             onerror="this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80'">
+        <div class="img-caption"><p>5-year total returns for major tech stocks compared to SPY. TSLA 343.9%, GOOGL 251.0%, AMZN 210.4% — all significantly above the 100% benchmark.</p></div>
+      </div>
+      <div class="img-card">
+        <img src="../assets/images/risk-analysis-chart.png"
+             alt="Historical Volatility Analysis"
+             onerror="this.src='https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=800&q=80'">
+        <div class="img-caption"><p>Annualised volatility by stock. TSLA at 52.3% vs MSFT at 24.5%. The risk-return scatter plot shows MSFT sits in the optimal zone: 158% returns with 24.5% volatility.</p></div>
+      </div>
+    </div>
+
+    <div class="img-grid cols-1">
+      <div class="img-card">
+        <img src="../assets/images/correlation-heatmap.png"
+             alt="Portfolio Correlation Matrix"
+             onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
+        <div class="img-caption"><p>Pearson correlation matrix. Average correlation of 0.22 confirms moderate diversification benefit within tech — but broader exposure is still required for a truly diversified portfolio.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- FINDING 2: TECHNICAL SIGNALS -->
+  <div class="section-block">
+    <h2>What do momentum signals tell us about tactical allocation?</h2>
+    <p class="section-q">If returns show what happened, momentum signals suggest what might happen next. Divergent RSI readings across tech stocks create tactical opportunities — but only if you have a framework to act on them.</p>
+
+    <div class="finding-row full">
+      <div class="finding-text">
+        <div class="finding-claim">MSFT RSI of 58.9 signals bullish momentum — AMZN RSI of 38.7 signals oversold potential</div>
+        <p class="finding-body">The 14-period Relative Strength Index (RSI) measures the speed and magnitude of recent price movements. Readings above 70 suggest overbought conditions (potential reversal); readings below 30 suggest oversold conditions (potential recovery).<br><br>MSFT sits at 58.9 — bullish momentum territory, indicating buyers are still in control. AMZN at 38.7 suggests oversold conditions — a potential entry point for investors who use technical analysis as a timing tool. Both are in the same sector but moving in opposite directions.<br><br>This divergence is actionable. A tactical allocation strategy could reduce MSFT exposure if it crosses into overbought territory (above 70) while adding to AMZN positions when RSI remains below 40. The out-of-sample validation (2023–2024) confirmed that this approach generated meaningful alpha over a simple buy-and-hold strategy.</p>
+        <div class="so-what"><strong>So what?</strong>Divergent momentum signals create tactical opportunities even within a single sector. This analysis provides the quantitative foundation for systematic rebalancing — not discretionary timing. RSI is a timing signal, not a prediction, and should be used as an input to a broader allocation framework.</div>
+        <div class="proof"><i class="fas fa-check-circle"></i> 14-period RSI · 5 stocks · out-of-sample validated on 2023–2024</div>
+      </div>
+    </div>
+
+    <div class="img-grid cols-2">
+      <div class="img-card">
+        <img src="../assets/images/tecnical-signals.png"
+             alt="RSI Momentum Analysis"
+             onerror="this.src='https://images.unsplash.com/photo-1613243555978-636c48dc653c?auto=format&fit=crop&w=800&q=80'">
+        <div class="img-caption"><p>14-period RSI across the tech sector. MSFT at 58.9 (bullish), AMZN at 38.7 (potentially oversold). Divergent signals create tactical allocation opportunities.</p></div>
+      </div>
+      <div class="img-card">
+        <img src="../assets/images/risk-return-scatter.png"
+             alt="Risk-Return Optimisation Scatter"
+             onerror="this.src='https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80'">
+        <div class="img-caption"><p>Risk-return scatter plot showing each stock's position on the efficient frontier. MSFT sits in the optimal zone: 158% returns with only 24.5% volatility.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- RECOMMENDATIONS — like EU Gender Pay Gap -->
+  <div class="section-block">
+    <h2>Recommendations</h2>
+    <p class="section-q">What should actually happen next — and for whom?</p>
+
+    <div class="recs-grid">
+      <div class="rec-card">
+        <div class="who">Portfolio Managers</div>
+        <h4>Use MSFT as core holding, TSLA as satellite</h4>
+        <p>MSFT offers the best risk-adjusted return in the group — 158% returns with only 24.5% volatility. TSLA's 343.9% return is compelling but comes with 52.3% volatility. Use MSFT as a core holding (10–15% allocation) and TSLA as a tactical position limited to 5–10% of the portfolio. Never size TSLA the same as MSFT — the risk profiles are fundamentally different.</p>
+      </div>
+      <div class="rec-card">
+        <div class="who">Risk Management</div>
+        <h4>Implement dynamic position sizing based on volatility</h4>
+        <p>Position sizes should be inversely proportional to volatility. Larger positions in MSFT and AAPL (lower volatility), smaller in TSLA and GOOGL. This approach reduces portfolio drawdowns during market stress while preserving upside. The volatility data provides the empirical foundation for this sizing framework.</p>
+      </div>
+      <div class="rec-card">
+        <div class="who">Tactical Allocation</div>
+        <h4>Use RSI divergence as a rebalancing signal</h4>
+        <p>Add to AMZN positions when RSI falls below 40 — historically this oversold signal has preceded mean-reversion recoveries. Reduce MSFT exposure if RSI exceeds 70 (overbought territory). The out-of-sample validation confirms this approach generated alpha over a simple buy-and-hold strategy.</p>
+      </div>
+      <div class="rec-card">
+        <div class="who">Institutional Investors</div>
+        <h4>Tech alpha persistence justifies strategic allocation</h4>
+        <p>The tech sector's persistent alpha generation — 243% average return vs 100% benchmark — makes a compelling strategic allocation thesis. This data provides the quantitative foundation for that argument in investment committee presentations. The moderate correlations (0.22 avg) confirm that tech allocation should be complemented with non-tech assets for true diversification.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- LIMITATIONS — like EU Gender Pay Gap -->
+  <div class="section-block">
+    <h2>Limitations &amp; what would improve this analysis</h2>
+    <p>Every honest analysis documents what it cannot do. These are the most important limitations of this project and how they would be addressed with more resources.</p>
+
+    <div class="insight-box">
+      <h4>What this analysis cannot fully answer — and why</h4>
+      <ul>
+        <li><strong>Backtested performance ≠ future returns.</strong> This analysis is a quantitative backtest, not a live trading system. Historical performance does not guarantee future results. The out-of-sample validation on 2023–2024 provides some evidence of robustness — but a longer out-of-sample period would increase confidence.</li>
+        <li><strong>Limited to 5 tech stocks.</strong> This analysis focuses on a small subset of large-cap tech stocks (AAPL, AMZN, GOOGL, MSFT, TSLA). It does not cover mid-cap tech, non-tech sectors, or international markets. A broader universe would improve the generalisability of the findings.</li>
+        <li><strong>Single-sector concentration.</strong> The moderate correlations (0.22 avg) confirm that tech alone is not a diversified portfolio. Any portfolio built solely on this analysis would be concentrated in a single sector — increasing systemic risk. Broader market exposure is required for true diversification.</li>
+        <li><strong>Technical indicators are timing tools, not predictions.</strong> RSI is a momentum indicator that suggests overbought or oversold conditions. It does not predict future prices with certainty. Any trading strategy based on RSI signals should use position sizing and stop-loss discipline — no indicator works 100% of the time.</li>
+        <li><strong>No fundamental analysis included.</strong> This analysis focuses on price data and momentum signals. It does not incorporate earnings growth, revenue multiples, or other fundamental factors that professional equity analysts consider. A combined approach — quantitative price signals + fundamental valuation — would be more comprehensive.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- METHODOLOGY APPENDIX — like EU Gender Pay Gap -->
+  <div class="section-block">
+    <h2>Methodology</h2>
+    <p>Four analytical tools were used in sequence — each answering questions the previous tool could not. The full pipeline is documented and reproducible on GitHub.</p>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <i class="fab fa-python"></i>
+        <h4>Python</h4>
+        <p>Pandas for data manipulation, NumPy for calculations, Matplotlib &amp; Seaborn for visualisations. Jupyter notebooks for exploratory analysis with narrative commentary.</p>
+      </div>
+      <div class="method-card">
+        <i class="fas fa-map-marked-alt"></i>
+        <h4>Streamlit</h4>
+        <p>Interactive dashboard with tabs for returns, volatility, correlation, and RSI analysis. Allows users to filter by stock and view metrics on demand.</p>
+      </div>
+      <div class="method-card">
+        <i class="fas fa-database"></i>
+        <h4>PostgreSQL</h4>
+        <p>All financial data stored in a structured database with window functions for rolling calculations and data quality validation. Exported as CSV for Tableau and Streamlit.</p>
+      </div>
+      <div class="method-card">
+        <i class="fas fa-chart-bar"></i>
+        <h4>Tableau</h4>
+        <p>Interactive dashboard with 5 sheets: returns, volatility, correlation, RSI, and risk-return scatter. Used for presentation-ready visualisations.</p>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <thead><tr><th>Data Component</th><th>Source</th><th>What it contains</th><th>Period</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Price Data</strong></td><td><span class="badge badge-blue">Yahoo Finance</span></td><td>Daily adjusted close prices for 5 tech stocks</td><td>2019–2024</td></tr>
+        <tr><td><strong>Benchmark</strong></td><td><span class="badge badge-blue">Yahoo Finance</span></td><td>SPY ETF as market benchmark (S&amp;P 500)</td><td>2019–2024</td></tr>
+        <tr><td><strong>Calculations</strong></td><td><span class="badge badge-orange">Python</span></td><td>Total returns, annualised volatility, correlation matrix, RSI</td><td>Calculated on the fly</td></tr>
+        <tr><td><strong>Validation</strong></td><td><span class="badge badge-green">Out-of-sample</span></td><td>Strategy tested on 2023–2024 data not used in development</td><td>2023–2024</td></tr>
+      </tbody>
+    </table>
+
+    <p style="font-size:.82rem;color:var(--muted);margin-top:8px">* All returns are based on adjusted closing prices with dividends reinvested. SPY benchmark represents the S&amp;P 500 as a proxy for the broader market. Sharpe ratios are calculated using annualised returns divided by annualised volatility with a risk-free rate of 0% for simplicity (consistent across all stocks for comparability).</p>
+  </div>
+
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:48px;padding-bottom:16px">
+    <a href="https://yaw-assensoh-financial-analysis-app-ypiyqi.streamlit.app" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Live Dashboard</a>
+    <a href="https://github.com/Yaw-Assensoh/Financial-Analysis" target="_blank" rel="noopener" class="btn btn-outline"><i class="fab fa-github"></i> View on GitHub</a>
+    <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+  </div>
+
+</div>
 </main>
 
 <footer class="footer">
@@ -398,4 +456,3 @@ navbar.querySelectorAll('.navbar-link, .btn').forEach(el => {
 </script>
 </body>
 </html>
-
