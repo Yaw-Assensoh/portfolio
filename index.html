@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yaw Assensoh Opoku — Data Analyst · Remote / Europe</title>
-  <meta name="description" content="Data Analyst bridging operational expertise with advanced analytics. Former logistics entrepreneur, fluent in 5 languages, 10 case studies with live dashboards. Open to remote or relocation to Italy.">
+  <meta name="description" content="Data Analyst bridging operational expertise with advanced analytics. Former logistics entrepreneur, fluent in 5 languages, 3 featured case studies with live dashboards. Open to remote or relocation to Italy.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
@@ -114,24 +114,19 @@
     .spec-icon{width:28px;height:28px;background:var(--blue-light);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--blue);font-size:.72rem;margin-top:2px}
     .specialty-item strong{color:var(--dark);font-weight:600}
 
-    /* FEATURED PROJECTS */
+    /* FEATURED PROJECTS — 3 cards */
     .projects{background:var(--bg)}
     .projects-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:56px;gap:24px}
     .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
     .project-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s;display:flex;flex-direction:column}
     .project-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:#c7d9f9}
-    .card-wide{grid-column:span 3;display:grid !important;grid-template-columns:1fr 1.2fr !important}
-    .card-wide .card-img{height:auto;min-height:300px}
-    .card-img{overflow:hidden}
-    .project-card:not(.card-wide) .card-img{height:200px}
+    .project-card .card-img{height:200px;overflow:hidden}
     .card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
     .project-card:hover .card-img img{transform:scale(1.04)}
     .card-body{padding:24px;display:flex;flex-direction:column;flex:1}
-    .card-wide .card-body{padding:36px}
     .card-badge{display:inline-block;font-size:.7rem;font-weight:600;padding:3px 10px;border-radius:99px;background:var(--blue-light);color:var(--blue);border:1px solid #c7d9f9;margin-bottom:12px;align-self:flex-start}
     .card-badge.warning{background:#FEF3C7;color:#92400E;border-color:#FCD34D}
     .card-title{font-family:var(--font-head);font-size:1.15rem;color:var(--dark);line-height:1.3;margin-bottom:10px}
-    .card-wide .card-title{font-size:1.55rem}
     .card-desc{font-size:.88rem;color:var(--muted);line-height:1.65;margin-bottom:16px;flex:1}
     .card-metrics{background:#F0F7FF;border-radius:var(--radius-sm);padding:12px 14px;margin-bottom:16px;border-left:3px solid var(--blue)}
     .metric-row{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--mid);margin-bottom:5px}
@@ -144,38 +139,30 @@
     .card-link.primary{background:var(--blue);color:#fff;border-color:var(--blue)}
     .card-link.primary:hover{background:#1550c0;box-shadow:0 4px 12px rgba(27,95,217,.3)}
 
-    /* ALL PROJECTS */
-    .portfolio-section{padding:80px 0;background:var(--white)}
-    .portfolio-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
-
-    .pcard{
+    /* MORE WORK — compact, clean 4-col grid with smaller cards */
+    .more-work{padding:64px 0;background:var(--white)}
+    .more-work .section-text{margin-bottom:40px}
+    .mw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .mw-card{
       border:1px solid var(--border);border-radius:var(--radius-md);
-      overflow:hidden;background:var(--white);
-      transition:transform .3s,box-shadow .3s,border-color .3s;
-      position:relative;display:flex;flex-direction:column;
+      padding:16px 18px 18px;background:var(--white);
+      transition:border-color .2s,box-shadow .2s,transform .2s;
+      display:flex;flex-direction:column;
     }
-    .pcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:#c7d9f9}
-    .pcard:hover .pcard-img img{transform:scale(1.05)}
-    .pcard-img{height:150px;overflow:hidden}
-    .pcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-    .pcard-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
-    .pcard-title-link{
-      font-family:var(--font-head);font-size:1rem;color:var(--dark);
-      line-height:1.35;margin-bottom:6px;display:block;
-    }
-    .pcard-title-link::before{
-      content:'';position:absolute;inset:0;z-index:0;
-    }
-    .pcard-tools{font-size:.75rem;color:var(--muted);margin-bottom:14px}
-    .pcard-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;position:relative;z-index:1}
-    .pcard-btn{
-      display:inline-flex;align-items:center;gap:5px;
-      font-size:.75rem;font-weight:600;padding:5px 11px;
+    .mw-card:hover{transform:translateY(-2px);border-color:#c7d9f9;box-shadow:var(--shadow-sm)}
+    .mw-card .mw-title{font-family:var(--font-head);font-size:.95rem;color:var(--dark);margin-bottom:4px;display:block}
+    .mw-card .mw-tools{font-size:.7rem;color:var(--muted);margin-bottom:10px}
+    .mw-card .mw-actions{display:flex;gap:4px;flex-wrap:wrap;margin-top:auto}
+    .mw-btn{
+      display:inline-flex;align-items:center;gap:4px;
+      font-size:.68rem;font-weight:600;padding:3px 8px;
       border-radius:var(--radius-sm);border:1.5px solid var(--border);
-      color:var(--mid);background:var(--white);transition:all .2s;cursor:pointer;
+      color:var(--mid);background:var(--white);transition:all .2s;
     }
-    .pcard-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light)}
-    .pcard-btn i{font-size:.7rem}
+    .mw-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light)}
+    .mw-btn i{font-size:.6rem}
+    .mw-btn.primary{background:var(--blue);color:#fff;border-color:var(--blue)}
+    .mw-btn.primary:hover{background:#1550c0}
 
     /* SKILLS */
     .skills{background:var(--bg)}
@@ -235,8 +222,7 @@
     /* RESPONSIVE */
     @media(max-width:1024px){
       .projects-grid{grid-template-columns:1fr 1fr}
-      .card-wide{grid-column:span 2 !important}
-      .portfolio-grid{grid-template-columns:1fr 1fr}
+      .mw-grid{grid-template-columns:1fr 1fr}
     }
     @media(max-width:768px){
       .section{padding:64px 0}
@@ -246,9 +232,7 @@
       .exp-badge{right:0;top:16px}
       .about .container{grid-template-columns:1fr;gap:40px}
       .projects-grid{grid-template-columns:1fr}
-      .card-wide{grid-column:span 1 !important;display:flex !important;flex-direction:column !important;grid-template-columns:unset !important}
-      .card-wide .card-img{height:220px !important;min-height:unset}
-      .portfolio-grid{grid-template-columns:1fr 1fr}
+      .mw-grid{grid-template-columns:1fr 1fr}
       .skills-layout{grid-template-columns:1fr}
       .contact-layout{grid-template-columns:1fr;gap:40px}
       .form-row{grid-template-columns:1fr}
@@ -262,7 +246,7 @@
       .nav-toggle-btn{display:block}
     }
     @media(max-width:480px){
-      .portfolio-grid{grid-template-columns:1fr}
+      .mw-grid{grid-template-columns:1fr}
       .hero-stats{gap:16px}
     }
   </style>
@@ -319,7 +303,7 @@
         <a href="#about" class="btn btn-ghost">My Story</a>
       </div>
       <div class="hero-stats">
-        <div><span class="hero-stat-num">10</span><span class="hero-stat-label">Live case studies</span></div>
+        <div><span class="hero-stat-num">3</span><span class="hero-stat-label">Featured case studies</span></div>
         <div><span class="hero-stat-num">5</span><span class="hero-stat-label">Languages fluent</span></div>
         <div><span class="hero-stat-num">10+</span><span class="hero-stat-label">Years in operations</span></div>
         <div><span class="hero-stat-num">+10%</span><span class="hero-stat-label">Revenue uplift delivered</span></div>
@@ -416,125 +400,78 @@
   </div>
 </section>
 
-<!-- FEATURED PROJECTS -->
+<!-- FEATURED PROJECTS — 3 STRONGEST -->
 <section class="section projects" id="projects">
   <div class="container">
     <div class="projects-header">
       <div>
-        <p class="section-label">Case Studies</p>
-        <h2 class="section-title">Data-driven business impact</h2>
-        <p class="section-text">Selected projects with live dashboards, GitHub repos, and documented outcomes.</p>
+        <p class="section-label">Featured Case Studies</p>
+        <h2 class="section-title">Three projects that show my range</h2>
+        <p class="section-text">Each one solves a different business problem using a different stack — real estate forecasting, labour economics, and financial backtesting.</p>
       </div>
     </div>
     <div class="projects-grid">
 
-      <!-- HOUSING -->
-      <div class="project-card card-wide fade-up">
+      <!-- 1. HOUSING — forecasting -->
+      <div class="project-card fade-up">
         <div class="card-img">
           <img src="./assets/images/housing-graphic.png" alt="US Housing Affordability"
-               onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80'">
+               onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80'">
         </div>
         <div class="card-body">
-          <span class="card-badge">Real Estate &amp; Economic Analytics</span>
-          <h3 class="card-title">US Housing Affordability Analysis (2015–2024)</h3>
-          <p class="card-desc">3-phase project examining the affordability crisis across 5 major US cities. Combined Excel, SQL, and Python with K-Means clustering and a 36-month SARIMA forecast — surfaced in an interactive Streamlit dashboard.</p>
+          <span class="card-badge">Real Estate · Forecasting</span>
+          <h3 class="card-title">US Housing Affordability</h3>
+          <p class="card-desc">3-phase project: Excel + SQL + Python. K-Means clustering, 36-month SARIMA forecast, interactive Streamlit dashboard.</p>
           <div class="card-metrics">
-            <div class="metric-row"><i class="fas fa-chart-line"></i><span><strong>2.22 LA affordability index</strong> — requires $200K+ annual income for median home</span></div>
-            <div class="metric-row"><i class="fas fa-layer-group"></i><span><strong>3 market clusters</strong> via K-Means, validated by SQL risk classification</span></div>
-            <div class="metric-row"><i class="fas fa-clock"></i><span><strong>36-month SARIMA forecast</strong> with 95% confidence intervals</span></div>
+            <div class="metric-row"><i class="fas fa-chart-line"></i><span><strong>2.22 LA index</strong> — $200K+ income needed</span></div>
+            <div class="metric-row"><i class="fas fa-clock"></i><span><strong>36-month forecast</strong> with 95% CI</span></div>
           </div>
           <div class="card-links">
-            <a href="projects/housing-analysis.html" class="card-link primary"><i class="fas fa-book-open"></i> Full Case Study</a>
-            <a href="https://yaw-assensoh-housing-affordability-pr-dashboarddashboard-0wtwto.streamlit.app" target="_blank" rel="noopener" class="card-link"><i class="fas fa-external-link-alt"></i> Live Dashboard</a>
+            <a href="projects/housing-analysis.html" class="card-link primary"><i class="fas fa-book-open"></i> Case Study</a>
+            <a href="https://yaw-assensoh-housing-affordability-pr-dashboarddashboard-0wtwto.streamlit.app" target="_blank" rel="noopener" class="card-link"><i class="fas fa-external-link-alt"></i> Dashboard</a>
             <a href="https://github.com/Yaw-Assensoh/Housing-Affordability-Analysis" target="_blank" rel="noopener" class="card-link"><i class="fab fa-github"></i> GitHub</a>
           </div>
         </div>
       </div>
 
-      <!-- CITI BIKE -->
-      <div class="project-card fade-up">
-        <div class="card-img">
-          <img src="./assets/images/people-bikes.jpg" alt="NYC Citi Bike"
-               onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80'">
-        </div>
-        <div class="card-body">
-          <span class="card-badge">Supply Chain &amp; Operations</span>
-          <h3 class="card-title">NYC Citi Bike Supply Optimisation</h3>
-          <p class="card-desc">Demand forecasting model with 0.82 temperature-usage correlation to optimise distribution across 1,500+ stations, reducing costs while improving availability.</p>
-          <div class="card-metrics">
-            <div class="metric-row"><i class="fas fa-dollar-sign"></i><span><strong>20–25% revenue increase</strong> via dynamic pricing strategy</span></div>
-            <div class="metric-row"><i class="fas fa-calendar-alt"></i><span><strong>4-week advance forecasting</strong> for proactive planning</span></div>
-          </div>
-          <div class="card-links">
-            <a href="projects/nyc-citibike-analysis.html" class="card-link primary"><i class="fas fa-book-open"></i> Case Study</a>
-            <a href="https://yaw-assensoh-urban-mobility-insights-app-ujtkq3.streamlit.app" target="_blank" rel="noopener" class="card-link"><i class="fas fa-external-link-alt"></i> Dashboard</a>
-            <a href="https://github.com/Yaw-Assensoh/urban-mobility-insights" target="_blank" rel="noopener" class="card-link"><i class="fab fa-github"></i> GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- INSTACART -->
-      <div class="project-card fade-up">
-        <div class="card-img">
-          <img src="./assets/images/instacart-image.jpg" alt="Instacart"
-               onerror="this.src='https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80'">
-        </div>
-        <div class="card-body">
-          <span class="card-badge">E-commerce &amp; Retail</span>
-          <h3 class="card-title">Instacart Market Basket Analysis</h3>
-          <p class="card-desc">Customer segmentation and product association analysis identifying 12 high-probability product pairs for targeted marketing and strategic bundling.</p>
-          <div class="card-metrics">
-            <div class="metric-row"><i class="fas fa-shopping-cart"></i><span><strong>+15% AOV</strong> through product bundling strategy</span></div>
-            <div class="metric-row"><i class="fas fa-bullseye"></i><span><strong>65%+ co-purchase rates</strong> on identified pairs</span></div>
-          </div>
-          <div class="card-links">
-            <a href="projects/instacart-analysis.html" class="card-link primary"><i class="fas fa-book-open"></i> Case Study</a>
-            <a href="https://github.com/Yaw-Assensoh/Instacart-Analysis" target="_blank" rel="noopener" class="card-link"><i class="fab fa-github"></i> GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- EU GENDER PAY GAP — FIXED: path to projects/ -->
+      <!-- 2. EU GENDER PAY GAP — policy + statistics -->
       <div class="project-card fade-up">
         <div class="card-img">
           <img src="./assets/images/the-gender-pay-gap.jpg" alt="EU Gender Pay Gap"
                onerror="this.src='https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=600&q=80'">
         </div>
         <div class="card-body">
-          <span class="card-badge">Labour Economics &amp; Policy Analytics</span>
-          <h3 class="card-title">EU Gender Pay Gap Analysis (2002–2024)</h3>
-          <p class="card-desc">22-year Eurostat analysis across 27 EU countries. 5 statistically proven findings on sector, age, and regional drivers — with an interactive Tableau dashboard and policy recommendations.</p>
+          <span class="card-badge">Labour Economics · Statistics</span>
+          <h3 class="card-title">EU Gender Pay Gap (2002–2024)</h3>
+          <p class="card-desc">22-year Eurostat analysis across 27 countries. 5 statistically proven findings with regression, t-tests, and Tableau dashboard.</p>
           <div class="card-metrics">
-            <div class="metric-row"><i class="fas fa-chart-line"></i><span><strong>10.5%</strong> EU average gap · <strong>24.1%</strong> in Finance sector</span></div>
-            <div class="metric-row"><i class="fas fa-baby"></i><span><strong>4.6% → 13.9%</strong> gap triples between Under 25 and 35–44</span></div>
-            <div class="metric-row"><i class="fas fa-flask"></i><span><strong>4 statistical tests</strong> · regression + t-tests + ANOVA</span></div>
+            <div class="metric-row"><i class="fas fa-chart-line"></i><span><strong>10.5%</strong> EU average · <strong>24.1%</strong> in Finance</span></div>
+            <div class="metric-row"><i class="fas fa-flask"></i><span><strong>4 statistical tests</strong> · p &lt; 0.05</span></div>
           </div>
           <div class="card-links">
-            <!-- FIXED: path is projects/eu-gender-pay-gap.html -->
-            <a href="projects/eu-gender-pay-gap.html" class="card-link primary"><i class="fas fa-book-open"></i> Full Case Study</a>
-            <!-- FIXED: replaced YOUR_TABLEAU_LINK_HERE with your Tableau Public profile -->
+            <a href="projects/eu-gender-pay-gap.html" class="card-link primary"><i class="fas fa-book-open"></i> Case Study</a>
             <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku" target="_blank" rel="noopener" class="card-link"><i class="fas fa-chart-bar"></i> Tableau</a>
             <a href="https://github.com/Yaw-Assensoh/Eu-gender-pay-gap-analysis" target="_blank" rel="noopener" class="card-link"><i class="fab fa-github"></i> GitHub</a>
           </div>
         </div>
       </div>
 
-      <!-- FINANCE — FIXED: removed placeholder metrics -->
+      <!-- 3. FINANCIAL MARKETS — backtesting -->
       <div class="project-card fade-up">
         <div class="card-img">
           <img src="./assets/images/dashboard-preview.jpg" alt="Financial Markets"
                onerror="this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&q=80'">
         </div>
         <div class="card-body">
-          <span class="card-badge">Financial Analytics</span>
+          <span class="card-badge">Financial Analytics · Backtesting</span>
           <span class="card-badge warning" style="margin-top:-4px;margin-bottom:8px;">
-            <i class="fas fa-exclamation-triangle"></i> Backtested — not live trading
+            <i class="fas fa-exclamation-triangle"></i> Backtested — not live
           </span>
-          <h3 class="card-title">Financial Markets Intelligence Platform</h3>
-          <p class="card-desc">Quantitative backtest of a tech-stock momentum strategy against a risk-adjusted framework — built to test whether signal-based allocation could beat a passive SPY benchmark on a risk-adjusted basis.</p>
+          <h3 class="card-title">Financial Markets Platform</h3>
+          <p class="card-desc">Quantitative backtest of tech-stock momentum strategy against SPY benchmark on a risk-adjusted basis.</p>
           <div class="card-metrics">
-            <div class="metric-row"><i class="fas fa-rocket"></i><span><strong>+243% cumulative return</strong> vs. SPY benchmark over the backtest window (2016–2024)</span></div>
-            <div class="metric-row"><i class="fas fa-chart-bar"></i><span><strong>58.9 RSI</strong> momentum signals used for tactical allocation, validated out-of-sample on 2023–2024</span></div>
+            <div class="metric-row"><i class="fas fa-rocket"></i><span><strong>+243% return</strong> vs. SPY (2016–2024)</span></div>
+            <div class="metric-row"><i class="fas fa-chart-bar"></i><span><strong>58.9 RSI</strong> momentum signals</span></div>
           </div>
           <div class="card-links">
             <a href="projects/financial-analysis.html" class="card-link primary"><i class="fas fa-book-open"></i> Case Study</a>
@@ -548,93 +485,79 @@
   </div>
 </section>
 
-<!-- ALL PROJECTS -->
-<section class="portfolio-section" id="portfolio">
+<!-- MORE WORK — compact grid -->
+<section class="more-work" id="more-work">
   <div class="container">
-    <p class="section-label">All Projects</p>
-    <h2 class="section-title">More analysis work</h2>
-    <div class="portfolio-grid">
+    <p class="section-label">Additional Projects</p>
+    <h2 class="section-title">Other analysis work</h2>
+    <p class="section-text">Seven more projects — shorter case studies, full repos, live dashboards where available.</p>
+    <div class="mw-grid">
 
-      <!-- MIGRATION -->
-      <div class="pcard fade-up">
-        <div class="pcard-img">
-          <img src="./assets/images/migration-view.png" alt="Global Migration"
-               onerror="this.src='https://images.unsplash.com/photo-1527689361190-bcf06e6c8b6d?auto=format&fit=crop&w=400&q=80'">
-        </div>
-        <div class="pcard-body">
-          <span class="card-badge">Forecasting</span>
-          <a href="projects/migration-analysis.html" class="pcard-title-link">Global Migration Analysis</a>
-          <p class="pcard-tools">Python · Tableau · ARIMA</p>
-          <div class="pcard-actions">
-            <a href="https://yaw-assensoh-global-migration-analysis-project-app-tbxmqx.streamlit.app" target="_blank" rel="noopener" class="pcard-btn"><i class="fas fa-external-link-alt"></i> Dashboard</a>
-            <a href="https://github.com/Yaw-Assensoh/Global-Migration-Analysis-Project" target="_blank" rel="noopener" class="pcard-btn"><i class="fab fa-github"></i> GitHub</a>
-          </div>
+      <div class="mw-card fade-up">
+        <span class="card-badge" style="font-size:.6rem;padding:2px 8px;margin-bottom:6px;">Supply Chain</span>
+        <a href="projects/nyc-citibike-analysis.html" class="mw-title">NYC Citi Bike Optimisation</a>
+        <div class="mw-tools">Python · Streamlit · Forecasting</div>
+        <div class="mw-actions">
+          <a href="https://yaw-assensoh-urban-mobility-insights-app-ujtkq3.streamlit.app" target="_blank" rel="noopener" class="mw-btn"><i class="fas fa-external-link-alt"></i> Dashboard</a>
+          <a href="https://github.com/Yaw-Assensoh/urban-mobility-insights" target="_blank" rel="noopener" class="mw-btn"><i class="fab fa-github"></i> Code</a>
         </div>
       </div>
 
-      <!-- ROCKBUSTER -->
-      <div class="pcard fade-up">
-        <div class="pcard-img">
-          <img src="./assets/images/Data-Analytics.jpg" alt="RockBuster"
-               onerror="this.src='https://images.unsplash.com/photo-1534308143439-3820b8e20fca?auto=format&fit=crop&w=400&q=80'">
-        </div>
-        <div class="pcard-body">
-          <span class="card-badge">Business Intelligence</span>
-          <a href="projects/rockbuster-insights.html" class="pcard-title-link">RockBuster Insights</a>
-          <p class="pcard-tools">PostgreSQL · Tableau</p>
-          <div class="pcard-actions">
-            <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/ROCKBUSTERPROJECT/Story1" target="_blank" rel="noopener" class="pcard-btn"><i class="fas fa-chart-bar"></i> Tableau</a>
-            <a href="https://github.com/Yaw-Assensoh/RockBuster-Insights" target="_blank" rel="noopener" class="pcard-btn"><i class="fab fa-github"></i> GitHub</a>
-          </div>
+      <div class="mw-card fade-up">
+        <span class="card-badge" style="font-size:.6rem;padding:2px 8px;margin-bottom:6px;">E-commerce</span>
+        <a href="projects/instacart-analysis.html" class="mw-title">Instacart Basket Analysis</a>
+        <div class="mw-tools">Python · Segmentation · SQL</div>
+        <div class="mw-actions">
+          <a href="https://github.com/Yaw-Assensoh/Instacart-Analysis" target="_blank" rel="noopener" class="mw-btn"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>
 
-      <!-- INFLUENZA — moved from featured to all projects -->
-      <div class="pcard fade-up">
-        <div class="pcard-img">
-          <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=400&q=80" alt="Influenza Forecast">
-        </div>
-        <div class="pcard-body">
-          <span class="card-badge">Healthcare Analytics</span>
-          <a href="projects/influenza-forecast.html" class="pcard-title-link">Influenza Staffing Forecast</a>
-          <p class="pcard-tools">Python · Tableau · ARIMA</p>
-          <div class="pcard-actions">
-            <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/Book1_17436918254930/Story1" target="_blank" rel="noopener" class="pcard-btn"><i class="fas fa-chart-bar"></i> Tableau</a>
-            <a href="https://github.com/Yaw-Assensoh" target="_blank" rel="noopener" class="pcard-btn"><i class="fab fa-github"></i> GitHub</a>
-          </div>
+      <div class="mw-card fade-up">
+        <span class="card-badge" style="font-size:.6rem;padding:2px 8px;margin-bottom:6px;">BI</span>
+        <a href="projects/rockbuster-insights.html" class="mw-title">RockBuster Insights</a>
+        <div class="mw-tools">PostgreSQL · Tableau</div>
+        <div class="mw-actions">
+          <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/ROCKBUSTERPROJECT/Story1" target="_blank" rel="noopener" class="mw-btn"><i class="fas fa-chart-bar"></i> Tableau</a>
+          <a href="https://github.com/Yaw-Assensoh/RockBuster-Insights" target="_blank" rel="noopener" class="mw-btn"><i class="fab fa-github"></i> Code</a>
         </div>
       </div>
 
-      <!-- GEOPOLITICAL -->
-      <div class="pcard fade-up">
-        <div class="pcard-img">
-          <img src="./assets/images/historical-data.jpg" alt="Geopolitical"
-               onerror="this.src='https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=400&q=80'">
-        </div>
-        <div class="pcard-body">
-          <span class="card-badge">Network Science</span>
-          <a href="projects/20th-century-events.html" class="pcard-title-link">20th Century Geopolitical Analysis</a>
-          <p class="pcard-tools">Python · NetworkX · NLP</p>
-          <div class="pcard-actions">
-            <a href="https://github.com/Yaw-Assensoh/20th_Century" target="_blank" rel="noopener" class="pcard-btn"><i class="fab fa-github"></i> GitHub</a>
-          </div>
+      <div class="mw-card fade-up">
+        <span class="card-badge" style="font-size:.6rem;padding:2px 8px;margin-bottom:6px;">Healthcare</span>
+        <a href="projects/influenza-forecast.html" class="mw-title">Influenza Staffing Forecast</a>
+        <div class="mw-tools">Python · Tableau · ARIMA</div>
+        <div class="mw-actions">
+          <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/Book1_17436918254930/Story1" target="_blank" rel="noopener" class="mw-btn"><i class="fas fa-chart-bar"></i> Tableau</a>
+          <a href="https://github.com/Yaw-Assensoh" target="_blank" rel="noopener" class="mw-btn"><i class="fab fa-github"></i> Code</a>
         </div>
       </div>
 
-      <!-- GLOBAL DEVELOPMENT -->
-      <div class="pcard fade-up">
-        <div class="pcard-img">
-          <img src="./assets/images/analysis-3.jpg" alt="Global Development"
-               onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80'">
+      <div class="mw-card fade-up">
+        <span class="card-badge" style="font-size:.6rem;padding:2px 8px;margin-bottom:6px;">Forecasting</span>
+        <a href="projects/migration-analysis.html" class="mw-title">Global Migration Analysis</a>
+        <div class="mw-tools">Python · Tableau · ARIMA</div>
+        <div class="mw-actions">
+          <a href="https://yaw-assensoh-global-migration-analysis-project-app-tbxmqx.streamlit.app" target="_blank" rel="noopener" class="mw-btn"><i class="fas fa-external-link-alt"></i> Dashboard</a>
+          <a href="https://github.com/Yaw-Assensoh/Global-Migration-Analysis-Project" target="_blank" rel="noopener" class="mw-btn"><i class="fab fa-github"></i> Code</a>
         </div>
-        <div class="pcard-body">
-          <span class="card-badge">Economic Analysis</span>
-          <a href="projects/global-development.html" class="pcard-title-link">Global Development Trends</a>
-          <p class="pcard-tools">Python · Tableau · World Bank</p>
-          <div class="pcard-actions">
-            <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/GDPperCapita_17593122370230/Story2" target="_blank" rel="noopener" class="pcard-btn"><i class="fas fa-chart-bar"></i> Tableau</a>
-            <a href="https://github.com/Yaw-Assensoh/Global-Development-Trends" target="_blank" rel="noopener" class="pcard-btn"><i class="fab fa-github"></i> GitHub</a>
-          </div>
+      </div>
+
+      <div class="mw-card fade-up">
+        <span class="card-badge" style="font-size:.6rem;padding:2px 8px;margin-bottom:6px;">Network Science</span>
+        <a href="projects/20th-century-events.html" class="mw-title">20th Century Geopolitical Analysis</a>
+        <div class="mw-tools">Python · NetworkX · NLP</div>
+        <div class="mw-actions">
+          <a href="https://github.com/Yaw-Assensoh/20th_Century" target="_blank" rel="noopener" class="mw-btn"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+
+      <div class="mw-card fade-up">
+        <span class="card-badge" style="font-size:.6rem;padding:2px 8px;margin-bottom:6px;">Economic Analysis</span>
+        <a href="projects/global-development.html" class="mw-title">Global Development Trends</a>
+        <div class="mw-tools">Python · Tableau · World Bank</div>
+        <div class="mw-actions">
+          <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/GDPperCapita_17593122370230/Story2" target="_blank" rel="noopener" class="mw-btn"><i class="fas fa-chart-bar"></i> Tableau</a>
+          <a href="https://github.com/Yaw-Assensoh/Global-Development-Trends" target="_blank" rel="noopener" class="mw-btn"><i class="fab fa-github"></i> Code</a>
         </div>
       </div>
 
