@@ -129,6 +129,7 @@
     .card-body{padding:24px;display:flex;flex-direction:column;flex:1}
     .card-wide .card-body{padding:36px}
     .card-badge{display:inline-block;font-size:.7rem;font-weight:600;padding:3px 10px;border-radius:99px;background:var(--blue-light);color:var(--blue);border:1px solid #c7d9f9;margin-bottom:12px;align-self:flex-start}
+    .card-badge.warning{background:#FEF3C7;color:#92400E;border-color:#FCD34D}
     .card-title{font-family:var(--font-head);font-size:1.15rem;color:var(--dark);line-height:1.3;margin-bottom:10px}
     .card-wide .card-title{font-size:1.55rem}
     .card-desc{font-size:.88rem;color:var(--muted);line-height:1.65;margin-bottom:16px;flex:1}
@@ -143,9 +144,7 @@
     .card-link.primary{background:var(--blue);color:#fff;border-color:var(--blue)}
     .card-link.primary:hover{background:#1550c0;box-shadow:0 4px 12px rgba(27,95,217,.3)}
 
-    /* ALL PROJECTS — clean cards, no nested anchor hack needed:
-       title link has a ::before that stretches to fill the card,
-       action buttons sit above it via z-index:1               */
+    /* ALL PROJECTS */
     .portfolio-section{padding:80px 0;background:var(--white)}
     .portfolio-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
 
@@ -160,7 +159,6 @@
     .pcard-img{height:150px;overflow:hidden}
     .pcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
     .pcard-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
-    /* Title link stretches to become the card's main clickable area */
     .pcard-title-link{
       font-family:var(--font-head);font-size:1rem;color:var(--dark);
       line-height:1.35;margin-bottom:6px;display:block;
@@ -169,7 +167,6 @@
       content:'';position:absolute;inset:0;z-index:0;
     }
     .pcard-tools{font-size:.75rem;color:var(--muted);margin-bottom:14px}
-    /* Icon buttons float above the overlay */
     .pcard-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;position:relative;z-index:1}
     .pcard-btn{
       display:inline-flex;align-items:center;gap:5px;
@@ -322,7 +319,7 @@
         <a href="#about" class="btn btn-ghost">My Story</a>
       </div>
       <div class="hero-stats">
-        <div><span class="hero-stat-num">9</span><span class="hero-stat-label">Live case studies</span></div>
+        <div><span class="hero-stat-num">10</span><span class="hero-stat-label">Live case studies</span></div>
         <div><span class="hero-stat-num">5</span><span class="hero-stat-label">Languages fluent</span></div>
         <div><span class="hero-stat-num">10+</span><span class="hero-stat-label">Years in operations</span></div>
         <div><span class="hero-stat-num">+10%</span><span class="hero-stat-label">Revenue uplift delivered</span></div>
@@ -331,7 +328,7 @@
 
     <div class="hero-visual">
       <div class="hero-img-wrap">
-        <!-- Replace src with your real headshot path -->
+        <!-- Replace with your real headshot path -->
         <img src="./assets/images/absolute-image.png" alt="Yaw Assensoh Opoku — Data Analyst"
              onerror="this.outerHTML='<div class=hero-img-placeholder><i class=fas fa-user-circle></i><p>Add your headshot here</p></div>'">
       </div>
@@ -432,6 +429,7 @@
     </div>
     <div class="projects-grid">
 
+      <!-- HOUSING -->
       <div class="project-card card-wide fade-up">
         <div class="card-img">
           <img src="./assets/images/housing-graphic.png" alt="US Housing Affordability"
@@ -454,6 +452,7 @@
         </div>
       </div>
 
+      <!-- CITI BIKE -->
       <div class="project-card fade-up">
         <div class="card-img">
           <img src="./assets/images/people-bikes.jpg" alt="NYC Citi Bike"
@@ -475,6 +474,7 @@
         </div>
       </div>
 
+      <!-- INSTACART -->
       <div class="project-card fade-up">
         <div class="card-img">
           <img src="./assets/images/instacart-image.jpg" alt="Instacart"
@@ -495,6 +495,30 @@
         </div>
       </div>
 
+      <!-- EU GENDER PAY GAP — REPLACED INFLUENZA -->
+      <div class="project-card fade-up">
+        <div class="card-img">
+          <img src="./assets/images/the-gender-pay-gap.jpg" alt="EU Gender Pay Gap"
+               onerror="this.src='https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="card-body">
+          <span class="card-badge">Labour Economics &amp; Policy Analytics</span>
+          <h3 class="card-title">EU Gender Pay Gap Analysis (2002–2024)</h3>
+          <p class="card-desc">22-year Eurostat analysis across 27 EU countries. 5 statistically proven findings on sector, age, and regional drivers — with an interactive Tableau dashboard and policy recommendations.</p>
+          <div class="card-metrics">
+            <div class="metric-row"><i class="fas fa-chart-line"></i><span><strong>10.5%</strong> EU average gap · <strong>24.1%</strong> in Finance sector</span></div>
+            <div class="metric-row"><i class="fas fa-baby"></i><span><strong>4.6% → 13.9%</strong> gap triples between Under 25 and 35–44</span></div>
+            <div class="metric-row"><i class="fas fa-flask"></i><span><strong>4 statistical tests</strong> · regression + t-tests + ANOVA</span></div>
+          </div>
+          <div class="card-links">
+            <a href="eu-gender-pay-gap.html" class="card-link primary"><i class="fas fa-book-open"></i> Full Case Study</a>
+            <a href="YOUR_TABLEAU_LINK_HERE" target="_blank" rel="noopener" class="card-link"><i class="fas fa-chart-bar"></i> Tableau</a>
+            <a href="https://github.com/Yaw-Assensoh/Eu-gender-pay-gap-analysis" target="_blank" rel="noopener" class="card-link"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FINANCE — FIXED: added warning badge -->
       <div class="project-card fade-up">
         <div class="card-img">
           <img src="./assets/images/dashboard-preview.jpg" alt="Financial Markets"
@@ -502,6 +526,9 @@
         </div>
         <div class="card-body">
           <span class="card-badge">Financial Analytics</span>
+          <span class="card-badge warning" style="margin-top:-4px;margin-bottom:8px;">
+            <i class="fas fa-exclamation-triangle"></i> Backtested — not live trading
+          </span>
           <h3 class="card-title">Financial Markets Intelligence Platform</h3>
           <p class="card-desc">Quantitative analysis of tech stocks delivering 243% average returns vs. 100% SPY benchmark, with risk-adjusted portfolio optimisation and momentum signals.</p>
           <div class="card-metrics">
@@ -516,37 +543,18 @@
         </div>
       </div>
 
-      <div class="project-card fade-up">
-        <div class="card-img">
-          <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=600&q=80" alt="Influenza Forecast">
-        </div>
-        <div class="card-body">
-          <span class="card-badge">Healthcare Analytics</span>
-          <h3 class="card-title">Influenza Staffing Forecast Model</h3>
-          <p class="card-desc">ARIMA-based predictive model with 89% accuracy for 4-week influenza forecasts, enabling optimised hospital staffing during peak seasons.</p>
-          <div class="card-metrics">
-            <div class="metric-row"><i class="fas fa-hospital"></i><span><strong>−23% overtime costs</strong> through optimised staffing schedules</span></div>
-            <div class="metric-row"><i class="fas fa-calendar-check"></i><span><strong>4-week advance planning</strong> capability for resource allocation</span></div>
-          </div>
-          <div class="card-links">
-            <a href="projects/influenza-forecast.html" class="card-link primary"><i class="fas fa-book-open"></i> Case Study</a>
-            <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/Book1_17436918254930/Story1" target="_blank" rel="noopener" class="card-link"><i class="fas fa-chart-bar"></i> Tableau</a>
-            <a href="https://github.com/Yaw-Assensoh" target="_blank" rel="noopener" class="card-link"><i class="fab fa-github"></i> GitHub</a>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- ALL PROJECTS — each card is a div, title link = full-card overlay, icon btns float above -->
+<!-- ALL PROJECTS -->
 <section class="portfolio-section" id="portfolio">
   <div class="container">
     <p class="section-label">All Projects</p>
     <h2 class="section-title">More analysis work</h2>
     <div class="portfolio-grid">
 
+      <!-- MIGRATION -->
       <div class="pcard fade-up">
         <div class="pcard-img">
           <img src="./assets/images/migration-view.png" alt="Global Migration"
@@ -563,6 +571,7 @@
         </div>
       </div>
 
+      <!-- ROCKBUSTER -->
       <div class="pcard fade-up">
         <div class="pcard-img">
           <img src="./assets/images/Data-Analytics.jpg" alt="RockBuster"
@@ -579,6 +588,23 @@
         </div>
       </div>
 
+      <!-- INFLUENZA — moved from featured to all projects -->
+      <div class="pcard fade-up">
+        <div class="pcard-img">
+          <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=400&q=80" alt="Influenza Forecast">
+        </div>
+        <div class="pcard-body">
+          <span class="card-badge">Healthcare Analytics</span>
+          <a href="projects/influenza-forecast.html" class="pcard-title-link">Influenza Staffing Forecast</a>
+          <p class="pcard-tools">Python · Tableau · ARIMA</p>
+          <div class="pcard-actions">
+            <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/Book1_17436918254930/Story1" target="_blank" rel="noopener" class="pcard-btn"><i class="fas fa-chart-bar"></i> Tableau</a>
+            <a href="https://github.com/Yaw-Assensoh" target="_blank" rel="noopener" class="pcard-btn"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- GEOPOLITICAL -->
       <div class="pcard fade-up">
         <div class="pcard-img">
           <img src="./assets/images/historical-data.jpg" alt="Geopolitical"
@@ -594,6 +620,7 @@
         </div>
       </div>
 
+      <!-- GLOBAL DEVELOPMENT -->
       <div class="pcard fade-up">
         <div class="pcard-img">
           <img src="./assets/images/analysis-3.jpg" alt="Global Development"
@@ -685,11 +712,10 @@
         <p class="contact-intro">Ready to turn your data into decisions? Whether you're hiring a data analyst or need project-based analysis — I'd love to hear from you. Open to remote roles across Europe or relocation to Italy. I typically respond within 24 hours.</p>
         <div class="contact-detail">
           <div class="cd-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <div><div class="cd-label">Location</div><div class="cd-val">Hamburg, Germany · Remote /Europe</div></div>
+          <div><div class="cd-label">Location</div><div class="cd-val">Hamburg, Germany · Remote / Europe</div></div>
         </div>
         <div class="contact-detail">
           <div class="cd-icon"><i class="fas fa-envelope"></i></div>
-          <!-- Replace with your actual email address -->
           <div><div class="cd-label">Email</div><a href="mailto:yaw.assensoh.opoku@gmail.com" class="cd-val">yaw.assensoh.opoku@gmail.com</a></div>
         </div>
         <div class="contact-detail">
