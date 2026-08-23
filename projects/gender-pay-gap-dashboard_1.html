@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EU Gender Pay Gap — Interactive Dashboard | Yaw Assensoh Opoku</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+  :root{
+    --eu-blue:#003399;--eu-blue-deep:#00246e;--eu-gold:#FFCC00;--eu-gold-dim:#c9a300;
+    --ink:#0B1120;--mid:#3A4152;--muted:#6B7280;--border:#E4E7ED;--paper:#F7F8FC;--white:#FFFFFF;
+    --danger:#C0392B;--success:#1E7A46;
+    --radius-sm:6px;--radius-md:12px;--radius-lg:22px;
+    --shadow-sm:0 1px 3px rgba(11,17,32,.06);
+    --shadow-md:0 8px 28px rgba(11,17,32,.10);
+    --font-head:'DM Serif Display',Georgia,serif;
+    --font-body:'DM Sans',system-ui,sans-serif;
+    --font-mono:'IBM Plex Mono',ui-monospace,monospace;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+  body{font-family:var(--font-body);color:var(--mid);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px 80px}
+
+  /* ===== HERO / COUNTDOWN SIGNATURE ===== */
+  .hero-band{
+    background:radial-gradient(1200px 420px at 15% -10%, rgba(255,204,0,.18), transparent 55%),
+               linear-gradient(160deg, var(--eu-blue) 0%, var(--eu-blue-deep) 100%);
+    color:#fff; margin:0 -24px 0; padding:52px 24px 64px; position:relative; overflow:hidden;
+  }
+  .hero-band::after{
+    content:''; position:absolute; inset:0; pointer-events:none; opacity:.5;
+    background-image:radial-gradient(circle, rgba(255,255,255,.14) 1px, transparent 1px);
+    background-size:26px 26px; mask-image:linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
+  }
+  .hero-inner{max-width:1080px;margin:0 auto;position:relative;z-index:1}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);color:var(--eu-gold);font-size:.76rem;font-weight:600;padding:6px 14px;border-radius:99px;margin-bottom:20px;border:1px solid rgba(255,204,0,.35);letter-spacing:.02em}
+  .dot{width:6px;height:6px;background:var(--eu-gold);border-radius:50%;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  h1{font-family:var(--font-head);font-size:clamp(1.8rem,3.6vw,2.5rem);color:#fff;margin-bottom:12px;line-height:1.18}
+  .dash-sub{color:rgba(255,255,255,.78);font-size:.99rem;max-width:600px;margin-bottom:36px}
+
+  .countdown{
+    display:grid; grid-template-columns:auto 1fr; gap:28px; align-items:center;
+    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:var(--radius-lg);
+    padding:26px 28px; backdrop-filter:blur(6px);
+  }
+  .countdown-ring{position:relative;width:118px;height:118px;flex-shrink:0}
+  .countdown-ring svg{transform:rotate(-90deg)}
+  .countdown-ring .track{fill:none;stroke:rgba(255,255,255,.14);stroke-width:8}
+  .countdown-ring .arc{fill:none;stroke:var(--eu-gold);stroke-width:8;stroke-linecap:round;
+    stroke-dasharray:301; stroke-dashoffset:301; transition:stroke-dashoffset 1.4s cubic-bezier(.16,.84,.44,1);}
+  .countdown-ring .arc-label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .countdown-ring .arc-num{font-family:var(--font-mono);font-size:1.5rem;font-weight:600;color:#fff}
+  .countdown-ring .arc-unit{font-size:.62rem;color:rgba(255,255,255,.6);letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
+  .countdown-text h3{font-family:var(--font-head);font-size:1.15rem;color:#fff;margin-bottom:6px;font-weight:400}
+  .countdown-text p{font-size:.85rem;color:rgba(255,255,255,.72);line-height:1.6;max-width:460px}
+  .countdown-text .pace-bars{display:flex;gap:3px;margin-top:14px;height:6px;border-radius:99px;overflow:hidden}
+  .pace-bars span{display:block;height:100%}
+  .pace-bars .pre{background:var(--eu-gold);flex:5}
+  .pace-bars .post{background:rgba(255,255,255,.28);flex:3.4}
+  .pace-legend{display:flex;gap:16px;margin-top:8px;font-size:.7rem;color:rgba(255,255,255,.6)}
+  .pace-legend span::before{content:'●';margin-right:5px;font-size:.6rem}
+  .pace-legend .l1::before{color:var(--eu-gold)}
+  .pace-legend .l2::before{color:rgba(255,255,255,.5)}
+
+  /* ===== DATA NOTE — FIXED: less defensive ===== */
+  .data-note{display:flex;gap:10px;align-items:flex-start;background:#FFF8E1;border:1px solid #F5D98A;border-radius:var(--radius-md);padding:14px 16px;margin:28px 0;font-size:.82rem;color:#6B5200}
+  .data-note i{margin-top:2px;flex-shrink:0;color:var(--eu-gold-dim)}
+  .data-note code{background:rgba(0,0,0,.05);padding:1px 5px;border-radius:4px;font-family:var(--font-mono);font-size:.78em}
+
+  /* ===== KPI ROW ===== */
+  .kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:12px;margin:28px 0}
+  .kpi{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);padding:17px 18px;box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s}
+  .kpi:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+  .kpi .num{font-family:var(--font-mono);font-weight:600;font-size:1.55rem;color:var(--ink);line-height:1;display:block;letter-spacing:-.01em}
+  .kpi .num.red{color:var(--danger)}
+  .kpi .num.green{color:var(--success)}
+  .kpi .lbl{font-size:.73rem;color:var(--muted);margin-top:7px;line-height:1.4}
+
+  /* ===== TABS ===== */
+  .tabs{display:flex;gap:2px;flex-wrap:wrap;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);padding:5px;margin:32px 0 0;position:relative}
+  .tab-btn{flex:1;min-width:110px;padding:11px 14px;border:none;background:transparent;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:.82rem;font-weight:600;color:var(--muted);cursor:pointer;transition:color .2s;position:relative}
+  .tab-btn:hover{color:var(--ink)}
+  .tab-btn.active{color:var(--eu-blue)}
+  .tab-btn.active::after{content:'';position:absolute;left:14px;right:14px;bottom:4px;height:2.5px;background:var(--eu-gold-dim);border-radius:2px}
+
+  .panel{background:var(--white);border:1px solid var(--border);border-top:none;border-radius:0 0 var(--radius-md) var(--radius-md);padding:30px;margin-bottom:24px}
+  .panel-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:start}
+  .chart-box{position:relative;height:320px}
+  .panel h2{font-family:var(--font-head);font-size:1.28rem;color:var(--ink);margin-bottom:10px;line-height:1.3;font-weight:400}
+  .panel .q{font-size:.87rem;color:var(--muted);font-style:italic;margin-bottom:14px;line-height:1.6}
+  .panel .body{font-size:.87rem;color:var(--mid);line-height:1.75}
+  .so-what{background:var(--paper);border-left:3px solid var(--eu-gold-dim);padding:13px 15px;border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:.82rem;color:var(--ink);line-height:1.6;margin-top:16px}
+  .so-what strong{color:var(--eu-blue);display:block;font-size:.67rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+  .proof{display:inline-flex;align-items:center;gap:5px;background:#EAF6EE;color:var(--success);font-size:.71rem;font-weight:600;padding:4px 11px;border-radius:99px;border:1px solid #cdeed6;margin-top:13px;font-family:var(--font-mono)}
+
+  .fade-in{animation:fadeIn .45s ease both}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+  /* ===== FOOTER — FIXED: added case study link ===== */
+  footer{text-align:center;margin-top:36px;font-size:.8rem;color:var(--muted)}
+  footer a{color:var(--eu-blue);font-weight:600}
+  footer a:hover{text-decoration:underline}
+  .footer-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:6px}
+
+  @media(max-width:720px){
+    .panel-grid{grid-template-columns:1fr}
+    .chart-box{height:260px}
+    .countdown{grid-template-columns:1fr;text-align:center;justify-items:center}
+    .pace-legend{justify-content:center}
+    .footer-links{flex-direction:column;gap:8px}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero-band">
+  <div class="hero-inner">
+    <span class="eyebrow"><span class="dot"></span> Interactive · Built from case study data</span>
+    <h1>EU Gender Pay Gap Analysis (2002–2024)</h1>
+    <p class="dash-sub">Five statistically tested findings from 22 years of Eurostat data across 27 EU member states — trend, sector, age, country, and regression views.</p>
+
+    <div class="countdown">
+      <div class="countdown-ring">
+        <svg width="118" height="118" viewBox="0 0 118 118">
+          <circle class="track" cx="59" cy="59" r="48"/>
+          <circle class="arc" id="ringArc" cx="59" cy="59" r="48"/>
+        </svg>
+        <div class="arc-label">
+          <span class="arc-num">~2100</span>
+          <span class="arc-unit">projected parity</span>
+        </div>
+      </div>
+      <div class="countdown-text">
+        <h3>At the current pace, equality is roughly 74 years away</h3>
+        <p>The gap closed ~5 points in the nine years to 2011 — then only 3.4 points in the years since 2015. Projecting the post-2015 rate forward, the EU average doesn't reach zero until around 2100.</p>
+        <div class="pace-bars"><span class="pre"></span><span class="post"></span></div>
+        <div class="pace-legend"><span class="l1">Pace 2002–2011</span><span class="l2">Pace since 2015 (slower)</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- DATA NOTE — FIXED: less defensive, more positive -->
+  <div class="data-note">
+    <i class="fas fa-chart-simple"></i>
+    <span>This dashboard visualises the five key findings from the case study using Chart.js. For the full 27-country × 18-sector interactive breakdown, explore the <strong>Tableau Story</strong> linked below.</span>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi"><span class="num">10.5%</span><span class="lbl">EU average gap, 2024</span></div>
+    <div class="kpi"><span class="num">17.9%</span><span class="lbl">EU average gap, 2002</span></div>
+    <div class="kpi"><span class="num red">24.1%</span><span class="lbl">Finance & insurance sector</span></div>
+    <div class="kpi"><span class="num">4.6→13.9%</span><span class="lbl">Motherhood penalty jump</span></div>
+    <div class="kpi"><span class="num red">18.8%</span><span class="lbl">Estonia — highest in EU</span></div>
+    <div class="kpi"><span class="num green">−0.8%</span><span class="lbl">Luxembourg — only negative</span></div>
+  </div>
+
+  <div class="tabs" id="tabs">
+    <button class="tab-btn active" data-tab="trend">1 · Trend</button>
+    <button class="tab-btn" data-tab="sector">2 · Sector</button>
+    <button class="tab-btn" data-tab="age">3 · Age</button>
+    <button class="tab-btn" data-tab="country">4 · Country</button>
+    <button class="tab-btn" data-tab="regression">5 · Regression</button>
+  </div>
+
+  <div class="panel">
+    <div class="panel-grid" id="panel-grid">
+      <div class="chart-box"><canvas id="chart"></canvas></div>
+      <div id="panel-text"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER — FIXED: added case study link, actual Tableau URL -->
+  <footer>
+    <div class="footer-links">
+      <a href="eu-gender-pay-gap.html" style="color:var(--eu-blue);font-weight:600;">← Full Case Study</a>
+      <a href="https://github.com/Yaw-Assensoh/Eu-gender-pay-gap-analysis" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/EU_Gender_Pay_Gap_Dashboard/Story1" target="_blank" rel="noopener">Tableau Public</a>
+      <a href="../index.html#projects">← Back to Portfolio</a>
+    </div>
+    <p style="margin-top:8px;font-size:.75rem;color:var(--muted)">Full methodology, SQL, and Python notebooks on GitHub</p>
+  </footer>
+
+</div>
+
+<script>
+const BLUE = '#003399', GOLD='#c9a300', DARK='#0B1120', RED='#C0392B', GREEN='#1E7A46', MUTED='#9CA3AF';
+
+const content = {
+  trend: {
+    title: "Is the EU pay gap actually getting better?",
+    q: "The EU gender pay gap is widely reported as improving. But is that decline statistically real, and what does the current pace mean for the future?",
+    body: "The EU unweighted average fell from 17.9% (2002) to 10.5% (2024) — a real, statistically confirmed decline (linear regression, R² = 0.94, p &lt; 0.05). But progress split into two very different eras: roughly 5 percentage points closed in the first nine years, only 3.4 points closed since 2015. At the post-2015 rate, the projection doesn't reach zero until around the year 2100.",
+    soWhat: "The EU is improving — but policy shouldn't confuse progress with arrival. The slowdown since 2015 means the remaining gap is more structurally embedded than early gains suggested.",
+    proof: "Linear regression · p &lt; 0.05 · R² = 0.94",
+    chart: (ctx) => new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['2002', '2011 (est.)', '2015', '2024'],
+        datasets: [{
+          label: 'EU average pay gap',
+          data: [17.9, 12.9, 11.9, 10.5],
+          borderColor: BLUE, backgroundColor: 'rgba(0,51,153,0.07)',
+          fill: true, tension: 0.35, pointRadius: 5, pointBackgroundColor: BLUE, borderWidth: 3
+        }]
+      },
+      options: baseOpts('Pay gap (%)', 'Two eras: steep decline pre-2015, flattening since')
+    })
+  },
+  sector: {
+    title: "Which industry is the biggest problem — and can we prove it?",
+    q: "Is Finance & insurance genuinely an outlier, or does it just look that way on a chart?",
+    body: "Finance & insurance sits at 24.1% — 13.6 points above the EU overall average of 10.5%. An independent t-test comparing Finance to all other sectors combined returned p &lt; 0.0001: this is a statistical outlier, not just a visually large bar. Public admin sits at the opposite end (5.6%), where pay is set by transparent grade structures with no bonus discretion.",
+    soWhat: "The 2023 EU Pay Transparency Directive requires gender pay disclosure from 2026. Finance is where this will bite hardest — and where compliance resistance is likely greatest.",
+    proof: "Independent t-test · Finance vs. all other sectors · p &lt; 0.0001",
+    chart: (ctx) => new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Construction', 'Public admin', 'EU average (18 sectors)', 'Finance & insurance'],
+        datasets: [{ data: [-2.5, 5.6, 10.5, 24.1], backgroundColor: [GREEN, GREEN, MUTED, RED], borderRadius: 6 }]
+      },
+      options: baseOpts('Pay gap (%)', '3 of 18 sectors shown — full ranking in the Tableau Story')
+    })
+  },
+  age: {
+    title: "Is this a young workers' problem — or does it get worse with age?",
+    q: "If the gap were purely about career choices, it would appear early and stay stable. Instead it nearly triples over a working life.",
+    body: "Workers under 25 experience near pay parity (4.6%). By 35–44 the gap has nearly tripled to 13.9% — and it never fully recovers, settling at 15.9% by 65+. A paired t-test comparing each country's Under-25 gap to its own 35–44 gap returned p &lt; 0.0001, consistent across all 27 EU countries. This is the motherhood penalty, statistically confirmed rather than assumed.",
+    soWhat: "Countries with the sharpest 25→35 jump are where investment in affordable childcare and parental leave would move the headline number most.",
+    proof: "Paired t-test · 27 countries, each vs. itself · p &lt; 0.0001",
+    chart: (ctx) => new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Under 25', '25–34', '35–44', '65+'],
+        datasets: [{ data: [4.6, 7.8, 13.9, 15.9], borderColor: '#c9660a', backgroundColor: 'rgba(201,102,10,0.08)', fill:true, tension:0.25, pointRadius:6, pointBackgroundColor:'#c9660a', borderWidth:3 }]
+      },
+      options: baseOpts('Pay gap (%)', 'The 25–34 → 35–44 jump is the sharpest single increase')
+    })
+  },
+  country: {
+    title: "Which countries are outliers — and what do they tell us?",
+    q: "Estonia (18.8%) and Luxembourg (−0.8%) sit at opposite extremes. Statistical flukes, or structural stories?",
+    body: "Estonia's gap reflects real occupational segregation between high-paying male-dominated sectors (ICT, finance) and lower-paying female-dominated ones (education, health) — and a significant positive residual remains even after controlling for that. Luxembourg's negative gap is a composition artefact: highly-paid male expat finance workers inflate the average, not a policy success. Poland (4.0%), also Eastern European, shows the region isn't a uniform problem — it contains the EU's best and worst performers.",
+    soWhat: "Outliers are where the most interesting policy questions live. You can't close the gap without addressing which sectors women work in.",
+    proof: "IQR outlier test · both countries beyond 1.5× IQR from the median",
+    chart: (ctx) => new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Luxembourg', 'Poland', 'EU average', 'Estonia'],
+        datasets: [{ data: [-0.8, 4.0, 10.5, 18.8], backgroundColor: [GREEN, GREEN, MUTED, RED], borderRadius: 6 }]
+      },
+      options: baseOpts('Pay gap (%)', '3 of 27 countries shown — full ranking in the Tableau Story')
+    })
+  },
+  regression: {
+    title: "After controlling for everything measurable — what gap remains?",
+    q: "How much of the unadjusted gap persists once you control for sector, age, and region?",
+    body: "An OLS regression using sector composition, age profile, and EU region as predictors explains a meaningful share of the variation between countries. But most countries show a positive residual — their actual gap is higher than structure alone predicts. That unexplained portion is what equal pay legislation is designed to address: the gap between equivalent workers in equivalent roles.",
+    soWhat: "Countries with large positive residuals are where Pay Transparency Directive enforcement will matter most. Countries with negative residuals are outperforming their structure — worth studying what they do differently.",
+    proof: "OLS regression · sector + age + region controls · residual analysis, 27 countries",
+    chart: (ctx) => new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Structural factors\n(sector + age + region)', 'Unexplained residual'],
+        datasets: [{ data: [65, 35], backgroundColor: [BLUE, RED], borderRadius: 6 }]
+      },
+      options: { 
+        ...baseOpts('Illustrative share (%)', 'Illustrative split — exact model output available in the full case study'), 
+        indexAxis: 'y' 
+      }
+    })
+  }
+};
+
+function baseOpts(yLabel, footnote){
+  return {
+    responsive:true, maintainAspectRatio:false,
+    animation:{duration:600, easing:'easeOutQuart'},
+    plugins:{
+      legend:{display:false},
+      title:{display:!!footnote, text:footnote, color:'#6B7280', font:{size:11,family:'DM Sans'}, padding:{bottom:10}}
+    },
+    scales:{
+      y:{title:{display:true,text:yLabel,color:'#6B7280',font:{size:11}}, grid:{color:'#EEF0F4'}, ticks:{color:'#6B7280',font:{family:'IBM Plex Mono',size:11}}},
+      x:{grid:{display:false}, ticks:{color:'#6B7280',font:{size:11}}}
+    }
+  };
+}
+
+let currentChart = null;
+function renderTab(key){
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === key));
+  const c = content[key];
+  const textEl = document.getElementById('panel-text');
+  textEl.classList.remove('fade-in'); void textEl.offsetWidth; textEl.classList.add('fade-in');
+  textEl.innerHTML = `
+    <h2>${c.title}</h2>
+    <p class="q">${c.q}</p>
+    <p class="body">${c.body}</p>
+    <div class="so-what"><strong>So what?</strong>${c.soWhat}</div>
+    <div class="proof"><i class="fas fa-check-circle"></i> ${c.proof}</div>
+  `;
+  if (currentChart) currentChart.destroy();
+  const ctx = document.getElementById('chart').getContext('2d');
+  currentChart = c.chart(ctx);
+}
+
+document.getElementById('tabs').addEventListener('click', (e) => {
+  const btn = e.target.closest('.tab-btn');
+  if (btn) renderTab(btn.dataset.tab);
+});
+
+// Signature: animate the equality-countdown ring in on load
+window.addEventListener('load', () => {
+  const arc = document.getElementById('ringArc');
+  const circumference = 301; // 2πr, r=48
+  const yearsRemaining = 74, totalSpan = 98; // 2002 → 2100
+  const progress = 1 - (yearsRemaining / totalSpan); // how much of the road is already behind us
+  requestAnimationFrame(() => {
+    arc.style.strokeDashoffset = circumference * (1 - progress);
+  });
+});
+
+renderTab('trend');
+</script>
+</body>
+</html>
