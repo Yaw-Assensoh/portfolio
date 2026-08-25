@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yaw Assensoh Opoku — Operations & Business Analyst</title>
-  <meta name="description" content="Operations & Business Analyst — Data Analytics, Supply Chain, Logistics. 10+ years operations & logistics leadership plus data analytics training. Python, SQL, Tableau, Streamlit. 11 case studies. Open to remote/hybrid analyst roles.">
+  <meta name="description" content="Operations & Business Analyst with 10+ years logistics leadership and data analytics capability. Python, SQL, Tableau, Streamlit. 11 case studies. Open to remote/hybrid analyst roles.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    /* ===== CSS ===== */
     :root {
       --blue: #1B5FD9;
       --blue-light: #EEF4FF;
@@ -42,7 +43,7 @@
     .section-title { font-family: var(--font-head); font-size: clamp(1.8rem, 3.5vw, 2.6rem); color: var(--dark); line-height: 1.15; margin-bottom: 0.75rem; }
     .section-text { font-size: 1rem; color: var(--muted); max-width: 580px; line-height: 1.7; }
 
-    /* AVAILABILITY BANNER — Clean */
+    /* AVAILABILITY BANNER */
     .av-banner { background: #0a1a4a; padding: 10px 0; text-align: center; }
     .av-banner p { color: rgba(255,255,255,0.9); font-size: 0.8rem; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
     .av-dot { width: 7px; height: 7px; background: #4ade80; border-radius: 50%; display: inline-block; animation: pulse-dot 2s infinite; }
@@ -73,15 +74,16 @@
     .btn-sm { padding: 7px 16px; font-size: 0.8rem; }
     .nav-toggle-btn { display: none; background: none; border: none; font-size: 1.25rem; cursor: pointer; padding: 8px; color: var(--dark); }
 
-    /* HERO — Shortened, punchy */
+    /* HERO */
     .hero { padding: calc(var(--nav-h) + 64px) 0 72px; position: relative; overflow: hidden; background: var(--bg); }
     .hero::before { content: ''; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(27,95,217,0.06), transparent 65%); pointer-events: none; }
     .hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; position: relative; z-index: 1; }
     .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: var(--blue-light); color: var(--blue); font-size: 0.75rem; font-weight: 600; padding: 4px 16px; border-radius: 99px; margin-bottom: 20px; border: 1px solid #c7d9f9; }
     .hero-eyebrow .dot { width: 6px; height: 6px; background: var(--blue); border-radius: 50%; display: inline-block; animation: pulse-dot 2s infinite; }
-    .hero h1 { font-family: var(--font-head); font-size: clamp(2.2rem, 4.5vw, 3.2rem); color: var(--dark); line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.01em; }
+    .hero h1 { font-family: var(--font-head); font-size: clamp(2.2rem, 4.5vw, 3.2rem); color: var(--dark); line-height: 1.1; margin-bottom: 4px; letter-spacing: -0.01em; }
     .hero h1 em { font-style: italic; color: var(--blue); position: relative; }
     .hero h1 em::after { content: ''; position: absolute; bottom: 4px; left: 0; right: 0; height: 6px; background: var(--gold); opacity: 0.2; border-radius: 2px; }
+    .hero-sub-headline { font-size: 0.9rem; color: var(--muted); margin-bottom: 20px; }
     .hero-sub { font-size: 1rem; color: var(--muted); max-width: 520px; line-height: 1.7; margin-bottom: 24px; }
     .target-roles { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 28px; }
     .target-roles span { background: var(--bg); color: var(--mid); padding: 4px 14px; border-radius: 99px; font-size: 0.7rem; font-weight: 600; border: 1px solid var(--border); transition: all 0.2s; }
@@ -97,13 +99,12 @@
     .hero-img-placeholder { text-align: center; padding: 40px; color: #93C5FD; }
     .hero-img-placeholder i { font-size: 4rem; margin-bottom: 12px; display: block; }
 
-    /* Single floating badge */
     @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
     .exp-badge { position: absolute; top: 24px; right: -16px; background: linear-gradient(135deg, var(--blue), #1550c0); color: #fff; border-radius: var(--radius); padding: 14px 18px; box-shadow: 0 8px 28px rgba(27,95,217,0.4); text-align: center; animation: float 4s ease-in-out infinite; }
     .exp-badge .num { font-family: var(--font-head); font-size: 1.6rem; line-height: 1; }
     .exp-badge .txt { font-size: 0.65rem; opacity: 0.85; margin-top: 2px; }
 
-    /* TRUST BAR — Clean */
+    /* TRUST BAR */
     .trust-bar { background: var(--dark); padding: 18px 0; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); }
     .trust-bar .container { display: flex; align-items: center; gap: 32px; overflow-x: auto; scrollbar-width: none; }
     .trust-bar .container::-webkit-scrollbar { display: none; }
@@ -113,7 +114,7 @@
     .tool-chip i { font-size: 0.8rem; color: #6B7280; transition: color 0.2s; }
     .tool-chip:hover i { color: var(--blue); }
 
-    /* ABOUT — Shortened */
+    /* ABOUT */
     .about .container { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; }
     .about-left { display: flex; flex-direction: column; gap: 20px; }
     .about-story-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; position: relative; box-shadow: var(--shadow); transition: all 0.3s; }
@@ -135,16 +136,14 @@
     .specialty-item:hover .spec-icon { transform: scale(1.1) rotate(-3deg); }
     .specialty-item strong { color: var(--dark); }
 
-    /* PROJECTS — FEATURED */
+    /* PROJECTS */
     .projects { background: var(--bg); }
     .projects-header { margin-bottom: 48px; }
     .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 
-    /* ALL PROJECTS */
     .all-projects { background: var(--white); padding: 64px 0; border-top: 1px solid var(--border); }
     .all-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
 
-    /* CARD STYLES */
     .card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); display: flex; flex-direction: column; box-shadow: var(--shadow); position: relative; }
     .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: var(--blue); }
     .card::after { content: ''; position: absolute; inset: 0; border-radius: var(--radius-lg); opacity: 0; transition: opacity 0.4s; box-shadow: 0 0 0 1px var(--blue) inset; pointer-events: none; }
@@ -172,7 +171,6 @@
     .card-link.primary { background: var(--blue); color: #fff; border-color: var(--blue); }
     .card-link.primary:hover { background: #1550c0; box-shadow: 0 4px 14px rgba(27,95,217,0.3); transform: translateY(-2px); }
 
-    /* ALL PROJECTS — SMALLER CARDS */
     .all-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px 18px; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); display: flex; flex-direction: column; box-shadow: var(--shadow); }
     .all-card:hover { transform: translateY(-4px); border-color: var(--blue); box-shadow: var(--shadow-hover); }
     .all-card .all-title { font-family: var(--font-head); font-size: 0.9rem; color: var(--dark); margin-bottom: 4px; display: block; transition: color 0.2s; }
@@ -187,7 +185,7 @@
     .all-card.highlight { border-color: var(--blue); background: #F5F8FF; position: relative; overflow: hidden; }
     .all-card.highlight::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(27,95,217,0.06), transparent 60%); pointer-events: none; }
 
-    /* SKILLS — Tightened, no unsupported tech */
+    /* SKILLS */
     .skills { background: var(--bg); }
     .skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 40px; }
     .skills-group-title { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
@@ -202,7 +200,7 @@
     .cert-name { font-weight: 600; font-size: 0.85rem; color: var(--dark); }
     .cert-issuer { font-size: 0.75rem; color: var(--muted); }
 
-    /* CONTACT — Simplified */
+    /* CONTACT */
     .contact { background: var(--dark); color: #fff; position: relative; overflow: hidden; }
     .contact::before { content: ''; position: absolute; top: -200px; right: -200px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(27,95,217,0.08), transparent 60%); pointer-events: none; }
     .contact .section-label { color: #60A5FA; border-bottom-color: #60A5FA; }
@@ -265,7 +263,7 @@
 </head>
 <body>
 
-<!-- AVAILABILITY BANNER — Clean, no animation -->
+<!-- AVAILABILITY BANNER -->
 <div class="av-banner">
   <div class="container">
     <p><span class="av-dot"></span> Open to Data, Business, Operations &amp; Supply Chain Analyst roles · Remote / Hybrid — <a href="#contact">Let's talk</a></p>
@@ -294,12 +292,13 @@
   </div>
 </header>
 
-<!-- HERO — Shortened, punchy -->
+<!-- HERO — Clean, focused headline -->
 <section class="hero" id="home">
   <div class="container">
     <div class="hero-content">
       <div class="hero-eyebrow"><span class="dot"></span> Available — Remote / Hybrid</div>
-      <h1>Operations &amp; Business Analyst<br><em>Data Analytics</em> · Supply Chain · Logistics</h1>
+      <h1>Operations &amp; Business Analyst</h1>
+      <p class="hero-sub-headline">Data Analytics · Supply Chain · Logistics</p>
       <p class="hero-sub">Turning operational data into better decisions. I combine 10+ years of logistics leadership with Python, SQL, Tableau and statistical analysis to solve forecasting, performance and supply-chain problems.</p>
       <div class="target-roles">
         <span>Data Analyst</span>
@@ -317,7 +316,7 @@
         <div><span class="hero-stat-num">10+</span><span class="hero-stat-label">Years operations &amp; logistics</span></div>
         <div><span class="hero-stat-num">11</span><span class="hero-stat-label">Case studies</span></div>
         <div><span class="hero-stat-num">5</span><span class="hero-stat-label">Languages</span></div>
-        <div><span class="hero-stat-num">2024</span><span class="hero-stat-label">Analytics certification</span></div>
+        <div><span class="hero-stat-num">2025</span><span class="hero-stat-label">Analytics certification</span></div>
       </div>
     </div>
     <div class="hero-visual">
@@ -346,12 +345,12 @@
   </div>
 </div>
 
-<!-- ABOUT — Shortened -->
+<!-- ABOUT -->
 <section class="section about" id="about">
   <div class="container">
     <div class="about-left fade-up">
       <div class="about-story-card">
-        <p>For years I owned and operated a logistics business in Hamburg — optimising routes, forecasting demand, and segmenting customers using whatever data tools I had. Every decision had a real cost.<br><br>That pressure taught me something most analysts learn in theory: <strong>data only matters when it changes a decision.</strong></p>
+        <p>For years I owned and operated a logistics business in Hamburg, optimising routes, forecasting demand, and segmenting customers using whatever data tools I had. Every decision had a real cost.<br><br>That pressure taught me something most analysts learn in theory: <strong>data only matters when it changes a decision.</strong></p>
       </div>
       <div class="about-impact-card">
         <div class="card-label">What I learned running the business</div>
@@ -363,8 +362,8 @@
     <div class="about-text fade-up">
       <p class="section-label">My Story</p>
       <h2 class="section-title">From logistics founder to business analyst</h2>
-      <p class="section-text">Transitioning into analytics wasn't a career change — it was adding Python, SQL, and Tableau to a toolkit I'd already been building for years. I closed the business in 2023 to make the transition deliberately, completing a 12-month analytics certification and building out 11 case studies.</p>
-      <p class="section-text" style="margin-top:1rem;">Currently based in Hamburg, open to remote-first analyst roles across Europe, or to relocating to Italy.</p>
+      <p class="section-text">Transitioning into analytics wasn't a career change — it was adding Python, SQL, and Tableau to a toolkit I'd already been building for years. I closed the business in 2024 to make the transition deliberately, completing a 12-month analytics certification and building out 11 case studies.</p>
+      <p class="section-text" style="margin-top:1rem;">Currently based in Hamburg, open to remote-first analyst roles across Europe, worldwide.</p>
       <div class="specialties-list">
         <div class="specialty-item"><div class="spec-icon"><i class="fas fa-bullseye"></i></div><div><strong>Business-first mindset:</strong> I start with "What problem are we solving?" — not "What can the data show?"</div></div>
         <div class="specialty-item"><div class="spec-icon"><i class="fas fa-cogs"></i></div><div><strong>Operational fluency:</strong> Years running logistics means I understand process optimisation from the ground up</div></div>
@@ -379,7 +378,7 @@
   </div>
 </section>
 
-<!-- FEATURED PROJECTS — Business Question format -->
+<!-- FEATURED PROJECTS -->
 <section class="section projects" id="projects">
   <div class="container">
     <div class="projects-header">
@@ -409,7 +408,7 @@
         </div>
       </div>
 
-      <!-- EU GENDER PAY GAP — "statistically supported" -->
+      <!-- EU GENDER PAY GAP -->
       <div class="card fade-up">
         <div class="card-img"><img src="./assets/images/the-gender-pay-gap.jpg" alt="EU Gender Pay Gap" onerror="this.src='https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=600&q=80'"></div>
         <div class="card-body">
@@ -429,7 +428,7 @@
         </div>
       </div>
 
-      <!-- NYC CITI BIKE — Projected revenue opportunity -->
+      <!-- NYC CITI BIKE -->
       <div class="card fade-up">
         <div class="card-img"><img src="./assets/images/citibike-dashboard.png" alt="NYC Citi Bike" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80'"></div>
         <div class="card-body">
@@ -461,7 +460,6 @@
     <p class="section-text">Eight more projects — showing breadth across e-commerce, healthcare, BI, forecasting, network science, and economic analysis.</p>
     <div class="all-grid">
 
-      <!-- FINANCIAL -->
       <div class="all-card fade-up">
         <span class="card-badge" style="font-size:.6rem;padding:2px 8px;margin-bottom:6px;">Financial Analytics</span>
         <a href="projects/financial-analysis.html" class="all-title">Financial Markets Platform</a>
@@ -472,7 +470,6 @@
         </div>
       </div>
 
-      <!-- INSTACART -->
       <div class="all-card fade-up">
         <span class="card-badge" style="font-size:.6rem;padding:2px 8px;margin-bottom:6px;">E-commerce</span>
         <a href="projects/instacart-analysis.html" class="all-title">Instacart Basket Analysis</a>
@@ -482,7 +479,6 @@
         </div>
       </div>
 
-      <!-- INFLUENZA -->
       <div class="all-card fade-up">
         <span class="card-badge" style="font-size:.6rem;padding:2px 8px;margin-bottom:6px;">Healthcare</span>
         <a href="projects/influenza-forecast.html" class="all-title">Influenza Staffing Forecast</a>
@@ -493,7 +489,6 @@
         </div>
       </div>
 
-      <!-- ROCKBUSTER -->
       <div class="all-card fade-up">
         <span class="card-badge" style="font-size:.6rem;padding:2px 8px;margin-bottom:6px;">BI</span>
         <a href="projects/rockbuster-insights.html" class="all-title">RockBuster Insights</a>
@@ -504,7 +499,6 @@
         </div>
       </div>
 
-      <!-- MIGRATION -->
       <div class="all-card fade-up">
         <span class="card-badge" style="font-size:.6rem;padding:2px 8px;margin-bottom:6px;">Forecasting</span>
         <a href="projects/migration-analysis.html" class="all-title">Global Migration Analysis</a>
@@ -515,7 +509,6 @@
         </div>
       </div>
 
-      <!-- GEOPOLITICAL -->
       <div class="all-card fade-up">
         <span class="card-badge" style="font-size:.6rem;padding:2px 8px;margin-bottom:6px;">Network Science</span>
         <a href="projects/20th-century-events.html" class="all-title">20th Century Geopolitical Analysis</a>
@@ -525,7 +518,6 @@
         </div>
       </div>
 
-      <!-- GLOBAL DEVELOPMENT -->
       <div class="all-card fade-up">
         <span class="card-badge" style="font-size:.6rem;padding:2px 8px;margin-bottom:6px;">Economic Analysis</span>
         <a href="projects/global-development.html" class="all-title">Global Development Trends</a>
@@ -536,7 +528,6 @@
         </div>
       </div>
 
-      <!-- INTERACTIVE DASHBOARD -->
       <div class="all-card highlight fade-up">
         <span class="card-badge" style="font-size:.6rem;padding:2px 8px;margin-bottom:6px;background:#1B5FD9;color:#fff;border-color:#1B5FD9;">⭐ Interactive</span>
         <a href="projects/gender-pay-gap-dashboard_1.html" class="all-title">EU Gender Pay Gap — Interactive</a>
@@ -551,7 +542,7 @@
   </div>
 </section>
 
-<!-- SKILLS — Tightened, no unsupported tech -->
+<!-- SKILLS -->
 <section class="section skills" id="skills">
   <div class="container">
     <p class="section-label">Technical Skills</p>
@@ -606,14 +597,14 @@
   </div>
 </section>
 
-<!-- CONTACT — Simplified, reliable -->
+<!-- CONTACT — Simplified -->
 <section class="section contact" id="contact">
   <div class="container">
     <p class="section-label">Get In Touch</p>
     <h2 class="section-title">Let's work together</h2>
     <div class="contact-layout">
       <div>
-        <p class="contact-intro">I'm looking for an analyst who understands both data and operations. If that sounds like you — or if you're hiring for a role where that combination matters — I'd love to hear from you. Open to remote roles across Europe or relocation to Italy.</p>
+        <p class="contact-intro">I'm an analyst who understands both data and operations. If you're hiring for a role where that combination matters — I'd love to hear from you. Open to remote roles across Europe or relocation to Italy.</p>
         <div class="contact-detail"><div class="cd-icon"><i class="fas fa-map-marker-alt"></i></div><div><div class="cd-label">Location</div><div class="cd-val">Hamburg, Germany · Remote / Europe</div></div></div>
         <div class="contact-detail"><div class="cd-icon"><i class="fas fa-envelope"></i></div><div><div class="cd-label">Email</div><a href="mailto:yaw.assensoh@hotmail.com" class="cd-val">yaw.assensoh@hotmail.com</a></div></div>
         <div class="social-links">
