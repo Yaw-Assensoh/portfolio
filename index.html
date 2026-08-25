@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yaw Assensoh Opoku — Operations & Business Analyst</title>
-  <meta name="description" content="Operations & Business Analyst with 10+ years logistics leadership and strong data analytics capability. Python, SQL, Tableau, Streamlit. 11 case studies. Open to remote or relocation to Italy.">
+  <meta name="description" content="Operations & Business Analyst — Data Analytics, Supply Chain, Logistics. 10+ years operations & logistics leadership plus data analytics training. Python, SQL, Tableau, Streamlit. 11 case studies. Open to remote/hybrid analyst roles.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
     :root {
       --blue: #1B5FD9;
       --blue-light: #EEF4FF;
-      --blue-glow: rgba(27,95,217,0.15);
+      --blue-glow: rgba(27,95,217,0.10);
       --gold: #D4A017;
       --gold-light: #FEF7E0;
       --dark: #0D1117;
@@ -42,12 +42,10 @@
     .section-title { font-family: var(--font-head); font-size: clamp(1.8rem, 3.5vw, 2.6rem); color: var(--dark); line-height: 1.15; margin-bottom: 0.75rem; }
     .section-text { font-size: 1rem; color: var(--muted); max-width: 580px; line-height: 1.7; }
 
-    /* AVAILABILITY BANNER */
-    .av-banner { background: linear-gradient(90deg, #0a1a4a, #1B5FD9, #1B5FD9); padding: 10px 0; text-align: center; position: relative; overflow: hidden; }
-    .av-banner::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent); transform: translateX(-100%); animation: shimmer 5s infinite; }
-    @keyframes shimmer { 0% { transform: translateX(-100%); } 60% { transform: translateX(100%); } 100% { transform: translateX(100%); } }
-    .av-banner p { color: rgba(255,255,255,0.9); font-size: 0.8rem; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; position: relative; z-index: 1; }
-    .av-dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; display: inline-block; animation: pulse-dot 2s infinite; }
+    /* AVAILABILITY BANNER — Clean */
+    .av-banner { background: #0a1a4a; padding: 10px 0; text-align: center; }
+    .av-banner p { color: rgba(255,255,255,0.9); font-size: 0.8rem; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
+    .av-dot { width: 7px; height: 7px; background: #4ade80; border-radius: 50%; display: inline-block; animation: pulse-dot 2s infinite; }
     @keyframes pulse-dot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.7); } }
     .av-banner a { color: #93c5fd; text-decoration: underline; font-weight: 500; transition: color 0.2s; }
     .av-banner a:hover { color: #fff; }
@@ -75,23 +73,22 @@
     .btn-sm { padding: 7px 16px; font-size: 0.8rem; }
     .nav-toggle-btn { display: none; background: none; border: none; font-size: 1.25rem; cursor: pointer; padding: 8px; color: var(--dark); }
 
-    /* HERO */
+    /* HERO — Shortened, punchy */
     .hero { padding: calc(var(--nav-h) + 64px) 0 72px; position: relative; overflow: hidden; background: var(--bg); }
-    .hero::before { content: ''; position: absolute; top: -200px; right: -200px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(27,95,217,0.08), transparent 65%); pointer-events: none; }
-    .hero::after { content: ''; position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(212,160,23,0.04), transparent 60%); pointer-events: none; }
+    .hero::before { content: ''; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(27,95,217,0.06), transparent 65%); pointer-events: none; }
     .hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; position: relative; z-index: 1; }
     .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: var(--blue-light); color: var(--blue); font-size: 0.75rem; font-weight: 600; padding: 4px 16px; border-radius: 99px; margin-bottom: 20px; border: 1px solid #c7d9f9; }
     .hero-eyebrow .dot { width: 6px; height: 6px; background: var(--blue); border-radius: 50%; display: inline-block; animation: pulse-dot 2s infinite; }
-    .hero h1 { font-family: var(--font-head); font-size: clamp(2.2rem, 4.5vw, 3.4rem); color: var(--dark); line-height: 1.08; margin-bottom: 20px; letter-spacing: -0.01em; }
+    .hero h1 { font-family: var(--font-head); font-size: clamp(2.2rem, 4.5vw, 3.2rem); color: var(--dark); line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.01em; }
     .hero h1 em { font-style: italic; color: var(--blue); position: relative; }
     .hero h1 em::after { content: ''; position: absolute; bottom: 4px; left: 0; right: 0; height: 6px; background: var(--gold); opacity: 0.2; border-radius: 2px; }
-    .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 500px; line-height: 1.7; margin-bottom: 20px; }
+    .hero-sub { font-size: 1rem; color: var(--muted); max-width: 520px; line-height: 1.7; margin-bottom: 24px; }
     .target-roles { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 28px; }
     .target-roles span { background: var(--bg); color: var(--mid); padding: 4px 14px; border-radius: 99px; font-size: 0.7rem; font-weight: 600; border: 1px solid var(--border); transition: all 0.2s; }
     .target-roles span:hover { background: var(--blue-light); color: var(--blue); border-color: var(--blue); transform: translateY(-2px); }
     .hero-ctas { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
-    .hero-stats { display: flex; gap: 36px; padding-top: 28px; border-top: 1px solid var(--border); }
-    .hero-stat-num { font-family: var(--font-head); font-size: 1.7rem; color: var(--dark); line-height: 1; display: block; }
+    .hero-stats { display: flex; gap: 32px; padding-top: 28px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+    .hero-stat-num { font-family: var(--font-head); font-size: 1.6rem; color: var(--dark); line-height: 1; display: block; }
     .hero-stat-label { font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
 
     .hero-visual { position: relative; }
@@ -99,24 +96,16 @@
     .hero-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
     .hero-img-placeholder { text-align: center; padding: 40px; color: #93C5FD; }
     .hero-img-placeholder i { font-size: 4rem; margin-bottom: 12px; display: block; }
-    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-    @keyframes float-delay { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-    .lang-badge { position: absolute; bottom: 24px; left: -24px; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 18px; box-shadow: var(--shadow-hover); min-width: 180px; animation: float 4s ease-in-out infinite; }
-    .lang-badge-label { font-size: 0.65rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
-    .lang-flags { display: flex; gap: 4px; flex-wrap: wrap; }
-    .lang-pill { font-size: 0.65rem; font-weight: 600; padding: 2px 9px; border-radius: 99px; background: var(--blue-light); color: var(--blue); border: 1px solid #c7d9f9; transition: all 0.2s; }
-    .lang-pill:hover { transform: scale(1.05); background: var(--blue); color: #fff; }
-    .exp-badge { position: absolute; top: 24px; right: -20px; background: linear-gradient(135deg, var(--blue), #1550c0); color: #fff; border-radius: var(--radius); padding: 14px 18px; box-shadow: 0 8px 28px rgba(27,95,217,0.4); text-align: center; animation: float-delay 4s ease-in-out infinite 0.8s; }
+
+    /* Single floating badge */
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    .exp-badge { position: absolute; top: 24px; right: -16px; background: linear-gradient(135deg, var(--blue), #1550c0); color: #fff; border-radius: var(--radius); padding: 14px 18px; box-shadow: 0 8px 28px rgba(27,95,217,0.4); text-align: center; animation: float 4s ease-in-out infinite; }
     .exp-badge .num { font-family: var(--font-head); font-size: 1.6rem; line-height: 1; }
     .exp-badge .txt { font-size: 0.65rem; opacity: 0.85; margin-top: 2px; }
 
-    /* RECENT BADGE */
-    .recent-badge { display: inline-flex; align-items: center; gap: 4px; background: var(--gold-light); color: var(--gold); padding: 2px 10px; border-radius: 99px; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; border: 1px solid #f5d98a; margin-left: 6px; }
-
-    /* TRUST BAR */
-    .trust-bar { background: var(--dark); padding: 18px 0; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); position: relative; overflow: hidden; }
-    .trust-bar::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.02), transparent); transform: translateX(-100%); animation: shimmer 6s infinite; }
-    .trust-bar .container { display: flex; align-items: center; gap: 32px; overflow-x: auto; scrollbar-width: none; position: relative; z-index: 1; }
+    /* TRUST BAR — Clean */
+    .trust-bar { background: var(--dark); padding: 18px 0; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .trust-bar .container { display: flex; align-items: center; gap: 32px; overflow-x: auto; scrollbar-width: none; }
     .trust-bar .container::-webkit-scrollbar { display: none; }
     .trust-bar .label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6B7280; white-space: nowrap; flex-shrink: 0; }
     .tool-chip { display: flex; align-items: center; gap: 6px; color: #D1D5DB; font-size: 0.8rem; font-weight: 500; white-space: nowrap; flex-shrink: 0; transition: color 0.2s; }
@@ -124,7 +113,7 @@
     .tool-chip i { font-size: 0.8rem; color: #6B7280; transition: color 0.2s; }
     .tool-chip:hover i { color: var(--blue); }
 
-    /* ABOUT */
+    /* ABOUT — Shortened */
     .about .container { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; }
     .about-left { display: flex; flex-direction: column; gap: 20px; }
     .about-story-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; position: relative; box-shadow: var(--shadow); transition: all 0.3s; }
@@ -170,6 +159,7 @@
     .card-badge.warning { background: #FEF3C7; color: #92400E; border-color: #FCD34D; }
     .card-title { font-family: var(--font-head); font-size: 1.1rem; color: var(--dark); line-height: 1.3; margin-bottom: 8px; }
     .card-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 14px; flex: 1; }
+    .card-desc strong { color: var(--dark); font-weight: 600; }
     .card-metrics { background: #F0F7FF; border-radius: 8px; padding: 10px 12px; margin-bottom: 14px; border-left: 3px solid var(--blue); transition: all 0.3s; }
     .card:hover .card-metrics { background: var(--blue-light); border-left-color: var(--gold); }
     .metric-row { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--mid); margin-bottom: 4px; }
@@ -197,7 +187,7 @@
     .all-card.highlight { border-color: var(--blue); background: #F5F8FF; position: relative; overflow: hidden; }
     .all-card.highlight::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(27,95,217,0.06), transparent 60%); pointer-events: none; }
 
-    /* SKILLS */
+    /* SKILLS — Tightened, no unsupported tech */
     .skills { background: var(--bg); }
     .skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 40px; }
     .skills-group-title { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
@@ -212,7 +202,7 @@
     .cert-name { font-weight: 600; font-size: 0.85rem; color: var(--dark); }
     .cert-issuer { font-size: 0.75rem; color: var(--muted); }
 
-    /* CONTACT */
+    /* CONTACT — Simplified */
     .contact { background: var(--dark); color: #fff; position: relative; overflow: hidden; }
     .contact::before { content: ''; position: absolute; top: -200px; right: -200px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(27,95,217,0.08), transparent 60%); pointer-events: none; }
     .contact .section-label { color: #60A5FA; border-bottom-color: #60A5FA; }
@@ -228,16 +218,6 @@
     .social-links { display: flex; gap: 8px; margin-top: 24px; }
     .social-link { width: 40px; height: 40px; border-radius: 8px; background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 0.95rem; transition: all 0.3s; border: 1px solid rgba(255,255,255,0.06); }
     .social-link:hover { background: var(--blue); color: #fff; border-color: var(--blue); transform: translateY(-4px) scale(1.05); box-shadow: 0 8px 24px rgba(27,95,217,0.35); }
-    .contact-form { display: flex; flex-direction: column; gap: 12px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .form-label { font-size: 0.75rem; font-weight: 600; color: #D1D5DB; }
-    .form-input { padding: 10px 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; font-family: var(--font-body); font-size: 0.9rem; color: #F3F4F6; outline: none; transition: all 0.3s; resize: vertical; }
-    .form-input::placeholder { color: #6B7280; }
-    .form-input:focus { border-color: #60A5FA; box-shadow: 0 0 0 4px rgba(96,165,250,0.1); background: rgba(255,255,255,0.1); }
-    .form-submit { background: var(--blue); color: #fff; font-weight: 600; padding: 10px 24px; border: none; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; font-size: 0.85rem; align-self: flex-start; box-shadow: 0 4px 14px rgba(27,95,217,0.3); }
-    .form-submit:hover { background: #1550c0; transform: translateY(-3px); box-shadow: 0 8px 28px rgba(27,95,217,0.4); }
-    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-    #contact-feedback { margin-top: 8px; font-size: 0.85rem; font-weight: 600; display: none; }
 
     /* FOOTER */
     .footer { background: #060910; padding: 24px 0; border-top: 1px solid rgba(255,255,255,0.04); }
@@ -262,14 +242,12 @@
       .section { padding: 56px 0; }
       .hero .container { grid-template-columns: 1fr; gap: 32px; }
       .hero-visual { order: -1; }
-      .lang-badge { left: 0; bottom: 12px; }
       .exp-badge { right: 0; top: 12px; }
       .about .container { grid-template-columns: 1fr; gap: 32px; }
       .projects-grid { grid-template-columns: 1fr; }
       .all-grid { grid-template-columns: 1fr 1fr; }
       .skills-layout { grid-template-columns: 1fr; gap: 32px; }
       .contact-layout { grid-template-columns: 1fr; gap: 32px; }
-      .form-row { grid-template-columns: 1fr; }
       .hero-stats { gap: 16px; flex-wrap: wrap; }
       .navbar { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0; background: var(--white); padding: 20px; flex-direction: column; border-top: 1px solid var(--border); z-index: 99; overflow-y: auto; }
       .navbar.open { display: flex; }
@@ -287,10 +265,10 @@
 </head>
 <body>
 
-<!-- AVAILABILITY BANNER -->
+<!-- AVAILABILITY BANNER — Clean, no animation -->
 <div class="av-banner">
   <div class="container">
-    <p><span class="av-dot"></span> Open to remote roles across Europe or relocation to Italy — <a href="#contact">Let's talk</a></p>
+    <p><span class="av-dot"></span> Open to Data, Business, Operations &amp; Supply Chain Analyst roles · Remote / Hybrid — <a href="#contact">Let's talk</a></p>
   </div>
 </div>
 
@@ -316,13 +294,13 @@
   </div>
 </header>
 
-<!-- HERO -->
+<!-- HERO — Shortened, punchy -->
 <section class="hero" id="home">
   <div class="container">
     <div class="hero-content">
-      <div class="hero-eyebrow"><span class="dot"></span> Available — Remote / Europe</div>
-      <h1>Operations &amp; Business<br><em>Analytics</em> · Data-Driven<br>Decision Making</h1>
-      <p class="hero-sub">I combine 10+ years of operational leadership with modern data analytics to turn complex business data into decisions. I ran a logistics business in Hamburg — managing P&L, employees, and clients — and now use Python, SQL, and Tableau to solve business problems at scale.</p>
+      <div class="hero-eyebrow"><span class="dot"></span> Available — Remote / Hybrid</div>
+      <h1>Operations &amp; Business Analyst<br><em>Data Analytics</em> · Supply Chain · Logistics</h1>
+      <p class="hero-sub">Turning operational data into better decisions. I combine 10+ years of logistics leadership with Python, SQL, Tableau and statistical analysis to solve forecasting, performance and supply-chain problems.</p>
       <div class="target-roles">
         <span>Data Analyst</span>
         <span>Operations Analyst</span>
@@ -336,27 +314,17 @@
         <a href="#about" class="btn btn-ghost">My Story</a>
       </div>
       <div class="hero-stats">
-        <div><span class="hero-stat-num">10+</span><span class="hero-stat-label">Years in operations</span></div>
+        <div><span class="hero-stat-num">10+</span><span class="hero-stat-label">Years operations &amp; logistics</span></div>
         <div><span class="hero-stat-num">11</span><span class="hero-stat-label">Case studies</span></div>
         <div><span class="hero-stat-num">5</span><span class="hero-stat-label">Languages</span></div>
-        <div><span class="hero-stat-num">+10%</span><span class="hero-stat-label">Revenue uplift</span></div>
+        <div><span class="hero-stat-num">2024</span><span class="hero-stat-label">Analytics certification</span></div>
       </div>
     </div>
     <div class="hero-visual">
       <div class="hero-img-wrap">
         <img src="./assets/images/absolute-image.png" alt="Yaw Assensoh Opoku" onerror="this.outerHTML='<div class=hero-img-placeholder><i class=fas fa-user-circle></i><p>Add your headshot</p></div>'">
       </div>
-      <div class="exp-badge"><div class="num">10+</div><div class="txt">Years in business ops</div></div>
-      <div class="lang-badge">
-        <div class="lang-badge-label">Fluent in 5 languages</div>
-        <div class="lang-flags">
-          <span class="lang-pill">🇬🇧 English (C2)</span>
-          <span class="lang-pill">🇩🇪 Deutsch (B2)</span>
-          <span class="lang-pill">🇮🇹 Italiano (C1)</span>
-          <span class="lang-pill">🇪🇸 Español (B1)</span>
-          <span class="lang-pill">🇫🇷 Français (B1)</span>
-        </div>
-      </div>
+      <div class="exp-badge"><div class="num">10+</div><div class="txt">Years operations experience</div></div>
     </div>
   </div>
 </section>
@@ -378,7 +346,7 @@
   </div>
 </div>
 
-<!-- ABOUT -->
+<!-- ABOUT — Shortened -->
 <section class="section about" id="about">
   <div class="container">
     <div class="about-left fade-up">
@@ -395,12 +363,12 @@
     <div class="about-text fade-up">
       <p class="section-label">My Story</p>
       <h2 class="section-title">From logistics founder to business analyst</h2>
-      <p class="section-text">Transitioning into analytics wasn't a career change — it was adding Python, SQL, and Tableau to a toolkit I'd already been building for years. I bring both the technical depth and the business context to turn insights into actions.</p>
-      <p class="section-text" style="margin-top:1rem;">I closed the business in 2023 to make this transition deliberately — completing a 12-month analytics certification and building out 11 case studies. Currently based in Hamburg, I'm actively seeking remote-first roles or opportunities to relocate to Italy.</p>
+      <p class="section-text">Transitioning into analytics wasn't a career change — it was adding Python, SQL, and Tableau to a toolkit I'd already been building for years. I closed the business in 2023 to make the transition deliberately, completing a 12-month analytics certification and building out 11 case studies.</p>
+      <p class="section-text" style="margin-top:1rem;">Currently based in Hamburg, open to remote-first analyst roles across Europe, or to relocating to Italy.</p>
       <div class="specialties-list">
         <div class="specialty-item"><div class="spec-icon"><i class="fas fa-bullseye"></i></div><div><strong>Business-first mindset:</strong> I start with "What problem are we solving?" — not "What can the data show?"</div></div>
         <div class="specialty-item"><div class="spec-icon"><i class="fas fa-cogs"></i></div><div><strong>Operational fluency:</strong> Years running logistics means I understand process optimisation from the ground up</div></div>
-        <div class="specialty-item"><div class="spec-icon"><i class="fas fa-language"></i></div><div><strong>Multilingual reach:</strong> Fluent in English, German, Italian, Spanish, and French — cultural awareness for global teams</div></div>
+        <div class="specialty-item"><div class="spec-icon"><i class="fas fa-language"></i></div><div><strong>5 languages:</strong> English (C2) · Italian (C1) · German (B2) · Spanish (B1) · French (B1)</div></div>
         <div class="specialty-item"><div class="spec-icon"><i class="fas fa-wifi"></i></div><div><strong>Remote-ready:</strong> Async collaboration, documentation-first communication, and distributed team workflows</div></div>
       </div>
       <div style="display:flex;gap:12px;flex-wrap:wrap;">
@@ -411,13 +379,13 @@
   </div>
 </section>
 
-<!-- FEATURED PROJECTS -->
+<!-- FEATURED PROJECTS — Business Question format -->
 <section class="section projects" id="projects">
   <div class="container">
     <div class="projects-header">
       <p class="section-label">Flagship Case Studies</p>
-      <h2 class="section-title">My three strongest projects</h2>
-      <p class="section-text">Each one solves a different business problem — forecasting, policy analysis, and supply-chain optimisation. <span style="color:var(--blue);font-weight:600;">★ Featured = full case study with statistical proof.</span></p>
+      <h2 class="section-title">Three projects that demonstrate how I solve business problems</h2>
+      <p class="section-text">Each one starts with a business question — forecasting, policy analysis, and supply-chain optimisation. <span style="color:var(--blue);font-weight:600;">★ Featured = full case study with statistical proof.</span></p>
     </div>
     <div class="projects-grid">
 
@@ -428,7 +396,7 @@
           <span class="card-badge featured">★ Featured</span>
           <span class="card-badge" style="margin-top:-4px;">Forecasting · Real Estate</span>
           <h3 class="card-title">US Housing Affordability</h3>
-          <p class="card-desc">3-phase project: Excel + SQL + Python. K-Means clustering, 36-month SARIMA forecast, interactive Streamlit dashboard.</p>
+          <p class="card-desc"><strong>Question:</strong> Where is housing becoming unaffordable, and how might that shift over the next 36 months?<br><br><strong>Method:</strong> K-Means segmentation + SARIMA forecasting<br><br><strong>Finding:</strong> Los Angeles reaches a 2.22 affordability index, requiring $200K+ income<br><br><strong>Decision:</strong> Identify markets where income growth is failing to keep pace with housing costs</p>
           <div class="card-metrics">
             <div class="metric-row"><i class="fas fa-chart-line"></i><span><strong>2.22 LA index</strong> — $200K+ income needed</span></div>
             <div class="metric-row"><i class="fas fa-clock"></i><span><strong>36-month forecast</strong> with 95% CI</span></div>
@@ -441,14 +409,14 @@
         </div>
       </div>
 
-      <!-- EU GENDER PAY GAP -->
+      <!-- EU GENDER PAY GAP — "statistically supported" -->
       <div class="card fade-up">
         <div class="card-img"><img src="./assets/images/the-gender-pay-gap.jpg" alt="EU Gender Pay Gap" onerror="this.src='https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=600&q=80'"></div>
         <div class="card-body">
           <span class="card-badge featured">★ Featured</span>
           <span class="card-badge" style="margin-top:-4px;">Statistics · Labour Economics</span>
           <h3 class="card-title">EU Gender Pay Gap (2002–2024)</h3>
-          <p class="card-desc">22-year Eurostat analysis across 27 countries. 5 statistically proven findings with regression, t-tests, and Tableau dashboard.</p>
+          <p class="card-desc"><strong>Question:</strong> Is the EU gender pay gap actually closing, and which sectors and age groups are driving what remains?<br><br><strong>Method:</strong> Regression + t-tests + 22 years of Eurostat data<br><br><strong>Finding:</strong> 5 statistically supported findings: trend, sector, age, country, and residual<br><br><strong>Decision:</strong> Prioritise Finance sector monitoring and target age-related policy interventions</p>
           <div class="card-metrics">
             <div class="metric-row"><i class="fas fa-chart-line"></i><span><strong>10.5%</strong> EU average · <strong>24.1%</strong> in Finance</span></div>
             <div class="metric-row"><i class="fas fa-baby"></i><span><strong>4.6% → 13.9%</strong> age-related increase</span></div>
@@ -461,16 +429,16 @@
         </div>
       </div>
 
-      <!-- NYC CITI BIKE -->
+      <!-- NYC CITI BIKE — Projected revenue opportunity -->
       <div class="card fade-up">
-        <div class="card-img"><img src="./assets/images/nyc-bikes.png" alt="NYC Citi Bike" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80'"></div>
+        <div class="card-img"><img src="./assets/images/citibike-dashboard.png" alt="NYC Citi Bike" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80'"></div>
         <div class="card-body">
           <span class="card-badge featured">★ Featured</span>
           <span class="card-badge" style="margin-top:-4px;">Supply Chain · Operations</span>
           <h3 class="card-title">NYC Citi Bike Optimisation</h3>
-          <p class="card-desc">Demand forecasting model with 0.82 temperature-usage correlation to optimise distribution across 1,500+ stations.</p>
+          <p class="card-desc"><strong>Question:</strong> How should bikes be redistributed across 1,500+ stations as demand shifts with weather and season?<br><br><strong>Method:</strong> Forecasting model with 0.82 temperature-usage correlation<br><br><strong>Finding:</strong> 20–25% estimated revenue opportunity under proposed dynamic pricing scenario<br><br><strong>Decision:</strong> Use 4-week advance forecasts for proactive redistribution planning</p>
           <div class="card-metrics">
-            <div class="metric-row"><i class="fas fa-dollar-sign"></i><span><strong>20–25% revenue increase</strong> via dynamic pricing</span></div>
+            <div class="metric-row"><i class="fas fa-dollar-sign"></i><span><strong>20–25% estimated revenue opportunity</strong> under proposed pricing scenario</span></div>
             <div class="metric-row"><i class="fas fa-calendar-alt"></i><span><strong>4-week advance forecasting</strong> for proactive planning</span></div>
           </div>
           <div class="card-links">
@@ -583,7 +551,7 @@
   </div>
 </section>
 
-<!-- SKILLS -->
+<!-- SKILLS — Tightened, no unsupported tech -->
 <section class="section skills" id="skills">
   <div class="container">
     <p class="section-label">Technical Skills</p>
@@ -591,42 +559,35 @@
     <p class="section-text">Skills demonstrated through projects — not progress bars.</p>
     <div class="skills-layout">
       <div>
-        <p class="skills-group-title">Data Analysis &amp; Python</p>
+        <p class="skills-group-title">Core</p>
         <div class="skills-chips">
           <span class="skill-chip"><i class="fab fa-python"></i> Python</span>
-          <span class="skill-chip"><i class="fas fa-table"></i> Pandas</span>
-          <span class="skill-chip"><i class="fas fa-calculator"></i> NumPy</span>
-          <span class="skill-chip"><i class="fas fa-chart-area"></i> Matplotlib / Seaborn</span>
-          <span class="skill-chip"><i class="fas fa-book"></i> Jupyter Notebook</span>
-          <span class="skill-chip"><i class="fas fa-map"></i> Folium</span>
-          <span class="skill-chip"><i class="fas fa-chart-bar"></i> Plotly</span>
-        </div>
-        <p class="skills-group-title">Databases &amp; Querying</p>
-        <div class="skills-chips">
-          <span class="skill-chip"><i class="fas fa-database"></i> PostgreSQL</span>
-          <span class="skill-chip"><i class="fas fa-code"></i> Window Functions</span>
-          <span class="skill-chip"><i class="fas fa-filter"></i> CTEs &amp; Subqueries</span>
+          <span class="skill-chip"><i class="fas fa-database"></i> SQL (PostgreSQL)</span>
+          <span class="skill-chip"><i class="fas fa-chart-bar"></i> Tableau</span>
           <span class="skill-chip"><i class="fas fa-file-excel"></i> Excel</span>
         </div>
-        <p class="skills-group-title">Visualisation &amp; Dashboards</p>
+        <p class="skills-group-title">Analytics</p>
         <div class="skills-chips">
-          <span class="skill-chip"><i class="fas fa-chart-bar"></i> Tableau</span>
-          <span class="skill-chip"><i class="fas fa-map-marked-alt"></i> Streamlit</span>
-          <span class="skill-chip"><i class="fas fa-chart-simple"></i> Chart.js</span>
-          <span class="skill-chip"><i class="fas fa-tachometer-alt"></i> Power BI</span>
+          <span class="skill-chip"><i class="fas fa-table"></i> Pandas</span>
+          <span class="skill-chip"><i class="fas fa-calculator"></i> NumPy</span>
+          <span class="skill-chip"><i class="fas fa-flask"></i> Statistical Analysis</span>
+          <span class="skill-chip"><i class="fas fa-project-diagram"></i> Regression</span>
+          <span class="skill-chip"><i class="fas fa-chart-line"></i> Time Series</span>
         </div>
-      </div>
-      <div>
-        <p class="skills-group-title">Machine Learning &amp; Statistics</p>
+        <p class="skills-group-title">Advanced</p>
         <div class="skills-chips">
           <span class="skill-chip"><i class="fas fa-robot"></i> Scikit-learn</span>
           <span class="skill-chip"><i class="fas fa-layer-group"></i> K-Means</span>
-          <span class="skill-chip"><i class="fas fa-wave-square"></i> SARIMA / ARIMA</span>
-          <span class="skill-chip"><i class="fas fa-flask"></i> A/B Testing</span>
-          <span class="skill-chip"><i class="fas fa-project-diagram"></i> Regression</span>
-          <span class="skill-chip"><i class="fas fa-chart-line"></i> Time Series</span>
-          <span class="skill-chip"><i class="fas fa-network-wired"></i> NetworkX / NLP</span>
+          <span class="skill-chip"><i class="fas fa-wave-square"></i> ARIMA / SARIMA</span>
         </div>
+        <p class="skills-group-title">Applications</p>
+        <div class="skills-chips">
+          <span class="skill-chip"><i class="fas fa-map-marked-alt"></i> Streamlit</span>
+          <span class="skill-chip"><i class="fas fa-chart-bar"></i> Plotly</span>
+          <span class="skill-chip"><i class="fas fa-map"></i> Folium</span>
+        </div>
+      </div>
+      <div>
         <p class="skills-group-title">Education &amp; Credentials</p>
         <div class="cert-card">
           <div class="cert-icon"><i class="fas fa-graduation-cap"></i></div>
@@ -634,7 +595,7 @@
         </div>
         <div class="cert-card">
           <div class="cert-icon"><i class="fas fa-chart-bar"></i></div>
-          <div><div class="cert-name">Tableau for Analysts</div><div class="cert-issuer">Tableau Public — verified</div></div>
+          <div><div class="cert-name">Tableau Public</div><div class="cert-issuer">Data Visualisation Portfolio</div></div>
         </div>
         <div class="cert-card">
           <div class="cert-icon"><i class="fas fa-briefcase"></i></div>
@@ -645,17 +606,16 @@
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT — Simplified, reliable -->
 <section class="section contact" id="contact">
   <div class="container">
     <p class="section-label">Get In Touch</p>
     <h2 class="section-title">Let's work together</h2>
     <div class="contact-layout">
       <div>
-        <p class="contact-intro">Ready to turn your data into decisions? Whether you're hiring a data analyst, operations analyst, or supply chain analyst — I'd love to hear from you. Open to remote roles across Europe or relocation to Italy. I typically respond within 24 hours.</p>
+        <p class="contact-intro">I'm looking for an analyst who understands both data and operations. If that sounds like you — or if you're hiring for a role where that combination matters — I'd love to hear from you. Open to remote roles across Europe or relocation to Italy.</p>
         <div class="contact-detail"><div class="cd-icon"><i class="fas fa-map-marker-alt"></i></div><div><div class="cd-label">Location</div><div class="cd-val">Hamburg, Germany · Remote / Europe</div></div></div>
         <div class="contact-detail"><div class="cd-icon"><i class="fas fa-envelope"></i></div><div><div class="cd-label">Email</div><a href="mailto:yaw.assensoh@hotmail.com" class="cd-val">yaw.assensoh@hotmail.com</a></div></div>
-        <div class="contact-detail"><div class="cd-icon"><i class="fas fa-phone"></i></div><div><div class="cd-label">Phone</div><a href="tel:+4915738065664" class="cd-val">+49 157 3806 5664</a></div></div>
         <div class="social-links">
           <a href="https://www.linkedin.com/in/yaw-assensoh-opoku" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
           <a href="https://github.com/Yaw-Assensoh" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
@@ -663,16 +623,9 @@
         </div>
       </div>
       <div>
-        <form class="contact-form" onsubmit="handleContact(event)">
-          <div class="form-row">
-            <div><label class="form-label">Name</label><input class="form-input" type="text" id="c-name" placeholder="Your name"></div>
-            <div><label class="form-label">Email</label><input class="form-input" type="email" id="c-email" placeholder="yaw.assensoh@hotmail.com"></div>
-          </div>
-          <div><label class="form-label">Subject</label><input class="form-input" type="text" id="c-subject" placeholder="What's this about?"></div>
-          <div><label class="form-label">Message</label><textarea class="form-input" id="c-msg" rows="4" placeholder="Tell me about your project or opportunity..."></textarea></div>
-          <button class="form-submit" type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
-          <p id="contact-feedback"></p>
-        </form>
+        <p style="color:#D1D5DB;font-size:0.9rem;margin-bottom:12px;">Prefer email? I'm at <strong style="color:#fff;">yaw.assensoh@hotmail.com</strong></p>
+        <a href="mailto:yaw.assensoh@hotmail.com" class="btn btn-primary" style="display:inline-flex;"><i class="fas fa-paper-plane"></i> Email Me Directly</a>
+        <p style="color:#6B7280;font-size:0.75rem;margin-top:12px;">I typically respond within 24 hours.</p>
       </div>
     </div>
   </div>
@@ -714,34 +667,6 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.08 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-  function handleContact(e) {
-    e.preventDefault();
-    const name = document.getElementById('c-name').value.trim();
-    const email = document.getElementById('c-email').value.trim();
-    const subject = document.getElementById('c-subject').value.trim();
-    const msg = document.getElementById('c-msg').value.trim();
-    const fb = document.getElementById('contact-feedback');
-    const btn = document.querySelector('.form-submit');
-    if (!name || !email || !msg) {
-      fb.style.cssText = 'display:block;color:#F87171';
-      fb.textContent = 'Please fill in your name, email, and message.';
-      return;
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      fb.style.cssText = 'display:block;color:#F87171';
-      fb.textContent = 'Please enter a valid email address.';
-      return;
-    }
-    const sub = encodeURIComponent(subject || 'Portfolio enquiry');
-    const body = encodeURIComponent('Hi Yaw,\n\n' + msg + '\n\nBest,\n' + name + '\n' + email);
-    window.location.href = 'mailto:yaw.assensoh@hotmail.com?subject=' + sub + '&body=' + body;
-    btn.disabled = true;
-    btn.innerHTML = '<i class="fas fa-check"></i> Opening email client…';
-    fb.style.cssText = 'display:block;color:#4ade80';
-    fb.textContent = 'Your email client should open now. Thank you!';
-    setTimeout(() => { btn.disabled = false; btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message'; }, 5000);
-  }
 </script>
 </body>
 </html>
