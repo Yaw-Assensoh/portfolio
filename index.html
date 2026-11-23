@@ -303,12 +303,12 @@
       transition: background .2s, transform .2s;
     }
     .link-chip:hover { background: var(--blue-pale); transform: translateY(-1px); }
-    .link-chip:first-child {
+    .link-chip.primary {
       background: var(--blue);
       color: #fff;
       border-color: var(--blue);
     }
-    .link-chip:first-child:hover { background: #0A54B8; }
+    .link-chip.primary:hover { background: #0A54B8; }
 
     /* ---------- All projects ---------- */
     .all-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
@@ -338,6 +338,8 @@
       line-height: 1.3; margin-bottom: 5px;
       letter-spacing: -.005em;
     }
+    .mini-card h3 a { display: block; transition: color .2s; }
+    .mini-card h3 a:hover { color: var(--blue); }
     .mini-card .mini-tools { font-size: .66rem; color: var(--muted); margin-bottom: 12px; }
     .mini-card .mini-actions { display: flex; gap: 5px; flex-wrap: wrap; margin-top: auto; }
     .mini-btn {
@@ -712,7 +714,7 @@
                 <div class="detail-text">Identify markets where income growth is failing to keep pace with housing costs.</div>
               </div>
               <div class="card-links">
-                <a class="link-chip" href="projects/housing-analysis.html">Case study ↗</a>
+                <a class="link-chip primary" href="projects/housing-analysis.html">Case study ↗</a>
                 <a class="link-chip" href="https://yaw-assensoh-housing-affordability-dashboard.streamlit.app" target="_blank" rel="noopener">Dashboard ↗</a>
                 <a class="link-chip" href="https://github.com/Yaw-Assensoh/Housing-Affordability-Analysis" target="_blank" rel="noopener">GitHub ↗</a>
               </div>
@@ -762,7 +764,7 @@
                 <div class="detail-text">Audit finance pay first and track the spread between countries, not only the average.</div>
               </div>
               <div class="card-links">
-                <a class="link-chip" href="projects/eu-gender-pay-gap.html">Case study ↗</a>
+                <a class="link-chip primary" href="projects/eu-gender-pay-gap.html">Case study ↗</a>
                 <a class="link-chip" href="https://yaw-assensoh.github.io/eu-gender-pay-gap-analysis/dashboard/eu-gender-pay-gap-dashboard.html" target="_blank" rel="noopener">Live dashboard ↗</a>
                 <a class="link-chip" href="https://github.com/Yaw-Assensoh/Eu-gender-pay-gap-analysis" target="_blank" rel="noopener">GitHub ↗</a>
               </div>
@@ -817,7 +819,7 @@
                 <div class="detail-text">Use 4 week advance forecasts for proactive redistribution planning.</div>
               </div>
               <div class="card-links">
-                <a class="link-chip" href="projects/nyc-citibike-analysis.html">Case study ↗</a>
+                <a class="link-chip primary" href="projects/nyc-citibike-analysis.html">Case study ↗</a>
                 <a class="link-chip" href="https://yaw-assensoh-urban-mobility-insights-app-ujtkq3.streamlit.app" target="_blank" rel="noopener">Dashboard ↗</a>
                 <a class="link-chip" href="https://github.com/Yaw-Assensoh/urban-mobility-insights" target="_blank" rel="noopener">GitHub ↗</a>
               </div>
@@ -841,7 +843,7 @@
         <div class="all-grid">
           <article class="mini-card">
             <div class="mini-tag">Financial analytics</div>
-            <h3>Financial Markets Platform</h3>
+            <h3><a href="projects/financial-analysis.html">Financial Markets Platform</a></h3>
             <div class="mini-tools">Python · Streamlit · Backtesting</div>
             <div class="mini-actions">
               <a class="mini-btn" href="https://yaw-assensoh-financial-analysis-app-ypiyqi.streamlit.app" target="_blank" rel="noopener">Dashboard ↗</a>
@@ -851,7 +853,7 @@
 
           <article class="mini-card">
             <div class="mini-tag">E-commerce</div>
-            <h3>Instacart Basket Analysis</h3>
+            <h3><a href="projects/instacart-analysis.html">Instacart Basket Analysis</a></h3>
             <div class="mini-tools">Python · Segmentation · SQL</div>
             <div class="mini-actions">
               <a class="mini-btn" href="https://github.com/Yaw-Assensoh/Instacart-Analysis" target="_blank" rel="noopener">GitHub ↗</a>
@@ -860,7 +862,7 @@
 
           <article class="mini-card">
             <div class="mini-tag">Healthcare</div>
-            <h3>Influenza Staffing Forecast</h3>
+            <h3><a href="projects/influenza-forecast.html">Influenza Staffing Forecast</a></h3>
             <div class="mini-tools">Python · Tableau · ARIMA</div>
             <div class="mini-actions">
               <a class="mini-btn" href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/Influenza_Staffing_Forecast/Story1" target="_blank" rel="noopener">Tableau ↗</a>
@@ -870,7 +872,7 @@
 
           <article class="mini-card">
             <div class="mini-tag">BI</div>
-            <h3>RockBuster Insights</h3>
+            <h3><a href="projects/rockbuster-insights.html">RockBuster Insights</a></h3>
             <div class="mini-tools">PostgreSQL · Tableau</div>
             <div class="mini-actions">
               <a class="mini-btn" href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/RockBuster_BI_Insights/Story1" target="_blank" rel="noopener">Tableau ↗</a>
@@ -880,7 +882,7 @@
 
           <article class="mini-card">
             <div class="mini-tag">Forecasting</div>
-            <h3>Global Migration Analysis</h3>
+            <h3><a href="projects/migration-analysis.html">Global Migration Analysis</a></h3>
             <div class="mini-tools">Python · Tableau · ARIMA</div>
             <div class="mini-actions">
               <a class="mini-btn" href="https://yaw-assensoh-global-migration-analysis-project-app-tbxmqx.streamlit.app" target="_blank" rel="noopener">Dashboard ↗</a>
@@ -890,7 +892,7 @@
 
           <article class="mini-card">
             <div class="mini-tag">Network science</div>
-            <h3>20th Century Geopolitical Analysis</h3>
+            <h3><a href="projects/20th-century-events.html">20th Century Geopolitical Analysis</a></h3>
             <div class="mini-tools">Python · NetworkX · NLP</div>
             <div class="mini-actions">
               <a class="mini-btn" href="https://github.com/Yaw-Assensoh/20th_Century" target="_blank" rel="noopener">GitHub ↗</a>
@@ -899,7 +901,7 @@
 
           <article class="mini-card">
             <div class="mini-tag">Economic analysis</div>
-            <h3>Global Development Trends</h3>
+            <h3><a href="projects/global-development.html">Global Development Trends</a></h3>
             <div class="mini-tools">Python · Tableau · World Bank</div>
             <div class="mini-actions">
               <a class="mini-btn" href="https://public.tableau.com/app/profile/yaw.assensoh.opoku/viz/Global_Development_Trends/Story2" target="_blank" rel="noopener">Tableau ↗</a>
@@ -909,7 +911,7 @@
 
           <article class="mini-card highlight">
             <div class="mini-tag">Interactive</div>
-            <h3>EU Gender Pay Gap Dashboard</h3>
+            <h3><a href="projects/eu-gender-pay-gap.html">EU Gender Pay Gap Dashboard</a></h3>
             <div class="mini-tools">Interactive · Eurostat data</div>
             <div class="mini-actions">
               <a class="mini-btn primary" href="https://yaw-assensoh.github.io/eu-gender-pay-gap-analysis/dashboard/eu-gender-pay-gap-dashboard.html" target="_blank" rel="noopener">Launch dashboard ↗</a>
