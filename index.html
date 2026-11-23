@@ -192,13 +192,14 @@
       background-size: 32px 32px;
       pointer-events: none;
     }
-    .monogram {
-      position: relative;
-      font-family: var(--font-head);
-      font-style: italic;
-      font-size: clamp(4.2rem, 9vw, 6.2rem);
-      color: var(--blue);
-      letter-spacing: -.04em;
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      border-radius: inherit;
     }
     .avail-pill {
       position: absolute; left: 50%; bottom: 20px;
@@ -211,6 +212,7 @@
       box-shadow: 0 6px 18px rgba(15,23,42,.06);
       font-size: .78rem;
       color: var(--body);
+      z-index: 2;
     }
     .avail-pill strong { display: block; color: var(--ink); font-size: .8rem; }
     .avail-pill .loc {
@@ -301,6 +303,12 @@
       transition: background .2s, transform .2s;
     }
     .link-chip:hover { background: var(--blue-pale); transform: translateY(-1px); }
+    .link-chip:first-child {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue);
+    }
+    .link-chip:first-child:hover { background: #0A54B8; }
 
     /* ---------- All projects ---------- */
     .all-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
@@ -704,7 +712,6 @@
                 <div class="detail-text">Identify markets where income growth is failing to keep pace with housing costs.</div>
               </div>
               <div class="card-links">
-                <a class="link-chip" href="projects/housing-analysis.html">Case study ↗</a>
                 <a class="link-chip" href="https://yaw-assensoh-housing-affordability-dashboard.streamlit.app" target="_blank" rel="noopener">Dashboard ↗</a>
                 <a class="link-chip" href="https://github.com/Yaw-Assensoh/Housing-Affordability-Analysis" target="_blank" rel="noopener">GitHub ↗</a>
               </div>
@@ -754,7 +761,6 @@
                 <div class="detail-text">Audit finance pay first and track the spread between countries, not only the average.</div>
               </div>
               <div class="card-links">
-                <a class="link-chip" href="projects/eu-gender-pay-gap.html">Case study ↗</a>
                 <a class="link-chip" href="https://yaw-assensoh.github.io/eu-gender-pay-gap-analysis/dashboard/eu-gender-pay-gap-dashboard.html" target="_blank" rel="noopener">Live dashboard ↗</a>
                 <a class="link-chip" href="https://github.com/Yaw-Assensoh/Eu-gender-pay-gap-analysis" target="_blank" rel="noopener">GitHub ↗</a>
               </div>
@@ -809,7 +815,6 @@
                 <div class="detail-text">Use 4 week advance forecasts for proactive redistribution planning.</div>
               </div>
               <div class="card-links">
-                <a class="link-chip" href="projects/nyc-citibike-analysis.html">Case study ↗</a>
                 <a class="link-chip" href="https://yaw-assensoh-urban-mobility-insights-app-ujtkq3.streamlit.app" target="_blank" rel="noopener">Dashboard ↗</a>
                 <a class="link-chip" href="https://github.com/Yaw-Assensoh/urban-mobility-insights" target="_blank" rel="noopener">GitHub ↗</a>
               </div>
